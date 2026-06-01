@@ -46,6 +46,8 @@
           <span></span><span></span><span></span>
         </button>
 
+        <div class="nav-overlay" aria-hidden="true"></div>
+
         <nav class="main-nav" aria-label="Main navigation">
           <ul>
             <li><a href="/">Home</a></li>
@@ -53,6 +55,9 @@
             <li><a href="/#treatments">Treatments</a></li>
             <li><a href="/#membership">Membership</a></li>
             <li><a href="/#resources">Resources</a></li>
+            <li class="nav-cta-mobile">
+              <a href="#get-started" class="btn btn-navy btn-pill btn-block">Get Started</a>
+            </li>
           </ul>
         </nav>
 
@@ -107,94 +112,155 @@
         </div>
       </section>
 
-      <section class="how-steps" id="steps">
-        <div class="how-wrap">
+      <section class="phone-scroll" id="steps" aria-label="Care journey steps">
+        <div class="how-wrap phone-scroll-intro">
           <p class="eyebrow">Your Process</p>
           <h2>From intake to long-term results.</h2>
+          <p class="phone-scroll-lead">
+            Scroll through your journey — each step connects to your North Star care
+            experience in the app.
+          </p>
+        </div>
 
-          <div class="step-list">
-            <article class="step-card">
-              <div class="step-index">01</div>
-              <div class="step-content">
-                <h3>Choose your treatment focus</h3>
-                <p>
-                  Start by selecting the care path that fits your goals — metabolic health,
-                  longevity optimization, hormone support, or personalized wellness care.
-                </p>
+        <div class="how-wrap phone-scroll-layout">
+          <div class="phone-sticky-wrap" aria-hidden="true">
+            <div class="phone-device">
+              <div class="phone-notch"></div>
+              <div class="phone-screen">
+                <img
+                  class="phone-slide is-active"
+                  data-step="1"
+                  src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80"
+                  alt=""
+                  width="800"
+                  height="1200"
+                />
+                <img
+                  class="phone-slide"
+                  data-step="2"
+                  src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80"
+                  alt=""
+                  width="800"
+                  height="1200"
+                />
+                <img
+                  class="phone-slide"
+                  data-step="3"
+                  src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=800&q=80"
+                  alt=""
+                  width="800"
+                  height="1200"
+                />
+                <img
+                  class="phone-slide"
+                  data-step="4"
+                  src="/images/product-box.png"
+                  alt=""
+                  width="800"
+                  height="1200"
+                />
+                <img
+                  class="phone-slide"
+                  data-step="5"
+                  src="/images/journey-seated.png"
+                  alt=""
+                  width="800"
+                  height="1200"
+                />
               </div>
+            </div>
+            <div class="phone-progress" role="tablist" aria-label="Step progress">
+              <span class="phone-progress-dot is-active" data-step="1"></span>
+              <span class="phone-progress-dot" data-step="2"></span>
+              <span class="phone-progress-dot" data-step="3"></span>
+              <span class="phone-progress-dot" data-step="4"></span>
+              <span class="phone-progress-dot" data-step="5"></span>
+            </div>
+          </div>
+
+          <div class="phone-steps">
+            <article class="phone-step is-active" data-step="1">
+              <span class="step-index">01</span>
+              <h3>Choose your treatment focus</h3>
+              <p>
+                Select the care path that fits your goals — metabolic health, longevity,
+                hormone support, or whole-person wellness.
+              </p>
               <img
+                class="phone-step-thumb"
                 src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&q=80"
-                alt="Patient selecting treatment options on a laptop"
+                alt="Choosing a treatment plan"
                 width="900"
                 height="600"
+                loading="lazy"
               />
             </article>
 
-            <article class="step-card">
-              <div class="step-index">02</div>
-              <div class="step-content">
-                <h3>Complete intake and secure checkout</h3>
-                <p>
-                  Fill out your medical history and submit your treatment request through a
-                  secure, HIPAA-aligned flow. This helps your provider assess fit safely.
-                </p>
-              </div>
+            <article class="phone-step" data-step="2">
+              <span class="step-index">02</span>
+              <h3>Complete intake &amp; secure checkout</h3>
+              <p>
+                Share your medical history through our secure, HIPAA-aligned intake. Quick
+                identity verification keeps your prescription safe.
+              </p>
               <img
+                class="phone-step-thumb"
                 src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=900&q=80"
-                alt="Secure online checkout and verification process"
+                alt="Secure checkout"
                 width="900"
                 height="600"
+                loading="lazy"
               />
             </article>
 
-            <article class="step-card">
-              <div class="step-index">03</div>
-              <div class="step-content">
-                <h3>Provider review and plan approval</h3>
-                <p>
-                  A licensed North Star MD provider reviews your history, labs, and goals.
-                  If needed, they follow up with recommendations before approval.
-                </p>
-              </div>
+            <article class="phone-step" data-step="3">
+              <span class="step-index">03</span>
+              <h3>Provider reviews your intake</h3>
+              <p>
+                A licensed North Star MD provider reviews your history and goals — often
+                within 24 hours. No live appointment required for most paths.
+              </p>
               <img
+                class="phone-step-thumb"
                 src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=900&q=80"
-                alt="Clinician reviewing patient intake information"
+                alt="Provider review"
                 width="900"
                 height="600"
+                loading="lazy"
               />
             </article>
 
-            <article class="step-card">
-              <div class="step-index">04</div>
-              <div class="step-content">
-                <h3>Receive medication and onboarding guidance</h3>
-                <p>
-                  Once approved, your medication is prepared and delivered to your door
-                  with clear instructions and onboarding support from day one.
-                </p>
-              </div>
+            <article class="phone-step" data-step="4">
+              <span class="step-index">04</span>
+              <h3>Receive your medication</h3>
+              <p>
+                Your prescription is prepared and shipped discreetly to your door with
+                clear onboarding guidance from day one.
+              </p>
               <img
-                src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=900&q=80"
-                alt="Medication package ready for home delivery"
+                class="phone-step-thumb"
+                src="/images/product-box.png"
+                alt="North Star MD wellness kit"
                 width="900"
                 height="600"
+                loading="lazy"
               />
             </article>
 
-            <article class="step-card">
-              <div class="step-index">05</div>
-              <div class="step-content">
-                <h3>Optimize with ongoing physician support</h3>
-                <p>
-                  Your plan evolves as your body and goals evolve. Expect regular check-ins,
-                  progress tracking, and data-informed adjustments for lasting outcomes.
-                </p>
-              </div>
+            <article class="phone-step" data-step="5">
+              <span class="step-index">05</span>
+              <h3>Ongoing physician support</h3>
+              <p>
+                Your plan evolves with you — check-ins, messaging, and optimization for
+                lasting results.
+              </p>
               <img
-                src="https://images.unsplash.com/photo-1576671414121-aa0c81c8695d?auto=format&fit=crop&w=900&q=80"
-                alt="Patient receiving ongoing digital care support"
+                class="phone-step-thumb"
+                src="/images/journey-seated.png"
+                alt="Ongoing wellness support"
                 width="900"
                 height="600"
+                loading="lazy"
               />
             </article>
           </div>
@@ -250,5 +316,6 @@
     </main>
 
     <script type="module" src="/js/main.js"></script>
+    <script type="module" src="/js/phone-scroll.js"></script>
   </body>
 </html>

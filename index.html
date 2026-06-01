@@ -45,6 +45,8 @@
           <span></span><span></span><span></span>
         </button>
 
+        <div class="nav-overlay" aria-hidden="true"></div>
+
         <nav class="main-nav" aria-label="Main navigation">
           <ul>
             <li><a href="#about">About Us</a></li>
@@ -52,6 +54,9 @@
             <li><a href="#treatments">Treatments <span class="chevron">▾</span></a></li>
             <li><a href="#membership">Membership</a></li>
             <li><a href="#resources">Resources</a></li>
+            <li class="nav-cta-mobile">
+              <a href="#get-started" class="btn btn-navy btn-pill btn-block">Get Started</a>
+            </li>
           </ul>
         </nav>
 
@@ -60,9 +65,9 @@
     </header>
 
     <main>
-      <!-- Hero: full banner from brand asset (matches landing mockup) -->
       <section class="hero" aria-label="Introduction">
-        <div class="hero-banner">
+        <!-- Desktop: full brand banner -->
+        <div class="hero-desktop hero-banner">
           <h1 class="sr-only">Find Your North Star.</h1>
           <p class="sr-only">
             Physician-guided longevity, metabolic health, and wellness care—delivered
@@ -75,6 +80,38 @@
             height="823"
             fetchpriority="high"
           />
+        </div>
+
+        <!-- Mobile: readable copy + photo -->
+        <div class="hero-mobile">
+          <div class="hero-mobile-inner">
+            <div class="hero-mobile-copy">
+              <h1>Find Your North Star.</h1>
+              <div class="hero-rule" aria-hidden="true"></div>
+              <p class="hero-lead">
+                Physician-guided longevity, metabolic health, and wellness care—delivered
+                wherever you are.
+              </p>
+              <div class="hero-btns">
+                <a href="#get-started" class="btn btn-gold btn-pill btn-block">Start Your Journey</a>
+                <a href="/how-it-works.html" class="btn btn-ghost btn-pill btn-block">How It Works</a>
+              </div>
+            </div>
+            <div class="hero-mobile-visual">
+              <img
+                src="/images/hero-photo.png"
+                alt="Woman smiling with sunlit hills in the background"
+                width="1104"
+                height="858"
+              />
+              <aside class="hero-badge">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 2L14 9L21 11L14 13L12 20L10 13L3 11L10 9L12 2Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/>
+                </svg>
+                <span>Whole-person care for real, lasting results.</span>
+              </aside>
+            </div>
+          </div>
         </div>
       </section>
 
