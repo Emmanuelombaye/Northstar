@@ -88,9 +88,43 @@
   margin-bottom: 10px;
 }
 
+.phone-scroll-intro h2 em {
+  font-style: italic;
+  color: var(--navy);
+}
+
 .phone-scroll-lead {
   color: var(--text-body);
   max-width: 52ch;
+}
+
+.phone-screen-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.phone-screen-caption {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  margin: 0;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 16px rgba(10, 31, 61, 0.12);
+}
+
+.phone-screen-step {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+.phone-step-label {
+  display: none;
 }
 
 .phone-scroll-layout {
@@ -149,6 +183,12 @@
 .phone-slide.is-active {
   opacity: 1;
   transform: scale(1);
+}
+
+.phone-slide--contain {
+  object-fit: contain;
+  background: var(--cream);
+  padding: 16px;
 }
 
 .phone-progress {
@@ -268,16 +308,6 @@
     border-right: none;
   }
 
-  .phone-scroll-layout {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-
-  .phone-sticky-wrap {
-    position: relative;
-    top: auto;
-  }
-
   .phone-scroll-intro,
   .faq-wrap {
     padding-inline: var(--gutter);
@@ -332,45 +362,130 @@
   }
 
   .phone-scroll {
-    padding: 40px 0 48px;
+    padding: 36px 0 52px;
   }
 
   .phone-scroll-intro {
     padding-inline: var(--gutter);
     width: 100%;
-    margin-bottom: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .phone-scroll-intro h2 {
+    max-width: 20ch;
+    margin-inline: auto;
+  }
+
+  .phone-scroll-lead {
+    margin-inline: auto;
   }
 
   .phone-scroll-layout {
-    padding-inline: var(--gutter);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding-inline: 0;
     width: 100%;
+    max-width: none;
   }
 
   .phone-sticky-wrap {
+    position: sticky;
+    top: var(--header-h);
+    z-index: 6;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    padding: 10px var(--gutter) 18px;
+    margin-bottom: 4px;
+    background: linear-gradient(180deg, #fff 78%, rgba(255, 255, 255, 0));
+  }
+
+  .phone-device {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .phone-notch {
     display: none;
   }
 
-  .phone-step {
-    min-height: auto;
-    margin-left: 0;
-    padding-left: 0;
-    border-left: none;
-    opacity: 1;
-    padding: 0 0 36px;
-    border-bottom: 1px solid var(--border);
+  .phone-screen {
+    aspect-ratio: 5 / 4;
+    border-radius: 14px;
+    border: 1px solid #e6e0d7;
+    box-shadow: 0 14px 36px rgba(10, 31, 61, 0.12);
   }
 
-  .phone-step:last-child {
+  .phone-screen-caption {
+    left: 14px;
+    bottom: 14px;
+  }
+
+  .phone-progress {
+    justify-content: center;
+  }
+
+  .phone-progress-dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .phone-steps {
+    padding: 0 var(--gutter) 12px;
+  }
+
+  .phone-step {
+    min-height: 52vh;
+    margin-left: 0;
+    padding: 32px 0 40px;
+    padding-left: 0;
+    border-left: none;
     border-bottom: none;
-    padding-bottom: 0;
+    text-align: center;
+    align-items: center;
+    opacity: 0.32;
+  }
+
+  .phone-step.is-active {
+    opacity: 1;
+    border-left-color: transparent;
+  }
+
+  .phone-step-label {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  .phone-step .step-index {
+    display: none;
   }
 
   .phone-step-thumb {
-    display: block;
+    display: none;
   }
 
   .phone-step h3 {
-    max-width: none;
+    max-width: 22ch;
+    margin-inline: auto;
+    font-size: clamp(26px, 6.5vw, 34px);
+  }
+
+  .phone-step p {
+    margin-inline: auto;
+    max-width: 36ch;
+    font-size: 15px;
   }
 
   .how-faq {

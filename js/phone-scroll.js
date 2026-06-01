@@ -4,6 +4,7 @@ if (phoneScroll) {
   const steps = [...phoneScroll.querySelectorAll(".phone-step")];
   const slides = [...phoneScroll.querySelectorAll(".phone-slide")];
   const dots = [...phoneScroll.querySelectorAll(".phone-progress-dot")];
+  const screenStep = phoneScroll.querySelector(".phone-screen-step");
 
   const setActiveStep = (stepId) => {
     const id = String(stepId);
@@ -19,11 +20,34 @@ if (phoneScroll) {
     dots.forEach((dot) => {
       dot.classList.toggle("is-active", dot.dataset.step === id);
     });
+
+    if (screenStep) {
+      screenStep.textContent = `Step ${id}`;
+    }
   };
 
   if (steps.length && slides.length) {
-    const observer = new IntersectionObserver(
-      (entries) => {
+    const mobileQuery = window.matchMedia("(max-width: 768px)");
+
+    const getObserverOptions = () => ({
+      root: null,
+      rootMargin: mobileQuery.matches ? "-32% 0px -32% 0px" : "-38% 0px -38% 0px",
+      threshold: [0, 0.15, 0.35, 0.55, 0.75, 1],
+    });
+
+    let observer = new IntersectionObserver((entries) => {
+      const best = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+      if (best) {
+        setActiveStep(best.target.dataset.step);
+      }
+    }, getObserverOptions());
+
+    const observeSteps = () => {
+      observer.disconnect();
+      observer = new IntersectionObserver((entries) => {
         const best = entries
           .filter((entry) => entry.isIntersecting)
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
@@ -31,15 +55,14 @@ if (phoneScroll) {
         if (best) {
           setActiveStep(best.target.dataset.step);
         }
-      },
-      {
-        root: null,
-        rootMargin: "-38% 0px -38% 0px",
-        threshold: [0, 0.15, 0.35, 0.55, 0.75, 1],
-      }
-    );
+      }, getObserverOptions());
 
-    steps.forEach((step) => observer.observe(step));
+      steps.forEach((step) => observer.observe(step));
+    };
+
+    observeSteps();
+
+    mobileQuery.addEventListener("change", observeSteps);
 
     dots.forEach((dot) => {
       dot.addEventListener("click", () => {
