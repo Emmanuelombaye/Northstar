@@ -1,0 +1,14 @@
+{
+  "name": "north-star-md",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "slice": "powershell -ExecutionPolicy Bypass -File scripts/slice-mockup.ps1"
+  },
+  "devDependencies": {
+    "vite": "^6.2.0"
+  }
+}

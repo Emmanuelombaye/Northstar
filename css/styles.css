@@ -1,0 +1,526 @@
+/* North Star MD — layout matched to brand mockup (526×749 ref) */
+:root {
+  --navy: #0a1f3d;
+  --navy-bar: #081a32;
+  --gold: #c5a059;
+  --gold-dark: #b08f4a;
+  --cream: #f9f7f2;
+  --cream-bar: #f3f0ea;
+  --beige-mid: #eceae6;
+  --white: #ffffff;
+  --text: #0a1f3d;
+  --text-body: #3a4d61;
+  --cta-bg: #5a7286;
+  --border: #e5e0d8;
+
+  --serif: "Playfair Display", Georgia, serif;
+  --sans: "Inter", system-ui, sans-serif;
+  --page: min(1280px, 92vw);
+  --ease: 0.2s ease;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--text);
+  background: var(--cream);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+
+/* ---- type ---- */
+.eyebrow {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.eyebrow-light { color: var(--gold); }
+
+h1, h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1.1;
+}
+
+h1 { font-size: clamp(40px, 4.2vw, 54px); }
+h2 { font-size: clamp(30px, 3vw, 40px); }
+
+/* ---- buttons ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-family: var(--sans);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: background var(--ease);
+}
+.btn-pill { border-radius: 999px; }
+.btn-lg { padding: 14px 32px; font-size: 11px; }
+
+.btn-navy { background: var(--navy); color: var(--white); }
+.btn-navy:hover { background: #123052; }
+
+.btn-gold { background: var(--gold); color: var(--white); }
+.btn-gold:hover { background: var(--gold-dark); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--navy);
+  border: 1.5px solid var(--navy);
+}
+.btn-ghost:hover { background: rgba(10, 31, 61, 0.04); }
+
+/* ========== ANNOUNCEMENT ========== */
+.announcement-bar {
+  background: var(--navy-bar);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  font-size: 12px;
+}
+
+.announcement-star {
+  width: 12px;
+  height: 12px;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.announcement-bar a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ========== HEADER (white) ========== */
+.site-header {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+
+.header-inner {
+  width: var(--page);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 32px;
+  min-height: 78px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-star {
+  width: 40px;
+  height: 40px;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.logo-name {
+  display: block;
+  font-family: var(--serif);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  line-height: 1.15;
+}
+
+.logo-tagline {
+  display: block;
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.main-nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 26px;
+}
+
+.main-nav a {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--navy);
+  white-space: nowrap;
+}
+
+.chevron { font-size: 8px; opacity: 0.6; margin-left: 1px; }
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.nav-toggle span {
+  width: 22px;
+  height: 2px;
+  background: var(--navy);
+}
+
+/* ========== HERO — full brand banner image ========== */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.hero {
+  background: var(--cream);
+  overflow: hidden;
+}
+
+.hero-banner {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  line-height: 0;
+}
+
+.hero-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+  vertical-align: top;
+}
+
+/* ========== VALUE BAR ========== */
+.value-bar {
+  background: var(--cream-bar);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 32px 0;
+}
+
+.value-inner {
+  width: var(--page);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.value-cell { text-align: center; padding: 0 6px; }
+
+.value-ico {
+  width: 32px;
+  height: 32px;
+  color: var(--gold);
+  margin: 0 auto 8px;
+}
+
+.value-cell h3 {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.value-cell p {
+  font-size: 12px;
+  color: var(--text-body);
+  line-height: 1.4;
+}
+
+/* ========== CARE ========== */
+.care-block {
+  background: var(--white);
+  padding: 64px 0 72px;
+}
+
+.care-inner {
+  width: var(--page);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.care-text h2 { margin-bottom: 16px; }
+
+.care-text p {
+  color: var(--text-body);
+  font-size: 15px;
+  line-height: 1.65;
+  margin-bottom: 22px;
+  max-width: 440px;
+}
+
+.care-scene {
+  overflow: hidden;
+  background: #f0ebe3;
+  border-radius: 2px;
+  aspect-ratio: 4 / 3;
+}
+
+.care-scene img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+/* ========== JOURNEY — 37% / 33% / 30% ========== */
+.journey-block {
+  display: grid;
+  grid-template-columns: 37fr 33fr 30fr;
+  min-height: 480px;
+}
+
+.journey-navy {
+  position: relative;
+  background: var(--navy);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  padding: 48px 40px;
+  overflow: hidden;
+}
+
+.journey-starburst {
+  position: absolute;
+  left: -20%;
+  bottom: -25%;
+  width: 80%;
+  color: var(--gold);
+  opacity: 0.13;
+  pointer-events: none;
+}
+
+.journey-navy-copy { position: relative; z-index: 1; max-width: 320px; }
+.journey-navy h2 { color: var(--white); margin-bottom: 14px; }
+.journey-navy p {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.text-link {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--white);
+  border-bottom: 1px solid rgba(197, 160, 89, 0.75);
+  padding-bottom: 2px;
+}
+
+.journey-features {
+  background: var(--beige-mid);
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.journey-row {
+  display: flex;
+  gap: 14px;
+  padding: 18px 0;
+  border-bottom: 1px solid #ddd9d2;
+}
+.journey-row:last-child { border-bottom: none; }
+
+.journey-row > svg {
+  width: 28px;
+  height: 28px;
+  color: #5c6b7a;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.journey-row strong {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+
+.journey-row p {
+  font-size: 13px;
+  color: var(--text-body);
+  line-height: 1.4;
+}
+
+.journey-photo {
+  overflow: hidden;
+  background: #f0ece8;
+}
+
+.journey-photo img {
+  width: 100%;
+  height: 100%;
+  min-height: 480px;
+  object-fit: cover;
+  object-position: 62% 35%;
+  image-rendering: auto;
+}
+
+/* ========== CTA ========== */
+.cta-block {
+  background: var(--cta-bg);
+  text-align: center;
+  padding: 64px 24px 68px;
+}
+
+.cta-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.cta-eyebrow svg { width: 12px; height: 12px; }
+
+.cta-block h2 {
+  color: var(--white);
+  max-width: 580px;
+  margin: 0 auto 14px;
+}
+
+.cta-sub {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 15px;
+  max-width: 460px;
+  margin: 0 auto 26px;
+  line-height: 1.55;
+}
+
+/* ========== TRUST ========== */
+.trust-bar {
+  background: var(--cream-bar);
+  border-top: 1px solid var(--border);
+  padding: 28px 0 32px;
+}
+
+.trust-inner {
+  width: var(--page);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.trust-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.trust-item svg {
+  width: 24px;
+  height: 24px;
+  color: #6b7c8f;
+  flex-shrink: 0;
+}
+
+.trust-item p {
+  font-size: 11.5px;
+  color: var(--text-body);
+  line-height: 1.4;
+}
+
+.trust-item strong {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1024px) {
+  .journey-block {
+    grid-template-columns: 1fr 1fr;
+  }
+  .journey-photo {
+    grid-column: 1 / -1;
+    max-height: 340px;
+  }
+  .journey-photo img { min-height: 340px; }
+}
+
+@media (max-width: 860px) {
+  .header-inner { grid-template-columns: 1fr auto; }
+  .main-nav {
+    position: fixed;
+    inset: 0;
+    top: 106px;
+    background: var(--white);
+    padding: 24px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 190;
+  }
+  .main-nav.is-open { transform: translateX(0); }
+  .main-nav ul { flex-direction: column; align-items: flex-start; gap: 18px; }
+  .header-inner > .btn { display: none; }
+  .nav-toggle { display: flex; }
+
+  .value-inner { grid-template-columns: repeat(2, 1fr); }
+  .care-inner { grid-template-columns: 1fr; }
+  .trust-inner { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 520px) {
+  .logo-tagline { display: none; }
+  .value-inner,
+  .trust-inner { grid-template-columns: 1fr; }
+  .journey-block { grid-template-columns: 1fr; }
+}
