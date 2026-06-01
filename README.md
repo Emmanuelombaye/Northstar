@@ -30,14 +30,15 @@ Photos are sliced from `public/images/mockup-full.png` (your design file):
 
 Re-slice after updating the mockup: `npm run slice`
 
-## Enrollment (Peak Health platform)
+## Enrollment (white-label on Peak Health platform)
 
-Marketing CTAs link to the shared clinical shop with North Star branding:
+Marketing CTAs link to the shared clinical shop with **North Star MD branding only** (no Peak Health in the patient UI):
 
-- **Production:** `https://www.peak-health.io/patient/shop?brand=north-star-md&brandId=c8e7f6a2-4b1d-4e9f-a3c2-1d5e8f7a6b4c`
-- **Config:** Edit `js/shop-links.js` (`PEAK_SHOP_ORIGIN` for local Peak Health dev server)
+- **Production:** `https://www.peak-health.io/care/north-star-md/shop?brand=north-star-md&brandId=c8e7f6a2-4b1d-4e9f-a3c2-1d5e8f7a6b4c`
+- **Config:** Edit `public/js/shop-links.js` (`PEAK_SHOP_ORIGIN`, `ENROLL_PATH`)
+- **Custom care domain (optional):** Add `care.northstarmed.vercel.app` to the telehealth Vercel project, then set `PEAK_SHOP_ORIGIN` to that host.
 
-`shop-links.js` runs on page load and keeps `data-shop` links in sync.
+`public/js/shop-links.js` runs on page load and keeps `data-shop` links in sync.
 
 ## Customize
 
