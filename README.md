@@ -30,6 +30,15 @@ Photos are sliced from `public/images/mockup-full.png` (your design file):
 
 Re-slice after updating the mockup: `npm run slice`
 
+## Enrollment (Peak Health platform)
+
+Marketing CTAs link to the shared clinical shop with North Star branding:
+
+- **Production:** `https://www.peak-health.io/patient/shop?brand=north-star-md&brandId=c8e7f6a2-4b1d-4e9f-a3c2-1d5e8f7a6b4c`
+- **Config:** Edit `js/shop-links.js` (`PEAK_SHOP_ORIGIN` for local Peak Health dev server)
+
+`shop-links.js` runs on page load and keeps `data-shop` links in sync.
+
 ## Customize
 
 - **Copy & sections:** Edit `index.html`
