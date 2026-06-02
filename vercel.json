@@ -97,6 +97,26 @@
       "destination": "https://www.peak-health.io/favicon.png"
     },
     {
+      "source": "/PeakHealthLogo.png",
+      "has": [{ "type": "host", "value": "joinnorthstarmd.com" }],
+      "destination": "https://www.peak-health.io/PeakHealthLogo.png"
+    },
+    {
+      "source": "/PeakHealthLogo.png",
+      "has": [{ "type": "host", "value": "www.joinnorthstarmd.com" }],
+      "destination": "https://www.peak-health.io/PeakHealthLogo.png"
+    },
+    {
+      "source": "/peakhealthlogo.png",
+      "has": [{ "type": "host", "value": "joinnorthstarmd.com" }],
+      "destination": "https://www.peak-health.io/PeakHealthLogo.png"
+    },
+    {
+      "source": "/peakhealthlogo.png",
+      "has": [{ "type": "host", "value": "www.joinnorthstarmd.com" }],
+      "destination": "https://www.peak-health.io/PeakHealthLogo.png"
+    },
+    {
       "source": "/care/:path*",
       "has": [{ "type": "host", "value": "joinnorthstarmd.com" }],
       "destination": "https://www.peak-health.io/care/:path*"
