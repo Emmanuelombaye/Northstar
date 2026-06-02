@@ -171,3 +171,248 @@
     gap: 24px;
   }
 }
+
+/* ========== FEATURED RESOURCE ========== */
+.featured-resource {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 48px;
+  margin: 0 auto 56px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 48px;
+  align-items: center;
+  text-align: left;
+  transition: border-color var(--ease);
+}
+
+.featured-resource:hover {
+  border-color: var(--gold);
+}
+
+.featured-badge {
+  display: inline-block;
+  background: var(--gold-bar);
+  color: var(--gold-text);
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 20px;
+}
+
+.featured-title {
+  font-family: var(--serif);
+  font-size: 32px;
+  line-height: 1.2;
+  margin-bottom: 18px;
+  color: var(--navy);
+}
+
+.featured-desc {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--text-body);
+  margin-bottom: 28px;
+}
+
+.featured-bullets-container h4 {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+.featured-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.featured-bullets li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13.5px;
+  color: var(--navy);
+  line-height: 1.4;
+}
+
+.featured-bullets li svg {
+  width: 15px;
+  height: 15px;
+  color: var(--gold);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.featured-meta {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+/* ========== CLINICAL REVIEWERS ========== */
+.reviewers-section {
+  border-top: 1px solid var(--border);
+  padding: 80px 24px;
+  background: #fff;
+  text-align: center;
+}
+
+.reviewers-section h2 {
+  margin-bottom: 12px;
+  font-size: 28px;
+}
+
+.reviewers-lead {
+  font-size: 15px;
+  color: var(--text-body);
+  max-width: 60ch;
+  margin: 0 auto 48px;
+  line-height: 1.6;
+}
+
+.reviewers-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.reviewer-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  flex: 1;
+  min-width: 320px;
+  max-width: 460px;
+  text-align: left;
+  border: 1px solid var(--border);
+  padding: 32px;
+  border-radius: 8px;
+  background: var(--cream);
+  transition: border-color var(--ease);
+}
+
+.reviewer-card:hover {
+  border-color: var(--gold);
+}
+
+.reviewer-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border);
+  flex-shrink: 0;
+}
+
+.reviewer-info h3 {
+  font-size: 17px;
+  margin-bottom: 4px;
+  color: var(--navy);
+  font-family: var(--serif);
+}
+
+.reviewer-credentials {
+  font-size: 10.5px;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.reviewer-bio {
+  font-size: 12.5px;
+  color: var(--text-body);
+  line-height: 1.6;
+}
+
+/* ========== CLINICAL NEWSLETTER ========== */
+.newsletter-section {
+  background: var(--cream);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 80px 24px;
+  text-align: center;
+}
+
+.newsletter-inner {
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+.newsletter-inner h2 {
+  margin-bottom: 12px;
+  font-size: 28px;
+}
+
+.newsletter-inner p {
+  font-size: 14.5px;
+  color: var(--text-body);
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 12px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.newsletter-input {
+  flex: 1;
+  background: #fff;
+  border: 1px solid var(--border);
+  padding: 14px 24px;
+  border-radius: 999px;
+  font-family: var(--sans);
+  font-size: 13.5px;
+  color: var(--navy);
+  outline: none;
+  transition: border-color var(--ease);
+}
+
+.newsletter-input:focus {
+  border-color: var(--gold);
+}
+
+@media (max-width: 900px) {
+  .featured-resource {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .newsletter-form {
+    flex-direction: column;
+    border-radius: 0;
+  }
+  .newsletter-input {
+    width: 100%;
+  }
+  .reviewer-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 24px;
+  }
+}

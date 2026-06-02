@@ -50,12 +50,12 @@
 
         <nav class="main-nav" aria-label="Main navigation">
           <ul>
-            <li><a href="/about.html">About Us</a></li>
-            <li><a href="/diagnostics.html">Diagnostics</a></li>
-            <li><a href="/how-it-works.html">How It Works</a></li>
-            <li><a href="/membership.html">Membership</a></li>
-            <li><a href="/resources.html" aria-current="page">Resources</a></li>
-            <li><a href="/faq.html">FAQ</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/diagnostics">Diagnostics</a></li>
+            <li><a href="/how-it-works">How It Works</a></li>
+            <li><a href="/membership">Membership</a></li>
+            <li><a href="/resources" aria-current="page">Resources</a></li>
+            <li><a href="/faq">FAQ</a></li>
             <li class="nav-cta-mobile">
               <a href="https://joinnorthstarmd.com/care/north-star-md/shop?brand=north-star-md&amp;brandId=c8e7f6a2-4b1d-4e9f-a3c2-1d5e8f7a6b4c" data-shop="catalog" class="btn btn-navy btn-pill btn-block">Get Started</a>
             </li>
@@ -81,6 +81,47 @@
         </div>
       </section>
 
+      <!-- Featured Guide Block -->
+      <section style="background: #fff; padding: 48px 0 0;">
+        <div class="res-wrap">
+          <div class="featured-resource" onclick="window.location.href='/membership'">
+            <div class="featured-left">
+              <span class="featured-badge">Featured Deep-Dive</span>
+              <h2 class="featured-title">ApoB Optimization: The Ultimate Cardiovascular Blueprint</h2>
+              <p class="featured-desc">
+                Cardiovascular stress is the number one threat to healthspan. This comprehensive clinical guide details how ApoB acts as the ultimate prognostic indicator for arterial health, outperforming standard LDL metrics by 300%. Learn the clinical strategies, dietary adjustments, and pharmaceutical interventions to drive your ApoB level to ideal longevity ranges.
+              </p>
+              <div class="featured-meta">
+                <span>18 min read</span>
+                <span style="color: var(--gold); font-weight: 600;">Medically Reviewed by Dr. Evelyn Sterling, MD</span>
+              </div>
+            </div>
+            <div class="featured-bullets-container">
+              <h4>What You Will Learn</h4>
+              <ul class="featured-bullets">
+                <li>
+                  <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M12 5L6.5 10.5L3.5 7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span><strong>The ApoB/ApoA-1 Ratio:</strong> Deciphering particle counts vs lipid volume.</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M12 5L6.5 10.5L3.5 7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span><strong>Dietary Titrations:</strong> Impact of saturated fats, soluble fibers, and phytosterols on lipid dynamics.</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M12 5L6.5 10.5L3.5 7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span><strong>Therapy Blueprints:</strong> When to introduce statin, ezetimibe, or PCSK9 inhibitor co-therapies.</span>
+                </li>
+                <li>
+                  <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M12 5L6.5 10.5L3.5 7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span><strong>Biological Age Markers:</strong> Reversing arterial plaque buildup through biomarker audits.</span>
+                </li>
+              </ul>
+              <a href="/membership" class="btn btn-navy btn-pill" style="display: inline-block; padding: 12px 28px;">Read Full Blueprint</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <div class="filter-container">
         <div class="filter-tabs" role="tablist" aria-label="Resource filters">
           <button class="filter-tab is-active" data-filter="all" role="tab" aria-selected="true">All Resources</button>
@@ -95,7 +136,7 @@
         <div class="res-wrap">
           <div class="library-grid">
             <!-- Resource 1: Labs -->
-            <article class="resource-card" data-category="diagnostics" onclick="window.location.href='/membership.html'">
+            <article class="resource-card" data-category="diagnostics" onclick="window.location.href='/membership'">
               <span class="resource-tag">Diagnostics &amp; Labs</span>
               <svg viewBox="0 0 24 24" fill="none" style="width: 36px; height: 36px; color: var(--gold); margin-bottom: 20px;">
                 <path d="M12 2C12 2 19 9 19 14C19 17.866 15.866 21 12 21C8.13401 21 5 17.866 5 14C5 9 12 2 12 2Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
@@ -117,7 +158,7 @@
             </article>
 
             <!-- Resource 2: Nutrition -->
-            <article class="resource-card" data-category="nutrition" onclick="window.location.href='/membership.html'">
+            <article class="resource-card" data-category="nutrition" onclick="window.location.href='/membership'">
               <span class="resource-tag">Nutrition &amp; Cooking</span>
               <svg viewBox="0 0 24 24" fill="none" style="width: 36px; height: 36px; color: var(--gold); margin-bottom: 20px;">
                 <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="1.3"/>
@@ -140,7 +181,7 @@
             </article>
 
             <!-- Resource 3: Sleep -->
-            <article class="resource-card" data-category="sleep" onclick="window.location.href='/membership.html'">
+            <article class="resource-card" data-category="sleep" onclick="window.location.href='/membership'">
               <span class="resource-tag">Sleep Optimization</span>
               <svg viewBox="0 0 24 24" fill="none" style="width: 36px; height: 36px; color: var(--gold); margin-bottom: 20px;">
                 <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
@@ -162,7 +203,7 @@
             </article>
 
             <!-- Resource 4: Peptides -->
-            <article class="resource-card" data-category="longevity" onclick="window.location.href='/membership.html'">
+            <article class="resource-card" data-category="longevity" onclick="window.location.href='/membership'">
               <span class="resource-tag">Longevity Science</span>
               <svg viewBox="0 0 24 24" fill="none" style="width: 36px; height: 36px; color: var(--gold); margin-bottom: 20px;">
                 <path d="M4.5 10.5C4.5 10.5 7.5 7.5 12 7.5C16.5 7.5 19.5 10.5 19.5 10.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
@@ -185,7 +226,7 @@
             </article>
 
             <!-- Resource 5: Cardio -->
-            <article class="resource-card" data-category="diagnostics" onclick="window.location.href='/membership.html'">
+            <article class="resource-card" data-category="diagnostics" onclick="window.location.href='/membership'">
               <span class="resource-tag">Diagnostics &amp; Labs</span>
               <svg viewBox="0 0 24 24" fill="none" style="width: 36px; height: 36px; color: var(--gold); margin-bottom: 20px;">
                 <path d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z" stroke="currentColor" stroke-width="1.3"/>
@@ -207,7 +248,7 @@
             </article>
 
             <!-- Resource 6: Brain -->
-            <article class="resource-card" data-category="longevity" onclick="window.location.href='/membership.html'">
+            <article class="resource-card" data-category="longevity" onclick="window.location.href='/membership'">
               <span class="resource-tag">Longevity Science</span>
               <svg viewBox="0 0 24 24" fill="none" style="width: 36px; height: 36px; color: var(--gold); margin-bottom: 20px;">
                 <path d="M9.5 14C9.5 14 10.5 15 12 15C13.5 15 14.5 14 14.5 14" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
@@ -233,6 +274,51 @@
         </div>
       </section>
 
+      <!-- Section: Clinical Reviewers & Authors -->
+      <section class="reviewers-section">
+        <div class="res-wrap">
+          <h2>Peer-Reviewed by Longevity Experts</h2>
+          <p class="reviewers-lead">
+            Every clinical blueprint, metabolic cookbook, and biological protocol in our library is written, 
+            reviewed, and audited by our board-certified clinical advisory board to ensure absolute medical accuracy.
+          </p>
+          <div class="reviewers-grid">
+            <article class="reviewer-card">
+              <img src="https://images.unsplash.com/photo-1594824813573-246434de83fb?auto=format&fit=crop&w=150&h=150&q=80" alt="Dr. Evelyn Sterling, MD" class="reviewer-avatar">
+              <div class="reviewer-info">
+                <h3>Dr. Evelyn Sterling, MD</h3>
+                <span class="reviewer-credentials">Lead Clinical Reviewer</span>
+                <p class="reviewer-bio">Board-certified in preventative cardiology and metabolic longevity care with 15+ years of clinical oversight. Evelyn audits all lipidology and vascular protocols.</p>
+              </div>
+            </article>
+
+            <article class="reviewer-card">
+              <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=150&h=150&q=80" alt="Dr. Julian Reyes, PhD" class="reviewer-avatar">
+              <div class="reviewer-info">
+                <h3>Dr. Julian Reyes, PhD</h3>
+                <span class="reviewer-credentials">Molecular Epigeneticist</span>
+                <p class="reviewer-bio">Stanford-trained molecular researcher specializing in epigenetic methylation clocks and biological aging rates. Julian audits all cellular science and peptide literature.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Clinical Newsletter -->
+      <section class="newsletter-section">
+        <div class="newsletter-inner">
+          <h2>Subscribe to Longevity Dispatches</h2>
+          <p>
+            Join 12,000+ members who receive our bi-weekly scientific digests. 
+            Get deep-dive analyses on emerging biomarker science, metabolic recipes, and sleep guidelines delivered directly to your inbox.
+          </p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing! Your longevity briefings will arrive shortly.');">
+            <input type="email" placeholder="Enter your private email..." class="newsletter-input" required>
+            <button type="submit" class="btn btn-navy btn-pill">Subscribe</button>
+          </form>
+        </div>
+      </section>
+
       <section class="resources-cta">
         <div class="resources-cta-starburst" aria-hidden="true">
           <svg viewBox="0 0 300 300" fill="none">
@@ -244,7 +330,7 @@
           Become a member of North Star MD to unlock our complete science databases, 
           metabolic recipe catalogs, and ongoing direct guidance with board-certified clinical professionals.
         </p>
-        <a href="/membership.html" class="btn btn-gold btn-pill btn-lg">Explore Memberships</a>
+        <a href="/membership" class="btn btn-gold btn-pill btn-lg">Explore Memberships</a>
       </section>
     </main>
 
@@ -266,20 +352,20 @@
             <h4 style="font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px;">Explore</h4>
             <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 12px; color: rgba(255,255,255,0.85);">
               <li><a href="/" style="transition: color var(--ease);">Home</a></li>
-              <li><a href="/about.html" style="transition: color var(--ease);">About Us</a></li>
-              <li><a href="/diagnostics.html" style="transition: color var(--ease);">Diagnostics</a></li>
-              <li><a href="/how-it-works.html" style="transition: color var(--ease);">How It Works</a></li>
-              <li><a href="/membership.html" style="transition: color var(--ease);">Membership</a></li>
-              <li><a href="/resources.html" style="transition: color var(--ease); color: var(--gold);">Resources</a></li>
-              <li><a href="/faq.html" style="transition: color var(--ease);">FAQ Support</a></li>
+              <li><a href="/about" style="transition: color var(--ease);">About Us</a></li>
+              <li><a href="/diagnostics" style="transition: color var(--ease);">Diagnostics</a></li>
+              <li><a href="/how-it-works" style="transition: color var(--ease);">How It Works</a></li>
+              <li><a href="/membership" style="transition: color var(--ease);">Membership</a></li>
+              <li><a href="/resources" style="transition: color var(--ease); color: var(--gold);">Resources</a></li>
+              <li><a href="/faq" style="transition: color var(--ease);">FAQ Support</a></li>
             </ul>
           </div>
           <div>
             <h4 style="font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px;">Compliance Legals</h4>
             <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 12px; color: rgba(255,255,255,0.85);">
-              <li><a href="/privacy.html" style="transition: color var(--ease);">Privacy Policy</a></li>
-              <li><a href="/terms.html" style="transition: color var(--ease);">Terms of Service</a></li>
-              <li><a href="/telehealth-consent.html" style="transition: color var(--ease);">Telehealth Consent</a></li>
+              <li><a href="/privacy" style="transition: color var(--ease);">Privacy Policy</a></li>
+              <li><a href="/terms" style="transition: color var(--ease);">Terms of Service</a></li>
+              <li><a href="/telehealth-consent" style="transition: color var(--ease);">Telehealth Consent</a></li>
             </ul>
           </div>
         </div>
