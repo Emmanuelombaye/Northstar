@@ -103,8 +103,32 @@ async function patchHtmlFiles() {
   return replacements;
 }
 
+async function generateMobileHeroCrop() {
+  const src = join(IMAGES_DIR, "hero-landing.png");
+  try {
+    const meta = await sharp(await readFile(src)).metadata();
+    const left = Math.round(meta.width * 0.48);
+    const width = meta.width - left;
+    const height = Math.round(meta.height * 0.88);
+    const extract = { left, top: 0, width, height };
+    const base = sharp(await readFile(src)).rotate().extract(extract);
+    await writeFile(
+      join(IMAGES_DIR, "hero-mobile-couple.webp"),
+      await base.clone().webp({ quality: 85, effort: 4 }).toBuffer(),
+    );
+    await writeFile(
+      join(IMAGES_DIR, "hero-mobile-couple.png"),
+      await base.clone().png({ compressionLevel: 9 }).toBuffer(),
+    );
+    console.log(`  hero-mobile-couple: cropped ${width}x${height} from landing banner`);
+  } catch (err) {
+    console.warn("  skip hero-mobile-couple:", err.message);
+  }
+}
+
 async function main() {
   console.log("Optimizing images in", IMAGES_DIR);
+  await generateMobileHeroCrop();
   const files = await walkImages(IMAGES_DIR);
   if (files.length === 0) {
     console.warn("No images found.");

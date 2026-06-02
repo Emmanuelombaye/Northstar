@@ -377,7 +377,7 @@ body.nav-open .nav-overlay {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-top: 22px;
+  margin-top: 20px;
 }
 
 .hero-mobile-visual {
@@ -390,9 +390,9 @@ body.nav-open .nav-overlay {
 
 .hero-mobile-visual img {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 998 / 660;
   object-fit: cover;
-  object-position: 42% 38%;
+  object-position: center 42%;
   display: block;
 }
 

@@ -17,7 +17,8 @@
     <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/css/mobile.css" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preload" as="image" href="/images/hero-landing.webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="/images/hero-mobile-couple.webp" fetchpriority="high" media="(max-width: 768px)" />
+    <link rel="preload" as="image" href="/images/hero-landing.webp" fetchpriority="high" media="(min-width: 769px)" />
   </head>
   <body>
     <div class="announcement-bar">
@@ -86,7 +87,7 @@
           />
         </div>
 
-        <!-- Mobile: readable copy + photo -->
+        <!-- Mobile: readable copy + couple photo (pre-cropped, no banner text) -->
         <div class="hero-mobile">
           <div class="hero-mobile-inner">
             <div class="hero-mobile-copy">
@@ -96,21 +97,21 @@
                 Physician-guided longevity, metabolic health, and wellness care—delivered
                 wherever you are.
               </p>
-              <div class="hero-btns">
-                <a href="#get-started" class="btn btn-gold btn-pill btn-block">Start Your Journey</a>
-                <a href="/how-it-works" class="btn btn-ghost btn-pill btn-block">How It Works</a>
-              </div>
             </div>
             <div class="hero-mobile-visual">
               <img
-                src="/images/hero-photo.webp"
-                data-fallback="/images/hero-photo.png"
+                src="/images/hero-mobile-couple.webp"
+                data-fallback="/images/hero-mobile-couple.png"
                 decoding="async"
-                alt="Woman enjoying sunlit hills — physician-guided longevity and wellness care with North Star MD"
-                width="528"
-                height="304"
+                alt="Couple enjoying sunlit hills — physician-guided longevity and wellness care with North Star MD"
+                width="998"
+                height="660"
                 fetchpriority="high"
               />
+            </div>
+            <div class="hero-btns">
+              <a href="#get-started" class="btn btn-gold btn-pill btn-block">Start Your Journey</a>
+              <a href="/how-it-works" class="btn btn-ghost btn-pill btn-block">How It Works</a>
             </div>
           </div>
         </div>
