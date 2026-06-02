@@ -1,3 +1,8 @@
+/* Explore Treatments — North Star MD brand surface (navy · cream · gold) */
+.page-explore {
+  background: var(--cream);
+}
+
 .explore-wrap {
   width: var(--page);
   margin: 0 auto;
@@ -5,9 +10,29 @@
 }
 
 .explore-hero {
-  background: linear-gradient(180deg, var(--cream) 0%, #fff 100%);
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(110% 85% at 92% -15%, rgba(197, 160, 89, 0.16) 0%, transparent 52%),
+    radial-gradient(80% 70% at -8% 105%, rgba(10, 31, 61, 0.07) 0%, transparent 48%),
+    linear-gradient(180deg, var(--cream) 0%, #fff 100%);
   border-bottom: 1px solid var(--border);
   padding: 72px 0 52px;
+}
+
+.explore-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath d='M60 8L68 44L104 52L68 60L60 96L52 60L16 52L52 44L60 8Z' fill='%230a1f3d'/%3E%3C/svg%3E");
+  background-size: 140px 140px;
+  pointer-events: none;
+}
+
+.explore-hero .explore-wrap {
+  position: relative;
+  z-index: 1;
 }
 
 .explore-hero h1 {
@@ -17,17 +42,27 @@
   line-height: 1.08;
 }
 
+.explore-hero h1::after {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 3px;
+  background: var(--gold);
+  margin-top: 18px;
+}
+
 .explore-hero h1 em {
   font-style: italic;
+  color: var(--navy);
 }
 
 .hero-trust-marquee {
   margin-top: 28px;
   overflow: hidden;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  background: #fff;
-  padding: 12px 0;
+  border-top: 1px solid rgba(197, 160, 89, 0.28);
+  border-bottom: 1px solid rgba(197, 160, 89, 0.28);
+  background: var(--navy-bar);
+  padding: 13px 0;
 }
 
 .hero-trust-track {
@@ -41,9 +76,15 @@
   white-space: nowrap;
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--navy);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-trust-track span::before {
+  content: "✦";
+  margin-right: 10px;
+  color: var(--gold);
 }
 
 @keyframes trust-marquee {
@@ -61,7 +102,7 @@
 
 .program-social-proof {
   font-size: 13px;
-  color: #5a6f86;
+  color: var(--text-body);
   margin-bottom: 8px;
 }
 
@@ -231,8 +272,9 @@
   width: 100%;
   height: auto;
   border-radius: 16px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(197, 160, 89, 0.22);
   display: block;
+  box-shadow: 0 20px 44px rgba(10, 31, 61, 0.1);
 }
 
 .designed-deep--banner {
@@ -246,6 +288,8 @@
   height: auto;
   display: block;
   border-radius: 16px;
+  border: 1px solid rgba(197, 160, 89, 0.22);
+  box-shadow: 0 20px 44px rgba(10, 31, 61, 0.12);
 }
 
 .why-section--art,
@@ -256,7 +300,7 @@
 
 .testimonials-section--art {
   padding-top: 0;
-  background: #0d1a2e;
+  background: var(--navy-bar);
 }
 
 .how-step-img {
@@ -295,11 +339,12 @@
 .designed-deep-visual img {
   width: 100%;
   border-radius: 14px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(197, 160, 89, 0.2);
+  box-shadow: 0 16px 36px rgba(10, 31, 61, 0.08);
 }
 
 .treatment-blocks {
-  background: #f7f7f9;
+  background: var(--cream-bar);
   padding: 56px 0;
   border-top: 1px solid var(--border);
 }
@@ -312,9 +357,10 @@
 
 .treatment-block {
   background: #fff;
-  border: 1px solid #dce3ee;
+  border: 1px solid var(--border);
   border-radius: 14px;
   padding: 22px 20px;
+  box-shadow: 0 8px 24px rgba(10, 31, 61, 0.04);
 }
 
 .treatment-block-wide {
@@ -329,7 +375,7 @@
 }
 
 .treatment-option {
-  border-top: 1px solid #e8edf4;
+  border-top: 1px solid var(--border);
   padding-top: 14px;
   margin-top: 14px;
 }
@@ -372,8 +418,8 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #12714f;
-  background: rgba(18, 113, 79, 0.1);
+  color: var(--gold-dark);
+  background: rgba(197, 160, 89, 0.16);
   padding: 4px 8px;
   border-radius: 999px;
   margin-left: 6px;
@@ -390,10 +436,10 @@
 }
 
 .plan-card {
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 16px;
-  background: #fafbfc;
+  background: var(--cream);
 }
 
 .plan-card h4 {
@@ -468,9 +514,10 @@
 
 .how-section-deep .how-steps article {
   background: #fff;
-  border: 1px solid #dce3ee;
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 16px;
+  box-shadow: 0 6px 20px rgba(10, 31, 61, 0.04);
 }
 
 .how-section-deep .how-steps h3 {
@@ -674,7 +721,7 @@
 }
 
 .programs-section {
-  background: #f7f7f9;
+  background: linear-gradient(180deg, var(--cream-bar) 0%, var(--cream) 100%);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   padding: 72px 0;
@@ -693,8 +740,8 @@
 }
 
 .filter-tab {
-  border: 1px solid #d9dce4;
-  background: linear-gradient(180deg, #ffffff 0%, #f8f9fc 100%);
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, #fff 0%, var(--cream) 100%);
   color: var(--navy);
   border-radius: 12px;
   cursor: pointer;
@@ -703,8 +750,8 @@
   justify-content: space-between;
   gap: 12px;
   width: min(300px, 100%);
-  padding: 10px 10px 10px 14px;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  padding: 12px 12px 12px 16px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease, background 0.2s ease;
 }
 
 .filter-tab img {
@@ -712,7 +759,7 @@
   height: 42px;
   object-fit: cover;
   border-radius: 10px;
-  border: 1px solid rgba(10, 31, 61, 0.1);
+  border: 1px solid rgba(197, 160, 89, 0.25);
 }
 
 .tab-labels {
@@ -730,14 +777,25 @@
 
 .tab-labels small {
   font-size: 10px;
-  color: #4f6277;
+  color: var(--text-body);
   margin-top: 2px;
 }
 
 .filter-tab.is-active {
   border-color: var(--gold);
-  box-shadow: 0 8px 24px rgba(10, 31, 61, 0.12);
+  background: #fff;
+  box-shadow:
+    0 12px 28px rgba(10, 31, 61, 0.1),
+    0 0 0 1px rgba(197, 160, 89, 0.35);
   transform: translateY(-1px);
+}
+
+.filter-tab.is-active .tab-labels strong {
+  color: var(--navy);
+}
+
+.filter-tab.is-active .tab-labels small {
+  color: var(--gold-dark);
 }
 
 .program-panel {
@@ -751,11 +809,11 @@
 .program-card {
   display: grid;
   grid-template-columns: 0.48fr 0.52fr;
-  border: 1px solid #dde2ea;
+  border: 1px solid rgba(197, 160, 89, 0.28);
   background: #fff;
   border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 20px 45px rgba(10, 31, 61, 0.08);
+  box-shadow: 0 24px 48px rgba(10, 31, 61, 0.1);
 }
 
 .program-media {
@@ -771,9 +829,10 @@
   min-height: auto;
   padding: 0;
   align-items: stretch;
-  background: #f0f2f7;
+  background: linear-gradient(165deg, var(--navy-bar) 0%, var(--navy) 100%);
   aspect-ratio: 4 / 5;
   max-height: 520px;
+  box-shadow: inset 0 -3px 0 var(--gold);
 }
 
 .program-media-card::before {
@@ -797,15 +856,15 @@
 }
 
 .program-media-weight {
-  background: linear-gradient(160deg, #d9d1f0 0%, #b8aedf 45%, #a397d5 100%);
+  background: linear-gradient(160deg, #1a3354 0%, var(--navy) 55%, var(--navy-bar) 100%);
 }
 
 .program-media-longevity {
-  background: linear-gradient(160deg, #d3e9e2 0%, #9fd2c3 45%, #76bba6 100%);
+  background: linear-gradient(160deg, #243a56 0%, var(--navy) 50%, var(--navy-bar) 100%);
 }
 
 .program-media-recovery {
-  background: linear-gradient(160deg, #dfecfb 0%, #bfd6f5 45%, #9cbdea 100%);
+  background: linear-gradient(160deg, #1e3349 0%, var(--navy) 50%, var(--navy-bar) 100%);
 }
 
 .program-media img {
@@ -821,6 +880,7 @@
   padding: 32px 34px;
   display: flex;
   flex-direction: column;
+  background: linear-gradient(180deg, #fff 0%, var(--cream) 100%);
 }
 
 .media-copy {
@@ -869,8 +929,8 @@
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #12714f;
-  background: rgba(18, 113, 79, 0.1);
+  color: var(--gold-dark);
+  background: rgba(197, 160, 89, 0.14);
   border-radius: 999px;
   padding: 8px 12px;
 }
@@ -901,9 +961,15 @@
   font-weight: 700;
   letter-spacing: 0.13em;
   text-transform: uppercase;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(197, 160, 89, 0.35);
+  background: rgba(197, 160, 89, 0.08);
+  color: var(--navy);
   border-radius: 999px;
   padding: 8px 12px;
+}
+
+.medication-pills a:hover {
+  color: var(--gold-dark);
 }
 
 .plan-includes {
@@ -932,13 +998,17 @@
 
 .guarantee-note {
   margin-top: 18px;
-  border: 1px solid #e3e8f0;
-  background: #f8f9fc;
+  border: 1px solid rgba(197, 160, 89, 0.35);
+  background: rgba(197, 160, 89, 0.09);
   border-radius: 12px;
   padding: 14px 16px;
   font-size: 13px;
-  color: #3c4c61;
+  color: var(--text-body);
   line-height: 1.6;
+}
+
+.guarantee-note strong {
+  color: var(--navy);
 }
 
 .pricing-row {
@@ -982,7 +1052,7 @@
 }
 
 .results-strip {
-  background: #fff;
+  background: linear-gradient(180deg, #fff 0%, var(--cream-bar) 100%);
   padding: 72px 0;
 }
 
@@ -1031,8 +1101,8 @@
 }
 
 .rating-strip > div {
-  background: #f2f5fa;
-  border: 1px solid #dbe3ef;
+  background: var(--cream);
+  border: 1px solid rgba(197, 160, 89, 0.3);
   border-radius: 10px;
   text-align: center;
   padding: 14px;
@@ -1049,7 +1119,7 @@
   font-size: 11px;
   letter-spacing: 0.09em;
   text-transform: uppercase;
-  color: #5d6f84;
+  color: var(--text-body);
 }
 
 .designed-section {
@@ -1107,7 +1177,7 @@
 }
 
 .how-section {
-  background: #f7f7f9;
+  background: var(--cream-bar);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   padding: 72px 0;
@@ -1126,9 +1196,10 @@
 
 .how-grid article {
   background: #fff;
-  border: 1px solid #dce3ee;
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 16px;
+  box-shadow: 0 6px 20px rgba(10, 31, 61, 0.04);
 }
 
 .how-grid article span {
@@ -1137,7 +1208,7 @@
   height: 32px;
   border-radius: 50%;
   background: var(--navy);
-  color: #fff;
+  color: var(--gold);
   align-items: center;
   justify-content: center;
   font-weight: 700;
@@ -1147,11 +1218,12 @@
 .how-grid article h3 {
   font-size: 15px;
   margin-bottom: 8px;
+  color: var(--navy);
 }
 
 .how-grid article p {
   font-size: 13px;
-  color: #5a6f86;
+  color: var(--text-body);
   line-height: 1.5;
 }
 
@@ -1242,43 +1314,84 @@
 
 @media (max-width: 640px) {
   .explore-hero {
-    padding: 52px 0 38px;
+    padding: 44px 0 32px;
+  }
+
+  .explore-hero h1 {
+    font-size: clamp(32px, 8.5vw, 40px);
+  }
+
+  .explore-hero h1::after {
+    width: 56px;
+    margin-top: 14px;
+  }
+
+  .hero-trust-marquee {
+    margin-top: 22px;
+    margin-inline: calc(-1 * var(--gutter));
+  }
+
+  .hero-trust-track span {
+    font-size: 10px;
+    letter-spacing: 0.08em;
+  }
+
+  .filter-tabs {
+    flex-direction: column;
+    gap: 10px;
   }
 
   .filter-tab {
     width: 100%;
+    min-height: 58px;
+    padding: 14px 14px 14px 16px;
+  }
+
+  .filter-tab img {
+    width: 72px;
+    height: 48px;
   }
 
   .programs-section,
   .results-strip,
-  .final-cta {
-    padding: 56px 0;
+  .final-cta,
+  .designed-deep,
+  .treatment-blocks,
+  .how-section-deep {
+    padding: 48px 0;
   }
 
   .program-content {
-    padding: 28px 20px;
+    padding: 24px 18px;
   }
 
-  .program-media {
-    min-height: 315px;
-    padding: 16px;
+  .program-card-art {
+    min-height: unset;
+    max-height: 420px;
   }
 
-  .media-copy {
-    top: 18px;
-    left: 16px;
-    right: 16px;
-  }
-
-  .media-copy h3 {
-    font-size: 32px;
+  .program-media-card {
+    max-height: 420px;
   }
 
   .program-content h3 {
-    font-size: 29px;
+    font-size: 28px;
   }
 
   .pricing-value {
-    font-size: 38px;
+    font-size: 34px;
+  }
+
+  .results-marquee-slide {
+    width: min(280px, 84vw);
+  }
+
+  .choose-treatment-thumb {
+    max-width: 120px;
+  }
+
+  .section-art-img,
+  .designed-banner-img {
+    border-radius: 12px;
   }
 }
