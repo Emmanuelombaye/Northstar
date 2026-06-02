@@ -8,13 +8,29 @@
   const ENROLL_PATH = "/care/north-star-md/shop";
   const NORTH_STAR_BRAND_SLUG = "north-star-md";
   const NORTH_STAR_BRAND_ID = "c8e7f6a2-4b1d-4e9f-a3c2-1d5e8f7a6b4c";
+  const CATEGORY_ALIAS = {
+    semaglutide: "weight-loss",
+    tirzepatide: "weight-loss",
+    metabolic: "weight-loss",
+    nad: "anti-aging",
+    longevity: "anti-aging",
+    sermorelin: "anti-aging",
+    executive: "anti-aging",
+  };
+
+  function normalizeCategory(category) {
+    if (!category) return null;
+    var key = String(category).trim().toLowerCase();
+    return CATEGORY_ALIAS[key] || null;
+  }
 
   function shopUrl(category) {
     const params = new URLSearchParams({
       brand: NORTH_STAR_BRAND_SLUG,
       brandId: NORTH_STAR_BRAND_ID,
     });
-    if (category) params.set("category", category);
+    const normalizedCategory = normalizeCategory(category);
+    if (normalizedCategory) params.set("category", normalizedCategory);
     const q = params.toString();
     return `${PEAK_SHOP_ORIGIN}${ENROLL_PATH}${q ? `?${q}` : ""}`;
   }
