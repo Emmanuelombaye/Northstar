@@ -1,0 +1,288 @@
+/* North Star MD — Diagnostics & Labs Suite Styling */
+
+.diag-wrap {
+  width: var(--page);
+  margin: 0 auto;
+}
+
+/* ========== HERO ========== */
+.diagnostics-hero {
+  background: linear-gradient(180deg, var(--cream) 0%, #fff 100%);
+  padding: 72px 0 48px;
+  text-align: center;
+}
+
+.diagnostics-hero h1 {
+  margin-top: 8px;
+  margin-bottom: 20px;
+  max-width: 22ch;
+  margin-inline: auto;
+}
+
+.diagnostics-hero-lead {
+  font-size: 18px;
+  color: var(--text-body);
+  max-width: 58ch;
+  margin-inline: auto;
+  line-height: 1.6;
+}
+
+/* ========== LAB JOURNEY TIMELINE ========== */
+.journey-section {
+  background: var(--white);
+  padding: 80px 0;
+  border-top: 1px solid var(--border);
+}
+
+.journey-section h2 {
+  text-align: center;
+  margin-bottom: 54px;
+}
+
+.journey-timeline {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  position: relative;
+}
+
+.journey-timeline::before {
+  content: '';
+  position: absolute;
+  top: 30px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: var(--border);
+  z-index: 1;
+}
+
+.timeline-step {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.step-node {
+  width: 60px;
+  height: 60px;
+  background: var(--cream);
+  border: 2px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--navy);
+  margin: 0 auto 20px;
+  transition: border-color var(--ease), background var(--ease);
+}
+
+.timeline-step:hover .step-node {
+  border-color: var(--gold);
+  background: var(--white);
+}
+
+.timeline-step h3 {
+  font-family: var(--sans);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.timeline-step p {
+  font-size: 13.5px;
+  color: var(--text-body);
+  line-height: 1.5;
+  max-width: 32ch;
+  margin-inline: auto;
+}
+
+/* ========== BIOMARKER MATRIX ========== */
+.biomarker-section {
+  background: var(--cream);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 80px 0;
+}
+
+.biomarker-section h2 {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.biomarker-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.biomarker-card {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 4px;
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.biomarker-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+  box-shadow: 0 16px 36px rgba(10, 31, 61, 0.08);
+}
+
+.biomarker-icon {
+  width: 36px;
+  height: 36px;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+.biomarker-card h3 {
+  font-family: var(--serif);
+  font-size: 22px;
+  color: var(--navy);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.biomarker-clinical {
+  font-family: var(--sans);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #7a8d9e;
+  margin-bottom: 16px;
+}
+
+.biomarker-card p {
+  font-size: 13.5px;
+  color: var(--text-body);
+  line-height: 1.55;
+}
+
+/* ========== LAB PARTNERS BLOCK ========== */
+.partners-section {
+  background: var(--white);
+  padding: 80px 0 88px;
+}
+
+.partners-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.partners-text h2 {
+  font-family: var(--serif);
+  font-size: 34px;
+  color: var(--navy);
+  margin-bottom: 16px;
+  line-height: 1.25;
+}
+
+.partners-text p {
+  font-size: 15px;
+  color: var(--text-body);
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+
+.partners-logos {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.partner-logo-box {
+  border: 1.5px solid var(--border);
+  padding: 24px;
+  border-radius: 4px;
+  text-align: center;
+  background: #fafafa;
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: border-color var(--ease);
+}
+
+.partner-logo-box:hover {
+  border-color: var(--gold);
+}
+
+.partner-logo-box svg {
+  width: 24px;
+  height: 24px;
+  color: var(--gold);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1024px) {
+  .biomarker-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .partners-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .diag-wrap {
+    padding-inline: var(--gutter);
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .diagnostics-hero {
+    padding: 48px 0 32px;
+  }
+
+  .journey-section,
+  .biomarker-section,
+  .partners-section {
+    padding: 48px 0;
+  }
+
+  .journey-timeline {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .journey-timeline::before {
+    display: none;
+  }
+
+  .timeline-step {
+    display: flex;
+    text-align: left;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .step-node {
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  .biomarker-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
