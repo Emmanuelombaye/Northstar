@@ -1,10 +1,10 @@
 /**
  * North Star MD → white-label enrollment.
- * Production: https://joinnorthstarmd.com/care/north-star-md/shop
+ * Production: https://www.joinnorthstarmd.com/care/north-star-md/shop
  * (Proxied via Northstar Vercel project → Peak Health telehealth backend)
  */
 (function () {
-  const PEAK_SHOP_ORIGIN = "https://joinnorthstarmd.com";
+  const PEAK_SHOP_ORIGIN = "https://www.joinnorthstarmd.com";
   const ENROLL_PATH = "/care/north-star-md/shop";
   const NORTH_STAR_BRAND_SLUG = "north-star-md";
   const NORTH_STAR_BRAND_ID = "c8e7f6a2-4b1d-4e9f-a3c2-1d5e8f7a6b4c";
@@ -49,9 +49,35 @@
     });
   }
 
+  function ensureConnectionHints() {
+    var existingPreconnect = document.querySelector(
+      'link[rel="preconnect"][href="' + PEAK_SHOP_ORIGIN + '"]'
+    );
+    if (!existingPreconnect) {
+      var preconnect = document.createElement("link");
+      preconnect.rel = "preconnect";
+      preconnect.href = PEAK_SHOP_ORIGIN;
+      document.head.appendChild(preconnect);
+    }
+
+    var existingDnsPrefetch = document.querySelector(
+      'link[rel="dns-prefetch"][href="' + PEAK_SHOP_ORIGIN + '"]'
+    );
+    if (!existingDnsPrefetch) {
+      var dnsPrefetch = document.createElement("link");
+      dnsPrefetch.rel = "dns-prefetch";
+      dnsPrefetch.href = PEAK_SHOP_ORIGIN;
+      document.head.appendChild(dnsPrefetch);
+    }
+  }
+
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", applyShopLinks);
+    document.addEventListener("DOMContentLoaded", function () {
+      ensureConnectionHints();
+      applyShopLinks();
+    });
   } else {
+    ensureConnectionHints();
     applyShopLinks();
   }
 })();
