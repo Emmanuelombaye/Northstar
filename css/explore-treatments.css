@@ -138,6 +138,58 @@
   color: #12714f;
 }
 
+.patient-result-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #6a7d94;
+  margin-bottom: 4px;
+}
+
+.designed-banner-img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  display: block;
+}
+
+.designed-deep--banner {
+  padding: 40px 0 0;
+  background: #fff;
+  border-top: 1px solid var(--border);
+}
+
+.section-art-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+}
+
+.why-section--art,
+.testimonials-section--art {
+  padding: 48px 0;
+  background: var(--navy);
+}
+
+.testimonials-section--art {
+  padding-top: 0;
+  background: #0d1a2e;
+}
+
+.how-step-img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
 .designed-deep {
   padding: 56px 0;
   background: #fff;
@@ -525,6 +577,15 @@
   margin: 10px 0 14px;
 }
 
+.choose-treatment-thumb {
+  width: 100%;
+  max-width: 140px;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  display: block;
+}
+
 .btn-sm {
   padding: 10px 18px;
   font-size: 12px;
@@ -626,6 +687,26 @@
   align-items: flex-end;
   justify-content: center;
   padding: 28px;
+}
+
+.program-media-card {
+  min-height: auto;
+  padding: 0;
+  align-items: stretch;
+  background: #f0f2f7;
+}
+
+.program-media-card::before {
+  display: none;
+}
+
+.program-card-art {
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
 }
 
 .program-media::before {
@@ -1038,6 +1119,10 @@
     min-height: 400px;
   }
 
+  .program-card-art {
+    min-height: 380px;
+  }
+
   .filter-tab {
     width: min(360px, 100%);
   }
@@ -1055,8 +1140,6 @@
   .plan-cards-two,
   .includes-icon-grid,
   .how-section-deep .how-steps,
-  .why-grid,
-  .testimonials-grid,
   .choose-treatment-grid {
     grid-template-columns: 1fr;
   }
