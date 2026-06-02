@@ -15,6 +15,9 @@ export default defineConfig({
         about: resolve(__dirname, "about.html"),
         diagnostics: resolve(__dirname, "diagnostics.html"),
         faq: resolve(__dirname, "faq.html"),
+        privacy: resolve(__dirname, "privacy.html"),
+        terms: resolve(__dirname, "terms.html"),
+        telehealthConsent: resolve(__dirname, "telehealth-consent.html"),
       },
       output: {
         // m-assets avoids clashing with Peak Health /assets/* proxied on joinnorthstarmd.com
