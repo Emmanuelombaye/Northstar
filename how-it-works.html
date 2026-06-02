@@ -14,8 +14,6 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="stylesheet" href="/css/how-it-works.css" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body>
@@ -52,7 +50,7 @@
           <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/how-it-works.html" aria-current="page">How It Works</a></li>
-            <li><a href="/#treatments">Treatments</a></li>
+            <li><a href="https://joinnorthstarmd.com/care/north-star-md/shop?brand=north-star-md&amp;brandId=c8e7f6a2-4b1d-4e9f-a3c2-1d5e8f7a6b4c" data-shop="catalog">Treatments</a></li>
             <li><a href="/#membership">Membership</a></li>
             <li><a href="/#resources">Resources</a></li>
             <li class="nav-cta-mobile">
@@ -67,11 +65,16 @@
 
     <main>
       <section class="how-hero">
-        <div class="how-wrap">
+        <div class="how-hero-starburst" aria-hidden="true">
+          <svg viewBox="0 0 300 300" fill="none">
+            <path d="M150 6L164 118L278 132L164 146L150 258L136 146L22 132L136 118L150 6Z" stroke="currentColor" stroke-width="0.85"/>
+          </svg>
+        </div>
+        <div class="how-wrap how-hero-grid">
           <div class="how-hero-copy">
             <p class="eyebrow">How It Works</p>
             <h1>Your North Star care journey, step by step.</h1>
-            <p>
+            <p class="how-hero-lead">
               Personalized treatment should feel seamless. From intake to ongoing support,
               every step is physician-led, secure, and built around your goals.
             </p>
@@ -82,30 +85,43 @@
           </div>
           <div class="how-hero-media">
             <img
-              src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1400&q=80"
-              alt="Physician and patient reviewing a personalized treatment plan"
-              width="1400"
-              height="900"
+              src="/images/hero-photo.png"
+              alt="Woman with sunlit hills — physician-guided longevity and wellness care"
+              width="1104"
+              height="858"
+              fetchpriority="high"
             />
           </div>
         </div>
       </section>
 
-      <section class="how-proof">
+      <section class="how-proof" aria-label="Care highlights">
         <div class="how-wrap how-proof-grid">
           <article>
+            <span class="how-proof-icon" aria-hidden="true">
+              <svg viewBox="0 0 28 28" fill="none"><circle cx="14" cy="10" r="4" stroke="currentColor" stroke-width="1.2"/><path d="M6 24c0-4.5 3.5-6.5 8-6.5s8 2 8 6.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+            </span>
             <h3>Licensed Providers</h3>
             <p>Board-certified clinical teams guiding every treatment decision.</p>
           </article>
           <article>
+            <span class="how-proof-icon" aria-hidden="true">
+              <svg viewBox="0 0 28 28" fill="none"><path d="M5 21V11M9.5 21V15M14 21V8M18.5 21V13M23 21V6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+            </span>
             <h3>Fast Clinical Review</h3>
             <p>Most intake reviews are completed within 24 hours.</p>
           </article>
           <article>
+            <span class="how-proof-icon" aria-hidden="true">
+              <svg viewBox="0 0 28 28" fill="none"><rect x="6" y="12" width="16" height="12" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M10 12V9a4 4 0 018 0v3" stroke="currentColor" stroke-width="1.2"/></svg>
+            </span>
             <h3>Secure Delivery</h3>
             <p>Medication ships discreetly with temperature-safe packaging.</p>
           </article>
           <article>
+            <span class="how-proof-icon" aria-hidden="true">
+              <svg viewBox="0 0 28 28" fill="none"><path d="M14 24s-6-4.2-6-9.5a6 6 0 0112 0C20 19.8 14 24 14 24z" stroke="currentColor" stroke-width="1.2"/></svg>
+            </span>
             <h3>Ongoing Support</h3>
             <p>Messaging, follow-ups, and optimization throughout your journey.</p>
           </article>
@@ -131,24 +147,24 @@
                 <img
                   class="phone-slide is-active"
                   data-step="1"
-                  src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80"
-                  alt=""
+                  src="/images/product.png"
+                  alt="Choosing a treatment plan"
                   width="800"
                   height="1200"
                 />
                 <img
                   class="phone-slide"
                   data-step="2"
-                  src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80"
-                  alt=""
+                  src="/images/journey.png"
+                  alt="Secure intake and checkout"
                   width="800"
                   height="1200"
                 />
                 <img
                   class="phone-slide"
                   data-step="3"
-                  src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=800&q=80"
-                  alt=""
+                  src="/images/mockup-full.png"
+                  alt="Provider reviewing your intake"
                   width="800"
                   height="1200"
                 />
@@ -181,7 +197,7 @@
               <span class="phone-progress-dot" data-step="4"></span>
               <span class="phone-progress-dot" data-step="5"></span>
             </div>
-          </div>
+          </aside>
 
           <div class="phone-steps">
             <article class="phone-step is-active" data-step="1">
@@ -194,7 +210,7 @@
               </p>
               <img
                 class="phone-step-thumb"
-                src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&q=80"
+                src="/images/product.png"
                 alt="Choosing a treatment plan"
                 width="900"
                 height="600"
@@ -212,7 +228,7 @@
               </p>
               <img
                 class="phone-step-thumb"
-                src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=900&q=80"
+                src="/images/journey.png"
                 alt="Secure checkout"
                 width="900"
                 height="600"
@@ -230,7 +246,7 @@
               </p>
               <img
                 class="phone-step-thumb"
-                src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=900&q=80"
+                src="/images/mockup-full.png"
                 alt="Provider review"
                 width="900"
                 height="600"
@@ -309,7 +325,7 @@
         </div>
       </section>
 
-      <section class="cta-block" id="get-started">
+      <section class="cta-block how-page-cta" id="get-started">
         <p class="cta-eyebrow">
           Better care starts with clarity.
           <svg viewBox="0 0 14 14" fill="none" aria-hidden="true">
@@ -326,7 +342,6 @@
     </main>
 
     <script src="/js/shop-links.js"></script>
-    <script type="module" src="/js/main.js"></script>
-    <script type="module" src="/js/phone-scroll.js"></script>
+    <script type="module" src="/js/how-it-works-entry.js"></script>
   </body>
 </html>

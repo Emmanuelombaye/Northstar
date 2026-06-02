@@ -11,6 +11,11 @@ export default defineConfig({
         main: resolve(__dirname, "index.html"),
         howItWorks: resolve(__dirname, "how-it-works.html"),
       },
+      output: {
+        entryFileNames: "assets/[name]-[hash].js",
+        chunkFileNames: "assets/[name]-[hash].js",
+        assetFileNames: "assets/[name]-[hash][extname]",
+      },
     },
   },
 });
