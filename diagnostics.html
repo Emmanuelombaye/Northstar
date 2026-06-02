@@ -16,6 +16,7 @@
     />
     <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/css/diagnostics.css" />
+    <link rel="stylesheet" href="/css/treatments.css" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body>
@@ -50,6 +51,15 @@
 
         <nav class="main-nav" aria-label="Main navigation">
           <ul>
+            <li class="nav-dropdown-trigger">
+              <a href="#">Treatments</a>
+              <div class="dropdown-menu">
+                <a href="/semaglutide">Semaglutide</a>
+                <a href="/tirzepatide">Tirzepatide</a>
+                <a href="/nad">NAD+ Rejuvenation</a>
+                <a href="/sermorelin">Sermorelin</a>
+              </div>
+            </li>
             <li><a href="/about">About Us</a></li>
             <li><a href="/diagnostics" aria-current="page">Diagnostics</a></li>
             <li><a href="/how-it-works">How It Works</a></li>
@@ -233,6 +243,46 @@
         </div>
       </section>
 
+      <!-- Dignified Lab Experience Visual Section -->
+      <section class="dignified-lab-section">
+        <div class="treatment-wrap">
+          <div class="dignified-lab-grid">
+            <div class="dignified-lab-visual">
+              <!-- AI IMAGE GENERATION PROMPT:
+                A quiet, premium clinic private blood draw room with warm timber partitions, comfortable luxury organic linen armchair, pristine medical materials arranged elegantly on a copper tray, sunrays, photorealistic, depth of field, Hasselblad 50mm, color tone #f9f7f2 cream and #0a1f3d navy highlights --ar 4:3
+              -->
+              <img
+                class="lab-img-base"
+                src="/images/sterling.png"
+                alt="Aesthetic clinical lab draw room"
+              />
+              <!-- AI IMAGE GENERATION PROMPT:
+                High-resolution laboratory diagnostic monitor showcasing clear cardiovascular biomarker analytics, ApoB lipid panel scores, sirtuin enzyme levels, gold frames, clinical luxury, photorealistic, depth of field --ar 4:3
+              -->
+              <img
+                class="lab-img-overlay"
+                src="/images/reyes.png"
+                alt="Advanced biomarker analysis screens"
+              />
+            </div>
+            <div class="dignified-lab-text">
+              <p class="eyebrow">Direct-to-Consumer Logistics</p>
+              <h2>A quiet, dignified lab draw.</h2>
+              <p>
+                Forget crowded public health centers or long waiting lines. 
+                With over 4,000 national Quest Diagnostics and Labcorp drawing centers, we ensure your 
+                metabolic screening is handled in a serene, professional clinical environment.
+              </p>
+              <p>
+                Simply schedule your 10-minute slot through your secure patient portal, hand your digital lab 
+                slip to the Metrologist, and let our board-certified clinical directors analyze, titrate, 
+                and ship your tailored therapies based on your biological findings.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="cta-block">
         <p class="cta-eyebrow">
           Preventative science.
@@ -260,7 +310,16 @@
             Physician-guided longevity, metabolic wellness, and premium preventative care delivered safely wherever you are.
           </p>
         </div>
-        <div style="display: flex; gap: 48px;">
+        <div style="display: flex; gap: 40px; flex-wrap: wrap;">
+          <div>
+            <h4 style="font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px;">Treatments</h4>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 12px; color: rgba(255,255,255,0.85);">
+              <li><a href="/semaglutide" style="transition: color var(--ease);">Semaglutide</a></li>
+              <li><a href="/tirzepatide" style="transition: color var(--ease);">Tirzepatide</a></li>
+              <li><a href="/nad" style="transition: color var(--ease);">NAD+ Rejuvenation</a></li>
+              <li><a href="/sermorelin" style="transition: color var(--ease);">Sermorelin</a></li>
+            </ul>
+          </div>
           <div>
             <h4 style="font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px;">Explore</h4>
             <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 12px; color: rgba(255,255,255,0.85);">

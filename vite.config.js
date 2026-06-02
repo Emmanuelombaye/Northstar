@@ -18,6 +18,10 @@ export default defineConfig({
         privacy: resolve(__dirname, "privacy.html"),
         terms: resolve(__dirname, "terms.html"),
         telehealthConsent: resolve(__dirname, "telehealth-consent.html"),
+        semaglutide: resolve(__dirname, "semaglutide.html"),
+        tirzepatide: resolve(__dirname, "tirzepatide.html"),
+        nad: resolve(__dirname, "nad.html"),
+        sermorelin: resolve(__dirname, "sermorelin.html"),
       },
       output: {
         // m-assets avoids clashing with Peak Health /assets/* proxied on joinnorthstarmd.com

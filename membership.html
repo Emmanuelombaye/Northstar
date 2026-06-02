@@ -16,6 +16,7 @@
     />
     <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/css/membership.css" />
+    <link rel="stylesheet" href="/css/treatments.css" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body>
@@ -50,6 +51,15 @@
 
         <nav class="main-nav" aria-label="Main navigation">
           <ul>
+            <li class="nav-dropdown-trigger">
+              <a href="#">Treatments</a>
+              <div class="dropdown-menu">
+                <a href="/semaglutide">Semaglutide</a>
+                <a href="/tirzepatide">Tirzepatide</a>
+                <a href="/nad">NAD+ Rejuvenation</a>
+                <a href="/sermorelin">Sermorelin</a>
+              </div>
+            </li>
             <li><a href="/about">About Us</a></li>
             <li><a href="/diagnostics">Diagnostics</a></li>
             <li><a href="/how-it-works">How It Works</a></li>
@@ -371,6 +381,53 @@
         </div>
       </section>
 
+      <!-- Intake & Delivery Experience Section (Asymmetric Grid) -->
+      <section class="delivery-experience-section">
+        <div class="treatment-wrap">
+          <div class="delivery-experience-grid">
+            <div class="delivery-experience-text">
+              <p class="eyebrow">The Intake &amp; Delivery Experience</p>
+              <h2>Unboxing a healthier, longer life.</h2>
+              <p>
+                Your direct-care membership is designed for absolute physical convenience. 
+                Once your board-certified prescribing physician approves your metabolic longevity protocol, 
+                our partner compounding pharmacies freshly package and ship your premium custom formulation.
+              </p>
+              <p>
+                Delivered safely to your door in highly customized, discreet temperature-controlled cold packs, 
+                your therapy kit arrives complete with medical guidance sheets, safety titrations, and sterile single-use tools.
+              </p>
+            </div>
+            <div class="delivery-grid-visual">
+              <!-- AI IMAGE GENERATION PROMPT:
+                Minimalist luxury clinical unboxing experience scene showing a premium white-label navy blue cardboard box containing cold-chain insulated wraps, sterile medicine vials and alcohol swabs resting neatly, natural sun light, photorealistic, depth of field, Hasselblad 50mm, color tone #f9f7f2 cream and #0a1f3d navy highlights --ar 4:3
+              -->
+              <img
+                class="delivery-img-large"
+                src="/images/product-box.png"
+                alt="North Star MD unboxing cold chain delivery box"
+              />
+              <!-- AI IMAGE GENERATION PROMPT:
+                Close up photography of pure glass clinical medicine vials standing on a luxury timber bathroom vanity surface, beautiful linear window shadows, soft luxury ambient lighting, depth of field --ar 1:1
+              -->
+              <img
+                class="delivery-img-square"
+                src="/images/product-box/close.png"
+                alt="Glass medical vials sitting on vanity"
+              />
+              <!-- AI IMAGE GENERATION PROMPT:
+                Macro shot of an elegant white clinical guidance booklet, single-use subcutaneous syringes and alcohol pads resting beautifully organized on raw neutral canvas, soft golden sunset, depth of field --ar 4:3
+              -->
+              <img
+                class="delivery-img-wide"
+                src="/images/product-box/wide.png"
+                alt="Clinical guidance sheets and sterile syringes"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="membership-faq">
         <div class="memb-wrap faq-wrap">
           <div>
@@ -436,7 +493,16 @@
             Physician-guided longevity, metabolic wellness, and premium preventative care delivered safely wherever you are.
           </p>
         </div>
-        <div style="display: flex; gap: 48px;">
+        <div style="display: flex; gap: 40px; flex-wrap: wrap;">
+          <div>
+            <h4 style="font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px;">Treatments</h4>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 12px; color: rgba(255,255,255,0.85);">
+              <li><a href="/semaglutide" style="transition: color var(--ease);">Semaglutide</a></li>
+              <li><a href="/tirzepatide" style="transition: color var(--ease);">Tirzepatide</a></li>
+              <li><a href="/nad" style="transition: color var(--ease);">NAD+ Rejuvenation</a></li>
+              <li><a href="/sermorelin" style="transition: color var(--ease);">Sermorelin</a></li>
+            </ul>
+          </div>
           <div>
             <h4 style="font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px;">Explore</h4>
             <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 12px; color: rgba(255,255,255,0.85);">

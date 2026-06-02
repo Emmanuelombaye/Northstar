@@ -1,0 +1,747 @@
+/* North Star MD — Clinical Treatments Styling Suite */
+
+/* ==================== COMMON WRAPPERS & UTILITIES ==================== */
+.treatment-wrap {
+  width: var(--page);
+  margin: 0 auto;
+  padding-inline: var(--gutter);
+}
+
+/* ==================== TREATMENT HERO ==================== */
+.treatment-hero {
+  background: linear-gradient(180deg, var(--cream) 0%, #fff 100%);
+  padding: 88px 0 64px;
+}
+
+.treatment-hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.treatment-hero-text h1 {
+  margin-top: 8px;
+  margin-bottom: 20px;
+  font-size: clamp(38px, 4vw, 52px);
+  line-height: 1.15;
+}
+
+.treatment-hero-lead {
+  font-size: 17px;
+  color: var(--text-body);
+  margin-bottom: 32px;
+  line-height: 1.65;
+  max-width: 52ch;
+}
+
+.treatment-hero-ctas {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.treatment-hero-image-wrap {
+  position: relative;
+}
+
+.treatment-hero-image {
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 40px rgba(10, 31, 61, 0.04);
+  transition: transform 0.3s ease;
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  background: var(--beige-mid);
+}
+
+/* Floating aesthetic stats overlay */
+.treatment-floating-badge {
+  position: absolute;
+  bottom: -24px;
+  left: -24px;
+  background: var(--navy);
+  color: var(--white);
+  padding: 24px 32px;
+  border-radius: 4px;
+  border: 1px solid rgba(197, 160, 89, 0.3);
+  box-shadow: 0 16px 36px rgba(10, 31, 61, 0.15);
+  max-width: 220px;
+}
+
+.treatment-floating-badge .badge-val {
+  font-family: var(--serif);
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.treatment-floating-badge .badge-lbl {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ==================== MOLECULAR PROFILE ==================== */
+.molecule-section {
+  background: var(--white);
+  padding: 96px 0;
+  border-top: 1px solid var(--border);
+}
+
+.molecule-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.molecule-text h2 {
+  font-size: 34px;
+  margin-bottom: 24px;
+}
+
+.molecule-text p {
+  color: var(--text-body);
+  font-size: 15px;
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+
+.molecule-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 36px;
+}
+
+.molecule-feature-card {
+  border-top: 1.5px solid var(--gold);
+  padding-top: 16px;
+}
+
+.molecule-feature-card h4 {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+
+.molecule-feature-card p {
+  font-size: 13px;
+  color: var(--text-body);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ==================== ASYMMETRICAL MULTI-IMAGE GRID ==================== */
+.asym-grid-visual {
+  position: relative;
+  height: 480px;
+  width: 100%;
+}
+
+.asym-img-large {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 30px rgba(10, 31, 61, 0.05);
+  background: var(--beige-mid);
+}
+
+.asym-img-small {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid var(--gold);
+  box-shadow: 0 20px 48px rgba(10, 31, 61, 0.1);
+  z-index: 2;
+  background: var(--beige-mid);
+}
+
+/* ==================== CLINICAL EFFICACY & STATS ==================== */
+.efficacy-section {
+  background: var(--cream);
+  padding: 96px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.efficacy-inner {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.efficacy-inner h2 {
+  font-size: 36px;
+  margin-bottom: 16px;
+}
+
+.efficacy-inner p {
+  color: var(--text-body);
+  font-size: 16px;
+  max-width: 60ch;
+  margin-inline: auto;
+  line-height: 1.6;
+}
+
+.efficacy-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.efficacy-stat-card {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 4px;
+  padding: 44px 32px;
+  text-align: center;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.efficacy-stat-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+  box-shadow: 0 16px 36px rgba(10, 31, 61, 0.06);
+}
+
+.efficacy-stat-num {
+  font-family: var(--serif);
+  font-size: 52px;
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.efficacy-stat-num span {
+  color: var(--gold);
+}
+
+.efficacy-stat-card h3 {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 14px;
+}
+
+.efficacy-stat-card p {
+  font-size: 13.5px;
+  color: var(--text-body);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ==================== TREATMENT PRICING & PROGRAM SELECTOR ==================== */
+.treatment-pricing {
+  background: var(--white);
+  padding: 96px 0;
+}
+
+.pricing-banner {
+  border: 1px solid var(--border);
+  background: var(--cream);
+  border-radius: 4px;
+  padding: 64px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.pricing-details h2 {
+  font-size: 34px;
+  margin-bottom: 16px;
+}
+
+.pricing-details p {
+  font-size: 15px;
+  color: var(--text-body);
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+
+.pricing-inclusions {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 20px;
+}
+
+.pricing-inclusions li {
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+}
+
+.pricing-inclusions li svg {
+  width: 16px;
+  height: 16px;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.pricing-action-card {
+  background: var(--navy);
+  color: var(--white);
+  border: 1px solid rgba(197, 160, 89, 0.4);
+  border-radius: 4px;
+  padding: 44px 36px;
+  text-align: center;
+  box-shadow: 0 20px 48px rgba(10, 31, 61, 0.15);
+}
+
+.pricing-action-card h3 {
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--white);
+}
+
+.pricing-action-card .price-subtext {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 24px;
+}
+
+.pricing-price-box {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.pricing-price-box .price-currency {
+  font-size: 24px;
+  font-family: var(--serif);
+  color: var(--gold);
+  align-self: flex-start;
+  margin-top: 4px;
+}
+
+.pricing-price-box .price-amount {
+  font-family: var(--serif);
+  font-size: 64px;
+  font-weight: 500;
+  color: var(--white);
+  line-height: 1;
+}
+
+.pricing-price-box .price-period {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-left: 4px;
+}
+
+/* ==================== TREATMENT FAQ ==================== */
+.treatment-faq {
+  background: var(--cream);
+  padding: 96px 0;
+  border-top: 1px solid var(--border);
+}
+
+.faq-grid-split {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 56px;
+}
+
+.faq-intro h2 {
+  font-size: 34px;
+  margin-bottom: 16px;
+}
+
+.faq-intro p {
+  color: var(--text-body);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.treatment-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.treatment-faq-list details {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 20px 24px;
+  transition: border-color var(--ease);
+}
+
+.treatment-faq-list details[open] {
+  border-color: var(--gold);
+}
+
+.treatment-faq-list summary {
+  font-family: var(--sans);
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--navy);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  outline: none;
+}
+
+.treatment-faq-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.treatment-faq-list summary::after {
+  content: '+';
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--gold);
+  transition: transform 0.2s ease;
+}
+
+.treatment-faq-list details[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.treatment-faq-list p {
+  margin-top: 14px;
+  font-size: 13.5px;
+  color: var(--text-body);
+  line-height: 1.6;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+
+/* ==================== GLOBAL DROP-DOWN NAVIGATION STYLES ==================== */
+.site-header {
+  z-index: 1000;
+}
+
+.main-nav ul {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-dropdown-trigger {
+  position: relative;
+}
+
+.nav-dropdown-trigger > a {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-dropdown-trigger > a::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid var(--navy);
+  margin-top: 2px;
+  transition: transform var(--ease);
+}
+
+.nav-dropdown-trigger:hover > a::after {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 16px 20px;
+  min-width: 200px;
+  box-shadow: 0 16px 36px rgba(10, 31, 61, 0.08);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1010;
+  margin-top: 8px;
+}
+
+.nav-dropdown-trigger:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-menu a {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--text-body);
+  transition: color var(--ease);
+  white-space: nowrap;
+  text-align: left;
+}
+
+.dropdown-menu a:hover {
+  color: var(--gold);
+}
+
+/* Mobile dropdown styles helper */
+@media (max-width: 1024px) {
+  .nav-dropdown-trigger > a::after {
+    border-top-color: var(--white);
+  }
+  
+  .dropdown-menu {
+    position: static;
+    transform: none;
+    background: rgba(255, 255, 255, 0.04);
+    border: none;
+    border-left: 2px solid var(--gold);
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    padding: 8px 0 8px 16px;
+    margin-top: 4px;
+    margin-left: 4px;
+    display: none;
+  }
+  
+  .nav-dropdown-trigger.is-active .dropdown-menu {
+    display: flex;
+  }
+  
+  .dropdown-menu a {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 13.5px;
+  }
+}
+
+/* ==================== VISUAL ENRICHMENT STYLES ==================== */
+/* Membership page asymmetric grid */
+.delivery-experience-section {
+  background: var(--white);
+  padding: 96px 0;
+  border-top: 1px solid var(--border);
+}
+
+.delivery-experience-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.delivery-experience-text h2 {
+  font-size: 34px;
+  margin-bottom: 20px;
+}
+
+.delivery-experience-text p {
+  color: var(--text-body);
+  font-size: 15px;
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+
+.delivery-grid-visual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 240px 180px;
+  gap: 24px;
+}
+
+.delivery-img-large {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  box-shadow: 0 16px 36px rgba(10, 31, 61, 0.05);
+  background: var(--beige-mid);
+}
+
+.delivery-img-square {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 30px rgba(10, 31, 61, 0.04);
+  background: var(--beige-mid);
+}
+
+.delivery-img-wide {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid var(--gold);
+  box-shadow: 0 16px 40px rgba(10, 31, 61, 0.08);
+  background: var(--beige-mid);
+}
+
+/* Diagnostics page overlapping stack */
+.dignified-lab-section {
+  background: var(--white);
+  padding: 96px 0;
+  border-top: 1px solid var(--border);
+}
+
+.dignified-lab-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.dignified-lab-visual {
+  position: relative;
+  height: 460px;
+}
+
+.lab-img-base {
+  width: 80%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  box-shadow: 0 16px 36px rgba(10, 31, 61, 0.04);
+  background: var(--beige-mid);
+}
+
+.lab-img-overlay {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 55%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1.5px solid var(--gold);
+  box-shadow: 0 20px 48px rgba(10, 31, 61, 0.1);
+  background: var(--beige-mid);
+  z-index: 3;
+}
+
+/* ==================== RESPONSIVE TREATMENTS ==================== */
+@media (max-width: 1024px) {
+  .treatment-hero-grid,
+  .molecule-grid,
+  .delivery-experience-grid,
+  .dignified-lab-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .pricing-banner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding: 36px;
+  }
+  
+  .efficacy-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .faq-grid-split {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  
+  .treatment-hero-image {
+    height: 380px;
+  }
+  
+  .asym-grid-visual {
+    height: 380px;
+  }
+  
+  .asym-img-large {
+    height: 300px;
+  }
+  
+  .asym-img-small {
+    height: 200px;
+  }
+  
+  .dignified-lab-visual {
+    height: 380px;
+  }
+  
+  .lab-img-base {
+    height: 300px;
+    width: 85%;
+  }
+  
+  .lab-img-overlay {
+    height: 200px;
+    width: 60%;
+  }
+}
+
+@media (max-width: 768px) {
+  .treatment-hero {
+    padding: 48px 0 32px;
+  }
+  
+  .molecule-section,
+  .efficacy-section,
+  .treatment-pricing,
+  .treatment-faq,
+  .delivery-experience-section,
+  .dignified-lab-section {
+    padding: 56px 0;
+  }
+  
+  .treatment-floating-badge {
+    position: static;
+    margin-top: 20px;
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  .pricing-inclusions {
+    grid-template-columns: 1fr;
+  }
+  
+  .delivery-grid-visual {
+    grid-template-rows: 180px 140px;
+    gap: 16px;
+  }
+}
