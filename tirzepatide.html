@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/css/treatments.css" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preload" as="image" href="/images/tirzepatide-hero.webp" fetchpriority="high" />
   </head>
   <body>
     <div class="announcement-bar">
@@ -90,7 +91,7 @@
               -->
               <img
                 class="treatment-hero-image"
-                src="/images/tirzepatide-hero.png"
+                src="/images/tirzepatide-hero.webp" data-fallback="/images/tirzepatide-hero.png" decoding="async"
                 alt="North Star MD Tirzepatide premium packaging"
                 width="800"
                 height="600"
@@ -114,7 +115,7 @@
               -->
               <img
                 class="asym-img-large"
-                src="/images/product-box/close.png"
+                src="/images/product-box/close.webp" data-fallback="/images/product-box/close.png" decoding="async"
                 alt="Tirzepatide glass vial and gold details"
               />
               <!-- AI IMAGE GENERATION PROMPT:
@@ -122,7 +123,7 @@
               -->
               <img
                 class="asym-img-small"
-                src="/images/product-box/wide.png"
+                src="/images/product-box/wide.webp" data-fallback="/images/product-box/wide.png" decoding="async"
                 alt="Syringe and clinical packaging close up"
               />
             </div>

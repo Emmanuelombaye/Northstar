@@ -4,11 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "optimize:images": "node scripts/optimize-images.mjs",
+    "build": "node scripts/optimize-images.mjs && vite build",
     "preview": "vite preview",
     "slice": "powershell -ExecutionPolicy Bypass -File scripts/slice-mockup.ps1"
   },
   "devDependencies": {
+    "sharp": "^0.34.2",
     "vite": "^6.2.0"
   }
 }

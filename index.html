@@ -16,6 +16,7 @@
     />
     <link rel="stylesheet" href="/css/styles.css" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preload" as="image" href="/images/hero-landing.webp" fetchpriority="high" />
   </head>
   <body>
     <div class="announcement-bar">
@@ -76,7 +77,7 @@
             wherever you are.
           </p>
           <img
-            src="/images/hero-landing.png"
+            src="/images/hero-landing.webp" data-fallback="/images/hero-landing.png" decoding="async"
             alt="Find Your North Star — woman with sunlit hills, physician-guided longevity and wellness care"
             width="2007"
             height="784"
@@ -101,7 +102,7 @@
             </div>
             <div class="hero-mobile-visual">
               <img
-                src="/images/hero-photo.png"
+                src="/images/hero-photo.webp" data-fallback="/images/hero-photo.png" decoding="async"
                 alt="Woman smiling with sunlit hills in the background"
                 width="1104"
                 height="858"
@@ -173,7 +174,7 @@
           </div>
           <div class="care-scene">
             <img
-              src="/images/product-box.png"
+              src="/images/product-box.webp" data-fallback="/images/product-box.png" decoding="async"
               alt="North Star MD box, supplements, and greenery on linen"
               width="1200"
               height="900"
@@ -234,7 +235,7 @@
 
         <div class="journey-photo">
           <img
-            src="/images/journey-seated.png"
+            src="/images/journey-seated.webp" data-fallback="/images/journey-seated.png" decoding="async"
             alt="Woman seated by a window holding a glass of water"
             width="1266"
             height="1242"

@@ -1,3 +1,5 @@
+import "./media-loader.js";
+
 const navToggle = document.querySelector(".nav-toggle");
 const mainNav = document.querySelector(".main-nav");
 const navOverlay = document.querySelector(".nav-overlay");

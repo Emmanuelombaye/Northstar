@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/css/explore-treatments.css" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preload" as="image" href="/images/weight-loss-card.webp" fetchpriority="high" />
   </head>
   <body>
     <div class="announcement-bar">
@@ -92,28 +93,28 @@
                   <strong>Weight Loss</strong>
                   <small>Tirzepatide + Semaglutide</small>
                 </span>
-                <img src="/images/tirzepatide-hero.png" alt="Personalized Tirzepatide+ weight loss" loading="lazy" />
+                <img src="/images/tirzepatide-hero.webp" data-fallback="/images/tirzepatide-hero.png" decoding="async" alt="Personalized Tirzepatide+ weight loss" loading="lazy" />
               </button>
               <button class="filter-tab" role="tab" aria-selected="false" data-filter="longevity">
                 <span class="tab-labels">
                   <strong>Longevity</strong>
                   <small>NAD+ Rejuvenation</small>
                 </span>
-                <img src="/images/nad-hero.png" alt="NAD+ longevity treatment" loading="lazy" />
+                <img src="/images/nad-hero.webp" data-fallback="/images/nad-hero.png" decoding="async" alt="NAD+ longevity treatment" loading="lazy" />
               </button>
               <button class="filter-tab" role="tab" aria-selected="false" data-filter="recovery">
                 <span class="tab-labels">
                   <strong>Muscle Recovery</strong>
                   <small>Sermorelin Recovery</small>
                 </span>
-                <img src="/images/sermorelin-hero.png" alt="Sermorelin muscle recovery treatment" loading="lazy" />
+                <img src="/images/sermorelin-hero.webp" data-fallback="/images/sermorelin-hero.png" decoding="async" alt="Sermorelin muscle recovery treatment" loading="lazy" />
               </button>
             </div>
 
           <div class="program-panel is-active" data-panel="weight">
             <article class="program-card">
               <div class="program-media program-media-card">
-                <img src="/images/weight-loss-card.png" alt="Personalized GLP-1 injections — Tirzepatide+ and Semaglutide+ by North Star MD" class="program-card-art" loading="lazy" />
+                <img src="/images/weight-loss-card.webp" data-fallback="/images/weight-loss-card.png" decoding="async" alt="Personalized GLP-1 injections — Tirzepatide+ and Semaglutide+ by North Star MD" class="program-card-art" fetchpriority="high" />
               </div>
               <div class="program-content">
                 <h3>Personalized GLP-1 Injections</h3>
@@ -147,7 +148,7 @@
           <div class="program-panel" data-panel="longevity">
             <article class="program-card">
               <div class="program-media program-media-card">
-                <img src="/images/longevity-card.png" alt="NAD+ injections by North Star MD" class="program-card-art" loading="lazy" />
+                <img src="/images/longevity-card.webp" data-fallback="/images/longevity-card.png" decoding="async" alt="NAD+ injections by North Star MD" class="program-card-art" loading="lazy" />
               </div>
               <div class="program-content">
                 <h3>NAD+ Injections</h3>
@@ -177,7 +178,7 @@
           <div class="program-panel" data-panel="recovery">
             <article class="program-card">
               <div class="program-media program-media-card">
-                <img src="/images/muscle-recovery-card.png" alt="Sermorelin injections by North Star MD" class="program-card-art" loading="lazy" />
+                <img src="/images/muscle-recovery-card.webp" data-fallback="/images/muscle-recovery-card.png" decoding="async" alt="Sermorelin injections by North Star MD" class="program-card-art" loading="lazy" />
               </div>
               <div class="program-content">
                 <h3>Sermorelin Injections</h3>
@@ -213,7 +214,7 @@
             <h2>Our <em>patients' results</em> speak for themselves!</h2>
             <div class="patient-results-scroll">
               <article class="patient-result-card">
-                <img src="/images/journey-seated.png" alt="North Star MD GLP-1 patient Lisa C. — lost 75 lbs in 10 months" loading="lazy" />
+                <img src="/images/journey-seated.webp" data-fallback="/images/journey-seated.png" decoding="async" alt="North Star MD GLP-1 patient Lisa C. — lost 75 lbs in 10 months" loading="lazy" />
                 <div class="patient-result-meta">
                   <span class="patient-result-labels"><span>Before</span><span>After</span></span>
                   <span class="patient-result-stat">Lost 75 lbs in 10 Months</span>
@@ -222,7 +223,7 @@
                 </div>
               </article>
               <article class="patient-result-card">
-                <img src="/images/hero-photo.png" alt="North Star MD GLP-1 patient Blaze B. — lost 50 lbs in 6 months" loading="lazy" />
+                <img src="/images/hero-photo.webp" data-fallback="/images/hero-photo.png" decoding="async" alt="North Star MD GLP-1 patient Blaze B. — lost 50 lbs in 6 months" loading="lazy" />
                 <div class="patient-result-meta">
                   <span class="patient-result-labels"><span>Before</span><span>After</span></span>
                   <span class="patient-result-stat">Lost 50 lbs in 6 Months</span>
@@ -231,7 +232,7 @@
                 </div>
               </article>
               <article class="patient-result-card">
-                <img src="/images/journey.png" alt="North Star MD GLP-1 patient Crystal G. — lost 50 lbs in 6 months" loading="lazy" />
+                <img src="/images/journey.webp" data-fallback="/images/journey.png" decoding="async" alt="North Star MD GLP-1 patient Crystal G. — lost 50 lbs in 6 months" loading="lazy" />
                 <div class="patient-result-meta">
                   <span class="patient-result-labels"><span>Before</span><span>After</span></span>
                   <span class="patient-result-stat">Lost 50 lbs in 6 Months</span>
@@ -240,7 +241,7 @@
                 </div>
               </article>
               <article class="patient-result-card">
-                <img src="/images/clinical-draw.png" alt="North Star MD GLP-1 patient Jamilyn C. — lost 17 lbs in 6 weeks" loading="lazy" />
+                <img src="/images/clinical-draw.webp" data-fallback="/images/clinical-draw.png" decoding="async" alt="North Star MD GLP-1 patient Jamilyn C. — lost 17 lbs in 6 weeks" loading="lazy" />
                 <div class="patient-result-meta">
                   <span class="patient-result-labels"><span>Before</span><span>After</span></span>
                   <span class="patient-result-stat">Lost 17 lbs in 6 Weeks</span>
@@ -249,7 +250,7 @@
                 </div>
               </article>
               <article class="patient-result-card">
-                <img src="/images/biomarker-screen.png" alt="North Star MD GLP-1 patient Kim B. — lost 8 lbs in 6 weeks" loading="lazy" />
+                <img src="/images/biomarker-screen.webp" data-fallback="/images/biomarker-screen.png" decoding="async" alt="North Star MD GLP-1 patient Kim B. — lost 8 lbs in 6 weeks" loading="lazy" />
                 <div class="patient-result-meta">
                   <span class="patient-result-labels"><span>Before</span><span>After</span></span>
                   <span class="patient-result-stat">Lost 8 lbs in 6 Weeks</span>
@@ -279,7 +280,7 @@
               <p>Explore below for details on medication, plans, how it all works, and safety information.</p>
             </div>
             <div class="designed-deep-visual">
-              <img src="/images/panel-weight.png" alt="North Star MD weight loss program — personalized GLP-1 treatment designed around the patient" loading="lazy" />
+              <img src="/images/panel-weight.webp" data-fallback="/images/panel-weight.png" decoding="async" alt="North Star MD weight loss program — personalized GLP-1 treatment designed around the patient" loading="lazy" />
             </div>
           </div>
         </section>
@@ -301,7 +302,7 @@
               <article class="treatment-block">
                 <h3>Form Options</h3>
                 <div class="form-option-card">
-                  <img src="/images/panel-weight.png" alt="North Star MD GLP-1 weekly subcutaneous injection pen for personalized weight loss treatment" loading="lazy" />
+                  <img src="/images/panel-weight.webp" data-fallback="/images/panel-weight.png" decoding="async" alt="North Star MD GLP-1 weekly subcutaneous injection pen for personalized weight loss treatment" loading="lazy" />
                   <div>
                     <h4>Injection <span class="form-tag">Most effective</span></h4>
                     <p>Weekly subcutaneous shot.<br />Clinically proven delivery with the strongest results at every dose.</p>
@@ -353,27 +354,27 @@
             <p class="eyebrow">How It Works</p>
             <div class="how-steps">
               <article>
-                <img src="/images/step-01-choose-treatment.png" alt="" class="how-step-img" loading="lazy" />
+                <img src="/images/step-01-choose-treatment.webp" data-fallback="/images/step-01-choose-treatment.png" decoding="async" alt="" class="how-step-img" loading="lazy" />
                 <h3>Choose a <em>treatment plan</em></h3>
                 <p>Complete a short medical history questionnaire to confirm your eligibility for GLP-1 treatment.</p>
               </article>
               <article>
-                <img src="/images/step-02-intake-checkout.png" alt="" class="how-step-img" loading="lazy" />
+                <img src="/images/step-02-intake-checkout.webp" data-fallback="/images/step-02-intake-checkout.png" decoding="async" alt="" class="how-step-img" loading="lazy" />
                 <h3><em>Checkout</em> <em>&amp;</em> <em>Verify</em> <em>identity</em></h3>
                 <p>After checkout, verify your identity for the licensed provider by entering the last four digits of your SSN or uploading a photo of your government ID.</p>
               </article>
               <article>
-                <img src="/images/step-03-provider-review.png" alt="" class="how-step-img" loading="lazy" />
+                <img src="/images/step-03-provider-review.webp" data-fallback="/images/step-03-provider-review.png" decoding="async" alt="" class="how-step-img" loading="lazy" />
                 <h3><em>Provider</em> reviews intake</h3>
                 <p>A licensed U.S. provider reviews your intake within 24 hours and may follow up with questions or recommendations — <em>no live visit needed.</em></p>
               </article>
               <article>
-                <img src="/images/step-04-delivery-kit.png" alt="" class="how-step-img" loading="lazy" />
+                <img src="/images/step-04-delivery-kit.webp" data-fallback="/images/step-04-delivery-kit.png" decoding="async" alt="" class="how-step-img" loading="lazy" />
                 <h3><em>Receive</em> your medication</h3>
                 <p>Once approved, your personalized prescription will be fulfilled by our partner pharmacy. Your medication ships via <em>UPS 2-Day Air</em> and arrives at your doorstep.</p>
               </article>
               <article>
-                <img src="/images/step-05-ongoing-support.png" alt="" class="how-step-img" loading="lazy" />
+                <img src="/images/step-05-ongoing-support.webp" data-fallback="/images/step-05-ongoing-support.png" decoding="async" alt="" class="how-step-img" loading="lazy" />
                 <h3><em>Start</em> your treatment</h3>
                 <p>Your care team is with you from day one. You'll get a checklist, Patient Center access, and can reach out to us anytime for support.</p>
               </article>
@@ -394,7 +395,7 @@
               <p>Explore below for details on medication, plans, how it all works, and safety information.</p>
             </div>
             <div class="designed-deep-visual">
-              <img src="/images/result-energy.png" alt="North Star MD longevity program — personalized NAD+ treatment plan designed around the patient" loading="lazy" />
+              <img src="/images/result-energy.webp" data-fallback="/images/result-energy.png" decoding="async" alt="North Star MD longevity program — personalized NAD+ treatment plan designed around the patient" loading="lazy" />
             </div>
           </div>
         </section>
@@ -430,7 +431,7 @@
               <article class="treatment-block">
                 <h3>Form Options</h3>
                 <div class="form-option-card">
-                  <img src="/images/nad-hero.png" alt="North Star MD NAD+ weekly subcutaneous injection vial" loading="lazy" />
+                  <img src="/images/nad-hero.webp" data-fallback="/images/nad-hero.png" decoding="async" alt="North Star MD NAD+ weekly subcutaneous injection vial" loading="lazy" />
                   <div>
                     <h4>Injection <span class="form-tag">Most effective</span></h4>
                     <p>Weekly subcutaneous shot.<br />Clinically proven delivery with the strongest results.</p>
@@ -458,27 +459,27 @@
             <p class="eyebrow">How It Works</p>
             <div class="how-steps">
               <article>
-                <img src="/images/step-01-choose-treatment.png" alt="" class="how-step-img" loading="lazy" />
+                <img src="/images/step-01-choose-treatment.webp" data-fallback="/images/step-01-choose-treatment.png" decoding="async" alt="" class="how-step-img" loading="lazy" />
                 <h3>Choose a <em>treatment plan</em></h3>
                 <p>Complete a short medical history questionnaire to confirm your eligibility for NAD+ treatment.</p>
               </article>
               <article>
-                <img src="/images/step-02-intake-checkout.png" alt="" class="how-step-img" loading="lazy" />
+                <img src="/images/step-02-intake-checkout.webp" data-fallback="/images/step-02-intake-checkout.png" decoding="async" alt="" class="how-step-img" loading="lazy" />
                 <h3><em>Checkout</em> <em>&amp;</em> <em>Verify</em> <em>identity</em></h3>
                 <p>After checkout, verify your identity for the licensed provider by entering the last four digits of your SSN or uploading a photo of your government ID.</p>
               </article>
               <article>
-                <img src="/images/step-03-provider-review.png" alt="" class="how-step-img" loading="lazy" />
+                <img src="/images/step-03-provider-review.webp" data-fallback="/images/step-03-provider-review.png" decoding="async" alt="" class="how-step-img" loading="lazy" />
                 <h3><em>Provider</em> reviews intake</h3>
                 <p>A licensed U.S. provider reviews your intake within 24 hours and may follow up with questions or recommendations — <em>no live visit needed.</em></p>
               </article>
               <article>
-                <img src="/images/step-04-delivery-kit.png" alt="" class="how-step-img" loading="lazy" />
+                <img src="/images/step-04-delivery-kit.webp" data-fallback="/images/step-04-delivery-kit.png" decoding="async" alt="" class="how-step-img" loading="lazy" />
                 <h3><em>Receive</em> your medication</h3>
                 <p>Once approved, your personalized prescription will be fulfilled by our partner pharmacy. Your medication ships via <em>UPS 2-Day Air</em> and arrives at your doorstep.</p>
               </article>
               <article>
-                <img src="/images/step-05-ongoing-support.png" alt="" class="how-step-img" loading="lazy" />
+                <img src="/images/step-05-ongoing-support.webp" data-fallback="/images/step-05-ongoing-support.png" decoding="async" alt="" class="how-step-img" loading="lazy" />
                 <h3><em>Start</em> your treatment</h3>
                 <p>Your care team is with you from day one. You'll get a checklist, Patient Center access, and can reach out to us anytime for support.</p>
               </article>
@@ -493,7 +494,7 @@
       <div class="category-detail" data-detail="recovery" hidden>
         <section class="designed-deep designed-deep--banner">
           <div class="explore-wrap">
-            <img src="/images/muscle-recovery-designed.png" alt="Muscle recovery treatments designed around you — North Star MD Official Treatment Guide" class="designed-banner-img" loading="lazy" />
+            <img src="/images/muscle-recovery-designed.webp" data-fallback="/images/muscle-recovery-designed.png" decoding="async" alt="Muscle recovery treatments designed around you — North Star MD Official Treatment Guide" class="designed-banner-img" loading="lazy" />
           </div>
         </section>
 
@@ -528,7 +529,7 @@
               <article class="treatment-block">
                 <h3>Form Options</h3>
                 <div class="form-option-card">
-                  <img src="/images/sermorelin-hero.png" alt="North Star MD Sermorelin daily subcutaneous peptide injection vial" loading="lazy" />
+                  <img src="/images/sermorelin-hero.webp" data-fallback="/images/sermorelin-hero.png" decoding="async" alt="North Star MD Sermorelin daily subcutaneous peptide injection vial" loading="lazy" />
                   <div>
                     <h4>Injection <span class="form-tag">Most effective</span></h4>
                     <p><em>Daily</em> subcutaneous shot. Clinically proven delivery with the strongest results.</p>
@@ -556,27 +557,27 @@
             <p class="eyebrow">How It Works</p>
             <div class="how-steps">
               <article>
-                <img src="/images/step-01-choose-treatment.png" alt="" class="how-step-img" loading="lazy" />
+                <img src="/images/step-01-choose-treatment.webp" data-fallback="/images/step-01-choose-treatment.png" decoding="async" alt="" class="how-step-img" loading="lazy" />
                 <h3>Choose a <em>treatment plan</em></h3>
                 <p>Complete a short medical history questionnaire to confirm your eligibility for Sermorelin treatment.</p>
               </article>
               <article>
-                <img src="/images/step-02-intake-checkout.png" alt="" class="how-step-img" loading="lazy" />
+                <img src="/images/step-02-intake-checkout.webp" data-fallback="/images/step-02-intake-checkout.png" decoding="async" alt="" class="how-step-img" loading="lazy" />
                 <h3><em>Checkout</em> <em>&amp;</em> <em>Verify</em> <em>identity</em></h3>
                 <p>After checkout, verify your identity for the licensed provider by entering the last four digits of your SSN or uploading a photo of your government ID.</p>
               </article>
               <article>
-                <img src="/images/step-03-provider-review.png" alt="" class="how-step-img" loading="lazy" />
+                <img src="/images/step-03-provider-review.webp" data-fallback="/images/step-03-provider-review.png" decoding="async" alt="" class="how-step-img" loading="lazy" />
                 <h3><em>Provider</em> reviews intake</h3>
                 <p>A licensed U.S. provider reviews your intake within 24 hours and may follow up with questions or recommendations — <em>no live visit needed.</em></p>
               </article>
               <article>
-                <img src="/images/step-04-delivery-kit.png" alt="" class="how-step-img" loading="lazy" />
+                <img src="/images/step-04-delivery-kit.webp" data-fallback="/images/step-04-delivery-kit.png" decoding="async" alt="" class="how-step-img" loading="lazy" />
                 <h3><em>Receive</em> your medication</h3>
                 <p>Once approved, your personalized prescription will be fulfilled by our partner pharmacy. Your medication ships via <em>UPS 2-Day Air</em> and arrives at your doorstep.</p>
               </article>
               <article>
-                <img src="/images/step-05-ongoing-support.png" alt="" class="how-step-img" loading="lazy" />
+                <img src="/images/step-05-ongoing-support.webp" data-fallback="/images/step-05-ongoing-support.png" decoding="async" alt="" class="how-step-img" loading="lazy" />
                 <h3><em>Start</em> your treatment</h3>
                 <p>Your care team is with you from day one. You'll get a checklist, Patient Center access, and can reach out to us anytime for support.</p>
               </article>
@@ -589,13 +590,13 @@
 
       <section class="why-section why-section--art">
         <div class="explore-wrap">
-          <img src="/images/why-northstar-md.png" alt="Why North Star MD — transparent and trusted care, tailored personalized plans, and science-backed results" class="section-art-img" loading="lazy" />
+          <img src="/images/why-northstar-md.webp" data-fallback="/images/why-northstar-md.png" decoding="async" alt="Why North Star MD — transparent and trusted care, tailored personalized plans, and science-backed results" class="section-art-img" loading="lazy" />
         </div>
       </section>
 
       <section class="testimonials-section testimonials-section--art">
         <div class="explore-wrap">
-          <img src="/images/exceptional-experience.png" alt="Exceptional experience is our top priority — North Star MD patient portal, care team support, and verified patient reviews" class="section-art-img" loading="lazy" />
+          <img src="/images/exceptional-experience.webp" data-fallback="/images/exceptional-experience.png" decoding="async" alt="Exceptional experience is our top priority — North Star MD patient portal, care team support, and verified patient reviews" class="section-art-img" loading="lazy" />
         </div>
       </section>
 
@@ -633,7 +634,7 @@
           <h2>Choose your treatment</h2>
           <div class="choose-treatment-grid">
             <article>
-              <img src="/images/weight-loss-card.png" alt="" class="choose-treatment-thumb" loading="lazy" />
+              <img src="/images/weight-loss-card.webp" data-fallback="/images/weight-loss-card.png" decoding="async" alt="" class="choose-treatment-thumb" loading="lazy" />
               <h3>Weight Loss</h3>
               <p>Support healthy, sustainable weight loss with a personalized approach.</p>
               <p class="choose-meds"><a href="/tirzepatide">Tirzepatide</a> · <a href="/semaglutide">Semaglutide</a></p>
@@ -641,7 +642,7 @@
               <a href="https://joinnorthstarmd.com/care/north-star-md/shop" data-shop="category" data-shop-category="weight-loss" class="btn btn-navy btn-pill btn-sm">Weight Loss</a>
             </article>
             <article>
-              <img src="/images/longevity-card.png" alt="" class="choose-treatment-thumb" loading="lazy" />
+              <img src="/images/longevity-card.webp" data-fallback="/images/longevity-card.png" decoding="async" alt="" class="choose-treatment-thumb" loading="lazy" />
               <h3>Longevity</h3>
               <p>Optimize energy, longevity, and overall wellness as you age.</p>
               <p class="choose-meds"><a href="/nad">NAD+</a></p>
@@ -649,7 +650,7 @@
               <a href="https://joinnorthstarmd.com/care/north-star-md/shop" data-shop="category" data-shop-category="nad" class="btn btn-navy btn-pill btn-sm">Longevity</a>
             </article>
             <article>
-              <img src="/images/muscle-recovery-card.png" alt="" class="choose-treatment-thumb" loading="lazy" />
+              <img src="/images/muscle-recovery-card.webp" data-fallback="/images/muscle-recovery-card.png" decoding="async" alt="" class="choose-treatment-thumb" loading="lazy" />
               <h3>Muscle Recovery</h3>
               <p>Enhance recovery and performance to support an active lifestyle.</p>
               <p class="choose-meds"><a href="/sermorelin">Sermorelin</a></p>
