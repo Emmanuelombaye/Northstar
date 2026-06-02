@@ -13,7 +13,6 @@ export default defineConfig({
         membership: resolve(__dirname, "membership.html"),
         resources: resolve(__dirname, "resources.html"),
         about: resolve(__dirname, "about.html"),
-        diagnostics: resolve(__dirname, "diagnostics.html"),
         faq: resolve(__dirname, "faq.html"),
         privacy: resolve(__dirname, "privacy.html"),
         terms: resolve(__dirname, "terms.html"),
