@@ -1,0 +1,267 @@
+/**
+ * North Star MD — site-wide phone polish (loads after styles.css)
+ */
+
+@supports (padding: max(0px)) {
+  .site-header .header-inner {
+    padding-inline: max(var(--gutter), env(safe-area-inset-left))
+      max(var(--gutter), env(safe-area-inset-right));
+  }
+
+  .main-nav {
+    padding-bottom: max(28px, env(safe-area-inset-bottom));
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    overflow-x: clip;
+  }
+
+  main {
+    max-width: 100%;
+  }
+
+  main img:not(.treatment-hero-image):not(.media-img) {
+    max-width: 100%;
+  }
+
+  .hero-mobile-visual img,
+  .hero-banner img,
+  .treatment-hero-image,
+  .journey-photo img,
+  .care-scene img,
+  .how-hero-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Touch targets */
+  .nav-toggle {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .main-nav a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  .btn {
+    min-height: 46px;
+  }
+
+  /* Hero CTAs */
+  .hero-btns .btn {
+    width: 100%;
+  }
+
+  .hero-mobile {
+    padding: 22px var(--gutter) 32px;
+  }
+
+  .hero-mobile-visual {
+    margin-top: 20px;
+  }
+
+  .hero-mobile-visual img {
+    aspect-ratio: 16 / 10;
+    object-position: 40% 36%;
+  }
+
+  .care-scene img {
+    object-position: center 28%;
+  }
+
+  /* Treatment pages */
+  .treatment-hero-ctas {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .treatment-hero-ctas .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .treatment-hero-text h1 {
+    font-size: clamp(32px, 8.5vw, 42px);
+  }
+
+  .treatment-hero-image {
+    max-height: min(420px, 78vw);
+    object-position: center 22%;
+  }
+
+  .treatment-wrap {
+    width: 100%;
+  }
+
+  .pricing-banner {
+    padding: 28px 20px;
+  }
+
+  .delivery-grid-visual {
+    grid-template-rows: 160px 120px;
+  }
+
+  /* Explore / final CTA */
+  .final-cta-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 320px;
+    margin-inline: auto;
+  }
+
+  .final-cta-actions .btn {
+    width: 100%;
+  }
+
+  /* FAQ accordions */
+  .faq-item summary {
+    min-height: 44px;
+    padding-block: 14px;
+  }
+
+  /* Footer (inline styles on every page) */
+  body > footer {
+    padding: 36px 0 calc(22px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+
+  body > footer > div:first-of-type {
+    flex-direction: column !important;
+    gap: 28px !important;
+  }
+
+  body > footer > div:first-of-type > div:first-of-type {
+    max-width: none !important;
+  }
+
+  body > footer > div:first-of-type > div:last-of-type {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+    width: 100%;
+  }
+
+  body > footer > div:last-of-type {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+    margin-top: 28px !important;
+    text-align: left !important;
+  }
+
+  body > footer a {
+    display: inline-block;
+    padding: 4px 0;
+  }
+
+  /* Legal pages */
+  .legal-hero {
+    padding: 40px var(--gutter) 28px;
+  }
+
+  .legal-body {
+    padding: 40px 0 calc(56px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .legal-content h2 {
+    font-size: clamp(20px, 5.5vw, 24px);
+    margin-top: 28px;
+  }
+
+  .legal-content table {
+    display: block;
+    overflow-x: auto;
+    max-width: 100%;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Membership comparison — scroll inside wrapper, not page */
+  .comparison-table-wrapper {
+    -webkit-overflow-scrolling: touch;
+    margin-inline: calc(-1 * var(--gutter));
+    width: calc(100% + 2 * var(--gutter));
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 12px 14px;
+    font-size: 12px;
+  }
+
+  /* Resources */
+  .featured-resource {
+    padding: 24px 20px;
+    margin-inline: 0;
+  }
+
+  .featured-title {
+    font-size: clamp(24px, 6.5vw, 32px);
+  }
+
+  /* About team */
+  .team-photo-wrap img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --gutter: 18px;
+  }
+
+  h1 {
+    font-size: clamp(32px, 8.8vw, 40px);
+  }
+
+  h2 {
+    font-size: clamp(26px, 7.2vw, 34px);
+  }
+
+  .journey-photo img {
+    object-position: 52% 18%;
+    min-height: min(68vw, 300px) !important;
+  }
+
+  .how-hero-media img {
+    max-height: 280px;
+    object-position: center 25%;
+  }
+
+  .program-content h3 {
+    font-size: clamp(24px, 6.5vw, 28px);
+  }
+
+  .molecule-section,
+  .efficacy-section,
+  .treatment-pricing,
+  .treatment-faq,
+  .delivery-experience-section,
+  .dignified-lab-section {
+    padding: 44px 0;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-mobile-copy h1 {
+    font-size: clamp(30px, 8.2vw, 36px);
+  }
+}

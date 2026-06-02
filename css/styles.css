@@ -390,10 +390,10 @@ body.nav-open .nav-overlay {
 
 .hero-mobile-visual img {
   width: 100%;
-  aspect-ratio: 16 / 11;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
-  /* Hero-landing banner: couple sits center-right; crop off baked-in left copy */
-  object-position: 72% 48%;
+  object-position: 42% 38%;
+  display: block;
 }
 
 .hero-mobile .hero-badge {
