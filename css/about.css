@@ -1,0 +1,274 @@
+/* North Star MD — About Us & Clinical Team Styling */
+
+.about-wrap {
+  width: var(--page);
+  margin: 0 auto;
+}
+
+/* ========== HERO ========== */
+.about-hero {
+  background: linear-gradient(180deg, var(--cream) 0%, #fff 100%);
+  padding: 72px 0 48px;
+  text-align: center;
+}
+
+.about-hero h1 {
+  margin-top: 8px;
+  margin-bottom: 20px;
+  max-width: 20ch;
+  margin-inline: auto;
+}
+
+.about-hero-lead {
+  font-size: 18px;
+  color: var(--text-body);
+  max-width: 56ch;
+  margin-inline: auto;
+  line-height: 1.6;
+}
+
+/* ========== MISSION STATEMENTS ========== */
+.mission-section {
+  background: var(--white);
+  padding: 80px 0;
+  border-top: 1px solid var(--border);
+}
+
+.mission-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.mission-text h2 {
+  font-family: var(--serif);
+  font-size: 36px;
+  color: var(--navy);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.mission-text p {
+  font-size: 15.5px;
+  color: var(--text-body);
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+
+.mission-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.stat-card {
+  background: var(--cream);
+  border: 1.5px solid var(--border);
+  padding: 28px 24px;
+  border-radius: 4px;
+  text-align: center;
+  transition: border-color var(--ease);
+}
+
+.stat-card:hover {
+  border-color: var(--gold);
+}
+
+.stat-num {
+  font-family: var(--serif);
+  font-size: 36px;
+  color: var(--gold-dark);
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+/* ========== TEAM DIRECTORY ========== */
+.team-section {
+  background: var(--cream);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 80px 0;
+}
+
+.team-section h2 {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.team-card {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+  box-shadow: 0 16px 36px rgba(10, 31, 61, 0.08);
+}
+
+.team-photo-wrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #eae2d6;
+  overflow: hidden;
+  position: relative;
+}
+
+.team-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.team-card:hover .team-photo-wrap img {
+  transform: scale(1.03);
+}
+
+.team-info {
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.team-role {
+  font-family: var(--sans);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 8px;
+}
+
+.team-info h3 {
+  font-family: var(--serif);
+  font-size: 20px;
+  color: var(--navy);
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.team-credentials {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  color: #7a8d9e;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.team-bio {
+  font-size: 13.5px;
+  color: var(--text-body);
+  line-height: 1.5;
+}
+
+/* ========== CLINICAL SECURITY (HIPAA) ========== */
+.compliance-block {
+  background: var(--white);
+  padding: 80px 0 88px;
+  text-align: center;
+}
+
+.compliance-box {
+  max-width: 680px;
+  margin: 0 auto;
+  border: 1.5px solid var(--border);
+  padding: 48px 36px;
+  border-radius: 4px;
+  position: relative;
+  background: #fafafa;
+}
+
+.compliance-box::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 32px;
+  right: 32px;
+  height: 3px;
+  background: var(--gold);
+}
+
+.compliance-icon {
+  width: 48px;
+  height: 48px;
+  color: var(--gold);
+  margin: 0 auto 20px;
+}
+
+.compliance-box h2 {
+  margin-bottom: 14px;
+}
+
+.compliance-box p {
+  font-size: 14.5px;
+  color: var(--text-body);
+  line-height: 1.6;
+  max-width: 52ch;
+  margin-inline: auto;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1024px) {
+  .mission-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .about-wrap {
+    padding-inline: var(--gutter);
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    padding: 48px 0 32px;
+  }
+
+  .mission-section,
+  .team-section,
+  .compliance-block {
+    padding: 48px 0;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .compliance-box {
+    padding: 32px 20px;
+  }
+}
