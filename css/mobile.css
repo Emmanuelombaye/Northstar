@@ -65,9 +65,20 @@
   }
 
   .hero-mobile-visual img {
-    aspect-ratio: 998 / 660;
-    object-position: center 42%;
-    max-height: min(58vw, 340px);
+    aspect-ratio: 998 / 540;
+    object-position: center 38%;
+    min-height: min(52vw, 280px);
+    max-height: none;
+  }
+
+  .hero-tagline {
+    font-size: clamp(10.5px, 2.9vw, 13px);
+    padding: clamp(9px, 2.6vw, 13px) clamp(10px, 3vw, 14px);
+  }
+
+  .main-nav a.btn {
+    color: var(--white) !important;
+    -webkit-text-fill-color: var(--white);
   }
 
   /* Touch targets */

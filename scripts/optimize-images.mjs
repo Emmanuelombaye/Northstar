@@ -109,7 +109,7 @@ async function generateMobileHeroCrop() {
     const meta = await sharp(await readFile(src)).metadata();
     const left = Math.round(meta.width * 0.48);
     const width = meta.width - left;
-    const height = Math.round(meta.height * 0.88);
+    const height = Math.round(meta.height * 0.72);
     const extract = { left, top: 0, width, height };
     const base = sharp(await readFile(src)).rotate().extract(extract);
     await writeFile(
