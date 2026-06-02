@@ -15,17 +15,53 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body>
+    <div class="announcement-bar">
+      <svg class="announcement-star" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <path d="M8 1L9.2 6.2L14.5 7.2L9.2 8.2L8 13.5L6.8 8.2L1.5 7.2L6.8 6.2L8 1Z" stroke="currentColor" stroke-width="0.9" stroke-linejoin="round"/>
+      </svg>
+      <p>
+        Now accepting new patients in select states.
+        <a href="https://joinnorthstarmd.com/care/north-star-md/shop?brand=north-star-md&amp;brandId=c8e7f6a2-4b1d-4e9f-a3c2-1d5e8f7a6b4c" data-shop="catalog">Get started today.</a>
+      </p>
+    </div>
+
     <header class="site-header">
       <div class="header-inner">
         <a href="/" class="logo" aria-label="North Star MD home">
           <svg class="logo-star" viewBox="0 0 48 48" fill="none" aria-hidden="true">
             <path d="M24 4L27 18L41 21L27 24L24 38L21 24L7 21L21 18L24 4Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+            <path d="M24 12L25.5 18.5L32 20L25.5 21.5L24 28L22.5 21.5L16 20L22.5 18.5L24 12Z" stroke="currentColor" stroke-width="0.9" stroke-linejoin="round"/>
           </svg>
           <div class="logo-text">
             <span class="logo-name">North Star MD</span>
+            <span class="logo-tagline">Guided by science. Designed for you.</span>
           </div>
         </a>
-        <a href="/" class="btn btn-ghost btn-pill">Back to Home</a>
+
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+
+        <div class="nav-overlay" aria-hidden="true"></div>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <ul>
+            <li><a href="/about.html">About Us</a></li>
+            <li><a href="/diagnostics.html">Diagnostics</a></li>
+            <li><a href="/how-it-works.html">How It Works</a></li>
+            <li><a href="/membership.html">Membership</a></li>
+            <li><a href="/resources.html">Resources</a></li>
+            <li><a href="/faq.html">FAQ</a></li>
+            <li class="nav-cta-mobile">
+              <a href="https://joinnorthstarmd.com/care/north-star-md/shop?brand=north-star-md&amp;brandId=c8e7f6a2-4b1d-4e9f-a3c2-1d5e8f7a6b4c" data-shop="catalog" class="btn btn-navy btn-pill btn-block">Get Started</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header-ctas">
+          <a href="https://joinnorthstarmd.com/care/north-star-md/shop" class="btn btn-ghost btn-pill header-btn-login">Patient Login</a>
+          <a href="https://joinnorthstarmd.com/care/north-star-md/shop?brand=north-star-md&amp;brandId=c8e7f6a2-4b1d-4e9f-a3c2-1d5e8f7a6b4c" data-shop="catalog" class="btn btn-navy btn-pill">Get Started</a>
+        </div>
       </div>
     </header>
 
@@ -93,11 +129,48 @@
       </section>
     </main>
 
-    <footer style="background: var(--navy); color: var(--white); padding: 32px 0 24px; border-top: 1px solid rgba(255,255,255,0.08);">
-      <div style="width: var(--page); margin: 0 auto; display: flex; justify-content: space-between; font-size: 11px; color: rgba(255,255,255,0.4); padding-inline: var(--gutter);">
+    <footer style="background: var(--navy); color: var(--white); padding: 48px 0 24px; border-top: 1px solid rgba(255,255,255,0.08);">
+      <div style="width: var(--page); margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px; padding-inline: var(--gutter);">
+        <div style="max-width: 320px;">
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
+            <svg class="logo-star" viewBox="0 0 48 48" fill="none" style="width: 32px; height: 32px; color: var(--gold);">
+              <path d="M24 4L27 18L41 21L27 24L24 38L21 24L7 21L21 18L24 4Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+            </svg>
+            <span style="font-family: var(--serif); font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;">North Star MD</span>
+          </div>
+          <p style="font-size: 12px; color: rgba(255,255,255,0.6); line-height: 1.6;">
+            Physician-guided longevity, metabolic wellness, and premium preventative care delivered safely wherever you are.
+          </p>
+        </div>
+        <div style="display: flex; gap: 48px;">
+          <div>
+            <h4 style="font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px;">Explore</h4>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 12px; color: rgba(255,255,255,0.85);">
+              <li><a href="/" style="transition: color var(--ease);">Home</a></li>
+              <li><a href="/about.html" style="transition: color var(--ease);">About Us</a></li>
+              <li><a href="/diagnostics.html" style="transition: color var(--ease);">Diagnostics</a></li>
+              <li><a href="/how-it-works.html" style="transition: color var(--ease);">How It Works</a></li>
+              <li><a href="/membership.html" style="transition: color var(--ease);">Membership</a></li>
+              <li><a href="/resources.html" style="transition: color var(--ease);">Resources</a></li>
+              <li><a href="/faq.html" style="transition: color var(--ease);">FAQ Support</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 style="font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px;">Compliance Legals</h4>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 12px; color: rgba(255,255,255,0.85);">
+              <li><a href="/privacy.html" style="transition: color var(--ease);">Privacy Policy</a></li>
+              <li><a href="/terms.html" style="transition: color var(--ease);">Terms of Service</a></li>
+              <li><a href="/telehealth-consent.html" style="transition: color var(--ease); color: var(--gold);">Telehealth Consent</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div style="width: var(--page); margin: 36px auto 0; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; font-size: 11px; color: rgba(255,255,255,0.4); padding-inline: var(--gutter);">
         <span>&copy; 2026 North Star MD. All rights reserved.</span>
         <span>Guided by science. Designed for you.</span>
       </div>
     </footer>
+    <script src="/js/shop-links.js"></script>
+    <script type="module" src="/js/main.js"></script>
   </body>
 </html>

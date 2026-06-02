@@ -244,6 +244,23 @@ body.nav-open .nav-overlay {
   color: var(--gold-dark);
 }
 
+.header-ctas {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-btn-login {
+  border: 1px solid var(--border);
+  padding: 10px 20px;
+}
+
+.header-btn-login:hover {
+  border-color: var(--gold);
+  color: var(--gold-dark);
+  background: transparent;
+}
+
 /* ========== HERO ========== */
 .hero-mobile {
   display: none;
@@ -815,7 +832,8 @@ body.nav-open .nav-overlay {
     border-bottom: none;
   }
 
-  .header-inner > .btn {
+  .header-inner > .btn,
+  .header-ctas {
     display: none;
   }
 
