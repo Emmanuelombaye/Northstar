@@ -68,6 +68,11 @@
         });
       }
     });
+
+    document.querySelectorAll('a[href*="/care/north-star-md/shop"]').forEach(function (el) {
+      if (el.getAttribute("data-shop")) return;
+      el.setAttribute("href", shopUrl());
+    });
   }
 
   function ensureConnectionHints() {
