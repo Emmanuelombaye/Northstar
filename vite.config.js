@@ -10,8 +10,6 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, "index.html"),
         howItWorks: resolve(__dirname, "how-it-works.html"),
-        membership: resolve(__dirname, "membership.html"),
-        resources: resolve(__dirname, "resources.html"),
         about: resolve(__dirname, "about.html"),
         faq: resolve(__dirname, "faq.html"),
         privacy: resolve(__dirname, "privacy.html"),

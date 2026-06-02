@@ -10,7 +10,7 @@
   const NORTH_STAR_BRAND_ID = "c8e7f6a2-4b1d-4e9f-a3c2-1d5e8f7a6b4c";
   // Keep catalog loading stable. Category filtering can cause empty states
   // when checkout-side slugs/catalog assignments change.
-  const ENABLE_CATEGORY_FILTER = false;
+  const ENABLE_CATEGORY_FILTER = true;
   const CATEGORY_ALIAS = {
     semaglutide: "weight-loss",
     tirzepatide: "weight-loss",
