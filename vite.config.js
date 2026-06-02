@@ -14,6 +14,7 @@ export default defineConfig({
         resources: resolve(__dirname, "resources.html"),
         about: resolve(__dirname, "about.html"),
         diagnostics: resolve(__dirname, "diagnostics.html"),
+        faq: resolve(__dirname, "faq.html"),
       },
       output: {
         // m-assets avoids clashing with Peak Health /assets/* proxied on joinnorthstarmd.com
