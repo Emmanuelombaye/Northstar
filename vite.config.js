@@ -12,9 +12,10 @@ export default defineConfig({
         howItWorks: resolve(__dirname, "how-it-works.html"),
       },
       output: {
-        entryFileNames: "assets/[name]-[hash].js",
-        chunkFileNames: "assets/[name]-[hash].js",
-        assetFileNames: "assets/[name]-[hash][extname]",
+        // m-assets avoids clashing with Peak Health /assets/* proxied on joinnorthstarmd.com
+        entryFileNames: "m-assets/[name]-[hash].js",
+        chunkFileNames: "m-assets/[name]-[hash].js",
+        assetFileNames: "m-assets/[name]-[hash][extname]",
       },
     },
   },
