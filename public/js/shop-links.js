@@ -8,34 +8,49 @@
   const ENROLL_PATH = "/care/north-star-md/shop";
   const NORTH_STAR_BRAND_SLUG = "north-star-md";
   const NORTH_STAR_BRAND_ID = "c8e7f6a2-4b1d-4e9f-a3c2-1d5e8f7a6b4c";
-  // Keep catalog loading stable. Category filtering can cause empty states
-  // when checkout-side slugs/catalog assignments change.
-  const ENABLE_CATEGORY_FILTER = true;
-  const CATEGORY_ALIAS = {
-    semaglutide: "weight-loss",
-    tirzepatide: "weight-loss",
-    metabolic: "weight-loss",
-    nad: "anti-aging",
-    longevity: "anti-aging",
-    sermorelin: "anti-aging",
-    executive: "anti-aging",
+  // Specific treatments → direct product pre-select (skips catalog in portal).
+  const TREATMENT_PRODUCT = {
+    semaglutide: "semaglutide",
+    tirzepatide: "tirzepatide",
+    nad: "nad",
+    sermorelin: "sermorelin",
   };
+  const CATEGORY_SLUG = {
+    "weight-loss": "weight-loss",
+    metabolic: "weight-loss",
+    longevity: "longevity",
+    executive: "longevity",
+  };
+  const ENABLE_CATEGORY_FILTER = true;
 
   function normalizeCategory(category) {
     if (!category) return null;
     var key = String(category).trim().toLowerCase();
-    return CATEGORY_ALIAS[key] || null;
+    return CATEGORY_SLUG[key] || key;
   }
 
-  function shopUrl(category) {
+  function shopUrl(opts) {
+    opts = opts || {};
     const params = new URLSearchParams({
       brand: NORTH_STAR_BRAND_SLUG,
       brandId: NORTH_STAR_BRAND_ID,
     });
-    const normalizedCategory = normalizeCategory(category);
-    if (ENABLE_CATEGORY_FILTER && normalizedCategory) {
-      params.set("category", normalizedCategory);
+
+    var productKey = opts.product;
+    if (!productKey && opts.category && TREATMENT_PRODUCT[opts.category]) {
+      productKey = TREATMENT_PRODUCT[opts.category];
     }
+
+    if (productKey) {
+      params.set("product", productKey);
+      params.set("auto", "1");
+    } else if (ENABLE_CATEGORY_FILTER && opts.category) {
+      var normalizedCategory = normalizeCategory(opts.category);
+      if (normalizedCategory) {
+        params.set("category", normalizedCategory);
+      }
+    }
+
     const q = params.toString();
     return `${PEAK_SHOP_ORIGIN}${ENROLL_PATH}${q ? `?${q}` : ""}`;
   }
@@ -49,7 +64,10 @@
       return shopUrl();
     },
     category: function (name) {
-      return shopUrl(name);
+      return shopUrl({ category: name });
+    },
+    product: function (name) {
+      return shopUrl({ product: name });
     },
   };
 
@@ -57,8 +75,17 @@
     document.querySelectorAll("[data-shop]").forEach(function (el) {
       var kind = el.getAttribute("data-shop") || "catalog";
       var category = el.getAttribute("data-shop-category");
-      var href =
-        kind === "category" && category ? shopUrl(category) : shopUrl();
+      var product = el.getAttribute("data-shop-product");
+      var href;
+
+      if (kind === "product" && product) {
+        href = shopUrl({ product: product });
+      } else if (kind === "category" && category) {
+        href = shopUrl({ category: category });
+      } else {
+        href = shopUrl();
+      }
+
       if (el.tagName === "A") {
         el.setAttribute("href", href);
       } else {
