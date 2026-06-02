@@ -22,6 +22,7 @@ export default defineConfig({
         tirzepatide: resolve(__dirname, "tirzepatide.html"),
         nad: resolve(__dirname, "nad.html"),
         sermorelin: resolve(__dirname, "sermorelin.html"),
+        exploreTreatments: resolve(__dirname, "explore-treatments.html"),
       },
       output: {
         // m-assets avoids clashing with Peak Health /assets/* proxied on joinnorthstarmd.com
