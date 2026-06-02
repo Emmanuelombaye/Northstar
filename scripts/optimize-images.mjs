@@ -29,6 +29,7 @@ function maxWidthFor(name) {
     return 1200;
   if (/panel-|product-box|journey|clinical|biomarker|result-|mockup/.test(n)) return 900;
   if (/sterling|vance|reyes/.test(n)) return 480;
+  if (/patient-result/.test(n)) return 900;
   return 1200;
 }
 
