@@ -152,6 +152,36 @@
       "destination": "https://www.peak-health.io/PeakHealthLogo.png"
     },
     {
+      "source": "/:portal(doctor|providers|patient|admin|superadmin|pharmacy|affiliate)",
+      "has": [{ "type": "host", "value": "joinnorthstarmd.com" }],
+      "destination": "https://www.peak-health.io/:portal"
+    },
+    {
+      "source": "/:portal(doctor|providers|patient|admin|superadmin|pharmacy|affiliate)/:path*",
+      "has": [{ "type": "host", "value": "joinnorthstarmd.com" }],
+      "destination": "https://www.peak-health.io/:portal/:path*"
+    },
+    {
+      "source": "/:portal(doctor|providers|patient|admin|superadmin|pharmacy|affiliate)",
+      "has": [{ "type": "host", "value": "www.joinnorthstarmd.com" }],
+      "destination": "https://www.peak-health.io/:portal"
+    },
+    {
+      "source": "/:portal(doctor|providers|patient|admin|superadmin|pharmacy|affiliate)/:path*",
+      "has": [{ "type": "host", "value": "www.joinnorthstarmd.com" }],
+      "destination": "https://www.peak-health.io/:portal/:path*"
+    },
+    {
+      "source": "/login",
+      "has": [{ "type": "host", "value": "joinnorthstarmd.com" }],
+      "destination": "https://www.peak-health.io/login"
+    },
+    {
+      "source": "/login",
+      "has": [{ "type": "host", "value": "www.joinnorthstarmd.com" }],
+      "destination": "https://www.peak-health.io/login"
+    },
+    {
       "source": "/care/:path*",
       "has": [{ "type": "host", "value": "joinnorthstarmd.com" }],
       "destination": "https://www.peak-health.io/care/:path*"
