@@ -12,6 +12,19 @@ const S = (name: string) => B(`/images/store/${name}.webp`, `/images/store/${nam
 const P = (slug: string) => B(`/images/products/${slug}.webp`, `/images/products/${slug}.jpg`);
 const A = (slug: string) => B(`/images/products/${slug}-alt.webp`, `/images/products/${slug}-alt.jpg`);
 
+/** Slugs whose {slug}-alt download failed — use real assets instead of 404 paths */
+const PRODUCT_ALT_FALLBACK: Record<string, ReturnType<typeof B>> = {
+  "nad-rejuvenation": B("/images/longevity-card.webp"),
+  "joint-recovery-stack": P("joint-recovery-stack"),
+  "liraglutide-daily": S("vial-pharmacy"),
+  "dutasteride": S("supplements"),
+  "sertraline-anxiety": S("alt-mental-01"),
+};
+
+function resolveAlt(slug: string) {
+  return PRODUCT_ALT_FALLBACK[slug] ?? A(slug);
+}
+
 function v(
   primary: { webp: string; png?: string },
   alt: { webp: string; png?: string },
@@ -75,12 +88,12 @@ const HAS_PRODUCT_IMAGE = new Set([
 const BRAND_HERO: Record<string, ProductVisual> = {
   "tirzepatide-plus": v(B("/images/tirzepatide-hero.webp"), A("tirzepatide-plus")),
   "semaglutide-plus": v(B("/images/semaglutide-hero.webp"), B("/images/weight-loss-card.webp")),
-  "nad-rejuvenation": v(B("/images/nad-hero.webp"), A("nad-rejuvenation")),
+  "nad-rejuvenation": v(B("/images/nad-hero.webp"), B("/images/longevity-card.webp")),
   "sermorelin-recovery": v(B("/images/sermorelin-hero.webp"), A("sermorelin-recovery")),
   "mounjaro-pathway": v(B("/images/tirzepatide-hero.webp"), B("/images/panel-weight.webp")),
   "longevity-stack-bundle": v(B("/images/panel-nad.webp"), B("/images/longevity-card.webp")),
   "bpc-157-repair": v(B("/images/muscle-recovery-designed.webp"), A("bpc-157-repair")),
-  "joint-recovery-stack": v(B("/images/panel-recovery.webp"), A("joint-recovery-stack")),
+  "joint-recovery-stack": v(B("/images/panel-recovery.webp"), P("joint-recovery-stack")),
 };
 
 /** Curated fallbacks for products without a downloaded photo */
@@ -122,9 +135,7 @@ const FALLBACK_VISUALS: Record<string, ProductVisual> = {
 };
 
 function fromDownloaded(slug: string): ProductVisual {
-  const primary = P(slug);
-  const alt = A(slug);
-  return v(primary, alt);
+  return v(P(slug), resolveAlt(slug));
 }
 
 export function applyProductVisuals<T extends {

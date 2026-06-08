@@ -1,6 +1,20 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState, type RefObject } from "react";
 import { getProductImagePair } from "../../lib/productImages";
 import type { PharmacyProduct } from "../../store/types";
+
+function useImageFallback(ref: RefObject<HTMLImageElement | null>) {
+  useEffect(() => {
+    const img = ref.current;
+    if (!img) return;
+    const fallback = img.getAttribute("data-fallback");
+    if (!fallback) return;
+    const onError = () => {
+      if (img.getAttribute("src") !== fallback) img.setAttribute("src", fallback);
+    };
+    img.addEventListener("error", onError);
+    return () => img.removeEventListener("error", onError);
+  }, [ref]);
+}
 
 type Props = {
   product: PharmacyProduct;
@@ -22,6 +36,10 @@ export function ProductImageFlip({ product, className = "", autoPlay = true }: P
   }, [autoPlay, hover, pair.primary, pair.secondary]);
 
   const same = pair.primary === pair.secondary;
+  const imgARef = useRef<HTMLImageElement>(null);
+  const imgBRef = useRef<HTMLImageElement>(null);
+  useImageFallback(imgARef);
+  useImageFallback(imgBRef);
 
   return (
     <div
@@ -33,6 +51,7 @@ export function ProductImageFlip({ product, className = "", autoPlay = true }: P
       }}
     >
       <img
+        ref={imgARef}
         className="pharm-img-flip-a"
         src={pair.primary}
         data-fallback={pair.primaryFallback}
@@ -42,6 +61,7 @@ export function ProductImageFlip({ product, className = "", autoPlay = true }: P
       />
       {!same ? (
         <img
+          ref={imgBRef}
           className="pharm-img-flip-b"
           src={pair.secondary}
           data-fallback={pair.secondaryFallback}
