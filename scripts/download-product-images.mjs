@@ -31,6 +31,43 @@ const SLUG_OVERRIDES = {
   "physician-consultation": { primary: "1666214066297-8bebe0500645", alt: "1631543931893-4e25c20f5dd0" },
 };
 
+function getKeywordForSlug(slug) {
+  const s = slug.toLowerCase();
+
+  if (s.includes("hair") || s.includes("finasteride") || s.includes("minoxidil") || s.includes("biotin") || s.includes("scalp") || s.includes("dutasteride") || s.includes("ketoconazole")) {
+    return "hair";
+  }
+  if (s.includes("skin") || s.includes("tretinoin") || s.includes("cream") || s.includes("serum") || s.includes("azelaic") || s.includes("niacinamide") || s.includes("acne") || s.includes("aging")) {
+    return "cream";
+  }
+  if (s.includes("sleep") || s.includes("melatonin") || s.includes("trazodone") || s.includes("doxepin") || s.includes("hydroxyzine")) {
+    return "sleep";
+  }
+  if (s.includes("weight") || s.includes("semaglutide") || s.includes("tirzepatide") || s.includes("reset") || s.includes("phentermine") || s.includes("diet") || s.includes("glp") || s.includes("liraglutide") || s.includes("contrave") || s.includes("wegovy") || s.includes("mounjaro") || s.includes("bmi") || s.includes("metabolic")) {
+    return "diet";
+  }
+  if (s.includes("recovery") || s.includes("bpc") || s.includes("joint") || s.includes("muscle") || s.includes("cjc") || s.includes("ipamorelin") || s.includes("tb-500") || s.includes("ghk") || s.includes("athlete") || s.includes("repair")) {
+    return "fitness";
+  }
+  if (s.includes("testosterone") || s.includes("trt") || s.includes("enclomiphene") || s.includes("prostate") || s.includes("mens") || s.includes("dhea")) {
+    return "fitness";
+  }
+  if (s.includes("progesterone") || s.includes("hrt") || s.includes("estradiol") || s.includes("womens") || s.includes("hormone") || s.includes("pcos") || s.includes("thyroid") || s.includes("levothyroxine") || s.includes("adrenal")) {
+    return "wellness";
+  }
+  if (s.includes("sexual") || s.includes("sildenafil") || s.includes("tadalafil") || s.includes("cialis") || s.includes("desire") || s.includes("oxytocin") || s.includes("intimacy")) {
+    return "wellness";
+  }
+  if (s.includes("anxiety") || s.includes("sertraline") || s.includes("escitalopram") || s.includes("wellbutrin") || s.includes("bupropion") || s.includes("propranolol") || s.includes("lexapro") || s.includes("depress")) {
+    return "nature";
+  }
+  if (s.includes("longevity") || s.includes("nad") || s.includes("nmn") || s.includes("metformin") || s.includes("resveratrol") || s.includes("coq10") || s.includes("epithalon") || s.includes("thymosin")) {
+    return "vitamins";
+  }
+
+  return "medicine";
+}
+
 await mkdir(OUT, { recursive: true });
 
 let ok = 0;
@@ -47,7 +84,7 @@ for (let i = 0; i < SLUGS.length; i++) {
     try {
       const fetchUrl = override
         ? photoUrl(id)
-        : `https://picsum.photos/seed/${slug}${suffix}/600/600`;
+        : `https://loremflickr.com/600/600/${getKeywordForSlug(slug)}?lock=${i * 2 + (suffix ? 1 : 0)}`;
 
       const res = await fetch(fetchUrl, { signal: AbortSignal.timeout(25000) });
       if (!res.ok) {
