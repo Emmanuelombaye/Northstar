@@ -1,19 +1,41 @@
-import { useEffect, useRef, useState, type RefObject } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { resolveProductPrimary, resolveProductSecondary } from "../../lib/imageFallback";
 import { getProductImagePair } from "../../lib/productImages";
 import type { PharmacyProduct } from "../../store/types";
 
-function useImageFallback(ref: RefObject<HTMLImageElement | null>) {
-  useEffect(() => {
-    const img = ref.current;
-    if (!img) return;
-    const fallback = img.getAttribute("data-fallback");
-    if (!fallback) return;
-    const onError = () => {
-      if (img.getAttribute("src") !== fallback) img.setAttribute("src", fallback);
-    };
-    img.addEventListener("error", onError);
-    return () => img.removeEventListener("error", onError);
-  }, [ref]);
+type FlipImgProps = {
+  resolved: ReturnType<typeof resolveProductPrimary>;
+  className: string;
+  alt: string;
+};
+
+function FlipImg({ resolved, className, alt }: FlipImgProps) {
+  const attempt = useRef(0);
+
+  const onError = useCallback(
+    (e: React.SyntheticEvent<HTMLImageElement>) => {
+      attempt.current += 1;
+      const next = resolved.chain[attempt.current];
+      if (next && e.currentTarget.src !== next) {
+        e.currentTarget.src = next;
+      }
+    },
+    [resolved.chain],
+  );
+
+  return (
+    <picture>
+      {resolved.webp ? <source srcSet={resolved.webp} type="image/webp" /> : null}
+      <img
+        className={className}
+        src={resolved.src}
+        alt={alt}
+        loading="lazy"
+        decoding="async"
+        onError={onError}
+      />
+    </picture>
+  );
 }
 
 type Props = {
@@ -22,24 +44,22 @@ type Props = {
   autoPlay?: boolean;
 };
 
-/** Dual-image crossfade — Pablo-style alternating product photos */
+/** Dual-image crossfade with JPG-first loading (no webp 404 console errors) */
 export function ProductImageFlip({ product, className = "", autoPlay = true }: Props) {
   const pair = getProductImagePair(product);
+  const primary = resolveProductPrimary(product);
+  const secondary = resolveProductSecondary(product);
   const [showB, setShowB] = useState(false);
   const [hover, setHover] = useState(false);
 
+  const same = pair.primary === pair.secondary;
+
   useEffect(() => {
-    if (!autoPlay || pair.primary === pair.secondary) return;
+    if (!autoPlay || same) return;
     const ms = hover ? 1400 : 2800;
     const id = window.setInterval(() => setShowB((v) => !v), ms);
     return () => window.clearInterval(id);
-  }, [autoPlay, hover, pair.primary, pair.secondary]);
-
-  const same = pair.primary === pair.secondary;
-  const imgARef = useRef<HTMLImageElement>(null);
-  const imgBRef = useRef<HTMLImageElement>(null);
-  useImageFallback(imgARef);
-  useImageFallback(imgBRef);
+  }, [autoPlay, hover, same]);
 
   return (
     <div
@@ -50,26 +70,9 @@ export function ProductImageFlip({ product, className = "", autoPlay = true }: P
         setShowB(false);
       }}
     >
-      <img
-        ref={imgARef}
-        className="pharm-img-flip-a"
-        src={pair.primary}
-        data-fallback={pair.primaryFallback}
-        alt={product.name}
-        loading="lazy"
-        decoding="async"
-      />
+      <FlipImg resolved={primary} className="pharm-img-flip-a" alt={product.name} />
       {!same ? (
-        <img
-          ref={imgBRef}
-          className="pharm-img-flip-b"
-          src={pair.secondary}
-          data-fallback={pair.secondaryFallback}
-          alt=""
-          loading="lazy"
-          decoding="async"
-          aria-hidden="true"
-        />
+        <FlipImg resolved={secondary} className="pharm-img-flip-b" alt="" />
       ) : null}
       <span className="pharm-img-flip-shine" aria-hidden="true" />
     </div>

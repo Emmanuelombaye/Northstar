@@ -76,7 +76,14 @@
   opacity: 1;
   pointer-events: auto;
 }
+.pharm-hero-slide picture,
 .pharm-hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.pharm-hero-slide picture img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -222,6 +229,7 @@
   background: var(--white);
   outline: 2px solid var(--gold);
 }
+.pharm-cat-tile picture,
 .pharm-cat-tile img {
   width: 64px;
   height: 64px;
@@ -784,6 +792,13 @@
   aspect-ratio: 1/1;
   overflow: hidden;
   background: linear-gradient(180deg, #fafbfc 0%, #f0f3f7 100%);
+}
+.pharm-img-flip picture {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 .pharm-img-flip img {
   position: absolute;

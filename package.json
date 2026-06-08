@@ -6,7 +6,7 @@
     "dev": "vite",
     "optimize:images": "node scripts/optimize-images.mjs",
     "store:images": "node scripts/download-store-images.mjs",
-    "build": "node scripts/download-store-images.mjs && node scripts/download-product-images.mjs && node scripts/ensure-product-images.mjs && node scripts/optimize-images.mjs && vite build",
+    "build": "node scripts/download-store-images.mjs && node scripts/download-product-images.mjs && node scripts/ensure-product-images.mjs && node scripts/optimize-images.mjs && node scripts/verify-images.mjs && vite build",
     "preview": "vite preview",
     "slice": "powershell -ExecutionPolicy Bypass -File scripts/slice-mockup.ps1"
   },

@@ -1,3 +1,4 @@
+import { SafeImage } from "./SafeImage";
 import type { StoreCategory } from "../../store/types";
 
 const TILES: { id: StoreCategory; label: string; image: string; fallback?: string }[] = [
@@ -36,7 +37,7 @@ export function CategoryTileGrid({ onSelect, active }: Props) {
                 document.getElementById("catalog")?.scrollIntoView({ behavior: "smooth" });
               }}
             >
-              <img src={t.image} data-fallback={t.fallback} alt="" loading="lazy" decoding="async" />
+              <SafeImage path={t.fallback ?? t.image} alt="" extraFallbacks={[t.image]} />
               <span>{t.label}</span>
             </button>
           ))}

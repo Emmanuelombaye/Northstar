@@ -100,21 +100,36 @@ async function downloadToProduct(slug, suffix, photoId) {
 async function ensureFile(slug, suffix, index) {
   const jpg = join(PRODUCTS, `${slug}${suffix}.jpg`);
   const webp = join(PRODUCTS, `${slug}${suffix}.webp`);
-  if ((await fileExists(jpg)) || (await fileExists(webp))) return;
+  const hasJpg = await fileExists(jpg);
+  const hasWebp = await fileExists(webp);
 
-  const storeFile = STORE_FILES[(index * 2 + (suffix ? 1 : 0)) % STORE_FILES.length];
-  if (await copyStoreToProduct(slug, suffix, storeFile)) return;
+  if (!hasJpg) {
+    const storeFile = STORE_FILES[(index * 2 + (suffix ? 1 : 0)) % STORE_FILES.length];
+    if (await copyStoreToProduct(slug, suffix, storeFile)) {
+      // copied jpg or webp — continue to ensure jpg exists
+    } else {
+      const photoId = PHOTO_POOL[index % PHOTO_POOL.length];
+      await downloadToProduct(slug, suffix, photoId);
+    }
+  }
 
-  const photoId = PHOTO_POOL[index % PHOTO_POOL.length];
-  if (await downloadToProduct(slug, suffix, photoId)) return;
+  // If we only have webp, copy to jpg (runtime uses jpg as primary src)
+  if (!(await fileExists(jpg)) && (await fileExists(webp))) {
+    await copyFile(webp, jpg);
+    console.log(`Copied webp → products/${slug}${suffix}.jpg`);
+  }
 
-  // Last resort: copy primary as alt (different suffix only)
-  if (suffix === "-alt") {
-    const primary = (await fileExists(jpg.replace("-alt", ""))) ? jpg.replace("-alt", "") : webp.replace("-alt", "");
-    if (await fileExists(primary)) {
-      const ext = primary.endsWith(".webp") ? ".webp" : ".jpg";
-      await copyFile(primary, join(PRODUCTS, `${slug}-alt${ext}`));
-      console.log(`Copied primary → products/${slug}-alt${ext}`);
+  // If we only have jpg, webp will be created by optimize-images.mjs
+  if (suffix === "-alt" && !(await fileExists(jpg)) && !(await fileExists(webp))) {
+    const primaryJpg = join(PRODUCTS, `${slug}.jpg`);
+    const primaryWebp = join(PRODUCTS, `${slug}.webp`);
+    if (await fileExists(primaryJpg)) {
+      await copyFile(primaryJpg, jpg);
+      console.log(`Copied primary → products/${slug}-alt.jpg`);
+    } else if (await fileExists(primaryWebp)) {
+      await copyFile(primaryWebp, webp);
+      await copyFile(primaryWebp, jpg);
+      console.log(`Copied primary → products/${slug}-alt (from webp)`);
     }
   }
 }

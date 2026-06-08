@@ -1,3 +1,4 @@
+import { SafeImage } from "./SafeImage";
 import type { StoreCategory } from "../../store/types";
 
 const BANNERS: { id: StoreCategory; title: string; subtitle: string; image: string; fallback?: string }[] = [
@@ -50,7 +51,7 @@ export function BrowseCategoryBanners({ onSelect }: Props) {
                 document.getElementById("catalog")?.scrollIntoView({ behavior: "smooth" });
               }}
             >
-              <img src={b.image} data-fallback={b.fallback} alt="" loading="lazy" decoding="async" />
+              <SafeImage path={b.fallback ?? b.image} alt="" extraFallbacks={[b.image]} />
               <div className="pharm-browse-caption">
                 <strong>{b.title}</strong>
                 <span>{b.subtitle}</span>

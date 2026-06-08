@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { SafeImage } from "./SafeImage";
 
 const BANNERS = [
   {
@@ -41,7 +42,7 @@ export function ShopBannerCarousel() {
       <div className="pharm-hero-slides">
         {BANNERS.map((b, i) => (
           <div key={b.title} className={`pharm-hero-slide${i === active ? " is-active" : ""}`}>
-            <img src={b.image} data-fallback={b.fallback} alt="" decoding="async" />
+            <SafeImage path={b.fallback ?? b.image} alt="" loading="eager" extraFallbacks={[b.image]} />
             <div className="pharm-hero-overlay" />
             <div className="pharm-wrap pharm-hero-copy">
               <h1>{b.title}</h1>

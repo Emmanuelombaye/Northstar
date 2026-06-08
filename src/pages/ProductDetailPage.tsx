@@ -26,7 +26,9 @@ import { ProductImageFlip } from "../components/shop/ProductImageFlip";
 import { ShopPharmacyBar } from "../components/shop/ShopPharmacyBar";
 import { ShopStoreNav } from "../components/shop/ShopStoreNav";
 import { CookieBanner } from "../components/shop/CookieBanner";
+import { toDisplayPath } from "../lib/imageFallback";
 import { getProductImagePair } from "../lib/productImages";
+import { SafeImage } from "../components/shop/SafeImage";
 
 
 
@@ -91,7 +93,7 @@ export function ProductDetailPage() {
 
 
   const pair = getProductImagePair(product);
-  const images = [pair.primary, pair.secondary, ...(product.gallery ?? [])].filter(
+  const images = [pair.primary, pair.secondary, ...(product.gallery ?? []).map(toDisplayPath)].filter(
     (v, i, a) => a.indexOf(v) === i,
   );
 
@@ -137,7 +139,7 @@ export function ProductDetailPage() {
 
                 {images.map((src) => (
 
-                  <img key={src} src={src} alt="" loading="lazy" decoding="async" />
+                  <SafeImage key={src} path={src} alt="" />
 
                 ))}
 
