@@ -2,26 +2,26 @@ import { useMemo, useState } from "react";
 import { BrowseCategoryBanners } from "../components/shop/BrowseCategoryBanners";
 import { CartDrawer } from "../components/shop/CartDrawer";
 import { CategoryTileGrid } from "../components/shop/CategoryTileGrid";
+import { CookieBanner } from "../components/shop/CookieBanner";
 import { OffersSlider } from "../components/shop/OffersSlider";
 import { PharmacyProductCard } from "../components/shop/PharmacyProductCard";
 import { ShopBannerCarousel } from "../components/shop/ShopBannerCarousel";
+import { ShopBrandsWall } from "../components/shop/ShopBrandsWall";
 import { ShopNewsletter } from "../components/shop/ShopNewsletter";
 import { ShopPharmacyBar } from "../components/shop/ShopPharmacyBar";
+import { ShopPharmacyFooter } from "../components/shop/ShopPharmacyFooter";
+import { ShopStoreNav } from "../components/shop/ShopStoreNav";
 import { useMediaLoader } from "../hooks/useMediaLoader";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 import { PHARMACY_PRODUCTS, PRODUCT_COUNT } from "../store/products";
 import type { SortKey, StoreCategory } from "../store/types";
 
-/** DigitalPharmacy-style storefront — North Star MD branding (see pablo.digitalpharmacy.io). */
 export function ShopPage() {
   const [category, setCategory] = useState<StoreCategory | "all">("all");
   const [query, setQuery] = useState("");
   const [sort, setSort] = useState<SortKey>("featured");
 
-  const featured = useMemo(
-    () => PHARMACY_PRODUCTS.filter((p) => p.popular).slice(0, 8),
-    [],
-  );
+  const featured = useMemo(() => PHARMACY_PRODUCTS.filter((p) => p.popular).slice(0, 10), []);
 
   const products = useMemo(() => {
     let list = [...PHARMACY_PRODUCTS];
@@ -63,6 +63,7 @@ export function ShopPage() {
   return (
     <main className="shop-page pharm-store">
       <ShopPharmacyBar />
+      <ShopStoreNav />
       <ShopBannerCarousel />
       <CategoryTileGrid onSelect={setCategory} active={category === "all" ? undefined : category} />
       <OffersSlider />
@@ -72,7 +73,7 @@ export function ShopPage() {
         <div className="pharm-wrap">
           <h2 className="pharm-section-title">Featured Products</h2>
           <p className="pharm-section-sub">
-            Don't miss physician-guided programs — special rates this week at North Star MD Pharmacy.
+            Don't miss this opportunity at a special discount just for this week.
           </p>
           <div className="pharm-featured-grid">
             {featured.map((p, i) => (
@@ -82,10 +83,12 @@ export function ShopPage() {
         </div>
       </section>
 
+      <ShopBrandsWall />
+
       <section id="catalog" className="pharm-section pharm-catalog">
         <div className="pharm-wrap">
           <h2 className="pharm-section-title">All Products</h2>
-          <p className="pharm-section-sub">{PRODUCT_COUNT} physician-supervised programs · Peak secure checkout</p>
+          <p className="pharm-section-sub">{PRODUCT_COUNT} programs · dual-image preview · Peak secure checkout</p>
 
           <div className="pharm-catalog-toolbar">
             <div className="pharm-search">
@@ -132,7 +135,7 @@ export function ShopPage() {
             </div>
           </div>
 
-          <div className="pharm-product-grid">
+          <div className="pharm-product-grid pharm-product-grid-all">
             {products.map((p, i) => (
               <PharmacyProductCard key={p.slug} product={p} index={i} />
             ))}
@@ -144,7 +147,9 @@ export function ShopPage() {
       </section>
 
       <ShopNewsletter />
+      <ShopPharmacyFooter />
       <CartDrawer />
+      <CookieBanner />
     </main>
   );
 }

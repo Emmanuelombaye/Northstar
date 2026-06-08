@@ -107,6 +107,22 @@ const IMAGES = [
   { file: "ed-bundle.jpg", id: PHOTOS.heartHealth },
   { file: "weight-starter.jpg", id: PHOTOS.healthyFood },
   { file: "consultation.jpg", id: PHOTOS.doctorConsult },
+  { file: "alt-weight-01.jpg", id: PHOTOS.weightGlp1 },
+  { file: "alt-weight-02.jpg", id: PHOTOS.injectionPen },
+  { file: "alt-longevity-01.jpg", id: PHOTOS.spaWellness },
+  { file: "alt-longevity-02.jpg", id: PHOTOS.supplements },
+  { file: "alt-recovery-01.jpg", id: PHOTOS.yogaRecovery },
+  { file: "alt-recovery-02.jpg", id: PHOTOS.jointHealth },
+  { file: "alt-mens-01.jpg", id: PHOTOS.fitnessMan },
+  { file: "alt-mens-02.jpg", id: PHOTOS.bloodTest },
+  { file: "alt-womens-01.jpg", id: PHOTOS.professionalWoman },
+  { file: "alt-hair-01.jpg", id: PHOTOS.hairTreatment },
+  { file: "alt-skin-01.jpg", id: PHOTOS.skincareCream },
+  { file: "alt-sleep-01.jpg", id: PHOTOS.sleepRest },
+  { file: "alt-mental-01.jpg", id: PHOTOS.meditation },
+  { file: "alt-hormone-01.jpg", id: PHOTOS.hormoneLab },
+  { file: "alt-pharmacy-01.jpg", id: PHOTOS.vialPharmacy },
+  { file: "alt-pharmacy-02.jpg", id: PHOTOS.peptideKit },
 ];
 
 await mkdir(OUT, { recursive: true });

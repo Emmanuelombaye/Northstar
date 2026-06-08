@@ -666,11 +666,382 @@
   }
 }
 
+/* ── Dual-image flip (every product, 2 photos) ── */
+.pharm-img-flip {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  background: #f0f4f8;
+}
+.pharm-img-flip img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.85s cubic-bezier(0.4, 0, 0.2, 1), transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.pharm-img-flip-a {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 1;
+}
+.pharm-img-flip-b {
+  opacity: 0;
+  transform: scale(1.06);
+  z-index: 2;
+}
+.pharm-img-flip.is-alt .pharm-img-flip-a {
+  opacity: 0;
+  transform: scale(0.96);
+}
+.pharm-img-flip.is-alt .pharm-img-flip-b {
+  opacity: 1;
+  transform: scale(1);
+}
+.pharm-img-flip.is-hover .pharm-img-flip-a,
+.pharm-img-flip.is-hover .pharm-img-flip-b {
+  transition-duration: 0.55s;
+}
+.pharm-img-flip-shine {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background: linear-gradient(105deg, transparent 42%, rgba(255, 255, 255, 0.35) 50%, transparent 58%);
+  transform: translateX(-120%);
+  animation: pharm-shine 4.5s ease-in-out infinite;
+  animation-delay: calc(var(--card-i, 0) * 0.35s);
+}
+@keyframes pharm-shine {
+  0%, 72%, 100% { transform: translateX(-120%); }
+  38% { transform: translateX(120%); }
+}
+.pharm-card-media {
+  display: block;
+  overflow: hidden;
+}
+
+/* ── Card actions (Enroll + Cart) ── */
+.pharm-card-actions {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  margin-top: 10px;
+}
+.pharm-enroll-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+  color: var(--navy);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 14px rgba(197, 160, 89, 0.35);
+}
+.pharm-enroll-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(197, 160, 89, 0.45);
+}
+.pharm-card-actions .pharm-add-btn {
+  margin-top: 0;
+  padding-inline: 14px;
+  white-space: nowrap;
+}
+
+/* ── Store nav (Pablo menu) ── */
+.pharm-store-nav {
+  background: var(--white);
+  border-bottom: 1px solid #e8ecf0;
+  position: sticky;
+  top: var(--header-h);
+  z-index: 90;
+}
+.pharm-store-nav-inner {
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  padding-block: 10px;
+  scrollbar-width: none;
+}
+.pharm-store-nav-inner::-webkit-scrollbar {
+  display: none;
+}
+.pharm-store-nav a {
+  flex-shrink: 0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-body);
+  padding: 8px 16px;
+  border-radius: 999px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.pharm-store-nav a:hover {
+  background: var(--cream-bar);
+  color: var(--navy);
+}
+
+/* ── Auto offers rail ── */
+.pharm-offers-auto {
+  scroll-behavior: auto;
+}
+
+/* ── Brands + Pharmacy Wall ── */
+.pharm-brands-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+.pharm-brand-chip {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  border: 1px solid #e8ecf0;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #fafbfc 0%, var(--white) 100%);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.pharm-brand-chip:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold);
+}
+.pharm-brand-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--navy);
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 800;
+}
+.pharm-brand-chip strong {
+  display: block;
+  font-size: 13px;
+  color: var(--navy);
+}
+.pharm-brand-chip em {
+  font-size: 11px;
+  color: var(--text-body);
+  font-style: normal;
+}
+.pharm-wall {
+  background: linear-gradient(180deg, #fafbfc 0%, var(--white) 100%);
+}
+.pharm-wall-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+.pharm-wall-tile {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  aspect-ratio: 1/1;
+  border: 1px solid #e8ecf0;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+}
+.pharm-wall-tile:hover {
+  transform: scale(1.04) rotate(-1deg);
+  box-shadow: 0 16px 40px rgba(10, 31, 61, 0.12);
+}
+.pharm-wall-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.pharm-wall-tile:hover img {
+  transform: scale(1.08);
+}
+.pharm-wall-tile span {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 10px;
+  background: linear-gradient(transparent, rgba(10, 31, 61, 0.9));
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+/* ── Product grid stagger entrance ── */
+.pharm-product-grid-all .pharm-card {
+  animation: pharm-card-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(var(--reveal-delay, 0ms));
+}
+@keyframes pharm-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ── PDP dual-image hero ── */
+.pharm-pdp-flip {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #e8ecf0;
+}
+.pharm-pdp-flip .pharm-img-flip {
+  aspect-ratio: 1/1;
+  min-height: 320px;
+}
+
+/* ── Pharmacy footer (Pablo) ── */
+.pharm-footer {
+  background: var(--navy-bar);
+  color: rgba(255, 255, 255, 0.85);
+  padding: 48px 0 24px;
+  margin-top: 8px;
+}
+.pharm-footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr repeat(3, 1fr);
+  gap: 32px;
+}
+.pharm-footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.pharm-footer-brand svg {
+  width: 40px;
+  height: 40px;
+  color: var(--gold);
+}
+.pharm-footer-brand span {
+  font-family: var(--serif);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--white);
+}
+.pharm-footer h3 {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+.pharm-footer ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.pharm-footer a {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.75);
+  transition: color 0.2s ease;
+}
+.pharm-footer a:hover {
+  color: var(--white);
+}
+.pharm-footer-copy {
+  text-align: center;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.45);
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ── Cookie banner (Pablo) ── */
+.pharm-cookie {
+  position: fixed;
+  bottom: calc(72px + env(safe-area-inset-bottom, 0px));
+  left: 16px;
+  right: 16px;
+  z-index: 500;
+  max-width: 400px;
+  margin-inline: auto;
+}
+@media (min-width: 769px) {
+  .pharm-cookie {
+    bottom: 24px;
+    left: 24px;
+    right: auto;
+    margin-inline: 0;
+  }
+}
+.pharm-cookie-inner {
+  background: var(--white);
+  border: 1px solid #e8ecf0;
+  border-radius: 14px;
+  padding: 16px 18px;
+  box-shadow: 0 16px 48px rgba(10, 31, 61, 0.18);
+  animation: pharm-cookie-in 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+@keyframes pharm-cookie-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.pharm-cookie strong {
+  display: block;
+  font-size: 14px;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+.pharm-cookie p {
+  font-size: 12px;
+  color: var(--text-body);
+  margin-bottom: 12px;
+}
+.pharm-cookie button {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  background: var(--navy);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .pharm-hero-slide {
     transition: none;
   }
   .pharm-card:hover {
     transform: none;
+  }
+  .pharm-img-flip img,
+  .pharm-img-flip-shine {
+    animation: none !important;
+    transition: none !important;
+  }
+  .pharm-product-grid-all .pharm-card {
+    animation: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .pharm-footer-grid {
+    grid-template-columns: 1fr 1fr;
   }
 }

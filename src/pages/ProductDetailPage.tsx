@@ -23,7 +23,11 @@ import { useScrollReveal } from "../hooks/useScrollReveal";
 import { PharmacyProductCard } from "../components/shop/PharmacyProductCard";
 
 import { CartDrawer } from "../components/shop/CartDrawer";
+import { ProductImageFlip } from "../components/shop/ProductImageFlip";
 import { ShopPharmacyBar } from "../components/shop/ShopPharmacyBar";
+import { ShopStoreNav } from "../components/shop/ShopStoreNav";
+import { CookieBanner } from "../components/shop/CookieBanner";
+import { getProductImagePair } from "../lib/productImages";
 
 
 
@@ -41,7 +45,13 @@ export function ProductDetailPage() {
 
     if (!product) return [];
 
-    return PHARMACY_PRODUCTS.filter((p) => p.category === product.category && p.slug !== product.slug).slice(0, 3);
+    const same = PHARMACY_PRODUCTS.filter(
+      (p) => p.category === product.category && p.slug !== product.slug,
+    );
+    const cross = PHARMACY_PRODUCTS.filter(
+      (p) => p.popular && p.slug !== product.slug && p.category !== product.category,
+    ).slice(0, 4);
+    return [...same, ...cross].slice(0, 8);
 
   }, [product]);
 
@@ -82,7 +92,10 @@ export function ProductDetailPage() {
 
   const enrollUrl = getProductEnrollUrl(product);
 
-  const images = [product.image, ...(product.gallery ?? [])];
+  const pair = getProductImagePair(product);
+  const images = [pair.primary, pair.secondary, ...(product.gallery ?? [])].filter(
+    (v, i, a) => a.indexOf(v) === i,
+  );
 
 
 
@@ -90,6 +103,7 @@ export function ProductDetailPage() {
 
     <main className="shop-page shop-pdp pharm-store">
       <ShopPharmacyBar />
+      <ShopStoreNav />
 
       <div className="shop-wrap">
 
@@ -113,23 +127,9 @@ export function ProductDetailPage() {
 
           <div className="shop-pdp-gallery" data-reveal>
 
-            <div className="shop-pdp-main-img">
+            <div className="shop-pdp-main-img pharm-pdp-flip">
 
-              <div className="shop-card-shine" aria-hidden="true" />
-
-              <img
-
-                src={product.image}
-
-                data-fallback={product.imageFallback}
-
-                alt={product.name}
-
-                fetchPriority="high"
-
-                decoding="async"
-
-              />
+              <ProductImageFlip product={product} autoPlay />
 
             </div>
 
@@ -247,9 +247,10 @@ export function ProductDetailPage() {
 
           <section className="shop-pdp-related">
 
-            <h2>Related in {product.categoryLabel}</h2>
+            <h2>You may also like</h2>
+            <p className="pharm-section-sub">Related {product.categoryLabel} programs &amp; patient favorites</p>
 
-            <div className="shop-grid shop-grid-premium shop-grid-compact">
+            <div className="pharm-featured-grid">
 
               {related.map((p, i) => (
 
@@ -266,6 +267,7 @@ export function ProductDetailPage() {
       </div>
 
       <CartDrawer />
+      <CookieBanner />
 
     </main>
 

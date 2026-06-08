@@ -15,7 +15,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
       {!isShop ? <AnnouncementBar /> : null}
       <SiteHeader />
       {children}
-      <SiteFooter />
+      {!isShop ? <SiteFooter /> : null}
       <ShopMobileNav />
     </>
   );
