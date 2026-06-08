@@ -45,7 +45,11 @@ for (let i = 0; i < SLUGS.length; i++) {
   ]) {
     const file = join(OUT, `${slug}${suffix}.jpg`);
     try {
-      const res = await fetch(photoUrl(id), { signal: AbortSignal.timeout(25000) });
+      const fetchUrl = override
+        ? photoUrl(id)
+        : `https://picsum.photos/seed/${slug}${suffix}/600/600`;
+
+      const res = await fetch(fetchUrl, { signal: AbortSignal.timeout(25000) });
       if (!res.ok) {
         console.warn(`Skip ${slug}${suffix}: HTTP ${res.status}`);
         continue;
