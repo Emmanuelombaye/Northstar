@@ -40,7 +40,20 @@ Marketing CTAs link to the shared clinical shop with **North Star MD branding on
 
 `public/js/shop-links.js` runs on page load and keeps `data-shop` links in sync.
 
+## Frontend architecture (2026 rewrite)
+
+| Path | Stack |
+|------|--------|
+| `/` | React — exact legacy homepage (`src/pages/HomePage.tsx`) |
+| `/shop` | Premium pharmacy store (20+ products, cart, animations) |
+| `/shop/product/:slug` | Product detail → Peak secure checkout |
+| `/about`, `/faq`, … | Legacy static HTML (unchanged until migrated) |
+
+Checkout still runs on Peak: `joinnorthstarmd.com/care/north-star-md/shop` (proxied in `vercel.json`).
+
 ## Customize
 
-- **Copy & sections:** Edit `index.html`
-- **Colors & typography:** Edit CSS variables at the top of `css/styles.css`
+- **Homepage:** `src/pages/HomePage.tsx` (keep layout/classes in sync with design)
+- **Shop catalog:** `src/data/products.ts` + `src/pages/ShopPage.tsx`
+- **Enrollment URLs:** `src/lib/shop.ts`
+- **Colors & typography:** CSS variables at the top of `css/styles.css`

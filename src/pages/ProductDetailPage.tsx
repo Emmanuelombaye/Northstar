@@ -1,0 +1,136 @@
+import { Link, useParams } from "react-router-dom";
+import { useMemo } from "react";
+import {
+  PHARMACY_PRODUCTS,
+  formatPrice,
+  getProductBySlug,
+  getProductEnrollUrl,
+} from "../store/products";
+import { useCartContext } from "../context/CartContext";
+import { useMediaLoader } from "../hooks/useMediaLoader";
+import { useScrollReveal } from "../hooks/useScrollReveal";
+import { ProductCard } from "../components/shop/ProductCard";
+import { CartDrawer } from "../components/shop/CartDrawer";
+
+export function ProductDetailPage() {
+  const { slug = "" } = useParams();
+  const product = getProductBySlug(slug);
+  const { add } = useCartContext();
+
+  const related = useMemo(() => {
+    if (!product) return [];
+    return PHARMACY_PRODUCTS.filter((p) => p.category === product.category && p.slug !== product.slug).slice(0, 3);
+  }, [product]);
+
+  useMediaLoader([slug]);
+  useScrollReveal([slug]);
+
+  if (!product) {
+    return (
+      <main className="shop-page shop-pdp">
+        <div className="shop-wrap shop-pdp-missing">
+          <h1>Program not found</h1>
+          <Link to="/shop" className="btn btn-navy btn-pill">
+            Back to store
+          </Link>
+        </div>
+      </main>
+    );
+  }
+
+  const enrollUrl = getProductEnrollUrl(product);
+  const images = [product.image, ...(product.gallery ?? [])];
+
+  return (
+    <main className="shop-page shop-pdp">
+      <div className="shop-wrap">
+        <nav className="shop-breadcrumb" aria-label="Breadcrumb">
+          <Link to="/shop">Store</Link>
+          <span>/</span>
+          <span>{product.categoryLabel}</span>
+          <span>/</span>
+          <span aria-current="page">{product.name}</span>
+        </nav>
+
+        <div className="shop-pdp-grid">
+          <div className="shop-pdp-gallery" data-reveal>
+            <div className="shop-pdp-main-img">
+              <div className="shop-card-shine" aria-hidden="true" />
+              <img
+                src={product.image}
+                data-fallback={product.imageFallback}
+                alt={product.name}
+                fetchPriority="high"
+                decoding="async"
+              />
+            </div>
+            {images.length > 1 ? (
+              <div className="shop-pdp-thumbs">
+                {images.map((src) => (
+                  <img key={src} src={src} alt="" loading="lazy" decoding="async" />
+                ))}
+              </div>
+            ) : null}
+          </div>
+
+          <div className="shop-pdp-info" data-reveal>
+            {product.badge ? <span className="shop-badge">{product.badge}</span> : null}
+            <p className="shop-card-category">{product.categoryLabel}</p>
+            <h1>{product.name}</h1>
+            <p className="shop-pdp-tagline">{product.tagline}</p>
+            <div className="shop-card-rating shop-pdp-rating">
+              <span className="shop-stars" aria-hidden="true">
+                {"★".repeat(Math.round(product.rating))}
+                {"☆".repeat(5 - Math.round(product.rating))}
+              </span>
+              <span>
+                {product.rating} · {product.reviews.toLocaleString()} reviews
+              </span>
+            </div>
+            <div className="shop-pdp-pricing">
+              <strong>{formatPrice(product.priceMonthly)}</strong>
+              {product.compareAtPrice ? <s>${product.compareAtPrice}/mo</s> : null}
+            </div>
+            <p className="shop-pdp-desc">{product.longDescription}</p>
+
+            <ul className="shop-pdp-features">
+              {product.features.map((f) => (
+                <li key={f}>{f}</li>
+              ))}
+            </ul>
+
+            <div className="shop-pdp-ctas">
+              <a href={enrollUrl} className="btn btn-gold btn-pill btn-lg shop-pdp-checkout">
+                Start secure checkout
+              </a>
+              <button type="button" className="btn btn-navy btn-pill btn-lg" onClick={() => add(product.slug)}>
+                Add to cart
+              </button>
+            </div>
+
+            <div className="shop-pdp-includes">
+              <p className="plan-includes-title">All plans include:</p>
+              <ul className="plan-includes">
+                {product.includes.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {related.length > 0 ? (
+          <section className="shop-pdp-related">
+            <h2>Related in {product.categoryLabel}</h2>
+            <div className="shop-grid shop-grid-premium shop-grid-compact">
+              {related.map((p, i) => (
+                <ProductCard key={p.slug} product={p} index={i} />
+              ))}
+            </div>
+          </section>
+        ) : null}
+      </div>
+      <CartDrawer />
+    </main>
+  );
+}

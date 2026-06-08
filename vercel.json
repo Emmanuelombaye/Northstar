@@ -42,6 +42,10 @@
   ],
   "rewrites": [
     {
+      "source": "/shop/:path*",
+      "destination": "/index.html"
+    },
+    {
       "source": "/logo/portal-logo.png",
       "has": [{ "type": "host", "value": "joinnorthstarmd.com" }],
       "destination": "/favicon.svg"

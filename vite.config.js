@@ -1,9 +1,11 @@
 import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 import { resolve } from "node:path";
 
 export default defineConfig({
   root: ".",
   publicDir: "public",
+  plugins: [react()],
   build: {
     outDir: "dist",
     rollupOptions: {
@@ -22,7 +24,6 @@ export default defineConfig({
         exploreTreatments: resolve(__dirname, "explore-treatments.html"),
       },
       output: {
-        // m-assets avoids clashing with Peak Health /assets/* proxied on joinnorthstarmd.com
         entryFileNames: "m-assets/[name]-[hash].js",
         chunkFileNames: "m-assets/[name]-[hash].js",
         assetFileNames: "m-assets/[name]-[hash][extname]",

@@ -5,12 +5,22 @@
   "scripts": {
     "dev": "vite",
     "optimize:images": "node scripts/optimize-images.mjs",
-    "build": "node scripts/optimize-images.mjs && vite build",
+    "store:images": "node scripts/download-store-images.mjs",
+    "build": "node scripts/download-store-images.mjs && node scripts/optimize-images.mjs && vite build",
     "preview": "vite preview",
     "slice": "powershell -ExecutionPolicy Bypass -File scripts/slice-mockup.ps1"
   },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.1.0"
+  },
   "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
     "sharp": "^0.34.2",
+    "typescript": "^5.7.0",
     "vite": "^6.2.0"
   }
 }
