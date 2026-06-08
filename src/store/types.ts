@@ -74,6 +74,12 @@ export type PharmacyProduct = {
 
   peakCategory?: string;
 
+  dosageForm?: string;
+
+  strength?: string;
+
+  vendor?: string;
+
 };
 
 

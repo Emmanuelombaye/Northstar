@@ -155,7 +155,16 @@ export function ProductDetailPage() {
 
             <p className="shop-card-category">{product.categoryLabel}</p>
 
+            {product.vendor ? <p className="shop-pdp-vendor">{product.vendor}</p> : null}
+
             <h1>{product.name}</h1>
+
+            {product.dosageForm ? (
+              <p className="shop-pdp-form">
+                {product.dosageForm}
+                {product.strength ? ` · ${product.strength}` : ""}
+              </p>
+            ) : null}
 
             <p className="shop-pdp-tagline">{product.tagline}</p>
 

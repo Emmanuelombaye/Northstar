@@ -104,11 +104,20 @@ export function PharmacyProductCard({ product, index = 0, compact = false }: Pro
 
       <div className="pharm-card-body">
 
+        <p className="pharm-card-vendor">{product.vendor ?? "North Star MD Pharmacy"}</p>
+
         <Link to={`/shop/product/${product.slug}`}>
 
           <h3>{product.name}</h3>
 
         </Link>
+
+        {product.dosageForm ? (
+          <p className="pharm-card-form">
+            {product.dosageForm}
+            {product.strength ? ` · ${product.strength}` : ""}
+          </p>
+        ) : null}
 
         <div className="pharm-card-price">
 
