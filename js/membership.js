@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
           : window.NORTHSTAR_SHOP.catalog();
           
         // Append billing cycle to URL parameters
-        const urlObj = new URL(baseHref);
+        const urlObj = new URL(baseHref, window.location.origin);
         urlObj.searchParams.set("billing", cycle);
         buyBtn.setAttribute("href", urlObj.toString());
       }

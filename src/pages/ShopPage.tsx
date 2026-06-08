@@ -35,13 +35,26 @@ import { PHARMACY_PRODUCTS, PRODUCT_COUNT } from "../store/products";
 
 import { groupProductsByCategory, sortProductsShopify } from "../store/shopifyMeta";
 
+import { useSearchParams } from "react-router-dom";
 import type { SortKey, StoreCategory } from "../store/types";
 
 
 
 export function ShopPage() {
 
-  const [category, setCategory] = useState<StoreCategory | "all">("all");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const category = (searchParams.get("category") as StoreCategory | "all") || "all";
+
+  const setCategory = (newCat: StoreCategory | "all") => {
+    setSearchParams((prev) => {
+      if (newCat === "all") {
+        prev.delete("category");
+      } else {
+        prev.set("category", newCat);
+      }
+      return prev;
+    }, { replace: true });
+  };
 
   const [query, setQuery] = useState("");
 

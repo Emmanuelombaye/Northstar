@@ -57,27 +57,37 @@ export type ShopLinkOpts = {
 };
 
 export function shopUrl(opts: ShopLinkOpts = {}): string {
-  const params = new URLSearchParams({
-    brand: BRAND_SLUG,
-    brandId: BRAND_ID,
-  });
-
   let productKey = opts.product;
   if (!productKey && opts.category && TREATMENT_PRODUCT[opts.category]) {
     productKey = TREATMENT_PRODUCT[opts.category];
   }
 
+  const PRODUCT_SLUG_MAP: Record<string, string> = {
+    semaglutide: "semaglutide-plus",
+    tirzepatide: "tirzepatide-plus",
+    nad: "nad-rejuvenation",
+    sermorelin: "sermorelin-recovery",
+  };
+
+  const origin = typeof window !== "undefined" ? window.location.origin : "";
+
   if (productKey) {
-    params.set("product", productKey);
-    params.set("auto", "1");
+    const localSlug = PRODUCT_SLUG_MAP[productKey] || productKey;
+    return `${origin}/shop/product/${localSlug}`;
   } else if (opts.category) {
     const key = opts.category.trim().toLowerCase();
     const normalized = CATEGORY_SLUG[key] || key;
-    if (normalized) params.set("category", normalized);
+    const CATEGORY_MAP: Record<string, string> = {
+      metabolic: "weight-loss",
+      executive: "longevity",
+      "muscle-recovery": "recovery",
+      recovery: "recovery",
+    };
+    const localCategory = CATEGORY_MAP[normalized] || normalized;
+    return `${origin}/shop?category=${localCategory}`;
   }
 
-  const q = params.toString();
-  return `${PEAK_ORIGIN}${ENROLL_PATH}${q ? `?${q}` : ""}`;
+  return `${origin}/shop`;
 }
 
 export function patientLoginUrl(extra: Record<string, string> = {}): string {

@@ -1,11 +1,40 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { resolve } from "node:path";
+import { existsSync } from "node:fs";
+
+const cleanUrlsMiddleware = (req, res, next) => {
+  const url = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
+  const pathname = url.pathname;
+  
+  if (pathname === "/") {
+    return next();
+  }
+
+  if (!pathname.includes(".") && !pathname.startsWith("/shop")) {
+    const filePath = resolve(__dirname, `${pathname.slice(1)}.html`);
+    if (existsSync(filePath)) {
+      req.url = `${pathname}.html${url.search}`;
+    }
+  }
+  next();
+};
 
 export default defineConfig({
   root: ".",
   publicDir: "public",
-  plugins: [react()],
+  plugins: [
+    react(),
+    {
+      name: "clean-urls",
+      configureServer(server) {
+        server.middlewares.use(cleanUrlsMiddleware);
+      },
+      configurePreviewServer(server) {
+        server.middlewares.use(cleanUrlsMiddleware);
+      }
+    }
+  ],
   build: {
     outDir: "dist",
     rollupOptions: {

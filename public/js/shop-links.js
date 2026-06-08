@@ -31,33 +31,40 @@
 
   function shopUrl(opts) {
     opts = opts || {};
-    const params = new URLSearchParams({
-      brand: NORTH_STAR_BRAND_SLUG,
-      brandId: NORTH_STAR_BRAND_ID,
-    });
-
     var productKey = opts.product;
     if (!productKey && opts.category && TREATMENT_PRODUCT[opts.category]) {
       productKey = TREATMENT_PRODUCT[opts.category];
     }
 
-    if (productKey) {
-      params.set("product", productKey);
-      params.set("auto", "1");
-    } else if (ENABLE_CATEGORY_FILTER && opts.category) {
-      var normalizedCategory = normalizeCategory(opts.category);
-      if (normalizedCategory) {
-        params.set("category", normalizedCategory);
-      }
-    }
+    const PRODUCT_SLUG_MAP = {
+      semaglutide: "semaglutide-plus",
+      tirzepatide: "tirzepatide-plus",
+      nad: "nad-rejuvenation",
+      sermorelin: "sermorelin-recovery"
+    };
 
-    const q = params.toString();
-    return `${PEAK_SHOP_ORIGIN}${ENROLL_PATH}${q ? `?${q}` : ""}`;
+    const origin = window.location.origin;
+
+    if (productKey) {
+      const localSlug = PRODUCT_SLUG_MAP[productKey] || productKey;
+      return `${origin}/shop/product/${localSlug}`;
+    } else if (opts.category) {
+      var normalizedCategory = normalizeCategory(opts.category);
+      const CATEGORY_MAP = {
+        metabolic: "weight-loss",
+        executive: "longevity",
+        "muscle-recovery": "recovery",
+        recovery: "recovery"
+      };
+      const localCategory = CATEGORY_MAP[normalizedCategory] || normalizedCategory;
+      return `${origin}/shop?category=${localCategory}`;
+    }
+    return `${origin}/shop`;
   }
 
   window.NORTHSTAR_SHOP = {
-    origin: PEAK_SHOP_ORIGIN,
-    enrollPath: ENROLL_PATH,
+    origin: window.location.origin,
+    enrollPath: "/shop",
     brandSlug: NORTH_STAR_BRAND_SLUG,
     brandId: NORTH_STAR_BRAND_ID,
     catalog: function () {
