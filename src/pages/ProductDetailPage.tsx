@@ -88,7 +88,8 @@ export function ProductDetailPage() {
 
   return (
 
-    <main className="shop-page shop-pdp">
+    <main className="shop-page shop-pdp pharm-store">
+      <ShopPharmacyBar />
 
       <div className="shop-wrap">
 
