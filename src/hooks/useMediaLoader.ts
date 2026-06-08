@@ -4,7 +4,7 @@ import { useEffect } from "react";
 export function useMediaLoader(deps: unknown[] = []) {
   useEffect(() => {
     const imgs = document.querySelectorAll(
-      "main img, .hero img, .hero-banner img, .shop-card img",
+      "main img, .hero img, .hero-banner img, .shop-card img, .pharm-card img, .pharm-img-flip img",
     );
 
     imgs.forEach((node) => {
