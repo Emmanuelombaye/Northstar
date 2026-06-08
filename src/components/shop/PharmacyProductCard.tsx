@@ -121,9 +121,11 @@ export function PharmacyProductCard({ product, index = 0, compact = false }: Pro
 
         <div className="pharm-card-price">
 
+          {product.priceMonthly > 0 ? <span className="pharm-price-from">From</span> : null}
+
           <strong>{formatPrice(product.priceMonthly)}</strong>
 
-          {product.compareAtPrice ? <s>${product.compareAtPrice}/mo</s> : null}
+          {product.compareAtPrice ? <s className="pharm-price-compare">${product.compareAtPrice}</s> : null}
 
         </div>
 

@@ -19,6 +19,7 @@ import { ShopBrandsWall } from "../components/shop/ShopBrandsWall";
 import { ShopNewsletter } from "../components/shop/ShopNewsletter";
 
 import { ShopPharmacyBar } from "../components/shop/ShopPharmacyBar";
+import { ShopTrustBar } from "../components/shop/ShopTrustBar";
 
 import { ShopPharmacyFooter } from "../components/shop/ShopPharmacyFooter";
 
@@ -112,6 +113,8 @@ export function ShopPage() {
 
       <ShopBannerCarousel />
 
+      <ShopTrustBar />
+
       <CategoryTileGrid onSelect={setCategory} active={category === "all" ? undefined : category} />
 
       <OffersSlider />
@@ -124,11 +127,11 @@ export function ShopPage() {
 
         <div className="pharm-wrap">
 
-          <h2 className="pharm-section-title">Featured Products</h2>
+          <h2 className="pharm-section-title">Featured Treatments</h2>
 
           <p className="pharm-section-sub">
 
-            Don't miss this opportunity at a special discount just for this week.
+            Physician-prescribed medications · U.S. pharmacy fulfillment · monthly subscription pricing
 
           </p>
 

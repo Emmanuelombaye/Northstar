@@ -1,10 +1,10 @@
 /* ═══════════════════════════════════════════════════════════════
-   North Star MD Pharmacy Store — DigitalPharmacy / Pablo layout
-   Inspired by pablo.digitalpharmacy.io · North Star brand tokens
+   North Star MD Pharmacy Store — Modern Shopify ecommerce layout
+   Dawn-inspired product cards · pharmacy product photography
    ═══════════════════════════════════════════════════════════════ */
 
 .pharm-store {
-  background: #f4f6f8;
+  background: #ffffff;
   padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
 }
 
@@ -188,13 +188,15 @@
 }
 .pharm-section-title {
   font-family: var(--serif);
-  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 500;
   color: var(--navy);
-  margin-bottom: 6px;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
 }
 .pharm-section-sub {
   font-size: 14px;
-  color: var(--text-body);
+  color: #6b7280;
   max-width: 52ch;
 }
 
@@ -318,21 +320,48 @@
   opacity: 0.9;
 }
 
-/* ── Product card (Pablo style) ── */
+/* ── Trust bar (Shopify-style) ── */
+.pharm-trust-bar {
+  background: #f7f8fa;
+  border-block: 1px solid #e8ecf0;
+  padding: 12px 0;
+}
+.pharm-trust-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px 28px;
+}
+.pharm-trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: 0.02em;
+}
+.pharm-trust-icon {
+  color: var(--gold-dark);
+  font-weight: 800;
+}
+
+/* ── Product card (Shopify Dawn style) ── */
 .pharm-card {
   position: relative;
   background: var(--white);
-  border: 1px solid #e8ecf0;
-  border-radius: 10px;
+  border: 1px solid #e3e6ea;
+  border-radius: 4px;
   overflow: hidden;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
   display: flex;
   flex-direction: column;
   min-height: 100%;
 }
 .pharm-card:hover {
-  box-shadow: 0 14px 36px rgba(10, 31, 61, 0.1);
-  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(10, 31, 61, 0.08);
+  border-color: #d0d5dc;
 }
 .pharm-card-badges {
   position: absolute;
@@ -391,71 +420,79 @@
 .pharm-card-media {
   display: block;
   aspect-ratio: 1/1;
-  background: linear-gradient(180deg, #fafbfc 0%, #f0f3f7 100%);
+  background: #f9fafb;
   overflow: hidden;
-  padding: 12px;
+  padding: 16px;
 }
 .pharm-card-media img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  transition: transform 0.45s ease;
+  transition: transform 0.4s ease;
 }
 .pharm-card:hover .pharm-card-media img {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 .pharm-card-body {
-  padding: 10px 12px 14px;
+  padding: 12px 14px 16px;
   flex: 1;
   display: flex;
   flex-direction: column;
+  text-align: left;
 }
 .pharm-card-vendor {
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #94a3b8;
+  color: #6b7280;
   margin-bottom: 4px;
-  text-align: center;
 }
 .pharm-card-form {
-  font-size: 10px;
-  font-weight: 600;
-  color: var(--gold-dark);
-  text-align: center;
-  margin-bottom: 4px;
-  line-height: 1.3;
+  font-size: 11px;
+  font-weight: 500;
+  color: #6b7280;
+  margin-bottom: 6px;
+  line-height: 1.35;
 }
 .pharm-card-body h3 {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--navy);
-  line-height: 1.35;
-  margin-bottom: 6px;
+  line-height: 1.4;
+  margin-bottom: 8px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  min-height: 2.5em;
-  text-align: center;
+  min-height: 2.6em;
 }
 .pharm-card-price {
   display: flex;
   align-items: baseline;
-  justify-content: center;
   gap: 6px;
   flex-wrap: wrap;
+  margin-top: auto;
   margin-bottom: 4px;
 }
+.pharm-price-from {
+  font-size: 11px;
+  font-weight: 500;
+  color: #6b7280;
+}
 .pharm-card-price strong {
-  font-size: 14px;
-  font-weight: 800;
+  font-size: 15px;
+  font-weight: 700;
   color: var(--navy);
+}
+.pharm-price-compare {
+  font-size: 12px;
+  color: #9ca3af;
+  text-decoration: line-through;
 }
 .pharm-card-price s {
   font-size: 12px;
-  color: #94a3b8;
+  color: #9ca3af;
 }
 .pharm-add-btn {
   width: 100%;
@@ -809,27 +846,33 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 12px;
+  padding: 11px 14px;
   border: none;
   cursor: pointer;
-  border-radius: 8px;
-  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
-  color: var(--navy);
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
+  border-radius: 4px;
+  background: var(--navy);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 14px rgba(197, 160, 89, 0.35);
+  transition: background 0.2s ease;
 }
 .pharm-enroll-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(197, 160, 89, 0.45);
+  background: #123052;
 }
 .pharm-card-actions .pharm-add-btn {
   margin-top: 0;
   padding-inline: 14px;
   white-space: nowrap;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--navy);
+  border: 1px solid #d0d5dc;
+}
+.pharm-card-actions .pharm-add-btn:hover {
+  background: #f7f8fa;
+  border-color: var(--navy);
 }
 
 /* ── Store nav (Pablo menu) ── */
