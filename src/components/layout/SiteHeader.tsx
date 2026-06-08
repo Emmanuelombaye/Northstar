@@ -1,14 +1,16 @@
 import { Link, useLocation } from "react-router-dom";
 import { shop } from "../../lib/shop";
 import { useCartContext } from "../../context/CartContext";
+import { useWishlistContext } from "../../context/WishlistContext";
 
 export function SiteHeader() {
   const { pathname } = useLocation();
   const isShop = pathname.startsWith("/shop");
   const cart = useCartContext();
+  const wishlist = useWishlistContext();
 
   return (
-    <header className="site-header">
+    <header className={`site-header${isShop ? " site-header-pharm" : ""}`}>
       <div className="header-inner">
         <Link to="/" className="logo" aria-label="North Star MD home">
           <svg className="logo-star" viewBox="0 0 48 48" fill="none" aria-hidden="true">
@@ -68,6 +70,18 @@ export function SiteHeader() {
 
         <div className="header-ctas">
           {isShop ? (
+            <>
+            <button
+              type="button"
+              className="shop-header-cart"
+              onClick={() => document.getElementById("catalog")?.scrollIntoView({ behavior: "smooth" })}
+              aria-label={`Wishlist, ${wishlist.count} items`}
+            >
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" stroke="currentColor" strokeWidth="1.4" />
+              </svg>
+              {wishlist.count > 0 ? <span className="shop-header-cart-count">{wishlist.count}</span> : null}
+            </button>
             <button
               type="button"
               className="shop-header-cart"
@@ -82,6 +96,7 @@ export function SiteHeader() {
               </svg>
               {cart.count > 0 ? <span className="shop-header-cart-count">{cart.count}</span> : null}
             </button>
+            </>
           ) : null}
           <a href={shop.login()} className="btn btn-ghost btn-pill header-btn-login">
             Patient Login

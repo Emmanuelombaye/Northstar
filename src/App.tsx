@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { CartProvider } from "./context/CartContext";
+import { WishlistProvider } from "./context/WishlistContext";
 import { SiteLayout } from "./components/layout/SiteLayout";
 import { HomePage } from "./pages/HomePage";
 import { ShopPage } from "./pages/ShopPage";
@@ -9,6 +10,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <CartProvider>
+        <WishlistProvider>
         <SiteLayout>
           <Routes>
             <Route path="/" element={<HomePage />} />
@@ -16,6 +18,7 @@ export default function App() {
             <Route path="/shop/product/:slug" element={<ProductDetailPage />} />
           </Routes>
         </SiteLayout>
+        </WishlistProvider>
       </CartProvider>
     </BrowserRouter>
   );
