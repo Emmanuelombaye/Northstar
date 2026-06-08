@@ -10,11 +10,10 @@ import {
 
   getProductBySlug,
 
-  getProductEnrollUrl,
-
 } from "../store/products";
 
 import { useCartContext } from "../context/CartContext";
+import { useCheckoutContext } from "../context/CheckoutContext";
 
 import { useMediaLoader } from "../hooks/useMediaLoader";
 
@@ -38,6 +37,7 @@ export function ProductDetailPage() {
   const product = getProductBySlug(slug);
 
   const { add } = useCartContext();
+  const { startCheckout } = useCheckoutContext();
 
 
 
@@ -89,8 +89,6 @@ export function ProductDetailPage() {
   }
 
 
-
-  const enrollUrl = getProductEnrollUrl(product);
 
   const pair = getProductImagePair(product);
   const images = [pair.primary, pair.secondary, ...(product.gallery ?? [])].filter(
@@ -205,11 +203,11 @@ export function ProductDetailPage() {
 
             <div className="shop-pdp-ctas">
 
-              <a href={enrollUrl} className="btn btn-gold btn-pill btn-lg shop-pdp-checkout">
+              <button type="button" className="btn btn-gold btn-pill btn-lg shop-pdp-checkout" onClick={() => startCheckout(product.slug)}>
 
                 Start secure checkout
 
-              </a>
+              </button>
 
               <button type="button" className="btn btn-navy btn-pill btn-lg" onClick={() => add(product.slug)}>
 

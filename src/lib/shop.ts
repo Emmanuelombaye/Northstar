@@ -80,13 +80,49 @@ export function shopUrl(opts: ShopLinkOpts = {}): string {
   return `${PEAK_ORIGIN}${ENROLL_PATH}${q ? `?${q}` : ""}`;
 }
 
-export function patientLoginUrl(): string {
-  return `${PEAK_ORIGIN}${LOGIN_PATH}`;
+export function patientLoginUrl(extra: Record<string, string> = {}): string {
+  const params = new URLSearchParams({
+    brand: BRAND_SLUG,
+    brandId: BRAND_ID,
+    ...extra,
+  });
+  const q = params.toString();
+  return `${PEAK_ORIGIN}${LOGIN_PATH}${q ? `?${q}` : ""}`;
+}
+
+export function patientPortalPath(): string {
+  return `/care/${BRAND_SLUG}/patient`;
+}
+
+/** After North Star intake — hand off to Peak patient login (product already chosen). */
+export function buildPatientLoginHandoff(opts: {
+  peakProduct?: string;
+  peakCategory?: string;
+  category?: string;
+}): string {
+  const params: Record<string, string> = {
+    source: "northstar-shop",
+    redirect: patientPortalPath(),
+    mode: "signup",
+  };
+
+  if (opts.peakProduct) {
+    params.product = opts.peakProduct;
+  } else if (opts.peakCategory) {
+    const key = opts.peakCategory.trim().toLowerCase();
+    params.category = CATEGORY_SLUG[key] || key;
+  } else if (opts.category) {
+    const key = opts.category.trim().toLowerCase();
+    params.category = CATEGORY_SLUG[key] || key;
+  }
+
+  return patientLoginUrl(params);
 }
 
 export const shop = {
   catalog: () => shopUrl(),
   category: (name: string) => shopUrl({ category: name }),
   product: (name: string) => shopUrl({ product: name }),
-  login: patientLoginUrl,
+  login: () => patientLoginUrl(),
+  patientHandoff: buildPatientLoginHandoff,
 };

@@ -5,6 +5,7 @@ import "../css/styles.css";
 import "../css/mobile.css";
 import "../css/shop.css";
 import "../css/pharm.css";
+import "../css/checkout-intake.css";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

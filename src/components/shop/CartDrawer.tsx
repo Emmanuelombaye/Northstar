@@ -1,8 +1,10 @@
 import { useCartContext } from "../../context/CartContext";
+import { useCheckoutContext } from "../../context/CheckoutContext";
 import { formatPrice } from "../../store/products";
 
 export function CartDrawer() {
-  const { items, open, setOpen, remove, checkoutUrl, total } = useCartContext();
+  const { items, open, setOpen, remove, total } = useCartContext();
+  const { startCheckout } = useCheckoutContext();
 
   if (!open) return null;
 
@@ -43,11 +45,21 @@ export function CartDrawer() {
                 Est. from <strong>{formatPrice(total)}</strong>
               </p>
               <p className="shop-cart-note">
-                Medical programs are enrolled one at a time. Checkout opens secure physician intake on Peak.
+                Medical programs are enrolled one at a time. Secure checkout walks you through clinical intake before patient login.
               </p>
-              <a href={checkoutUrl()} className="btn btn-gold btn-pill btn-block">
+              <button
+                type="button"
+                className="btn btn-gold btn-pill btn-block"
+                onClick={() => {
+                  const last = items[items.length - 1];
+                  if (last) {
+                    setOpen(false);
+                    startCheckout(last.slug);
+                  }
+                }}
+              >
                 Secure checkout
-              </a>
+              </button>
             </>
           ) : (
             <button type="button" className="btn btn-navy btn-pill btn-block" onClick={() => setOpen(false)}>
