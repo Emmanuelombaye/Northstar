@@ -31,6 +31,13 @@ export function SafeImage({
       attempt.current += 1;
       const next = img.chain[attempt.current];
       if (next && el.src !== next) {
+        const picture = el.parentElement;
+        if (picture && picture.tagName.toLowerCase() === "picture") {
+          const sources = picture.getElementsByTagName("source");
+          for (let i = 0; i < sources.length; i++) {
+            sources[i].srcset = "";
+          }
+        }
         el.src = next;
       }
     },

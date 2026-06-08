@@ -17,7 +17,15 @@ function FlipImg({ resolved, className, alt }: FlipImgProps) {
       attempt.current += 1;
       const next = resolved.chain[attempt.current];
       if (next && e.currentTarget.src !== next) {
-        e.currentTarget.src = next;
+        const el = e.currentTarget;
+        const picture = el.parentElement;
+        if (picture && picture.tagName.toLowerCase() === "picture") {
+          const sources = picture.getElementsByTagName("source");
+          for (let i = 0; i < sources.length; i++) {
+            sources[i].srcset = "";
+          }
+        }
+        el.src = next;
       }
     },
     [resolved.chain],
