@@ -37,10 +37,13 @@ export type ProductImagePair = {
 };
 
 export function getProductImagePair(product: PharmacyProduct): ProductImagePair {
-  const secondary =
-    product.imageAlt ?? product.gallery?.[0] ?? CATEGORY_ALT[product.category] ?? product.image;
-  const secondaryFallback =
-    product.imageAltFallback ?? product.gallery?.[1] ?? CATEGORY_ALT_FB[product.category];
+  let secondary = product.imageAlt ?? product.gallery?.[0];
+  let secondaryFallback = product.imageAltFallback ?? product.gallery?.[1];
+
+  if (!secondary || secondary === product.image) {
+    secondary = CATEGORY_ALT[product.category] ?? product.image;
+    secondaryFallback = CATEGORY_ALT_FB[product.category];
+  }
 
   return {
     primary: product.image,

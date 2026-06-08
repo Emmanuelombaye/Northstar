@@ -1,10 +1,11 @@
 import { shop } from "../lib/shop";
 import { CATEGORY_LABELS, PHARMACY_CATALOG, PLAN_INCLUDES } from "./catalog";
+import { applyProductVisuals } from "./productVisuals";
 import type { PharmacyProduct, StoreCategory } from "./types";
 
 export { PLAN_INCLUDES };
 
-export const PHARMACY_PRODUCTS = PHARMACY_CATALOG;
+export const PHARMACY_PRODUCTS = PHARMACY_CATALOG.map(applyProductVisuals);
 
 export const STORE_CATEGORIES: { id: StoreCategory | "all"; label: string; icon: string }[] = [
   { id: "all", label: "All treatments", icon: "✦" },
