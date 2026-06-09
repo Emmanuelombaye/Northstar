@@ -15,8 +15,7 @@ export function HomePage() {
             Physician-guided longevity, metabolic health, and wellness care—delivered wherever you are.
           </p>
           <img
-            src="/images/hero-landing.webp"
-            data-fallback="/images/hero-landing.png"
+            src="/images/hero-landing.png"
             decoding="async"
             alt="Find Your North Star — woman with sunlit hills, physician-guided longevity and wellness care"
             width={2007}
@@ -36,8 +35,7 @@ export function HomePage() {
             </div>
             <div className="hero-mobile-visual">
               <img
-                src="/images/hero-mobile-couple.webp"
-                data-fallback="/images/hero-mobile-couple.png"
+                src="/images/hero-mobile-couple.png"
                 decoding="async"
                 alt="Couple enjoying sunlit hills — physician-guided longevity and wellness care with North Star MD"
                 width={998}
@@ -127,8 +125,7 @@ export function HomePage() {
           </div>
           <div className="care-scene">
             <img
-              src="/images/product-box.webp"
-              data-fallback="/images/product-box.png"
+              src="/images/product-box.png"
               decoding="async"
               alt="North Star MD box, supplements, and greenery on linen"
               width={1200}
@@ -196,8 +193,7 @@ export function HomePage() {
 
         <div className="journey-photo">
           <img
-            src="/images/journey-seated.webp"
-            data-fallback="/images/journey-seated.png"
+            src="/images/journey-seated.png"
             decoding="async"
             alt="Woman seated by a window holding a glass of water"
             width={1266}

@@ -6,29 +6,25 @@ const BANNERS: { id: StoreCategory; title: string; subtitle: string; image: stri
     id: "weight-loss",
     title: "Weight Loss",
     subtitle: "Uncover GLP-1 programs designed around you",
-    image: "/images/panel-weight.webp",
-    fallback: "/images/panel-weight.png",
+    image: "/images/panel-weight.png",
   },
   {
     id: "longevity",
     title: "Longevity",
     subtitle: "NAD+, peptides & cellular rejuvenation",
-    image: "/images/panel-nad.webp",
-    fallback: "/images/panel-nad.png",
+    image: "/images/panel-nad.png",
   },
   {
     id: "recovery",
     title: "Muscle Recovery",
     subtitle: "Peptides for repair, sleep & performance",
-    image: "/images/panel-recovery.webp",
-    fallback: "/images/panel-recovery.png",
+    image: "/images/panel-recovery.png",
   },
   {
     id: "mens-health",
     title: "Men's Health",
     subtitle: "TRT, vitality & hormone optimization",
-    image: "/images/clinical-draw.webp",
-    fallback: "/images/clinical-draw.png",
+    image: "/images/clinical-draw.png",
   },
 ];
 
@@ -51,7 +47,7 @@ export function BrowseCategoryBanners({ onSelect }: Props) {
                 document.getElementById("catalog")?.scrollIntoView({ behavior: "smooth" });
               }}
             >
-              <SafeImage path={b.fallback ?? b.image} alt="" extraFallbacks={[b.image]} />
+              <SafeImage path={b.image} alt="" />
               <div className="pharm-browse-caption">
                 <strong>{b.title}</strong>
                 <span>{b.subtitle}</span>

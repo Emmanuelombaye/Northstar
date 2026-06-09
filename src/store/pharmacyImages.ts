@@ -5,9 +5,16 @@
 
 export type PharmAsset = { webp: string; jpg: string };
 
+const rasterPath = (webp: string): string => {
+  if (webp.includes("/images/store/") || webp.includes("/images/products/")) {
+    return webp.replace(/\.webp$/i, ".jpg");
+  }
+  return webp.replace(/\.webp$/i, ".png");
+};
+
 const B = (webp: string): PharmAsset => ({
   webp,
-  jpg: webp.replace(".webp", ".jpg").replace(".png", ".png"),
+  jpg: rasterPath(webp),
 });
 
 const brand = {

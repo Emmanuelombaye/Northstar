@@ -8,24 +8,21 @@ const BANNERS = [
     subtitle: "Physician-guided treatments, delivered to your door.",
     cta: "Shop all treatments",
     href: "#catalog",
-    image: "/images/hero-landing.webp",
-    fallback: "/images/hero-landing.png",
+    image: "/images/hero-landing.png",
   },
   {
     title: "Weight Loss Programs",
     subtitle: "GLP-1 & dual-pathway protocols from $146/mo.",
     cta: "Browse weight loss",
     href: "#category-weight-loss",
-    image: "/images/weight-loss-card.webp",
-    fallback: "/images/weight-loss-card.png",
+    image: "/images/weight-loss-card.png",
   },
   {
     title: "Longevity & NAD+",
     subtitle: "Cellular energy support with licensed clinicians.",
     cta: "Explore longevity",
     href: "#category-longevity",
-    image: "/images/nad-hero.webp",
-    fallback: "/images/nad-hero.png",
+    image: "/images/nad-hero.png",
   },
 ];
 
@@ -42,7 +39,7 @@ export function ShopBannerCarousel() {
       <div className="pharm-hero-slides">
         {BANNERS.map((b, i) => (
           <div key={b.title} className={`pharm-hero-slide${i === active ? " is-active" : ""}`}>
-            <SafeImage path={b.fallback ?? b.image} alt="" loading="eager" extraFallbacks={[b.image]} />
+            <SafeImage path={b.image} alt="" loading="eager" />
             <div className="pharm-hero-overlay" />
             <div className="pharm-wrap pharm-hero-copy">
               <h1>{b.title}</h1>

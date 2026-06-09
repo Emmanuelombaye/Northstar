@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import type { PharmacyProduct } from "../../store/types";
 import { formatPrice } from "../../store/products";
 import { useCartContext } from "../../context/CartContext";
+import { SafeImage } from "./SafeImage";
 
 type Props = {
   product: PharmacyProduct;
@@ -26,13 +27,7 @@ export function ProductCard({ product, index = 0 }: Props) {
       <Link to={`/shop/product/${product.slug}`} className="shop-card-media-link">
         <div className="shop-card-media">
           <div className="shop-card-shine" aria-hidden="true" />
-          <img
-            src={product.image}
-            data-fallback={product.imageFallback}
-            alt={product.name}
-            loading="lazy"
-            decoding="async"
-          />
+          <SafeImage path={product.image} alt={product.name} extraFallbacks={product.imageFallback ? [product.imageFallback] : []} />
         </div>
       </Link>
 

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { shop } from "../../lib/shop";
 import { PRODUCT_COUNT } from "../../store/products";
+import { SafeImage } from "./SafeImage";
 
 export function ShopHero() {
   return (
@@ -57,29 +58,23 @@ export function ShopHero() {
         </div>
         <div className="shop-hero-visual" data-reveal>
           <div className="shop-hero-card-stack">
-            <img
-              src="/images/product-box.webp"
-              data-fallback="/images/product-box.png"
+            <SafeImage
+              path="/images/product-box.png"
               alt="North Star MD treatment kit"
               className="shop-hero-card shop-hero-card-back"
               loading="eager"
-              decoding="async"
             />
-            <img
-              src="/images/step-04-delivery-kit.webp"
-              data-fallback="/images/step-04-delivery-kit.png"
+            <SafeImage
+              path="/images/step-04-delivery-kit.png"
               alt="Discreet pharmacy delivery"
               className="shop-hero-card shop-hero-card-mid"
               loading="eager"
-              decoding="async"
             />
-            <img
-              src="/images/tirzepatide-hero.webp"
-              data-fallback="/images/tirzepatide-hero.png"
+            <SafeImage
+              path="/images/tirzepatide-hero.png"
               alt="Tirzepatide+ program"
               className="shop-hero-card shop-hero-card-front"
               loading="eager"
-              decoding="async"
             />
           </div>
           <Link to="/shop/product/tirzepatide-plus" className="shop-hero-floating-badge">

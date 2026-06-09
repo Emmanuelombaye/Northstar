@@ -7,16 +7,15 @@ export const PLAN_INCLUDES = [
   "24/7 patient portal support",
 ];
 
-/** Store image — webp generated at build from public/images/store/*.jpg */
+/** Store image — load JPG (webp is build-only; never requested in the browser). */
 export function storeImg(name: string, fallbackExt = "jpg"): { image: string; imageFallback: string } {
-  return {
-    image: `/images/store/${name}.webp`,
-    imageFallback: `/images/store/${name}.${fallbackExt}`,
-  };
+  const path = `/images/store/${name}.${fallbackExt}`;
+  return { image: path, imageFallback: path };
 }
 
 export function brandImg(webp: string, png?: string): { image: string; imageFallback?: string } {
-  return { image: webp, imageFallback: png };
+  const image = png ?? webp.replace(/\.webp$/i, ".png");
+  return { image, imageFallback: png ?? image };
 }
 
 type ItemInput = Omit<PharmacyProduct, "includes" | "inStock"> & {

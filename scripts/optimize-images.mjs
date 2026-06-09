@@ -79,28 +79,8 @@ async function optimizeFile(filePath) {
 }
 
 async function patchHtmlFiles() {
-  const htmlFiles = (await readdir(ROOT)).filter((f) => f.endsWith(".html")).map((f) => join(ROOT, f));
-  let replacements = 0;
-
-  for (const file of htmlFiles) {
-    let html = await readFile(file, "utf8");
-    const original = html;
-
-    html = html.replace(
-      /src="(\/images\/[^"?]+\.(png|jpe?g))"(?! data-fallback)/gi,
-      (_, src) => {
-        replacements++;
-        const webp = src.replace(/\.(png|jpe?g)$/i, ".webp");
-        return `src="${webp}" data-fallback="${src}" decoding="async"`;
-      },
-    );
-
-    if (html !== original) {
-      await writeFile(file, html, "utf8");
-    }
-  }
-
-  return replacements;
+  /** WebP variants are for CDN caching only — runtime loads PNG/JPG to avoid 404 console noise. */
+  return 0;
 }
 
 async function generateMobileHeroCrop() {
@@ -163,7 +143,7 @@ async function main() {
 
   const patched = await patchHtmlFiles();
   console.log(`\nDone. Source ~${(totalBefore / 1024 / 1024).toFixed(1)}MB → WebP ~${(totalWebp / 1024 / 1024).toFixed(1)}MB`);
-  console.log(`Updated ${patched} image src references in HTML → .webp`);
+  console.log(`HTML image preload left as PNG/JPG (${patched} patches skipped)`);
 }
 
 main().catch((err) => {

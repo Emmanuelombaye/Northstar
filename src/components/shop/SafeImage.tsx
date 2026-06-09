@@ -10,10 +10,7 @@ type Props = {
   resolved?: ResolvedImage;
 };
 
-/**
- * Loads JPG first (always on disk) with optional webp <source>.
- * Chains through fallbacks on error — no broken images, fewer console 404s.
- */
+/** Loads JPG/PNG only — no webp &lt;source&gt; (avoids 404 console errors on hard refresh). */
 export function SafeImage({
   path,
   alt = "",
@@ -31,33 +28,21 @@ export function SafeImage({
       attempt.current += 1;
       const next = img.chain[attempt.current];
       if (next && el.src !== next) {
-        const picture = el.parentElement;
-        if (picture && picture.tagName.toLowerCase() === "picture") {
-          const sources = picture.getElementsByTagName("source");
-          for (let i = 0; i < sources.length; i++) {
-            sources[i].srcset = "";
-          }
-        }
         el.src = next;
       }
     },
     [img.chain],
   );
 
-  const external = img.src.startsWith("http");
-
   return (
-    <picture>
-      {!external && img.webp ? <source srcSet={img.webp} type="image/webp" /> : null}
-      <img
-        src={img.src}
-        alt={alt}
-        className={className}
-        loading={loading}
-        decoding="async"
-        referrerPolicy="no-referrer"
-        onError={onError}
-      />
-    </picture>
+    <img
+      src={img.src}
+      alt={alt}
+      className={className}
+      loading={loading}
+      decoding="async"
+      referrerPolicy="no-referrer"
+      onError={onError}
+    />
   );
 }

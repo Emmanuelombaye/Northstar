@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { PHARMACY_PRODUCTS } from "../../store/products";
+import { SafeImage } from "./SafeImage";
 
 const BRANDS = [
   { name: "North Star MD", tag: "House brand", logo: "★" },
@@ -38,7 +39,7 @@ export function ShopBrandsWall() {
           <div className="pharm-wall-grid">
             {wall.map((p) => (
               <Link key={p.slug} to={`/shop/product/${p.slug}`} className="pharm-wall-tile">
-                <img src={p.image} data-fallback={p.imageFallback} alt="" loading="lazy" decoding="async" />
+                <SafeImage path={p.image} alt="" extraFallbacks={p.imageFallback ? [p.imageFallback] : []} />
                 <span>{p.name}</span>
               </Link>
             ))}
