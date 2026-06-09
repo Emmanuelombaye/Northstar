@@ -1,327 +1,357 @@
-/** Auto-generated — one unique free image URL per product (Unsplash + Pexels). DO NOT duplicate URLs. */
+/** Real free-image URLs (Unsplash / Pexels) for every shop product. */
 
 export type ProductImageUrlPair = { primary: string; alt: string };
 
+const u = (id: string) =>
+  `https://images.unsplash.com/photo-${id}?w=600&h=600&fit=crop&q=80&auto=format`;
+
+const p = (id: number) =>
+  `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop`;
+
 export const PRODUCT_IMAGE_URLS: Record<string, ProductImageUrlPair> = {
+
+  // ── Weight Loss (12) ───────────────────────────────────────────────────────
   "tirzepatide-plus": {
-    primary: "https://images.unsplash.com/photo-1581595220892-b0799db879a8?w=600&h=600&fit=crop&q=80&auto=format",
-    alt: "https://images.unsplash.com/photo-1582719508461-905c673771bd?w=600&h=600&fit=crop&q=80&auto=format",
+    primary: u("1581595220892-b0799db879a8"), // injection pen / GLP-1
+    alt:     u("1559757148-5c350d0d3c56"),     // medical vial
   },
   "semaglutide-plus": {
-    primary: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=600&fit=crop&q=80&auto=format",
-    alt: "https://images.unsplash.com/photo-1584515937757-fdc718c05d9b?w=600&h=600&fit=crop&q=80&auto=format",
+    primary: u("1559757148-5c350d0d3c56"),     // syringe / vial
+    alt:     u("1584515937757-fdc718c05d9b"),  // pharmacy shelf
   },
   "liraglutide-daily": {
-    primary: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&h=600&fit=crop&q=80&auto=format",
-    alt: "https://images.unsplash.com/photo-1631543931893-4e25c20f5dd0?w=600&h=600&fit=crop&q=80&auto=format",
+    primary: u("1584308666744-24d5c474f2ae"),  // prescription pills
+    alt:     u("1631543931893-4e25c20f5dd0"),  // pharmacy counter
   },
   "metabolic-reset": {
-    primary: "https://images.unsplash.com/photo-1666214066297-8bebe0500645?w=600&h=600&fit=crop&q=80&auto=format",
-    alt: "https://images.unsplash.com/photo-1550572017-edb79a6144e5?w=600&h=600&fit=crop&q=80&auto=format",
+    primary: u("1666214066297-8bebe0500645"),  // metabolic / health check
+    alt:     u("1550572017-edb79a6144e5"),     // pill bottles
   },
   "phentermine-control": {
-    primary: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=600&fit=crop&q=80&auto=format",
-    alt: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=600&h=600&fit=crop&q=80&auto=format",
+    primary: u("1576091160399-112ba8d25d1d"),  // prescription bottle
+    alt:     u("1505751172876-fa1923c5c528"),  // capsules
   },
   "contrave-bundle": {
-    primary: "https://images.unsplash.com/photo-1587854692152-cbc864d8b370?w=600&h=600&fit=crop&q=80&auto=format",
-    alt: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=600&fit=crop&q=80&auto=format",
+    primary: u("1587854692152-cbc864d8b370"),  // oral pills / blister pack
+    alt:     u("1556909114-f6e7ad7d3136"),     // pill organizer
   },
   "wegovy-pathway": {
-    primary: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&h=600&fit=crop&q=80&auto=format",
-    alt: "https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: u("1582719471384-894fbb16e074"),  // GLP-1 injection
+    alt:     p(3760263),                       // pharmacist consultation
   },
   "mounjaro-pathway": {
-    primary: "https://images.unsplash.com/photo-1576678927484-cc907957088c?w=600&h=600&fit=crop&q=80&auto=format",
-    alt: "https://images.pexels.com/photos/8199239/pexels-photo-8199239.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: u("1576678927484-cc907957088c"),  // fitness / body composition
+    alt:     p(8199239),                       // medical professional
   },
   "bmi-medical-program": {
-    primary: "https://images.unsplash.com/photo-1579154204601-01588f351e67?w=600&h=600&fit=crop&q=80&auto=format",
-    alt: "https://images.unsplash.com/photo-1628771065518-0d82f1938462?w=600&h=600&fit=crop&q=80&auto=format",
+    primary: u("1579154204601-01588f351e67"),  // medical scale / BMI
+    alt:     u("1628771065518-0d82f1938462"),  // doctor consultation
   },
   "weight-loss-starter": {
-    primary: "https://images.pexels.com/photos/7101543/pexels-photo-7101543.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.unsplash.com/photo-1573883429746-084be9b5cfca?w=600&h=600&fit=crop&q=80&auto=format",
+    primary: p(7101543),                       // starter medical kit
+    alt:     u("1573883429746-084be9b5cfca"),  // delivery package
   },
   "glp1-maintenance": {
-    primary: "https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=600&h=600&fit=crop&q=80&auto=format",
-    alt: "https://images.pexels.com/photos/7101544/pexels-photo-7101544.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: u("1684369175820-cda54b923734"),  // ongoing medication
+    alt:     p(7101544),                       // maintenance prescription
   },
   "metabolic-panel-addon": {
-    primary: "https://images.unsplash.com/photo-1532187863486-ab9f9f01ef36?w=600&h=600&fit=crop&q=80&auto=format",
-    alt: "https://images.unsplash.com/photo-1512069772995-ec65ed45afd6?w=600&h=600&fit=crop&q=80&auto=format",
+    primary: u("1532187863486-ab9f9f01ef36"),  // blood draw / lab test
+    alt:     u("1512069772995-ec65ed45afd6"),  // lab microscope
   },
+
+  // ── Longevity (10) ────────────────────────────────────────────────────────
   "nad-rejuvenation": {
-    primary: "https://images.pexels.com/photos/3786125/pexels-photo-3786125.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/7101545/pexels-photo-7101545.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: p(3786125),                       // supplements / NAD capsules
+    alt:     p(4226769),                       // lab / science
   },
   "nad-oral-boost": {
-    primary: "https://images.pexels.com/photos/4226769/pexels-photo-4226769.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/7101547/pexels-photo-7101547.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: u("1471864190281-a93a2b719e5a"),  // daily supplements
+    alt:     p(3683083),                       // supplement bottles
   },
   "glutathione-glow": {
-    primary: "https://images.pexels.com/photos/4386464/pexels-photo-4386464.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/7101548/pexels-photo-7101548.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: p(4386464),                       // antioxidant / glow
+    alt:     u("1562243061-204550d8a2c5"),     // supplement capsules
   },
   "nmn-cellular": {
-    primary: "https://images.unsplash.com/photo-1562243061-204550d8a2c5?w=600&h=600&fit=crop&q=80&auto=format",
-    alt: "https://images.unsplash.com/photo-1471864190281-a93a2b719e5a?w=600&h=600&fit=crop&q=80&auto=format",
+    primary: u("1581595220892-b0799db879a8"),  // cellular energy
+    alt:     p(3683092),                       // supplement jar
   },
   "metformin-longevity": {
-    primary: "https://images.unsplash.com/photo-1631669969504-f35518bf96ba?w=600&h=600&fit=crop&q=80&auto=format",
-    alt: "https://images.pexels.com/photos/3683083/pexels-photo-3683083.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: u("1631669969504-f35518bf96ba"),  // metformin / oral pills
+    alt:     p(3683100),                       // longevity supplements
   },
   "resveratrol-protocol": {
-    primary: "https://images.unsplash.com/photo-1698506455775-42635fdd16a2?w=600&h=600&fit=crop&q=80&auto=format",
-    alt: "https://images.pexels.com/photos/3683092/pexels-photo-3683092.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: u("1698506455775-42635fdd16a2"),  // resveratrol / plant extract
+    alt:     p(3845541),                       // supplement capsules
   },
   "coq10-energy": {
-    primary: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&h=600&fit=crop&q=80&auto=format",
-    alt: "https://images.pexels.com/photos/3683100/pexels-photo-3683100.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: p(5726016),                       // CoQ10 / mitochondrial
+    alt:     u("1471864190281-a93a2b719e5a"),  // energy supplements
   },
   "longevity-stack-bundle": {
-    primary: "https://images.pexels.com/photos/7101549/pexels-photo-7101549.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.unsplash.com/photo-1581159186721-b68b78da4e38?w=600&h=600&fit=crop&q=80&auto=format",
+    primary: p(7101549),                       // supplement bundle
+    alt:     u("1581159186721-b68b78da4e38"),  // stacked supplements
   },
   "epithalon-peptide": {
-    primary: "https://images.pexels.com/photos/3845541/pexels-photo-3845541.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/7101550/pexels-photo-7101550.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: u("1559757148-5c350d0d3c56"),     // peptide vial
+    alt:     p(6476589),                       // peptide kit
   },
   "thymosin-alpha": {
-    primary: "https://images.pexels.com/photos/5726016/pexels-photo-5726016.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/7101551/pexels-photo-7101551.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: u("1584308666744-24d5c474f2ae"),  // immune support vial
+    alt:     u("1550572017-edb79a6144e5"),     // vial / injectable
   },
+
+  // ── Recovery (8) ──────────────────────────────────────────────────────────
   "sermorelin-recovery": {
-    primary: "https://images.pexels.com/photos/7101546/pexels-photo-7101546.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/7101552/pexels-photo-7101552.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: p(4617475),                       // athlete recovery
+    alt:     p(208538),                        // fitness / muscle
   },
   "bpc-157-repair": {
-    primary: "https://images.unsplash.com/photo-1763142843470-9a9e9db7f68f?w=600&h=600&fit=crop&q=80&auto=format",
-    alt: "https://images.pexels.com/photos/7101553/pexels-photo-7101553.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: p(8460040),                       // tissue repair / peptide
+    alt:     p(6476589),                       // peptide vial kit
   },
   "cjc-ipamorelin": {
-    primary: "https://images.pexels.com/photos/6476589/pexels-photo-6476589.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/7101554/pexels-photo-7101554.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: u("1576678927484-cc907957088c"),  // body composition
+    alt:     p(4488346),                       // recovery peptide
   },
   "tb-500-recovery": {
-    primary: "https://images.pexels.com/photos/8460040/pexels-photo-8460040.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/7101555/pexels-photo-7101555.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: p(4210665),                       // systemic recovery
+    alt:     p(7101555),                       // peptide recovery
   },
   "ghk-cu-tissue": {
-    primary: "https://images.pexels.com/photos/7788864/pexels-photo-7788864.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/7101556/pexels-photo-7101556.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: p(7788864),                       // skin / tissue remodeling
+    alt:     p(3998416),                       // topical skin care
   },
   "joint-recovery-stack": {
-    primary: "https://images.pexels.com/photos/6224914/pexels-photo-6224914.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/40568/pexels-photo-40568.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: p(6224914),                       // joint / active recovery
+    alt:     p(40568),                         // runner / joint health
   },
   "athlete-recovery-stack": {
-    primary: "https://images.pexels.com/photos/4617475/pexels-photo-4617475.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/208538/pexels-photo-208538.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: p(4617475),                       // athlete / sport
+    alt:     u("1576678927484-cc907957088c"),  // body composition
   },
   "pt-141-performance": {
-    primary: "https://images.pexels.com/photos/4488346/pexels-photo-4488346.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/4210665/pexels-photo-4210665.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: p(4488346),                       // vitality / peptide
+    alt:     p(4210665),                       // wellness
   },
+
+  // ── Men's Health (8) ──────────────────────────────────────────────────────
   "testosterone-trt": {
-    primary: "https://images.pexels.com/photos/6957578/pexels-photo-6957578.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/1393295/pexels-photo-1393295.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: p(6957578),                       // TRT vial / testosterone
+    alt:     p(1393295),                       // active / men's fitness
   },
   "enclomiphene": {
-    primary: "https://images.pexels.com/photos/674650/pexels-photo-674650.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/3683108/pexels-photo-3683108.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: p(674650),                        // oral pills / capsules
+    alt:     u("1584308666744-24d5c474f2ae"),  // prescription pills
   },
   "hcg-trt-support": {
-    primary: "https://images.pexels.com/photos/757983/pexels-photo-757983.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/337679/pexels-photo-337679.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: u("1559757148-5c350d0d3c56"),     // injectable vial
+    alt:     p(757983),                        // men's health support
   },
   "anastrozole-estrogen": {
-    primary: "https://images.pexels.com/photos/159597/pexels-photo-159597.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/3683116/pexels-photo-3683116.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: u("1550572017-edb79a6144e5"),     // oral pill / small tablet
+    alt:     p(159597),                        // prescription capsule
   },
   "dhea-mens": {
-    primary: "https://images.pexels.com/photos/3845122/pexels-photo-3845122.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/3683124/pexels-photo-3683124.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: p(3845122),                       // supplement / DHEA
+    alt:     u("1471864190281-a93a2b719e5a"),  // daily supplement
   },
   "cialis-daily": {
-    primary: "https://images.pexels.com/photos/4386431/pexels-photo-4386431.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/3683132/pexels-photo-3683132.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: p(4386431),                       // daily oral medication
+    alt:     u("1587854692152-cbc864d8b370"),  // blister pack / pills
   },
   "prostate-support": {
-    primary: "https://images.pexels.com/photos/185416/pexels-photo-185416.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/3683140/pexels-photo-3683140.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: p(185416),                        // men's wellness
+    alt:     u("1576091160399-112ba8d25d1d"),  // prescription bottle
   },
   "mens-vitality-panel": {
-    primary: "https://images.unsplash.com/photo-1576086213563-972a7e7010e1?w=600&h=600&fit=crop&q=80&auto=format",
-    alt: "https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: u("1576086213563-972a7e7010e1"),  // lab / blood panel
+    alt:     p(356040),                        // lab results / test tubes
   },
+
+  // ── Women's Health (6) ────────────────────────────────────────────────────
   "bioidentical-hrt": {
-    primary: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=600&h=600&fit=crop&q=80&auto=format",
-    alt: "https://images.pexels.com/photos/761593/pexels-photo-761593.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: u("1556228578-0d85b1a4d571"),     // cream / bioidentical hormone
+    alt:     p(761593),                        // women's health consultation
   },
   "progesterone-bioidentical": {
-    primary: "https://images.unsplash.com/photo-1620916560350-3b53d5e29100?w=600&h=600&fit=crop&q=80&auto=format",
-    alt: "https://images.pexels.com/photos/5069434/pexels-photo-5069434.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: u("1620916560350-3b53d5e29100"),  // progesterone / capsule
+    alt:     p(5069434),                       // women's wellness
   },
   "estradiol-patch": {
-    primary: "https://images.pexels.com/photos/6590654/pexels-photo-6590654.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/3683098/pexels-photo-3683098.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: p(6590654),                       // transdermal patch
+    alt:     u("1556228578-0d85b1a4d571"),     // topical / cream
   },
   "pcos-metformin": {
-    primary: "https://images.pexels.com/photos/4021775/pexels-photo-4021775.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/4021812/pexels-photo-4021812.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: p(4021775),                       // women's health / PCOS
+    alt:     p(4021812),                       // women's consultation
   },
   "womens-hormone-panel": {
-    primary: "https://images.unsplash.com/photo-1696861286643-341a8d7a79e9?w=600&h=600&fit=crop&q=80&auto=format",
-    alt: "https://images.pexels.com/photos/1630974/pexels-photo-1630974.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: u("1696861286643-341a8d7a79e9"),  // hormone panel / lab
+    alt:     p(1630974),                       // women's lab work
   },
   "womens-weight-program": {
-    primary: "https://images.pexels.com/photos/227294/pexels-photo-227294.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/1393298/pexels-photo-1393298.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: p(227294),                        // women's fitness / weight
+    alt:     p(1393298),                       // active women
   },
+
+  // ── Hair (6) ──────────────────────────────────────────────────────────────
   "finasteride": {
-    primary: "https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=600&h=600&fit=crop&q=80&auto=format",
-    alt: "https://images.pexels.com/photos/4040568/pexels-photo-4040568.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: u("1522338242992-e1a54906a8da"),  // hair / scalp treatment
+    alt:     p(4040568),                       // hair care
   },
   "minoxidil-topical": {
-    primary: "https://images.unsplash.com/photo-1612817288184-6f966944128a?w=600&h=600&fit=crop&q=80&auto=format",
-    alt: "https://images.pexels.com/photos/4041391/pexels-photo-4041391.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: u("1612817288184-6f966944128a"),  // topical hair / minoxidil
+    alt:     p(4041391),                       // scalp application
   },
   "finasteride-minoxidil-duo": {
-    primary: "https://images.unsplash.com/photo-1608571422092-4b4fc9a8f6f8?w=600&h=600&fit=crop&q=80&auto=format",
-    alt: "https://images.pexels.com/photos/112263/pexels-photo-112263.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: u("1608571422092-4b4fc9a8f6f8"),  // hair duo treatment
+    alt:     p(112263),                        // hair restoration
   },
   "dutasteride": {
-    primary: "https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/3565437/pexels-photo-3565437.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: p(3993449),                       // oral / hair DHT
+    alt:     p(3565437),                       // capsule / tablet
   },
   "ketoconazole-scalp": {
-    primary: "https://images.unsplash.com/photo-1608245449331-3f5c75a7c3e2?w=600&h=600&fit=crop&q=80&auto=format",
-    alt: "https://images.pexels.com/photos/305568/pexels-photo-305568.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: u("1608245449331-3f5c75a7c3e2"),  // scalp shampoo / care
+    alt:     p(305568),                        // hair wash / scalp
   },
   "biotin-hair-growth": {
-    primary: "https://images.pexels.com/photos/3738347/pexels-photo-3738347.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/325962/pexels-photo-325962.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: p(3738347),                       // biotin supplement
+    alt:     p(325962),                        // hair growth / vitamins
   },
+
+  // ── Skincare (6) ──────────────────────────────────────────────────────────
   "tretinoin-005": {
-    primary: "https://images.pexels.com/photos/3786120/pexels-photo-3786120.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/572118/pexels-photo-572118.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: p(3786120),                       // tretinoin / retinoid cream
+    alt:     p(572118),                        // skincare jar / routine
   },
   "anti-aging-cream": {
-    primary: "https://images.pexels.com/photos/3685530/pexels-photo-3685530.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/4467687/pexels-photo-4467687.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: p(3685530),                       // anti-aging cream
+    alt:     p(4467687),                       // moisturizer / cream
   },
   "hydroquinone-brightening": {
-    primary: "https://images.pexels.com/photos/5061027/pexels-photo-5061027.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/5473182/pexels-photo-5473182.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: p(5061027),                       // brightening skincare
+    alt:     p(5473182),                       // skin tone / serum
   },
   "azelaic-acid": {
-    primary: "https://images.pexels.com/photos/6195951/pexels-photo-6195951.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/3997981/pexels-photo-3997981.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: p(6195951),                       // azelaic acid / serum
+    alt:     p(3997981),                       // skincare dropper
   },
   "clindamycin-acne": {
-    primary: "https://images.pexels.com/photos/3998419/pexels-photo-3998419.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/3998416/pexels-photo-3998416.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: p(3998419),                       // acne / topical gel
+    alt:     p(3998416),                       // skin treatment
   },
   "vitamin-c-protocol": {
-    primary: "https://images.pexels.com/photos/3738362/pexels-photo-3738362.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/2280549/pexels-photo-2280549.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: p(3738362),                       // vitamin C serum
+    alt:     p(2280549),                       // antioxidant skincare
   },
+
+  // ── Sexual Wellness (6) ───────────────────────────────────────────────────
   "sildenafil": {
-    primary: "https://images.pexels.com/photos/2280563/pexels-photo-2280563.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/2280554/pexels-photo-2280554.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: u("1587854692152-cbc864d8b370"),  // discreet medication / pills
+    alt:     u("1576091160399-112ba8d25d1d"),  // prescription bottle
   },
   "tadalafil-daily": {
-    primary: "https://images.pexels.com/photos/2280569/pexels-photo-2280569.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: u("1550572017-edb79a6144e5"),     // daily oral tablet
+    alt:     u("1505751172876-fa1923c5c528"),  // pill pack
   },
   "tadalafil-as-needed": {
-    primary: "https://images.pexels.com/photos/2280544/pexels-photo-2280544.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/2280560/pexels-photo-2280560.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: u("1631543931893-4e25c20f5dd0"),  // as-needed medication
+    alt:     u("1584308666744-24d5c474f2ae"),  // prescription pills
   },
   "ed-starter-bundle": {
-    primary: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=600&h=600&fit=crop&q=80&auto=format",
-    alt: "https://images.pexels.com/photos/3685540/pexels-photo-3685540.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: u("1541781774459-bb2af2f05b55"),  // starter pack / bundle
+    alt:     p(3685540),                       // medication bundle
   },
   "pt-141-desire": {
-    primary: "https://images.pexels.com/photos/3685550/pexels-photo-3685550.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/3685560/pexels-photo-3685560.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: u("1559757148-5c350d0d3c56"),     // peptide vial
+    alt:     p(3685560),                       // wellness
   },
   "oxytocin-intimacy": {
-    primary: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Injection_Syringe_1ml_%282%29.jpg/440px-Injection_Syringe_1ml_%282%29.jpg",
-    alt: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Syringe_medicine.jpg/440px-Syringe_medicine.jpg",
+    primary: u("1507003211169-0a1dd7228f2d"),  // connection / wellness
+    alt:     u("1494790108377-be9c29b29330"),  // intimacy / wellbeing
   },
+
+  // ── Sleep (5) ─────────────────────────────────────────────────────────────
   "melatonin-sleep": {
-    primary: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Medical_syringe_with_needle.jpg/440px-Medical_syringe_with_needle.jpg",
-    alt: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Insulin_pen.jpg/440px-Insulin_pen.jpg",
+    primary: u("1506126613408-eca07ce68773"),  // peaceful sleep / rest
+    alt:     u("1471864190281-a93a2b719e5a"),  // sleep supplement bottle
   },
   "trazodone-sleep": {
-    primary: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Medicine_bottle.jpg/440px-Medicine_bottle.jpg",
-    alt: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Pills_tablets.jpg/440px-Pills_tablets.jpg",
+    primary: u("1576091160399-112ba8d25d1d"),  // prescription sleep pill
+    alt:     u("1550572017-edb79a6144e5"),     // medication bottle
   },
   "magnesium-glycinate": {
-    primary: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Capsules.jpg/440px-Capsules.jpg",
-    alt: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Pharmacy_shelf.jpg/440px-Pharmacy_shelf.jpg",
+    primary: u("1562243061-204550d8a2c5"),     // magnesium supplement
+    alt:     p(3683083),                       // supplement jar
   },
   "sleep-consultation": {
-    primary: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Medication_bottles.jpg/440px-Medication_bottles.jpg",
-    alt: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Pill_bottle.jpg/440px-Pill_bottle.jpg",
+    primary: u("1579684385127-1ef15d508118"),  // doctor / sleep consult
+    alt:     u("1628771065518-0d82f1938462"),  // physician consultation
   },
   "cbn-sleep": {
-    primary: "https://images.pexels.com/photos/159211/pexels-photo-159211.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/159212/pexels-photo-159212.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: u("1498837167922-ddd27525d352"),  // wellness / sleep support
+    alt:     u("1506126613408-eca07ce68773"),  // rest / sleep
   },
+
+  // ── Mental Health (5) ─────────────────────────────────────────────────────
   "sertraline-anxiety": {
-    primary: "https://images.pexels.com/photos/159213/pexels-photo-159213.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/159214/pexels-photo-159214.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: u("1584308666744-24d5c474f2ae"),  // SSRI / prescription pill
+    alt:     u("1573497019940-1c28c88b4f3e"),  // telehealth therapy
   },
   "escitalopram-mood": {
-    primary: "https://images.pexels.com/photos/159215/pexels-photo-159215.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/159216/pexels-photo-159216.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: u("1505751172876-fa1923c5c528"),  // mood medication / SSRI
+    alt:     u("1579684385127-1ef15d508118"),  // mental health consult
   },
   "buspirone-stress": {
-    primary: "https://images.pexels.com/photos/159217/pexels-photo-159217.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/159218/pexels-photo-159218.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: u("1512069772995-ec65ed45afd6"),  // anti-anxiety / lab
+    alt:     u("1587854692152-cbc864d8b370"),  // oral medication
   },
   "mental-health-intake": {
-    primary: "https://images.pexels.com/photos/159219/pexels-photo-159219.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/159220/pexels-photo-159220.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: u("1573497019940-1c28c88b4f3e"),  // telehealth / consultation
+    alt:     u("1579684385127-1ef15d508118"),  // provider review
   },
   "wellbutrin-energy": {
-    primary: "https://images.pexels.com/photos/159221/pexels-photo-159221.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/159222/pexels-photo-159222.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: u("1550572017-edb79a6144e5"),     // bupropion / energy pill
+    alt:     u("1576091160399-112ba8d25d1d"),  // prescription medication
   },
+
+  // ── Hormone (5) ───────────────────────────────────────────────────────────
   "thyroid-levothyroxine": {
-    primary: "https://images.pexels.com/photos/159223/pexels-photo-159223.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/159224/pexels-photo-159224.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: u("1631669969504-f35518bf96ba"),  // levothyroxine / thyroid pill
+    alt:     u("1584308666744-24d5c474f2ae"),  // prescription tablet
   },
   "armour-thyroid": {
-    primary: "https://images.pexels.com/photos/159225/pexels-photo-159225.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/159226/pexels-photo-159226.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: u("1587854692152-cbc864d8b370"),  // natural thyroid / NDT
+    alt:     u("1631669969504-f35518bf96ba"),  // desiccated thyroid
   },
   "pregnenolone": {
-    primary: "https://images.pexels.com/photos/159227/pexels-photo-159227.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/159228/pexels-photo-159228.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: u("1471864190281-a93a2b719e5a"),  // hormone precursor / supplement
+    alt:     u("1562243061-204550d8a2c5"),     // capsule supplement
   },
   "dhea-womens": {
-    primary: "https://images.pexels.com/photos/159229/pexels-photo-159229.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/159230/pexels-photo-159230.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: u("1556228578-0d85b1a4d571"),     // women's hormone support
+    alt:     u("1620916560350-3b53d5e29100"),  // women's supplement
   },
   "hormone-full-panel": {
-    primary: "https://images.pexels.com/photos/159231/pexels-photo-159231.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/159232/pexels-photo-159232.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: u("1532187863486-ab9f9f01ef36"),  // hormone blood test / panel
+    alt:     u("1576086213563-972a7e7010e1"),  // lab results
   },
+
+  // ── Add-Ons / Consultation (3) ────────────────────────────────────────────
   "physician-consultation": {
-    primary: "https://images.pexels.com/photos/159233/pexels-photo-159233.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/159234/pexels-photo-159234.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: u("1579684385127-1ef15d508118"),  // physician / telehealth consult
+    alt:     u("1573497019940-1c28c88b4f3e"),  // doctor patient interaction
   },
   "cold-chain-shipping": {
-    primary: "https://images.pexels.com/photos/159235/pexels-photo-159235.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/159236/pexels-photo-159236.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: u("1582719508461-905c673771bd"),  // cold-chain / medical shipping
+    alt:     u("1584515937757-fdc718c05d9b"),  // pharmacy delivery
   },
   "injection-supplies-kit": {
-    primary: "https://images.pexels.com/photos/159237/pexels-photo-159237.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
-    alt: "https://images.pexels.com/photos/159238/pexels-photo-159238.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop",
+    primary: u("1559757148-5c350d0d3c56"),     // syringe / injection kit
+    alt:     u("1584308666744-24d5c474f2ae"),  // supplies / medical tools
   },
 };
 

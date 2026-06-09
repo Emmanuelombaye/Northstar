@@ -2,6 +2,7 @@
 
 import { getCatalogCopy } from "./catalogCopy";
 import { getShopifyMeta } from "./shopifyMeta";
+import { PRODUCT_IMAGE_URLS } from "./productImageUrls";
 import type { StoreCategory } from "./types";
 
 function localImage(slug: string, suffix = ""): string {
@@ -27,6 +28,7 @@ export function applyProductVisuals<
 >(product: T): T {
   const meta = getShopifyMeta(product.slug, product.category);
   const copy = getCatalogCopy(product.slug);
+  const urls = PRODUCT_IMAGE_URLS[product.slug];
 
   return {
     ...product,
@@ -34,10 +36,10 @@ export function applyProductVisuals<
     tagline: copy?.tagline ?? product.tagline,
     description: copy?.description ?? product.description,
     longDescription: copy?.longDescription ?? product.longDescription,
-    image: localImage(product.slug),
-    imageFallback: localImage(product.slug),
-    imageAlt: localImage(product.slug, "-alt"),
-    imageAltFallback: localImage(product.slug, "-alt"),
+    image: urls?.primary ?? localImage(product.slug),
+    imageFallback: urls?.primary ?? localImage(product.slug),
+    imageAlt: urls?.alt ?? localImage(product.slug, "-alt"),
+    imageAltFallback: urls?.alt ?? localImage(product.slug, "-alt"),
     dosageForm: meta.dosageForm,
     strength: meta.strength,
     vendor: meta.vendor,
