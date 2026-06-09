@@ -1,357 +1,356 @@
-/** Real free-image URLs (Unsplash / Pexels) for every shop product. */
+/** Real free-image URLs (Flickr via LoremFlickr) for every shop product. */
 
 export type ProductImageUrlPair = { primary: string; alt: string };
 
-const u = (id: string) =>
-  `https://images.unsplash.com/photo-${id}?w=600&h=600&fit=crop&q=80&auto=format`;
-
-const p = (id: number) =>
-  `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&fit=crop`;
+// We use LoremFlickr with specific keywords to get real photos.
+// The `lock` parameter ensures the image stays exactly the same on every refresh.
+const f = (keyword: string, lockId: number) =>
+  `https://loremflickr.com/600/600/${keyword}?lock=${lockId}`;
 
 export const PRODUCT_IMAGE_URLS: Record<string, ProductImageUrlPair> = {
 
   // ── Weight Loss (12) ───────────────────────────────────────────────────────
   "tirzepatide-plus": {
-    primary: u("1581595220892-b0799db879a8"), // injection pen / GLP-1
-    alt:     u("1559757148-5c350d0d3c56"),     // medical vial
+    primary: f("medicine,vial", 101),
+    alt:     f("health,clinic", 102),
   },
   "semaglutide-plus": {
-    primary: u("1559757148-5c350d0d3c56"),     // syringe / vial
-    alt:     u("1584515937757-fdc718c05d9b"),  // pharmacy shelf
+    primary: f("syringe,medicine", 103),
+    alt:     f("pharmacy", 104),
   },
   "liraglutide-daily": {
-    primary: u("1584308666744-24d5c474f2ae"),  // prescription pills
-    alt:     u("1631543931893-4e25c20f5dd0"),  // pharmacy counter
+    primary: f("prescription,pills", 105),
+    alt:     f("doctor,consultation", 106),
   },
   "metabolic-reset": {
-    primary: u("1666214066297-8bebe0500645"),  // metabolic / health check
-    alt:     u("1550572017-edb79a6144e5"),     // pill bottles
+    primary: f("fitness,health", 107),
+    alt:     f("healthy,food", 108),
   },
   "phentermine-control": {
-    primary: u("1576091160399-112ba8d25d1d"),  // prescription bottle
-    alt:     u("1505751172876-fa1923c5c528"),  // capsules
+    primary: f("capsules,medicine", 109),
+    alt:     f("bottle,pills", 110),
   },
   "contrave-bundle": {
-    primary: u("1587854692152-cbc864d8b370"),  // oral pills / blister pack
-    alt:     u("1556909114-f6e7ad7d3136"),     // pill organizer
+    primary: f("blisterpack,pills", 111),
+    alt:     f("medicine", 112),
   },
   "wegovy-pathway": {
-    primary: u("1582719471384-894fbb16e074"),  // GLP-1 injection
-    alt:     p(3760263),                       // pharmacist consultation
+    primary: f("injection,medicine", 113),
+    alt:     f("pharmacist", 114),
   },
   "mounjaro-pathway": {
-    primary: u("1576678927484-cc907957088c"),  // fitness / body composition
-    alt:     p(8199239),                       // medical professional
+    primary: f("health,body", 115),
+    alt:     f("medical,doctor", 116),
   },
   "bmi-medical-program": {
-    primary: u("1579154204601-01588f351e67"),  // medical scale / BMI
-    alt:     u("1628771065518-0d82f1938462"),  // doctor consultation
+    primary: f("scale,weight", 117),
+    alt:     f("doctor,patient", 118),
   },
   "weight-loss-starter": {
-    primary: p(7101543),                       // starter medical kit
-    alt:     u("1573883429746-084be9b5cfca"),  // delivery package
+    primary: f("medical,kit", 119),
+    alt:     f("delivery,package", 120),
   },
   "glp1-maintenance": {
-    primary: u("1684369175820-cda54b923734"),  // ongoing medication
-    alt:     p(7101544),                       // maintenance prescription
+    primary: f("daily,medicine", 121),
+    alt:     f("health,lifestyle", 122),
   },
   "metabolic-panel-addon": {
-    primary: u("1532187863486-ab9f9f01ef36"),  // blood draw / lab test
-    alt:     u("1512069772995-ec65ed45afd6"),  // lab microscope
+    primary: f("blood,test", 123),
+    alt:     f("microscope,lab", 124),
   },
 
   // ── Longevity (10) ────────────────────────────────────────────────────────
   "nad-rejuvenation": {
-    primary: p(3786125),                       // supplements / NAD capsules
-    alt:     p(4226769),                       // lab / science
+    primary: f("supplements,bottle", 201),
+    alt:     f("science,lab", 202),
   },
   "nad-oral-boost": {
-    primary: u("1471864190281-a93a2b719e5a"),  // daily supplements
-    alt:     p(3683083),                       // supplement bottles
+    primary: f("daily,supplements", 203),
+    alt:     f("vitamins", 204),
   },
   "glutathione-glow": {
-    primary: p(4386464),                       // antioxidant / glow
-    alt:     u("1562243061-204550d8a2c5"),     // supplement capsules
+    primary: f("antioxidant,health", 205),
+    alt:     f("capsules,supplements", 206),
   },
   "nmn-cellular": {
-    primary: u("1581595220892-b0799db879a8"),  // cellular energy
-    alt:     p(3683092),                       // supplement jar
+    primary: f("energy,health", 207),
+    alt:     f("supplement,jar", 208),
   },
   "metformin-longevity": {
-    primary: u("1631669969504-f35518bf96ba"),  // metformin / oral pills
-    alt:     p(3683100),                       // longevity supplements
+    primary: f("pills,medicine", 209),
+    alt:     f("longevity,health", 210),
   },
   "resveratrol-protocol": {
-    primary: u("1698506455775-42635fdd16a2"),  // resveratrol / plant extract
-    alt:     p(3845541),                       // supplement capsules
+    primary: f("plant,extract", 211),
+    alt:     f("supplement,capsules", 212),
   },
   "coq10-energy": {
-    primary: p(5726016),                       // CoQ10 / mitochondrial
-    alt:     u("1471864190281-a93a2b719e5a"),  // energy supplements
+    primary: f("heart,health", 213),
+    alt:     f("energy,vitamins", 214),
   },
   "longevity-stack-bundle": {
-    primary: p(7101549),                       // supplement bundle
-    alt:     u("1581159186721-b68b78da4e38"),  // stacked supplements
+    primary: f("supplements,stack", 215),
+    alt:     f("vitamins,bundle", 216),
   },
   "epithalon-peptide": {
-    primary: u("1559757148-5c350d0d3c56"),     // peptide vial
-    alt:     p(6476589),                       // peptide kit
+    primary: f("peptide,vial", 217),
+    alt:     f("medical,kit", 218),
   },
   "thymosin-alpha": {
-    primary: u("1584308666744-24d5c474f2ae"),  // immune support vial
-    alt:     u("1550572017-edb79a6144e5"),     // vial / injectable
+    primary: f("immune,support", 219),
+    alt:     f("injectable,vial", 220),
   },
 
   // ── Recovery (8) ──────────────────────────────────────────────────────────
   "sermorelin-recovery": {
-    primary: p(4617475),                       // athlete recovery
-    alt:     p(208538),                        // fitness / muscle
+    primary: f("athlete,recovery", 301),
+    alt:     f("muscle,fitness", 302),
   },
   "bpc-157-repair": {
-    primary: p(8460040),                       // tissue repair / peptide
-    alt:     p(6476589),                       // peptide vial kit
+    primary: f("tissue,repair", 303),
+    alt:     f("peptide,vial", 304),
   },
   "cjc-ipamorelin": {
-    primary: u("1576678927484-cc907957088c"),  // body composition
-    alt:     p(4488346),                       // recovery peptide
+    primary: f("body,composition", 305),
+    alt:     f("recovery,peptide", 306),
   },
   "tb-500-recovery": {
-    primary: p(4210665),                       // systemic recovery
-    alt:     p(7101555),                       // peptide recovery
+    primary: f("systemic,recovery", 307),
+    alt:     f("peptide,medicine", 308),
   },
   "ghk-cu-tissue": {
-    primary: p(7788864),                       // skin / tissue remodeling
-    alt:     p(3998416),                       // topical skin care
+    primary: f("skin,care", 309),
+    alt:     f("topical,cream", 310),
   },
   "joint-recovery-stack": {
-    primary: p(6224914),                       // joint / active recovery
-    alt:     p(40568),                         // runner / joint health
+    primary: f("joint,health", 311),
+    alt:     f("runner,active", 312),
   },
   "athlete-recovery-stack": {
-    primary: p(4617475),                       // athlete / sport
-    alt:     u("1576678927484-cc907957088c"),  // body composition
+    primary: f("athlete,sport", 313),
+    alt:     f("fitness,recovery", 314),
   },
   "pt-141-performance": {
-    primary: p(4488346),                       // vitality / peptide
-    alt:     p(4210665),                       // wellness
+    primary: f("vitality,wellness", 315),
+    alt:     f("wellness,health", 316),
   },
 
   // ── Men's Health (8) ──────────────────────────────────────────────────────
   "testosterone-trt": {
-    primary: p(6957578),                       // TRT vial / testosterone
-    alt:     p(1393295),                       // active / men's fitness
+    primary: f("vial,testosterone", 401),
+    alt:     f("mens,fitness", 402),
   },
   "enclomiphene": {
-    primary: p(674650),                        // oral pills / capsules
-    alt:     u("1584308666744-24d5c474f2ae"),  // prescription pills
+    primary: f("capsules,pills", 403),
+    alt:     f("prescription,bottle", 404),
   },
   "hcg-trt-support": {
-    primary: u("1559757148-5c350d0d3c56"),     // injectable vial
-    alt:     p(757983),                        // men's health support
+    primary: f("injectable,medicine", 405),
+    alt:     f("mens,health", 406),
   },
   "anastrozole-estrogen": {
-    primary: u("1550572017-edb79a6144e5"),     // oral pill / small tablet
-    alt:     p(159597),                        // prescription capsule
+    primary: f("small,tablet", 407),
+    alt:     f("prescription,capsule", 408),
   },
   "dhea-mens": {
-    primary: p(3845122),                       // supplement / DHEA
-    alt:     u("1471864190281-a93a2b719e5a"),  // daily supplement
+    primary: f("supplement,mens", 409),
+    alt:     f("daily,vitamins", 410),
   },
   "cialis-daily": {
-    primary: p(4386431),                       // daily oral medication
-    alt:     u("1587854692152-cbc864d8b370"),  // blister pack / pills
+    primary: f("daily,medication", 411),
+    alt:     f("blisterpack,pills", 412),
   },
   "prostate-support": {
-    primary: p(185416),                        // men's wellness
-    alt:     u("1576091160399-112ba8d25d1d"),  // prescription bottle
+    primary: f("mens,wellness", 413),
+    alt:     f("bottle,medicine", 414),
   },
   "mens-vitality-panel": {
-    primary: u("1576086213563-972a7e7010e1"),  // lab / blood panel
-    alt:     p(356040),                        // lab results / test tubes
+    primary: f("blood,panel", 415),
+    alt:     f("lab,test", 416),
   },
 
   // ── Women's Health (6) ────────────────────────────────────────────────────
   "bioidentical-hrt": {
-    primary: u("1556228578-0d85b1a4d571"),     // cream / bioidentical hormone
-    alt:     p(761593),                        // women's health consultation
+    primary: f("cream,hormone", 501),
+    alt:     f("womens,health", 502),
   },
   "progesterone-bioidentical": {
-    primary: u("1620916560350-3b53d5e29100"),  // progesterone / capsule
-    alt:     p(5069434),                       // women's wellness
+    primary: f("progesterone,capsule", 503),
+    alt:     f("womens,wellness", 504),
   },
   "estradiol-patch": {
-    primary: p(6590654),                       // transdermal patch
-    alt:     u("1556228578-0d85b1a4d571"),     // topical / cream
+    primary: f("transdermal,patch", 505),
+    alt:     f("topical,cream", 506),
   },
   "pcos-metformin": {
-    primary: p(4021775),                       // women's health / PCOS
-    alt:     p(4021812),                       // women's consultation
+    primary: f("womens,health", 507),
+    alt:     f("consultation,doctor", 508),
   },
   "womens-hormone-panel": {
-    primary: u("1696861286643-341a8d7a79e9"),  // hormone panel / lab
-    alt:     p(1630974),                       // women's lab work
+    primary: f("hormone,lab", 509),
+    alt:     f("womens,clinic", 510),
   },
   "womens-weight-program": {
-    primary: p(227294),                        // women's fitness / weight
-    alt:     p(1393298),                       // active women
+    primary: f("womens,fitness", 511),
+    alt:     f("active,women", 512),
   },
 
   // ── Hair (6) ──────────────────────────────────────────────────────────────
   "finasteride": {
-    primary: u("1522338242992-e1a54906a8da"),  // hair / scalp treatment
-    alt:     p(4040568),                       // hair care
+    primary: f("hair,treatment", 601),
+    alt:     f("hair,care", 602),
   },
   "minoxidil-topical": {
-    primary: u("1612817288184-6f966944128a"),  // topical hair / minoxidil
-    alt:     p(4041391),                       // scalp application
+    primary: f("topical,hair", 603),
+    alt:     f("scalp,treatment", 604),
   },
   "finasteride-minoxidil-duo": {
-    primary: u("1608571422092-4b4fc9a8f6f8"),  // hair duo treatment
-    alt:     p(112263),                        // hair restoration
+    primary: f("hair,duo", 605),
+    alt:     f("hair,restoration", 606),
   },
   "dutasteride": {
-    primary: p(3993449),                       // oral / hair DHT
-    alt:     p(3565437),                       // capsule / tablet
+    primary: f("oral,medicine", 607),
+    alt:     f("capsule,tablet", 608),
   },
   "ketoconazole-scalp": {
-    primary: u("1608245449331-3f5c75a7c3e2"),  // scalp shampoo / care
-    alt:     p(305568),                        // hair wash / scalp
+    primary: f("shampoo,care", 609),
+    alt:     f("hair,wash", 610),
   },
   "biotin-hair-growth": {
-    primary: p(3738347),                       // biotin supplement
-    alt:     p(325962),                        // hair growth / vitamins
+    primary: f("biotin,supplement", 611),
+    alt:     f("hair,vitamins", 612),
   },
 
   // ── Skincare (6) ──────────────────────────────────────────────────────────
   "tretinoin-005": {
-    primary: p(3786120),                       // tretinoin / retinoid cream
-    alt:     p(572118),                        // skincare jar / routine
+    primary: f("retinoid,cream", 701),
+    alt:     f("skincare,jar", 702),
   },
   "anti-aging-cream": {
-    primary: p(3685530),                       // anti-aging cream
-    alt:     p(4467687),                       // moisturizer / cream
+    primary: f("antiaging,cream", 703),
+    alt:     f("moisturizer", 704),
   },
   "hydroquinone-brightening": {
-    primary: p(5061027),                       // brightening skincare
-    alt:     p(5473182),                       // skin tone / serum
+    primary: f("brightening,skincare", 705),
+    alt:     f("skin,serum", 706),
   },
   "azelaic-acid": {
-    primary: p(6195951),                       // azelaic acid / serum
-    alt:     p(3997981),                       // skincare dropper
+    primary: f("acid,serum", 707),
+    alt:     f("skincare,dropper", 708),
   },
   "clindamycin-acne": {
-    primary: p(3998419),                       // acne / topical gel
-    alt:     p(3998416),                       // skin treatment
+    primary: f("acne,gel", 709),
+    alt:     f("skin,treatment", 710),
   },
   "vitamin-c-protocol": {
-    primary: p(3738362),                       // vitamin C serum
-    alt:     p(2280549),                       // antioxidant skincare
+    primary: f("vitamin,serum", 711),
+    alt:     f("antioxidant,skincare", 712),
   },
 
   // ── Sexual Wellness (6) ───────────────────────────────────────────────────
   "sildenafil": {
-    primary: u("1587854692152-cbc864d8b370"),  // discreet medication / pills
-    alt:     u("1576091160399-112ba8d25d1d"),  // prescription bottle
+    primary: f("discreet,pills", 801),
+    alt:     f("prescription,bottle", 802),
   },
   "tadalafil-daily": {
-    primary: u("1550572017-edb79a6144e5"),     // daily oral tablet
-    alt:     u("1505751172876-fa1923c5c528"),  // pill pack
+    primary: f("daily,tablet", 803),
+    alt:     f("pill,pack", 804),
   },
   "tadalafil-as-needed": {
-    primary: u("1631543931893-4e25c20f5dd0"),  // as-needed medication
-    alt:     u("1584308666744-24d5c474f2ae"),  // prescription pills
+    primary: f("medicine,pills", 805),
+    alt:     f("prescription,medicine", 806),
   },
   "ed-starter-bundle": {
-    primary: u("1541781774459-bb2af2f05b55"),  // starter pack / bundle
-    alt:     p(3685540),                       // medication bundle
+    primary: f("starter,pack", 807),
+    alt:     f("medication,bundle", 808),
   },
   "pt-141-desire": {
-    primary: u("1559757148-5c350d0d3c56"),     // peptide vial
-    alt:     p(3685560),                       // wellness
+    primary: f("peptide,vial", 809),
+    alt:     f("wellness,health", 810),
   },
   "oxytocin-intimacy": {
-    primary: u("1507003211169-0a1dd7228f2d"),  // connection / wellness
-    alt:     u("1494790108377-be9c29b29330"),  // intimacy / wellbeing
+    primary: f("connection,wellness", 811),
+    alt:     f("intimacy,wellbeing", 812),
   },
 
   // ── Sleep (5) ─────────────────────────────────────────────────────────────
   "melatonin-sleep": {
-    primary: u("1506126613408-eca07ce68773"),  // peaceful sleep / rest
-    alt:     u("1471864190281-a93a2b719e5a"),  // sleep supplement bottle
+    primary: f("sleep,rest", 901),
+    alt:     f("sleep,supplement", 902),
   },
   "trazodone-sleep": {
-    primary: u("1576091160399-112ba8d25d1d"),  // prescription sleep pill
-    alt:     u("1550572017-edb79a6144e5"),     // medication bottle
+    primary: f("prescription,sleep", 903),
+    alt:     f("medication,bottle", 904),
   },
   "magnesium-glycinate": {
-    primary: u("1562243061-204550d8a2c5"),     // magnesium supplement
-    alt:     p(3683083),                       // supplement jar
+    primary: f("magnesium,supplement", 905),
+    alt:     f("supplement,jar", 906),
   },
   "sleep-consultation": {
-    primary: u("1579684385127-1ef15d508118"),  // doctor / sleep consult
-    alt:     u("1628771065518-0d82f1938462"),  // physician consultation
+    primary: f("doctor,sleep", 907),
+    alt:     f("physician,consultation", 908),
   },
   "cbn-sleep": {
-    primary: u("1498837167922-ddd27525d352"),  // wellness / sleep support
-    alt:     u("1506126613408-eca07ce68773"),  // rest / sleep
+    primary: f("wellness,sleep", 909),
+    alt:     f("rest,sleep", 910),
   },
 
   // ── Mental Health (5) ─────────────────────────────────────────────────────
   "sertraline-anxiety": {
-    primary: u("1584308666744-24d5c474f2ae"),  // SSRI / prescription pill
-    alt:     u("1573497019940-1c28c88b4f3e"),  // telehealth therapy
+    primary: f("prescription,pill", 1001),
+    alt:     f("telehealth,therapy", 1002),
   },
   "escitalopram-mood": {
-    primary: u("1505751172876-fa1923c5c528"),  // mood medication / SSRI
-    alt:     u("1579684385127-1ef15d508118"),  // mental health consult
+    primary: f("mood,medication", 1003),
+    alt:     f("mental,health", 1004),
   },
   "buspirone-stress": {
-    primary: u("1512069772995-ec65ed45afd6"),  // anti-anxiety / lab
-    alt:     u("1587854692152-cbc864d8b370"),  // oral medication
+    primary: f("antianxiety,medicine", 1005),
+    alt:     f("oral,medication", 1006),
   },
   "mental-health-intake": {
-    primary: u("1573497019940-1c28c88b4f3e"),  // telehealth / consultation
-    alt:     u("1579684385127-1ef15d508118"),  // provider review
+    primary: f("telehealth,consultation", 1007),
+    alt:     f("provider,review", 1008),
   },
   "wellbutrin-energy": {
-    primary: u("1550572017-edb79a6144e5"),     // bupropion / energy pill
-    alt:     u("1576091160399-112ba8d25d1d"),  // prescription medication
+    primary: f("energy,pill", 1009),
+    alt:     f("prescription,medication", 1010),
   },
 
   // ── Hormone (5) ───────────────────────────────────────────────────────────
   "thyroid-levothyroxine": {
-    primary: u("1631669969504-f35518bf96ba"),  // levothyroxine / thyroid pill
-    alt:     u("1584308666744-24d5c474f2ae"),  // prescription tablet
+    primary: f("thyroid,pill", 1101),
+    alt:     f("prescription,tablet", 1102),
   },
   "armour-thyroid": {
-    primary: u("1587854692152-cbc864d8b370"),  // natural thyroid / NDT
-    alt:     u("1631669969504-f35518bf96ba"),  // desiccated thyroid
+    primary: f("natural,thyroid", 1103),
+    alt:     f("desiccated,thyroid", 1104),
   },
   "pregnenolone": {
-    primary: u("1471864190281-a93a2b719e5a"),  // hormone precursor / supplement
-    alt:     u("1562243061-204550d8a2c5"),     // capsule supplement
+    primary: f("hormone,supplement", 1105),
+    alt:     f("capsule,supplement", 1106),
   },
   "dhea-womens": {
-    primary: u("1556228578-0d85b1a4d571"),     // women's hormone support
-    alt:     u("1620916560350-3b53d5e29100"),  // women's supplement
+    primary: f("womens,hormone", 1107),
+    alt:     f("womens,supplement", 1108),
   },
   "hormone-full-panel": {
-    primary: u("1532187863486-ab9f9f01ef36"),  // hormone blood test / panel
-    alt:     u("1576086213563-972a7e7010e1"),  // lab results
+    primary: f("hormone,blood", 1109),
+    alt:     f("lab,results", 1110),
   },
 
   // ── Add-Ons / Consultation (3) ────────────────────────────────────────────
   "physician-consultation": {
-    primary: u("1579684385127-1ef15d508118"),  // physician / telehealth consult
-    alt:     u("1573497019940-1c28c88b4f3e"),  // doctor patient interaction
+    primary: f("physician,telehealth", 1201),
+    alt:     f("doctor,patient", 1202),
   },
   "cold-chain-shipping": {
-    primary: u("1582719508461-905c673771bd"),  // cold-chain / medical shipping
-    alt:     u("1584515937757-fdc718c05d9b"),  // pharmacy delivery
+    primary: f("cold,shipping", 1203),
+    alt:     f("pharmacy,delivery", 1204),
   },
   "injection-supplies-kit": {
-    primary: u("1559757148-5c350d0d3c56"),     // syringe / injection kit
-    alt:     u("1584308666744-24d5c474f2ae"),  // supplies / medical tools
+    primary: f("syringe,kit", 1205),
+    alt:     f("medical,supplies", 1206),
   },
 };
 
