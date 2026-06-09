@@ -6,12 +6,19 @@ import { existsSync } from "node:fs";
 const cleanUrlsMiddleware = (req, res, next) => {
   const url = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
   const pathname = url.pathname;
-  
+
   if (pathname === "/") {
     return next();
   }
 
-  if (!pathname.includes(".") && !pathname.startsWith("/shop")) {
+  // SPA fallback: serve index.html for all /shop/* routes (React Router handles them client-side)
+  if (!pathname.includes(".") && pathname.startsWith("/shop")) {
+    req.url = `/index.html${url.search}`;
+    return next();
+  }
+
+  // Clean URLs: rewrite /about → /about.html etc. for the static multi-page site
+  if (!pathname.includes(".")) {
     const filePath = resolve(__dirname, `${pathname.slice(1)}.html`);
     if (existsSync(filePath)) {
       req.url = `${pathname}.html${url.search}`;
