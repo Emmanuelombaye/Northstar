@@ -5,3 +5,9 @@ dist/
 .env
 .env.*
 audit-*.png
+temp_*.jpg
+temp_downloads/
+pill_*.jpg
+test_*.jpg
+unsplash_*.json
+unsplash_dump.html
