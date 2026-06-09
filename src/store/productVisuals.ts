@@ -1,13 +1,11 @@
-/** Per-product unique image URLs + Shopify copy + pharmacy metadata */
+/** Per-product labeled pharmacy mockup images + Shopify copy */
 
 import { getCatalogCopy } from "./catalogCopy";
-import { getProductImageUrls } from "./productImageUrls";
 import { getShopifyMeta } from "./shopifyMeta";
 import type { StoreCategory } from "./types";
 
-function localSlugImage(slug: string, suffix = ""): { primary: string; alt: string } {
-  const base = `/images/products/${slug}${suffix}`;
-  return { primary: `${base}.jpg`, alt: `${base}.jpg` };
+function localImage(slug: string, suffix = ""): string {
+  return `/images/products/${slug}${suffix}.jpg`;
 }
 
 export function applyProductVisuals<
@@ -29,11 +27,6 @@ export function applyProductVisuals<
 >(product: T): T {
   const meta = getShopifyMeta(product.slug, product.category);
   const copy = getCatalogCopy(product.slug);
-  const urls = getProductImageUrls(product.slug);
-  const local = localSlugImage(product.slug);
-
-  const primary = urls?.primary ?? local.primary;
-  const alt = urls?.alt ?? localSlugImage(product.slug, "-alt").primary;
 
   return {
     ...product,
@@ -41,10 +34,10 @@ export function applyProductVisuals<
     tagline: copy?.tagline ?? product.tagline,
     description: copy?.description ?? product.description,
     longDescription: copy?.longDescription ?? product.longDescription,
-    image: primary,
-    imageFallback: urls?.primary ?? primary,
-    imageAlt: alt,
-    imageAltFallback: urls?.alt ?? alt,
+    image: localImage(product.slug),
+    imageFallback: localImage(product.slug),
+    imageAlt: localImage(product.slug, "-alt"),
+    imageAltFallback: localImage(product.slug, "-alt"),
     dosageForm: meta.dosageForm,
     strength: meta.strength,
     vendor: meta.vendor,
