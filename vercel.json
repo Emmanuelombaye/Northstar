@@ -43,11 +43,11 @@
   "rewrites": [
     {
       "source": "/shop",
-      "destination": "/index.html"
+      "destination": "/"
     },
     {
       "source": "/shop/:path*",
-      "destination": "/index.html"
+      "destination": "/"
     },
     {
       "source": "/logo/portal-logo.png",
@@ -198,6 +198,10 @@
       "source": "/care/:path*",
       "has": [{ "type": "host", "value": "www.joinnorthstarmd.com" }],
       "destination": "https://www.peak-health.io/care/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/"
     }
   ],
   "headers": [
