@@ -31,15 +31,18 @@ function FlipImg({ resolved, className, alt }: FlipImgProps) {
     [resolved.chain],
   );
 
+  const external = resolved.src.startsWith("http");
+
   return (
     <picture>
-      {resolved.webp ? <source srcSet={resolved.webp} type="image/webp" /> : null}
+      {!external && resolved.webp ? <source srcSet={resolved.webp} type="image/webp" /> : null}
       <img
         className={className}
         src={resolved.src}
         alt={alt}
         loading="lazy"
         decoding="async"
+        referrerPolicy="no-referrer"
         onError={onError}
       />
     </picture>

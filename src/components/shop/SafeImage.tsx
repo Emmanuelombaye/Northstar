@@ -44,15 +44,18 @@ export function SafeImage({
     [img.chain],
   );
 
+  const external = img.src.startsWith("http");
+
   return (
     <picture>
-      {img.webp ? <source srcSet={img.webp} type="image/webp" /> : null}
+      {!external && img.webp ? <source srcSet={img.webp} type="image/webp" /> : null}
       <img
         src={img.src}
         alt={alt}
         className={className}
         loading={loading}
         decoding="async"
+        referrerPolicy="no-referrer"
         onError={onError}
       />
     </picture>

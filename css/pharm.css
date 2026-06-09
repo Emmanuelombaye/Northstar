@@ -1194,3 +1194,42 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+
+/* ── Mobile Responsive Optimizations ── */
+@media (max-width: 768px) {
+  /* Side-by-side buttons are too squished in 2-column layout on medium/small tablet, so stack them vertically */
+  .pharm-card-actions {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+  .pharm-enroll-btn,
+  .pharm-card-actions .pharm-add-btn {
+    width: 100% !important;
+    padding-block: 10px !important;
+    font-size: 10px !important;
+  }
+}
+
+@media (max-width: 520px) {
+  /* On mobile phone screens, display product cards in a single column so images and clinical details display beautifully */
+  .pharm-featured-grid,
+  .pharm-product-grid,
+  .pharm-collection-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    padding-inline: 4px;
+  }
+  
+  /* Since cards are now full-width, we can restore the side-by-side button layout for premium aesthetics */
+  .pharm-card-actions {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+@media (max-width: 380px) {
+  /* Fallback to stacked buttons for extremely narrow mobile viewports (e.g. iPhone SE) */
+  .pharm-card-actions {
+    grid-template-columns: 1fr !important;
+  }
+}
+

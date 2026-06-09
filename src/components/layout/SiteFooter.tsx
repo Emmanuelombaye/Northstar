@@ -121,9 +121,7 @@ export function SiteFooter() {
               <li>
                 <a href="/shop">Shop</a>
               </li>
-              <li>
-                <a href="/explore-treatments">Explore Treatments</a>
-              </li>
+
               <li>
                 <a href="/how-it-works">How It Works</a>
               </li>

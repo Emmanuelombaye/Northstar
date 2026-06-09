@@ -1,28 +1,31 @@
 import { getPharmacyImages } from "../store/pharmacyImages";
+import { getProductImageUrls } from "../store/productImageUrls";
 import type { PharmacyProduct } from "../store/types";
 
 export type ResolvedImage = {
-  /** Always use this as <img src> — avoids webp 404 noise in the console */
   src: string;
-  /** Optional <source type="image/webp"> */
   webp?: string;
-  /** Ordered chain for onerror (jpg → webp → pharmacy store) */
   chain: string[];
 };
 
+export function isExternalUrl(path: string): boolean {
+  return /^https?:\/\//i.test(path);
+}
+
 /** Best on-disk raster path: prefer jpg, then png, then webp-derived jpg */
 export function toRaster(path: string): string {
+  if (isExternalUrl(path)) return path;
   if (path.endsWith(".jpg") || path.endsWith(".png")) return path;
   if (path.endsWith(".webp")) return path.replace(/\.webp$/, ".jpg");
   return `${path}.jpg`;
 }
 
-/** @deprecated alias */
 export function toJpg(path: string): string {
   return toRaster(path);
 }
 
 export function toWebp(path: string): string {
+  if (isExternalUrl(path)) return path;
   if (path.endsWith(".webp")) return path;
   return path.replace(/\.(jpg|png)$/, ".webp");
 }
@@ -31,8 +34,8 @@ function unique(paths: string[]): string[] {
   return paths.filter((p, i) => p && paths.indexOf(p) === i);
 }
 
-/** Resolve any /images/ path to jpg-first with fallbacks */
 export function toDisplayPath(path: string): string {
+  if (isExternalUrl(path)) return path;
   if (path.endsWith(".jpg") || path.endsWith(".png")) return path;
   if (path.endsWith(".webp")) {
     const base = path.slice(0, -5);
@@ -42,6 +45,11 @@ export function toDisplayPath(path: string): string {
 }
 
 export function resolveImagePath(path: string, extra: string[] = []): ResolvedImage {
+  if (isExternalUrl(path)) {
+    const chain = unique([path, ...extra.filter(isExternalUrl)]);
+    return { src: path, chain };
+  }
+
   const base = path.replace(/\.(webp|jpg|png)$/, "");
   const jpg = `${base}.jpg`;
   const png = `${base}.png`;
@@ -61,32 +69,35 @@ export function resolveImagePath(path: string, extra: string[] = []): ResolvedIm
 }
 
 export function resolveProductPrimary(product: PharmacyProduct): ResolvedImage {
+  const urls = getProductImageUrls(product.slug);
   const pharm = getPharmacyImages(product.slug, product.category);
   const extra = [
+    urls?.primary,
+    urls?.alt,
     product.image,
     product.imageFallback,
     product.imageAlt,
-    product.imageAltFallback,
     pharm.primary.jpg,
     pharm.primary.webp,
-    pharm.alt.jpg,
-    pharm.alt.webp,
-  ];
-  const base = product.imageFallback ?? toJpg(product.image);
+  ].filter(Boolean) as string[];
+
+  const base = product.image || urls?.primary || product.imageFallback || toJpg(product.image);
   return resolveImagePath(base, extra);
 }
 
 export function resolveProductSecondary(product: PharmacyProduct): ResolvedImage {
+  const urls = getProductImageUrls(product.slug);
   const pharm = getPharmacyImages(product.slug, product.category);
   const extra = [
+    urls?.alt,
+    urls?.primary,
     product.imageAlt,
     product.imageAltFallback,
     product.image,
-    product.imageFallback,
     pharm.alt.jpg,
     pharm.alt.webp,
-    pharm.primary.jpg,
-  ];
-  const base = product.imageAltFallback ?? toJpg(product.imageAlt ?? product.image);
+  ].filter(Boolean) as string[];
+
+  const base = product.imageAlt || urls?.alt || product.imageAltFallback || product.image;
   return resolveImagePath(base, extra);
 }

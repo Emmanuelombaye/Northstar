@@ -51,9 +51,7 @@ export function SiteHeader() {
                 Shop
               </Link>
             </li>
-            <li>
-              <a href="/explore-treatments">Explore Treatments</a>
-            </li>
+
             <li>
               <a href="/how-it-works">How It Works</a>
             </li>
@@ -98,9 +96,7 @@ export function SiteHeader() {
             </button>
             </>
           ) : null}
-          <a href={shop.login()} className="btn btn-ghost btn-pill header-btn-login">
-            Patient Login
-          </a>
+
           <Link to="/shop" className="btn btn-navy btn-pill">
             Get Started
           </Link>
