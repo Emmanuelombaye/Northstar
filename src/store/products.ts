@@ -10,15 +10,10 @@ export const PHARMACY_PRODUCTS = PHARMACY_CATALOG.map(applyProductVisuals);
 export const STORE_CATEGORIES: { id: StoreCategory | "all"; label: string; icon: string }[] = [
   { id: "all", label: "All treatments", icon: "✦" },
   { id: "weight-loss", label: CATEGORY_LABELS["weight-loss"], icon: "◈" },
-  { id: "longevity", label: CATEGORY_LABELS.longevity, icon: "◇" },
-  { id: "recovery", label: CATEGORY_LABELS.recovery, icon: "◎" },
   { id: "mens-health", label: CATEGORY_LABELS["mens-health"], icon: "◆" },
-  { id: "womens-health", label: CATEGORY_LABELS["womens-health"], icon: "♦" },
   { id: "hair", label: CATEGORY_LABELS.hair, icon: "◉" },
   { id: "skincare", label: CATEGORY_LABELS.skincare, icon: "○" },
   { id: "sexual-wellness", label: CATEGORY_LABELS["sexual-wellness"], icon: "◐" },
-  { id: "sleep", label: CATEGORY_LABELS.sleep, icon: "◑" },
-  { id: "mental-health", label: CATEGORY_LABELS["mental-health"], icon: "◒" },
   { id: "hormone", label: CATEGORY_LABELS.hormone, icon: "◓" },
 ];
 

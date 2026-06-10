@@ -13,16 +13,11 @@ const VENDOR = "North Star MD Pharmacy";
 
 export const CATEGORY_SORT: StoreCategory[] = [
   "weight-loss",
-  "longevity",
-  "recovery",
   "mens-health",
-  "womens-health",
-  "hormone",
   "hair",
   "skincare",
   "sexual-wellness",
-  "sleep",
-  "mental-health",
+  "hormone",
 ];
 
 const META: Record<string, ShopifyMeta> = {
@@ -39,26 +34,6 @@ const META: Record<string, ShopifyMeta> = {
   "glp1-maintenance": { dosageForm: "Injection", vendor: VENDOR, sortOrder: 11 },
   "metabolic-panel-addon": { dosageForm: "Lab Panel", vendor: VENDOR, sortOrder: 12 },
 
-  "nad-rejuvenation": { dosageForm: "Injection", strength: "200–500 mg", vendor: VENDOR, sortOrder: 1 },
-  "nad-oral-boost": { dosageForm: "Capsule", vendor: VENDOR, sortOrder: 2 },
-  "glutathione-glow": { dosageForm: "Injection", vendor: VENDOR, sortOrder: 3 },
-  "nmn-cellular": { dosageForm: "Capsule", vendor: VENDOR, sortOrder: 4 },
-  "metformin-longevity": { dosageForm: "Tablet", strength: "500–1000 mg", vendor: VENDOR, sortOrder: 5 },
-  "resveratrol-protocol": { dosageForm: "Capsule", vendor: VENDOR, sortOrder: 6 },
-  "coq10-energy": { dosageForm: "Capsule", vendor: VENDOR, sortOrder: 7 },
-  "longevity-stack-bundle": { dosageForm: "Bundle", vendor: VENDOR, sortOrder: 8 },
-  "epithalon-peptide": { dosageForm: "Injection", vendor: VENDOR, sortOrder: 9 },
-  "thymosin-alpha": { dosageForm: "Injection", vendor: VENDOR, sortOrder: 10 },
-
-  "sermorelin-recovery": { dosageForm: "Injection", vendor: VENDOR, sortOrder: 1 },
-  "bpc-157-repair": { dosageForm: "Injection", strength: "BPC-157", vendor: VENDOR, sortOrder: 2 },
-  "cjc-ipamorelin": { dosageForm: "Injection", vendor: VENDOR, sortOrder: 3 },
-  "tb-500-recovery": { dosageForm: "Injection", vendor: VENDOR, sortOrder: 4 },
-  "ghk-cu-tissue": { dosageForm: "Topical", vendor: VENDOR, sortOrder: 5 },
-  "joint-recovery-stack": { dosageForm: "Bundle", vendor: VENDOR, sortOrder: 6 },
-  "athlete-recovery-stack": { dosageForm: "Bundle", vendor: VENDOR, sortOrder: 7 },
-  "pt-141-performance": { dosageForm: "Injection", vendor: VENDOR, sortOrder: 8 },
-
   "testosterone-trt": { dosageForm: "Injection", strength: "Cypionate 200 mg/mL", vendor: VENDOR, sortOrder: 1 },
   enclomiphene: { dosageForm: "Tablet", vendor: VENDOR, sortOrder: 2 },
   "hcg-trt-support": { dosageForm: "Injection", vendor: VENDOR, sortOrder: 3 },
@@ -67,13 +42,6 @@ const META: Record<string, ShopifyMeta> = {
   "cialis-daily": { dosageForm: "Tablet", strength: "2.5–5 mg", vendor: VENDOR, sortOrder: 6 },
   "prostate-support": { dosageForm: "Protocol", vendor: VENDOR, sortOrder: 7 },
   "mens-vitality-panel": { dosageForm: "Lab Panel", vendor: VENDOR, sortOrder: 8 },
-
-  "bioidentical-hrt": { dosageForm: "Compounded", vendor: VENDOR, sortOrder: 1 },
-  "progesterone-bioidentical": { dosageForm: "Capsule", vendor: VENDOR, sortOrder: 2 },
-  "estradiol-patch": { dosageForm: "Patch", vendor: VENDOR, sortOrder: 3 },
-  "pcos-metformin": { dosageForm: "Tablet", vendor: VENDOR, sortOrder: 4 },
-  "womens-hormone-panel": { dosageForm: "Lab Panel", vendor: VENDOR, sortOrder: 5 },
-  "womens-weight-program": { dosageForm: "Program", vendor: VENDOR, sortOrder: 6 },
 
   finasteride: { dosageForm: "Tablet", strength: "1 mg", vendor: VENDOR, sortOrder: 1 },
   "minoxidil-topical": { dosageForm: "Topical", strength: "5%", vendor: VENDOR, sortOrder: 2 },
@@ -96,40 +64,19 @@ const META: Record<string, ShopifyMeta> = {
   "pt-141-desire": { dosageForm: "Injection", vendor: VENDOR, sortOrder: 5 },
   "oxytocin-intimacy": { dosageForm: "Nasal Spray", vendor: VENDOR, sortOrder: 6 },
 
-  "melatonin-sleep": { dosageForm: "Tablet", vendor: VENDOR, sortOrder: 1 },
-  "trazodone-sleep": { dosageForm: "Tablet", vendor: VENDOR, sortOrder: 2 },
-  "magnesium-glycinate": { dosageForm: "Capsule", vendor: VENDOR, sortOrder: 3 },
-  "sleep-consultation": { dosageForm: "Consult", vendor: VENDOR, sortOrder: 4 },
-  "cbn-sleep": { dosageForm: "Compounded", vendor: VENDOR, sortOrder: 5 },
-
-  "sertraline-anxiety": { dosageForm: "Tablet", strength: "50–100 mg", vendor: VENDOR, sortOrder: 1 },
-  "escitalopram-mood": { dosageForm: "Tablet", strength: "10–20 mg", vendor: VENDOR, sortOrder: 2 },
-  "buspirone-stress": { dosageForm: "Tablet", vendor: VENDOR, sortOrder: 3 },
-  "mental-health-intake": { dosageForm: "Consult", vendor: VENDOR, sortOrder: 4 },
-  "wellbutrin-energy": { dosageForm: "Tablet", vendor: VENDOR, sortOrder: 5 },
-
   "thyroid-levothyroxine": { dosageForm: "Tablet", vendor: VENDOR, sortOrder: 1 },
   "armour-thyroid": { dosageForm: "Tablet", vendor: VENDOR, sortOrder: 2 },
   pregnenolone: { dosageForm: "Capsule", vendor: VENDOR, sortOrder: 3 },
   "dhea-womens": { dosageForm: "Capsule", vendor: VENDOR, sortOrder: 4 },
   "hormone-full-panel": { dosageForm: "Lab Panel", vendor: VENDOR, sortOrder: 5 },
-
-  "physician-consultation": { dosageForm: "Consult", vendor: VENDOR, sortOrder: 1 },
-  "cold-chain-shipping": { dosageForm: "Service", vendor: VENDOR, sortOrder: 2 },
-  "injection-supplies-kit": { dosageForm: "Kit", vendor: VENDOR, sortOrder: 3 },
 };
 
 const FORM_DEFAULT: Record<string, string> = {
   "weight-loss": "Injection",
-  longevity: "Injection",
-  recovery: "Injection",
   "mens-health": "Tablet",
-  "womens-health": "Compounded",
   hair: "Tablet",
   skincare: "Topical",
   "sexual-wellness": "Tablet",
-  sleep: "Tablet",
-  "mental-health": "Tablet",
   hormone: "Tablet",
 };
 

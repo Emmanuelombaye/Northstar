@@ -233,23 +233,13 @@ export function ShopPage() {
 
                 <option value="weight-loss">Weight Loss</option>
 
-                <option value="longevity">Longevity</option>
-
-                <option value="recovery">Recovery</option>
-
                 <option value="mens-health">Men's Health</option>
-
-                <option value="womens-health">Women's Health</option>
 
                 <option value="hair">Hair</option>
 
                 <option value="skincare">Skincare</option>
 
                 <option value="sexual-wellness">Sexual Wellness</option>
-
-                <option value="sleep">Sleep</option>
-
-                <option value="mental-health">Mental Health</option>
 
                 <option value="hormone">Hormone</option>
 
