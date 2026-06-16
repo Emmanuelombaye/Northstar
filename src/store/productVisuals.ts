@@ -32,14 +32,6 @@ export function applyProductVisuals<
 
   return {
     ...product,
-    name: copy?.name ?? product.name,
-    tagline: copy?.tagline ?? product.tagline,
-    description: copy?.description ?? product.description,
-    longDescription: copy?.longDescription ?? product.longDescription,
-    image: urls?.primary ?? localImage(product.slug),
-    imageFallback: urls?.primary ?? localImage(product.slug),
-    imageAlt: urls?.alt ?? localImage(product.slug, "-alt"),
-    imageAltFallback: urls?.alt ?? localImage(product.slug, "-alt"),
     dosageForm: meta.dosageForm,
     strength: meta.strength,
     vendor: meta.vendor,
