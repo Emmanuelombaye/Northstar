@@ -7,26 +7,20 @@ export const PLAN_INCLUDES = [
   "24/7 patient portal support",
 ];
 
-/** Store image — load JPG (webp is build-only; never requested in the browser). */
-export function storeImg(name: string, fallbackExt = "jpg"): { image: string; imageFallback: string } {
-  const path = `/images/store/${name}.${fallbackExt}`;
-  return { image: path, imageFallback: path };
-}
-
-export function brandImg(webp: string, png?: string): { image: string; imageFallback?: string } {
-  const image = png ?? webp.replace(/\.webp$/i, ".png");
-  return { image, imageFallback: png ?? image };
-}
-
-type ItemInput = Omit<PharmacyProduct, "includes" | "inStock"> & {
+type ItemInput = Omit<PharmacyProduct, "includes" | "inStock" | "image" | "imageFallback"> & {
   includes?: string[];
   inStock?: boolean;
+  image?: string;
+  imageFallback?: string;
 };
 
 function item(p: ItemInput): PharmacyProduct {
+  const defaultImage = `/images/store/${p.slug}.png`;
   return {
     includes: p.includes ?? PLAN_INCLUDES,
     inStock: p.inStock ?? true,
+    image: p.image ?? defaultImage,
+    imageFallback: p.imageFallback ?? defaultImage,
     ...p,
   };
 }
@@ -47,7 +41,6 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
     description: "Weekly dual-pathway injection for appetite control and sustainable weight loss.",
     longDescription: "Our most advanced weight management protocol. Licensed clinicians titrate dosing from your intake, labs, and progress.",
     category: wl, categoryLabel: "Weight Loss", priceMonthly: 299, compareAtPrice: 389,
-    ...brandImg("/images/tirzepatide-hero.webp", "/images/tirzepatide-hero.png"),
     imageAlt: "/images/panel-weight.webp",
     imageAltFallback: "/images/panel-weight.png",
     gallery: ["/images/panel-weight.webp", "/images/result-weight-loss.webp"],
@@ -61,7 +54,6 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
     description: "Physician-guided weekly GLP-1 program with pharmacy fulfillment.",
     longDescription: "Foundational GLP-1 protocol for medical weight management with supplies and ongoing care team messaging.",
     category: wl, categoryLabel: "Weight Loss", priceMonthly: 146, compareAtPrice: 206,
-    ...brandImg("/images/semaglutide-hero.webp", "/images/semaglutide-hero.png"),
     imageAlt: "/images/weight-loss-card.webp",
     imageAltFallback: "/images/weight-loss-card.png",
     rating: 4.8, reviews: 3103, features: ["GLP-1 agonist", "Weekly protocol", "Affordable entry"],
@@ -74,7 +66,7 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
     description: "Daily injection option for patients who prefer shorter-acting GLP-1 control.",
     longDescription: "Ideal for patients transitioning from other GLP-1 therapies or needing daily dose adjustments.",
     category: wl, categoryLabel: "Weight Loss", priceMonthly: 179,
-    ...storeImg("weight-glp1"), rating: 4.6, reviews: 542, features: ["Daily dosing", "GLP-1", "Flexible titration"],
+    rating: 4.6, reviews: 542, features: ["Daily dosing", "GLP-1", "Flexible titration"],
     peakCategory: "weight-loss",
   }),
   item({
@@ -84,7 +76,6 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
     description: "Comprehensive program with provider check-ins every 4 weeks.",
     longDescription: "Structured weight-loss journey combining medication options with nutrition guidance.",
     category: wl, categoryLabel: "Weight Loss", priceMonthly: 189,
-    ...brandImg("/images/panel-weight.webp", "/images/panel-weight.png"),
     rating: 4.7, reviews: 812, features: ["Multi-phase", "Coach messaging", "Lab optional"],
     peakCategory: "weight-loss",
   }),
@@ -95,7 +86,7 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
     description: "Prescription appetite support for qualifying patients starting a weight-loss plan.",
     longDescription: "Used alongside lifestyle changes under close physician monitoring for eligible patients.",
     category: wl, categoryLabel: "Weight Loss", priceMonthly: 89,
-    ...storeImg("vitamin-bottles"), rating: 4.5, reviews: 1204, features: ["Oral daily", "Short-term", "Physician screened"],
+    rating: 4.5, reviews: 1204, features: ["Oral daily", "Short-term", "Physician screened"],
     peakCategory: "weight-loss",
   }),
   item({
@@ -105,7 +96,7 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
     description: "Dual-mechanism oral therapy for chronic weight management.",
     longDescription: "For patients who prefer non-injectable options with proven dual-pathway appetite support.",
     category: wl, categoryLabel: "Weight Loss", priceMonthly: 129,
-    ...storeImg("weight-glp1"), rating: 4.6, reviews: 678, features: ["Oral twice daily", "Non-injection", "Dual pathway"],
+    rating: 4.6, reviews: 678, features: ["Oral twice daily", "Non-injection", "Dual pathway"],
     peakCategory: "weight-loss",
   }),
   item({
@@ -115,7 +106,7 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
     description: "Semaglutide protocol aligned with Wegovy® dosing tiers.",
     longDescription: "Physician-guided escalation through standard GLP-1 dose tiers.",
     category: wl, categoryLabel: "Weight Loss", priceMonthly: 249, compareAtPrice: 329,
-    ...storeImg("peptide-kit"), rating: 4.8, reviews: 1456, features: ["Escalating doses", "GLP-1", "Weekly"],
+    rating: 4.8, reviews: 1456, features: ["Escalating doses", "GLP-1", "Weekly"],
     peakProduct: "semaglutide",
   }),
   item({
@@ -125,7 +116,7 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
     description: "Tirzepatide protocol modeled on Mounjaro® dose progression.",
     longDescription: "For patients seeking the strongest available dual GIP/GLP-1 outcomes.",
     category: wl, categoryLabel: "Weight Loss", priceMonthly: 319, compareAtPrice: 399,
-    ...storeImg("vial-pharmacy"), rating: 4.9, reviews: 987, features: ["Dual agonist", "Dose tiers", "Weekly"],
+    rating: 4.9, reviews: 987, features: ["Dual agonist", "Dose tiers", "Weekly"],
     peakProduct: "tirzepatide",
   }),
   item({
@@ -135,7 +126,7 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
     description: "Weight program with optional labs and quarterly provider reviews.",
     longDescription: "Comprehensive metabolic screening for patients with BMI ≥ 27 with comorbidities.",
     category: wl, categoryLabel: "Weight Loss", priceMonthly: 219,
-    ...storeImg("hormone-lab"), rating: 4.7, reviews: 445, features: ["Labs optional", "Quarterly review", "Custom plan"],
+    rating: 4.7, reviews: 445, features: ["Labs optional", "Quarterly review", "Custom plan"],
     peakCategory: "weight-loss",
   }),
   item({
@@ -145,7 +136,7 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
     description: "Everything needed to begin physician-guided weight management.",
     longDescription: "Includes consultation, medication selection, and first shipment of supplies.",
     category: wl, categoryLabel: "Weight Loss", priceMonthly: 99, compareAtPrice: 149,
-    ...storeImg("delivery-kit"), rating: 4.8, reviews: 2100, features: ["Starter bundle", "Supplies included", "Fast intake"],
+    rating: 4.8, reviews: 2100, features: ["Starter bundle", "Supplies included", "Fast intake"],
     badge: "Starter", newArrival: true, peakCategory: "weight-loss",
   }),
   item({
@@ -155,7 +146,6 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
     description: "Lower-dose maintenance for patients who reached target weight.",
     longDescription: "Ongoing physician oversight at reduced dosing to help sustain long-term results.",
     category: wl, categoryLabel: "Weight Loss", priceMonthly: 159,
-    ...brandImg("/images/weight-loss-card.webp", "/images/weight-loss-card.png"),
     rating: 4.7, reviews: 534, features: ["Maintenance dose", "Quarterly check", "Portal tracking"],
     peakCategory: "weight-loss",
   }),
@@ -166,7 +156,7 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
     description: "Optional lab panel to personalize your weight-loss protocol.",
     longDescription: "At-home or local draw options integrated with your treatment plan.",
     category: wl, categoryLabel: "Weight Loss", priceMonthly: 49,
-    ...storeImg("hormone-lab"), rating: 4.6, reviews: 312, features: ["Lab panel", "Add-on", "Personalized dosing"],
+    rating: 4.6, reviews: 312, features: ["Lab panel", "Add-on", "Personalized dosing"],
     peakCategory: "weight-loss",
   }),
 
@@ -178,7 +168,7 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
     description: "Restore energy, focus, and drive with hormone replacement.",
     longDescription: "Comprehensive TRT with lab review and refill management.",
     category: mh, categoryLabel: "Men's Health", priceMonthly: 120,
-    ...storeImg("trt-kit"), rating: 4.9, reviews: 2240, features: ["TRT", "Labs", "Monthly refills"],
+    rating: 4.9, reviews: 2240, features: ["TRT", "Labs", "Monthly refills"],
     badge: "Men's #1", popular: true, peakProduct: "testosterone",
   }),
   item({
@@ -188,7 +178,7 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
     description: "Oral alternative to stimulate endogenous testosterone.",
     longDescription: "Popular for younger men with suboptimal levels who prefer non-injection therapy.",
     category: mh, categoryLabel: "Men's Health", priceMonthly: 99,
-    ...storeImg("mens-wellness"), rating: 4.7, reviews: 645, features: ["Oral", "Fertility-friendly", "Lab-guided"],
+    rating: 4.7, reviews: 645, features: ["Oral", "Fertility-friendly", "Lab-guided"],
     peakProduct: "enclomiphene",
   }),
   item({
@@ -198,7 +188,7 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
     description: "HCG add-on for men on TRT preserving fertility markers.",
     longDescription: "Often paired with testosterone protocols for testicular function support.",
     category: mh, categoryLabel: "Men's Health", priceMonthly: 89,
-    ...storeImg("hormone-lab"), rating: 4.6, reviews: 412, features: ["TRT add-on", "Fertility", "Injectable"],
+    rating: 4.6, reviews: 412, features: ["TRT add-on", "Fertility", "Injectable"],
     peakCategory: "mens-health",
   }),
   item({
@@ -208,7 +198,7 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
     description: "Aromatase inhibitor for estrogen control during TRT.",
     longDescription: "Prescribed when estradiol elevation occurs on testosterone therapy.",
     category: mh, categoryLabel: "Men's Health", priceMonthly: 35,
-    ...storeImg("vitamin-bottles"), rating: 4.5, reviews: 534, features: ["TRT support", "Estrogen control", "Oral"],
+    rating: 4.5, reviews: 534, features: ["TRT support", "Estrogen control", "Oral"],
     peakCategory: "mens-health",
   }),
   item({
@@ -218,7 +208,7 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
     description: "DHEA supplementation with lab-monitored dosing.",
     longDescription: "For men with low DHEA-S on labs pursuing vitality support.",
     category: mh, categoryLabel: "Men's Health", priceMonthly: 29,
-    ...storeImg("supplements"), rating: 4.4, reviews: 289, features: ["Oral daily", "Lab-guided", "Vitality"],
+    rating: 4.4, reviews: 289, features: ["Oral daily", "Lab-guided", "Vitality"],
     peakCategory: "mens-health",
   }),
   item({
@@ -228,7 +218,7 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
     description: "Low-dose daily tadalafil for ED and urinary symptoms.",
     longDescription: "Same molecule as Cialis® — daily convenience without timing doses.",
     category: mh, categoryLabel: "Men's Health", priceMonthly: 45,
-    ...storeImg("delivery-kit"), rating: 4.8, reviews: 1867, features: ["Daily", "ED", "BPH option"],
+    rating: 4.8, reviews: 1867, features: ["Daily", "ED", "BPH option"],
     peakProduct: "tadalafil",
   }),
   item({
@@ -238,7 +228,7 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
     description: "Physician-guided protocol for men's urinary health goals.",
     longDescription: "Includes intake review and medication options where clinically appropriate.",
     category: mh, categoryLabel: "Men's Health", priceMonthly: 55,
-    ...storeImg("fitness-man"), rating: 4.5, reviews: 312, features: ["Urinary health", "Men's wellness", "Screening"],
+    rating: 4.5, reviews: 312, features: ["Urinary health", "Men's wellness", "Screening"],
     peakCategory: "mens-health",
   }),
   item({
@@ -248,7 +238,7 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
     description: "Comprehensive lab panel to guide men's health treatment.",
     longDescription: "At-home or local draw with results reviewed by your provider.",
     category: mh, categoryLabel: "Men's Health", priceMonthly: 79,
-    ...storeImg("hormone-lab"), rating: 4.7, reviews: 445, features: ["Full panel", "Provider review", "Treatment roadmap"],
+    rating: 4.7, reviews: 445, features: ["Full panel", "Provider review", "Treatment roadmap"],
     peakCategory: "mens-health",
   }),
 
@@ -260,7 +250,7 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
     description: "Oral treatment to halt male pattern hair loss.",
     longDescription: "Blocks DHT at the follicle with ongoing provider monitoring.",
     category: hr, categoryLabel: "Hair", priceMonthly: 25,
-    ...storeImg("vitamin-bottles"), rating: 4.7, reviews: 2823, features: ["Daily oral", "DHT block", "Proven"],
+    rating: 4.7, reviews: 2823, features: ["Daily oral", "DHT block", "Proven"],
     peakProduct: "finasteride",
   }),
   item({
@@ -270,7 +260,7 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
     description: "Prescription-strength topical for scalp stimulation.",
     longDescription: "Pair with finasteride for dual-action restoration.",
     category: hr, categoryLabel: "Hair", priceMonthly: 39,
-    ...storeImg("hair-treatment"), rating: 4.6, reviews: 1502, features: ["Topical", "Twice daily", "Stackable"],
+    rating: 4.6, reviews: 1502, features: ["Topical", "Twice daily", "Stackable"],
     peakProduct: "minoxidil",
   }),
   item({
@@ -280,7 +270,7 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
     description: "Combined oral + topical for maximum retention and regrowth.",
     longDescription: "Our most complete hair loss program with bundle savings.",
     category: hr, categoryLabel: "Hair", priceMonthly: 49, compareAtPrice: 64,
-    ...storeImg("hair-treatment"), rating: 4.8, reviews: 1292, features: ["Dual action", "Bundle", "Provider-guided"],
+    rating: 4.8, reviews: 1292, features: ["Dual action", "Bundle", "Provider-guided"],
     badge: "Bundle", popular: true, peakProduct: "finasteride",
   }),
   item({
@@ -290,7 +280,7 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
     description: "Dual 5-alpha reductase inhibitor for advanced hair loss.",
     longDescription: "For patients who need stronger DHT suppression than finasteride.",
     category: hr, categoryLabel: "Hair", priceMonthly: 35,
-    ...storeImg("hair-treatment"), rating: 4.6, reviews: 678, features: ["Strong DHT block", "Oral daily", "Advanced loss"],
+    rating: 4.6, reviews: 678, features: ["Strong DHT block", "Oral daily", "Advanced loss"],
     peakCategory: "hair",
   }),
   item({
@@ -300,7 +290,7 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
     description: "Prescription shampoo for scalp inflammation and thinning.",
     longDescription: "Often added to oral/topical hair protocols.",
     category: hr, categoryLabel: "Hair", priceMonthly: 29,
-    ...storeImg("hair-treatment"), rating: 4.5, reviews: 445, features: ["Scalp care", "Anti-inflammatory", "Topical"],
+    rating: 4.5, reviews: 445, features: ["Scalp care", "Anti-inflammatory", "Topical"],
     peakCategory: "hair",
   }),
   item({
@@ -310,7 +300,7 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
     description: "High-dose biotin with clinician-reviewed dosing.",
     longDescription: "Adjunct support for patients on prescription hair protocols.",
     category: hr, categoryLabel: "Hair", priceMonthly: 19,
-    ...storeImg("vitamin-bottles"), rating: 4.4, reviews: 890, features: ["Biotin", "Adjunct", "Oral"],
+    rating: 4.4, reviews: 890, features: ["Biotin", "Adjunct", "Oral"],
     peakCategory: "hair",
   }),
 
@@ -322,7 +312,7 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
     description: "Medical-grade retinoid for anti-aging and acne.",
     longDescription: "Includes purging guidance, SPF protocol, and titration schedule.",
     category: sk, categoryLabel: "Skincare", priceMonthly: 60,
-    ...storeImg("skincare-cream"), rating: 4.9, reviews: 3104, features: ["0.05%", "Anti-aging", "Acne"],
+    rating: 4.9, reviews: 3104, features: ["0.05%", "Anti-aging", "Acne"],
     badge: "Top rated", popular: true, peakProduct: "tretinoin",
   }),
   item({
@@ -332,7 +322,7 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
     description: "Personalized topical for fine lines and texture.",
     longDescription: "Compounded formulation adjusted over time by your clinician.",
     category: sk, categoryLabel: "Skincare", priceMonthly: 55,
-    ...storeImg("skincare-cream"), rating: 4.7, reviews: 734, features: ["Custom blend", "Compounded", "Refills"],
+    rating: 4.7, reviews: 734, features: ["Custom blend", "Compounded", "Refills"],
     peakCategory: "skincare",
   }),
   item({
@@ -342,7 +332,7 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
     description: "Prescription brightening cream for dark spots and melasma.",
     longDescription: "Cycled protocol with sun protection guidance.",
     category: sk, categoryLabel: "Skincare", priceMonthly: 49,
-    ...storeImg("skincare-cream"), rating: 4.6, reviews: 567, features: ["Brightening", "Melasma", "Cycled use"],
+    rating: 4.6, reviews: 567, features: ["Brightening", "Melasma", "Cycled use"],
     peakCategory: "skincare",
   }),
   item({
@@ -352,7 +342,7 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
     description: "Multi-benefit topical for acne, rosacea, and uneven tone.",
     longDescription: "Gentler alternative or complement to retinoids.",
     category: sk, categoryLabel: "Skincare", priceMonthly: 42,
-    ...storeImg("skincare-cream"), rating: 4.7, reviews: 892, features: ["Acne", "Rosacea", "Tone"],
+    rating: 4.7, reviews: 892, features: ["Acne", "Rosacea", "Tone"],
     peakCategory: "skincare",
   }),
   item({
@@ -362,7 +352,7 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
     description: "Prescription gel for inflammatory acne breakouts.",
     longDescription: "Often paired with retinoids in acne protocols.",
     category: sk, categoryLabel: "Skincare", priceMonthly: 35,
-    ...storeImg("skincare-cream"), rating: 4.5, reviews: 678, features: ["Acne", "Topical", "Anti-inflammatory"],
+    rating: 4.5, reviews: 678, features: ["Acne", "Topical", "Anti-inflammatory"],
     peakCategory: "skincare",
   }),
   item({
@@ -372,7 +362,7 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
     description: "Prescription-strength vitamin C with SPF guidance bundle.",
     longDescription: "Complements retinoid therapy for comprehensive skin protection.",
     category: sk, categoryLabel: "Skincare", priceMonthly: 38,
-    ...storeImg("skincare-cream"), rating: 4.6, reviews: 445, features: ["Vitamin C", "SPF bundle", "Antioxidant"],
+    rating: 4.6, reviews: 445, features: ["Vitamin C", "SPF bundle", "Antioxidant"],
     peakCategory: "skincare",
   }),
 
@@ -384,7 +374,7 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
     description: "Fast-acting ED medication with discreet shipping.",
     longDescription: "Prescribed after confidential intake with dose selection guidance.",
     category: sw, categoryLabel: "Sexual Wellness", priceMonthly: 35,
-    ...storeImg("delivery-kit"), rating: 4.8, reviews: 3890, features: ["As-needed", "Discreet", "Fast intake"],
+    rating: 4.8, reviews: 3890, features: ["As-needed", "Discreet", "Fast intake"],
     popular: true, peakProduct: "sildenafil",
   }),
   item({
@@ -394,7 +384,7 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
     description: "Daily tadalafil for spontaneity without timing doses.",
     longDescription: "Steady levels for patients who prefer daily convenience.",
     category: sw, categoryLabel: "Sexual Wellness", priceMonthly: 45,
-    ...storeImg("sexual-wellness"), rating: 4.8, reviews: 2567, features: ["Daily", "Spontaneity", "Discreet"],
+    rating: 4.8, reviews: 2567, features: ["Daily", "Spontaneity", "Discreet"],
     peakProduct: "tadalafil",
   }),
   item({
@@ -404,7 +394,7 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
     description: "Longer-acting as-needed ED option.",
     longDescription: "Popular for patients wanting extended effectiveness per dose.",
     category: sw, categoryLabel: "Sexual Wellness", priceMonthly: 40,
-    ...storeImg("delivery-kit"), rating: 4.7, reviews: 1890, features: ["As-needed", "36hr window", "Flexible"],
+    rating: 4.7, reviews: 1890, features: ["As-needed", "36hr window", "Flexible"],
     peakProduct: "tadalafil",
   }),
   item({
@@ -414,7 +404,7 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
     description: "Try both ED options with physician-guided selection.",
     longDescription: "Find your best fit with provider support on dosing.",
     category: sw, categoryLabel: "Sexual Wellness", priceMonthly: 59, compareAtPrice: 80,
-    ...storeImg("sexual-wellness"), rating: 4.8, reviews: 1234, features: ["Both options", "Trial bundle", "Provider picks"],
+    rating: 4.8, reviews: 1234, features: ["Both options", "Trial bundle", "Provider picks"],
     badge: "Bundle", peakCategory: "sexual-wellness",
   }),
   item({
@@ -424,7 +414,7 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
     description: "Peptide option for low desire in qualifying patients.",
     longDescription: "FDA-approved mechanism for hypoactive desire in women and men.",
     category: sw, categoryLabel: "Sexual Wellness", priceMonthly: 99,
-    ...storeImg("spa-wellness"), rating: 4.5, reviews: 534, features: ["Peptide", "Desire", "As directed"],
+    rating: 4.5, reviews: 534, features: ["Peptide", "Desire", "As directed"],
     peakCategory: "sexual-wellness",
   }),
   item({
@@ -434,7 +424,7 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
     description: "Compounded oxytocin for intimacy and connection goals.",
     longDescription: "Prescribed for qualifying patients as part of wellness protocols.",
     category: sw, categoryLabel: "Sexual Wellness", priceMonthly: 79,
-    ...storeImg("meditation"), rating: 4.4, reviews: 312, features: ["Compounded", "Intimacy", "Nasal/spray"],
+    rating: 4.4, reviews: 312, features: ["Compounded", "Intimacy", "Nasal/spray"],
     peakCategory: "sexual-wellness",
   }),
 
@@ -446,7 +436,7 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
     description: "Thyroid hormone replacement with lab-guided dosing.",
     longDescription: "TSH monitoring and dose adjustments through your portal.",
     category: ho, categoryLabel: "Hormone", priceMonthly: 19,
-    ...storeImg("hormone-lab"), rating: 4.8, reviews: 1567, features: ["Thyroid", "Lab-guided", "Daily oral"],
+    rating: 4.8, reviews: 1567, features: ["Thyroid", "Lab-guided", "Daily oral"],
     peakCategory: "hormone",
   }),
   item({
@@ -456,7 +446,7 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
     description: "NDT option for patients preferring natural thyroid hormone.",
     longDescription: "Prescribed when clinically appropriate after lab review.",
     category: ho, categoryLabel: "Hormone", priceMonthly: 35,
-    ...storeImg("hormone-lab"), rating: 4.6, reviews: 534, features: ["NDT", "Natural thyroid", "Lab monitored"],
+    rating: 4.6, reviews: 534, features: ["NDT", "Natural thyroid", "Lab monitored"],
     peakCategory: "hormone",
   }),
   item({
@@ -466,7 +456,7 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
     description: "Master hormone precursor with clinician-guided dosing.",
     longDescription: "Part of integrative hormone optimization protocols.",
     category: ho, categoryLabel: "Hormone", priceMonthly: 29,
-    ...storeImg("vitamin-bottles"), rating: 4.4, reviews: 267, features: ["Precursor", "Oral", "Hormone stack"],
+    rating: 4.4, reviews: 267, features: ["Precursor", "Oral", "Hormone stack"],
     peakCategory: "hormone",
   }),
   item({
@@ -476,7 +466,7 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
     description: "DHEA supplementation for women with low DHEA-S on labs.",
     longDescription: "Monitored dosing as part of women's hormone protocols.",
     category: ho, categoryLabel: "Hormone", priceMonthly: 29,
-    ...storeImg("womens-wellness"), rating: 4.5, reviews: 389, features: ["Women's", "Lab-guided", "Adrenal"],
+    rating: 4.5, reviews: 389, features: ["Women's", "Lab-guided", "Adrenal"],
     peakCategory: "hormone",
   }),
   item({
@@ -486,7 +476,7 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
     description: "Comprehensive hormone labs with provider interpretation.",
     longDescription: "Foundation for TRT, HRT, and thyroid treatment planning.",
     category: ho, categoryLabel: "Hormone", priceMonthly: 99,
-    ...storeImg("hormone-lab"), rating: 4.8, reviews: 612, features: ["Full panel", "All hormones", "Roadmap"],
+    rating: 4.8, reviews: 612, features: ["Full panel", "All hormones", "Roadmap"],
     peakCategory: "hormone",
   }),
 ];
