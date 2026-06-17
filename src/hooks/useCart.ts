@@ -37,6 +37,20 @@ export function useCart() {
     (slug: string) => {
       const product = getProductBySlug(slug);
       if (!product) return;
+
+      // Restrict cart to 1 item to enforce single clinical intake flow
+      if (items.length > 0) {
+        const existingItem = items[0];
+        // If they are adding the exact same product, let it pass (or just open drawer)
+        if (existingItem.slug !== slug) {
+          window.alert(
+            "You already have a medical program in your cart. Please finish your current intake and checkout first before starting another program.",
+          );
+          setOpen(true);
+          return;
+        }
+      }
+
       persist([
         ...items.filter((i) => i.slug !== slug),
         {
