@@ -397,6 +397,45 @@
   text-decoration: line-through;
 }
 
+/* Mobile adjustments for Airbnb Offers */
+@media (max-width: 768px) {
+  .airbnb-marquee-container {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    width: auto;
+    margin-inline: calc(-1 * var(--gutter, 16px));
+    padding-inline: var(--gutter, 16px);
+  }
+  .airbnb-marquee-container::-webkit-scrollbar {
+    display: none;
+  }
+  .airbnb-marquee-track {
+    animation: none !important;
+    gap: 16px;
+  }
+  /* Hide the duplicate infinite track on mobile since we just swipe */
+  .airbnb-marquee-track:nth-child(2) {
+    display: none;
+  }
+  .airbnb-card {
+    scroll-snap-align: start;
+    width: 140px; /* Slightly smaller on phones to fit more */
+  }
+  .airbnb-card-title {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .airbnb-card-sub {
+    font-size: 13px;
+    line-height: 18px;
+  }
+  .airbnb-card-price {
+    font-size: 14px;
+  }
+}
+
 /* ── Browse category banners ── */
 /* ── Airbnb-Style Categories ── */
 .airbnb-categories-section {
