@@ -1096,10 +1096,9 @@
 }
 .pharm-store-nav a {
   flex-shrink: 0;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
   color: var(--text-body);
   padding: 8px 16px;
   border-radius: 999px;
