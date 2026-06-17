@@ -70,12 +70,12 @@ export function resolveProductPrimary(product: PharmacyProduct): ResolvedImage {
     product.imageAlt,
     pharm.primary.jpg,
   ]
-    .map(toRaster)
-    .filter(Boolean) as string[];
+    .filter(Boolean)
+    .map((p) => toRaster(p as string));
 
   const base =
-    toRaster(product.image) ||
-    toRaster(product.imageFallback) ||
+    (product.image && toRaster(product.image)) ||
+    (product.imageFallback && toRaster(product.imageFallback)) ||
     `/images/products/${product.slug}.jpg`;
   return resolveImagePath(base, extra);
 }
@@ -89,13 +89,13 @@ export function resolveProductSecondary(product: PharmacyProduct): ResolvedImage
     product.imageFallback,
     pharm.alt.jpg,
   ]
-    .map(toRaster)
-    .filter(Boolean) as string[];
+    .filter(Boolean)
+    .map((p) => toRaster(p as string));
 
   const base =
-    toRaster(product.imageAlt) ||
-    toRaster(product.imageAltFallback) ||
-    toRaster(product.image) ||
+    (product.imageAlt && toRaster(product.imageAlt)) ||
+    (product.imageAltFallback && toRaster(product.imageAltFallback)) ||
+    (product.image && toRaster(product.image)) ||
     `/images/products/${product.slug}-alt.jpg`;
   return resolveImagePath(base, extra);
 }
