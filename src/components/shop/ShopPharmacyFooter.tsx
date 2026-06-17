@@ -1,61 +1,55 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { shop } from "../../lib/shop";
-import { STORE_CATEGORIES } from "../../store/products";
 
 export function ShopPharmacyFooter() {
-  const { pathname } = useLocation();
-  if (!pathname.startsWith("/shop")) return null;
-
-  const cats = STORE_CATEGORIES.filter((c) => c.id !== "all");
-
   return (
     <footer className="pharm-footer">
       <div className="pharm-wrap pharm-footer-grid">
         <div className="pharm-footer-brand">
-          <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
-            <path
-              d="M24 4L27 18L41 21L27 24L24 38L21 24L7 21L21 18L24 4Z"
-              stroke="currentColor"
-              strokeWidth="1.2"
-              strokeLinejoin="round"
-            />
-          </svg>
-          <span>North Star MD Pharmacy</span>
+          <Link to="/" className="pharm-footer-logo">
+            North Star MD
+          </Link>
+          <p className="pharm-footer-desc">
+            Direct-to-patient pharmacy dispensing, physician guidance, and optimized clinical treatments.
+          </p>
         </div>
+
         <div>
-          <h3>Categories</h3>
+          <h4>Programs</h4>
           <ul>
-            {cats.map((c) => (
-              <li key={c.id}>
-                <a href={`#category-${c.id}`}>{c.label}</a>
-              </li>
-            ))}
+            <li><Link to="/shop?category=weight-loss">Weight Loss</Link></li>
+            <li><Link to="/shop?category=longevity">Longevity</Link></li>
+            <li><Link to="/shop?category=recovery">Muscle Recovery</Link></li>
+            <li><Link to="/shop?category=mens-health">Men's Health</Link></li>
           </ul>
         </div>
+
         <div>
-          <h3>Quick Links</h3>
+          <h4>Shop</h4>
           <ul>
-            <li><a href="#brands">Brands</a></li>
-            <li><a href="#categories">Categories</a></li>
             <li><a href="#catalog">Products</a></li>
             <li><a href="#offers">Offers</a></li>
             <li><a href="#pharmacy-wall">Pharmacy Wall</a></li>
-            <li><a href={shop.login()}>Patient Portal</a></li>
           </ul>
         </div>
+
         <div>
-          <h3>Legal</h3>
+          <h4>Company</h4>
           <ul>
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/privacy">Privacy</a></li>
-            <li><a href="/terms">Terms</a></li>
-            <li><a href="/telehealth-consent">Telehealth Consent</a></li>
+            <li><Link to="/about">About Us</Link></li>
+            <li><Link to="/faq">FAQs</Link></li>
+            <li><Link to="/privacy">Privacy</Link></li>
+            <li><Link to="/terms">Terms</Link></li>
+            <li><Link to="/telehealth-consent">Telehealth Consent</Link></li>
           </ul>
         </div>
       </div>
-      <p className="pharm-footer-copy">
-        © {new Date().getFullYear()} North Star MD · Guided by science. Designed for you.
-      </p>
+      
+      <div className="pharm-wrap">
+        <div className="pharm-footer-bottom">
+          <p>© {new Date().getFullYear()} North Star MD · Guided by science. Designed for you.</p>
+        </div>
+      </div>
     </footer>
   );
 }
