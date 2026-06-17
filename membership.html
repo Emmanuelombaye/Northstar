@@ -31,41 +31,49 @@
       </p>
     </div>
 
-    <header class="site-header">
+        <header class="site-header">
       <div class="header-inner">
-        <a href="/" class="logo" aria-label="North Star MD home">
-          <svg class="logo-star" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-            <path d="M24 4L27 18L41 21L27 24L24 38L21 24L7 21L21 18L24 4Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
-            <path d="M24 12L25.5 18.5L32 20L25.5 21.5L24 28L22.5 21.5L16 20L22.5 18.5L24 12Z" stroke="currentColor" stroke-width="0.9" stroke-linejoin="round"/>
-          </svg>
-          <div class="logo-text">
-            <span class="logo-name">North Star MD</span>
-            <span class="logo-tagline">Guided by science. Designed for you.</span>
+        <!-- LEFT: Logo -->
+        <div class="header-left">
+          <a href="/" class="logo" aria-label="North Star MD home">
+            <svg class="logo-star" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+              <path d="M24 4L27 18L41 21L27 24L24 38L21 24L7 21L21 18L24 4Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round" />
+              <path d="M24 12L25.5 18.5L32 20L25.5 21.5L24 28L22.5 21.5L16 20L22.5 18.5L24 12Z" stroke="currentColor" stroke-width="0.9" stroke-linejoin="round" />
+            </svg>
+            <div class="logo-text">
+              <span class="logo-name">North Star MD</span>
+              <span class="logo-tagline">Guided by science. Designed for you.</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- CENTER: Desktop Navigation -->
+        <div class="header-center">
+          <nav class="main-nav" aria-label="Main navigation">
+            <ul>
+              <li><a href="/about">About Us</a></li>
+              <li><a href="/shop">Shop</a></li>
+              <li><a href="/how-it-works">How It Works</a></li>
+              <li><a href="/faq">FAQ</a></li>
+              <li class="nav-cta-mobile">
+                <a href="https://joinnorthstarmd.com/care/north-star-md/shop?brand=north-star-md&brandId=c8e7f6a2-4b1d-4e9f-a3c2-1d5e8f7a6b4c" data-shop="catalog" class="btn btn-navy btn-pill btn-block">Get Started</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- RIGHT: CTAs & Mobile Toggle -->
+        <div class="header-right" style="display: flex; align-items: center; gap: 20px;">
+          <div class="header-ctas">
+            <a href="https://joinnorthstarmd.com/care/north-star-md/shop?brand=north-star-md&brandId=c8e7f6a2-4b1d-4e9f-a3c2-1d5e8f7a6b4c" data-shop="catalog" class="btn btn-navy btn-pill">Get Started</a>
           </div>
-        </a>
-
-        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-
-        <div class="nav-overlay" aria-hidden="true"></div>
-
-        <nav class="main-nav" aria-label="Main navigation">
-          <ul>
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/how-it-works">How It Works</a></li>
-            <li><a href="/faq">FAQ</a></li>
-            <li class="nav-cta-mobile">
-              <a href="https://joinnorthstarmd.com/care/north-star-md/shop?brand=north-star-md&amp;brandId=c8e7f6a2-4b1d-4e9f-a3c2-1d5e8f7a6b4c" data-shop="catalog" class="btn btn-navy btn-pill btn-block">Get Started</a>
-            </li>
-          </ul>
-        </nav>
-
-        <div class="header-ctas">
-          <a href="https://joinnorthstarmd.com/care/north-star-md/shop?brand=north-star-md&amp;brandId=c8e7f6a2-4b1d-4e9f-a3c2-1d5e8f7a6b4c" data-shop="catalog" class="btn btn-navy btn-pill">Get Started</a>
+          <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
         </div>
       </div>
     </header>
+    <div class="nav-overlay" aria-hidden="true"></div>
 
     <main>
       <section class="membership-hero">
