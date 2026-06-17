@@ -880,9 +880,7 @@
   .pharm-browse-grid {
     grid-template-columns: 1fr;
   }
-  .pharm-cat-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
+
   .pharm-hero-slides {
     min-height: 200px;
   }
