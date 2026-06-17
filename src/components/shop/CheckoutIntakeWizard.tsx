@@ -275,20 +275,6 @@ export function CheckoutIntakeWizard() {
         <div className="ns-intake-progress-fill" style={{ width: `${intakeProgressPercent(step)}%` }} />
       </div>
 
-      <p className="ns-intake-step-label">
-        Step <strong>{step + 1}</strong> of {INTAKE_TOTAL_STEPS} · {INTAKE_STEP_LABELS[step]}
-      </p>
-
-      <div className="ns-intake-pills">
-        {INTAKE_STEP_LABELS.map((label, idx) => (
-          <span
-            key={label}
-            className={`ns-intake-pill${idx === step ? " active" : idx < step ? " done" : ""}`}
-          >
-            {idx + 1}. {label.split(" ")[0]}
-          </span>
-        ))}
-      </div>
 
       <div className="ns-intake-body">
         {loading || step === STEP_LOADING ? (
