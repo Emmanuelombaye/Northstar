@@ -32,7 +32,7 @@ export function HowItWorksPage() {
               alt="Choosing a North Star MD treatment plan at home"
               width="1200"
               height="900"
-              fetchpriority="high"
+              fetchPriority="high"
             />
           </div>
         </div>

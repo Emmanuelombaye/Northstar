@@ -47,7 +47,7 @@ export function ExploreTreatmentsPage() {
           <div className="program-panel is-active" data-panel="weight">
             <article className="program-card">
               <div className="program-media program-media-card">
-                <img src="/images/weight-loss-card.webp" data-fallback="/images/weight-loss-card.png" decoding="async" alt="Personalized GLP-1 injections — Tirzepatide+ and Semaglutide+ by North Star MD" className="program-card-art" fetchpriority="high" />
+                <img src="/images/weight-loss-card.webp" data-fallback="/images/weight-loss-card.png" decoding="async" alt="Personalized GLP-1 injections — Tirzepatide+ and Semaglutide+ by North Star MD" className="program-card-art" fetchPriority="high" />
               </div>
               <div className="program-content">
                 <h3>Personalized GLP-1 Injections</h3>
