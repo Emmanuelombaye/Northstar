@@ -31,7 +31,7 @@ import { useScrollReveal } from "../hooks/useScrollReveal";
 
 import { CategoryCollectionSection } from "../components/shop/CategoryCollectionSection";
 
-import { PHARMACY_PRODUCTS, PRODUCT_COUNT } from "../store/products";
+import { PHARMACY_PRODUCTS, PRODUCT_COUNT, STORE_CATEGORIES } from "../store/products";
 
 import { groupProductsByCategory, sortProductsShopify } from "../store/shopifyMeta";
 
@@ -185,20 +185,7 @@ export function ShopPage() {
 
           <div className="pharm-catalog-toolbar">
             <div className="pharm-catalog-pills">
-              {[
-                { id: "all", label: "All categories" },
-                { id: "weight-loss", label: "Weight Loss" },
-                { id: "longevity", label: "Longevity" },
-                { id: "recovery", label: "Recovery" },
-                { id: "mens-health", label: "Men's Health" },
-                { id: "womens-health", label: "Women's Health" },
-                { id: "hair", label: "Hair" },
-                { id: "skincare", label: "Skincare" },
-                { id: "sexual-wellness", label: "Sexual Wellness" },
-                { id: "sleep", label: "Sleep" },
-                { id: "mental-health", label: "Mental Health" },
-                { id: "hormone", label: "Hormone" }
-              ].map(cat => (
+              {STORE_CATEGORIES.map(cat => (
                 <button
                   key={cat.id}
                   className={`pharm-pill ${category === cat.id ? 'is-active' : ''}`}

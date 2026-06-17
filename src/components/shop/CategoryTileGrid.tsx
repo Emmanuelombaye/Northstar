@@ -3,15 +3,10 @@ import type { StoreCategory } from "../../store/types";
 
 const TILES: { id: StoreCategory; label: string; image: string }[] = [
   { id: "weight-loss", label: "Weight Loss", image: "/images/store/weight-loss-starter.png" },
-  { id: "longevity", label: "Longevity", image: "/images/store/nad-infusion.jpg" },
-  { id: "recovery", label: "Recovery", image: "/images/store/recovery-peptide.jpg" },
   { id: "mens-health", label: "Men's Health", image: "/images/store/testosterone-trt.png" },
-  { id: "womens-health", label: "Women's Health", image: "/images/store/womens-wellness.jpg" },
   { id: "hair", label: "Hair", image: "/images/store/hair-care.jpg" },
   { id: "skincare", label: "Skincare", image: "/images/store/anti-aging-cream.png" },
   { id: "sexual-wellness", label: "Sexual Wellness", image: "/images/store/sexual-wellness.jpg" },
-  { id: "sleep", label: "Sleep", image: "/images/store/sleep-rest.jpg" },
-  { id: "mental-health", label: "Mental Health", image: "/images/store/mental-calm.jpg" },
   { id: "hormone", label: "Hormone", image: "/images/store/hormone-lab.jpg" },
 ];
 
