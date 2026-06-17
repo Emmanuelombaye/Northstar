@@ -190,62 +190,42 @@ export function ShopPage() {
 
 
           <div className="pharm-catalog-toolbar">
-
-            <div className="pharm-search">
-
-              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
-
-                <circle cx="9" cy="9" r="6" stroke="currentColor" strokeWidth="1.4" />
-
-                <path d="M14 14l4 4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-
-              </svg>
-
-              <input
-
-                type="search"
-
-                placeholder="Search medicines & treatments…"
-
-                value={query}
-
-                onChange={(e) => setQuery(e.target.value)}
-
-                aria-label="Search products"
-
-              />
-
+            <div className="pharm-catalog-pills">
+              {[
+                { id: "all", label: "All categories" },
+                { id: "weight-loss", label: "Weight Loss" },
+                { id: "mens-health", label: "Men's Health" },
+                { id: "hair", label: "Hair" },
+                { id: "skincare", label: "Skincare" },
+                { id: "sexual-wellness", label: "Sexual Wellness" },
+                { id: "hormone", label: "Hormone" }
+              ].map(cat => (
+                <button
+                  key={cat.id}
+                  className={`pharm-pill ${category === cat.id ? 'is-active' : ''}`}
+                  onClick={() => setCategory(cat.id as StoreCategory | "all")}
+                >
+                  {cat.label}
+                </button>
+              ))}
             </div>
+            
+            <div className="pharm-catalog-controls">
+              <div className="pharm-search">
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <circle cx="9" cy="9" r="6" stroke="currentColor" strokeWidth="1.4" />
+                  <path d="M14 14l4 4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+                </svg>
+                <input
+                  type="search"
+                  placeholder="Search treatments…"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  aria-label="Search products"
+                />
+              </div>
 
-            <div className="pharm-catalog-filters">
-
-              <select
-
-                value={category}
-
-                onChange={(e) => setCategory(e.target.value as StoreCategory | "all")}
-
-                aria-label="Filter by category"
-
-              >
-
-                <option value="all">All categories</option>
-
-                <option value="weight-loss">Weight Loss</option>
-
-                <option value="mens-health">Men's Health</option>
-
-                <option value="hair">Hair</option>
-
-                <option value="skincare">Skincare</option>
-
-                <option value="sexual-wellness">Sexual Wellness</option>
-
-                <option value="hormone">Hormone</option>
-
-              </select>
-
-              <select value={sort} onChange={(e) => setSort(e.target.value as SortKey)} aria-label="Sort products">
+              <select className="pharm-sort-select" value={sort} onChange={(e) => setSort(e.target.value as SortKey)} aria-label="Sort products">
 
                 <option value="featured">Featured</option>
 

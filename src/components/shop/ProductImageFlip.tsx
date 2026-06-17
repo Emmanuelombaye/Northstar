@@ -11,6 +11,7 @@ type FlipImgProps = {
 
 function FlipImg({ resolved, className, alt }: FlipImgProps) {
   const attempt = useRef(0);
+  const [loaded, setLoaded] = useState(false);
 
   const onError = useCallback(
     (e: React.SyntheticEvent<HTMLImageElement>) => {
@@ -25,12 +26,14 @@ function FlipImg({ resolved, className, alt }: FlipImgProps) {
 
   return (
     <img
-      className={className}
+      className={`${className} ${loaded ? "is-loaded" : "is-loading"}`}
       src={resolved.src}
       alt={alt}
       loading="lazy"
       decoding="async"
+      fetchPriority="high"
       referrerPolicy="no-referrer"
+      onLoad={() => setLoaded(true)}
       onError={onError}
     />
   );
