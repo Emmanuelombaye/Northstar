@@ -307,7 +307,7 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  width: 250px; /* Small exact Airbnb width */
+  width: 272px; /* Standard Airbnb card width */
   text-decoration: none;
   color: inherit;
   flex-shrink: 0;
@@ -320,7 +320,7 @@
 }
 .airbnb-card-img-wrap {
   width: 100%;
-  aspect-ratio: 1/1;
+  aspect-ratio: 20/19; /* Airbnb signature aspect ratio */
   border-radius: 12px;
   overflow: hidden;
   position: relative;
@@ -339,46 +339,61 @@
   border: none;
   cursor: pointer;
   z-index: 2;
-  transition: transform 0.2s;
+  transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1);
   padding: 0;
 }
-.airbnb-heart:hover {
-  transform: scale(1.1);
+.airbnb-heart:active {
+  transform: scale(0.92);
 }
 .airbnb-heart svg {
   width: 24px;
   height: 24px;
+  display: block;
+  fill: rgba(0, 0, 0, 0.5);
+  stroke: white;
   stroke-width: 2;
+  overflow: visible;
 }
 .airbnb-card-info {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
   text-align: left;
 }
 .airbnb-card-title {
+  font-family: inherit; /* Use default sans-serif, avoid heavy serifs */
   font-size: 15px;
   font-weight: 600;
   color: #222222;
+  line-height: 19px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .airbnb-card-sub {
-  font-size: 14px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 400;
   color: #717171;
+  line-height: 19px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .airbnb-card-price {
-  font-size: 14px;
+  font-family: inherit;
+  font-size: 15px;
   color: #222222;
-  margin-top: 2px;
+  line-height: 19px;
+  margin-top: 4px;
+}
+.airbnb-card-price strong {
+  font-weight: 600;
 }
 .airbnb-card-price s {
   color: #717171;
   margin-left: 6px;
+  font-weight: 400;
   text-decoration: line-through;
 }
 

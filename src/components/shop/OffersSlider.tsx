@@ -24,8 +24,8 @@ export function OffersSlider() {
               <div className="airbnb-card-img-wrap">
                 <SafeImage path={p.image} alt={p.name} />
                 <button className="airbnb-heart" type="button" aria-label="Save">
-                  <svg viewBox="0 0 32 32" fill="rgba(0, 0, 0, 0.5)" stroke="white" strokeWidth="2">
-                    <path d="M16 28.27l-2.31-2.11C6.27 19.33 2 15.45 2 10.5 2 6.36 5.36 3 9.5 3c2.38 0 4.67 1.13 6.5 2.91C17.83 4.13 20.12 3 22.5 3 26.64 3 30 6.36 30 10.5c0 4.95-4.27 8.83-11.69 15.67L16 28.27z" />
+                  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 28c7-4.73 14-10 14-17a6.98 6.98 0 0 0-7-7c-1.8 0-3.58.68-4.95 2.05L16 8.1l-2.05-2.05a6.98 6.98 0 0 0-9.9 0A6.98 6.98 0 0 0 2 11c0 7 7 12.27 14 17z" />
                   </svg>
                 </button>
               </div>
@@ -46,8 +46,8 @@ export function OffersSlider() {
               <div className="airbnb-card-img-wrap">
                 <SafeImage path={p.image} alt={p.name} />
                 <button className="airbnb-heart" type="button" tabIndex={-1}>
-                  <svg viewBox="0 0 32 32" fill="rgba(0, 0, 0, 0.5)" stroke="white" strokeWidth="2">
-                    <path d="M16 28.27l-2.31-2.11C6.27 19.33 2 15.45 2 10.5 2 6.36 5.36 3 9.5 3c2.38 0 4.67 1.13 6.5 2.91C17.83 4.13 20.12 3 22.5 3 26.64 3 30 6.36 30 10.5c0 4.95-4.27 8.83-11.69 15.67L16 28.27z" />
+                  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 28c7-4.73 14-10 14-17a6.98 6.98 0 0 0-7-7c-1.8 0-3.58.68-4.95 2.05L16 8.1l-2.05-2.05a6.98 6.98 0 0 0-9.9 0A6.98 6.98 0 0 0 2 11c0 7 7 12.27 14 17z" />
                   </svg>
                 </button>
               </div>
