@@ -314,6 +314,75 @@
 }
 
 /* ── Browse category banners ── */
+/* ── Airbnb-Style Categories ── */
+.airbnb-categories-section {
+  padding: 32px 0 16px;
+  background: var(--white);
+  border-bottom: 1px solid #e2e8f0;
+}
+.airbnb-categories-header {
+  margin-bottom: 20px;
+}
+.airbnb-categories-header h2 {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+.airbnb-categories-header p {
+  font-size: 14px;
+  color: #64748b;
+}
+.airbnb-categories-track {
+  display: flex;
+  gap: 32px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: 4px;
+  margin-inline: calc(-1 * var(--gutter));
+  padding-inline: var(--gutter);
+}
+.airbnb-categories-track::-webkit-scrollbar {
+  display: none;
+}
+.airbnb-category-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  padding: 8px 0 12px;
+  cursor: pointer;
+  color: #717171;
+  min-width: max-content;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+  opacity: 0.8;
+}
+.airbnb-category-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke-width: 1.8;
+  transition: transform 0.2s ease;
+}
+.airbnb-category-label {
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.airbnb-category-btn:hover {
+  color: var(--navy);
+  border-bottom-color: #cbd5e1;
+  opacity: 1;
+}
+.airbnb-category-btn:hover .airbnb-category-icon svg {
+  transform: scale(1.05);
+}
+.airbnb-category-btn:active {
+  transform: scale(0.95);
+}
+
 .pharm-browse-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
