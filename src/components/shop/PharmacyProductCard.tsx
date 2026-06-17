@@ -1,39 +1,24 @@
 import type { CSSProperties } from "react";
-
-import { Link } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
 import { discountPercent, isPrescription } from "../../lib/productDiscount";
 
 import { useCartContext } from "../../context/CartContext";
-
 import { useWishlistContext } from "../../context/WishlistContext";
-
 import { useCheckoutContext } from "../../context/CheckoutContext";
 import { formatPrice } from "../../store/products";
-
 import type { PharmacyProduct } from "../../store/types";
-
 import { ProductImageFlip } from "./ProductImageFlip";
 
-
-
 type Props = {
-
   product: PharmacyProduct;
-
   index?: number;
-
   compact?: boolean;
-
 };
 
-
-
 export function PharmacyProductCard({ product, index = 0, compact = false }: Props) {
-
+  const navigate = useNavigate();
   const { add } = useCartContext();
   const { startCheckout } = useCheckoutContext();
-
   const { toggle, has } = useWishlistContext();
 
   const pct = discountPercent(product);
@@ -43,15 +28,10 @@ export function PharmacyProductCard({ product, index = 0, compact = false }: Pro
   const wished = has(product.slug);
 
   return (
-
     <article
-
       className={`pharm-card${compact ? " pharm-card-compact" : ""}`}
-
-      data-reveal
-
-      style={{ "--reveal-delay": `${Math.min(index * 45, 400)}ms`, "--card-i": index } as CSSProperties}
-
+      style={{ "--reveal-delay": `${Math.min(index * 45, 400)}ms`, "--card-i": index, cursor: "pointer" } as CSSProperties}
+      onClick={() => navigate(`/shop/product/${product.slug}`)}
     >
 
       <div className="pharm-card-badges">
@@ -65,15 +45,13 @@ export function PharmacyProductCard({ product, index = 0, compact = false }: Pro
 
 
       <button
-
         type="button"
-
         className={`pharm-wishlist${wished ? " is-active" : ""}`}
-
         aria-label={wished ? "Remove from wishlist" : "Add to wishlist"}
-
-        onClick={() => toggle(product.slug)}
-
+        onClick={(e) => {
+          e.stopPropagation();
+          toggle(product.slug);
+        }}
       >
 
         <svg viewBox="0 0 24 24" fill={wished ? "currentColor" : "none"} aria-hidden="true">
@@ -130,23 +108,28 @@ export function PharmacyProductCard({ product, index = 0, compact = false }: Pro
         </div>
 
         {!compact ? (
-
           <div className="pharm-card-actions">
-
-            <button type="button" className="pharm-enroll-btn" onClick={() => startCheckout(product.slug)}>
-
+            <button 
+              type="button" 
+              className="pharm-enroll-btn" 
+              onClick={(e) => {
+                e.stopPropagation();
+                startCheckout(product.slug);
+              }}
+            >
               Enroll now
-
             </button>
-
-            <button type="button" className="pharm-add-btn" onClick={() => add(product.slug)}>
-
+            <button 
+              type="button" 
+              className="pharm-add-btn" 
+              onClick={(e) => {
+                e.stopPropagation();
+                add(product.slug);
+              }}
+            >
               + Cart
-
             </button>
-
           </div>
-
         ) : null}
 
       </div>

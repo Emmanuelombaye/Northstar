@@ -4,6 +4,7 @@ import { CheckoutProvider } from "./context/CheckoutContext";
 import { WishlistProvider } from "./context/WishlistContext";
 import { CheckoutIntakeWizard } from "./components/shop/CheckoutIntakeWizard";
 import { SiteLayout } from "./components/layout/SiteLayout";
+import { ScrollToTop } from "./components/layout/ScrollToTop";
 import { HomePage } from "./pages/HomePage";
 import { ShopPage } from "./pages/ShopPage";
 import { ProductDetailPage } from "./pages/ProductDetailPage";
@@ -26,6 +27,7 @@ import { ResourcesPage } from "./pages/marketing/ResourcesPage";
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <CartProvider>
         <CheckoutProvider>
         <WishlistProvider>
