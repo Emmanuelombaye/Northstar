@@ -667,13 +667,9 @@
 }
 .pharm-catalog-pills {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
-  overflow-x: auto;
   padding-bottom: 8px;
-  scrollbar-width: none; /* Firefox */
-}
-.pharm-catalog-pills::-webkit-scrollbar {
-  display: none; /* Safari and Chrome */
 }
 .pharm-pill {
   background: var(--white);
