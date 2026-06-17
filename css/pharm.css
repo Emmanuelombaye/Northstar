@@ -309,8 +309,20 @@
   scrollbar-width: thin;
 }
 .pharm-offers-item {
-  flex: 0 0 200px;
+  flex: 0 0 240px;
   scroll-snap-align: start;
+}
+
+@media (min-width: 768px) {
+  .pharm-offers-item {
+    flex: 0 0 280px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .pharm-offers-item {
+    flex: 0 0 320px;
+  }
 }
 
 /* ── Browse category banners ── */
@@ -661,7 +673,7 @@
   gap: 24px;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1280px) {
   .pharm-featured-grid,
   .pharm-product-grid,
   .pharm-collection-grid {
