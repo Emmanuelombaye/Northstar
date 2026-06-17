@@ -23,7 +23,7 @@ import { ShopTrustBar } from "../components/shop/ShopTrustBar";
 
 import { ShopPharmacyFooter } from "../components/shop/ShopPharmacyFooter";
 
-import { ShopStoreNav } from "../components/shop/ShopStoreNav";
+
 
 import { useMediaLoader } from "../hooks/useMediaLoader";
 
@@ -121,8 +121,6 @@ export function ShopPage() {
     <main className="shop-page pharm-store">
 
       <ShopPharmacyBar />
-
-      <ShopStoreNav />
 
       <ShopBannerCarousel />
 
