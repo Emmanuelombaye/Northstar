@@ -307,7 +307,7 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  width: 272px; /* Standard Airbnb card width */
+  width: 190px; /* Small Airbnb Experiences width */
   text-decoration: none;
   color: inherit;
   flex-shrink: 0;
@@ -320,7 +320,7 @@
 }
 .airbnb-card-img-wrap {
   width: 100%;
-  aspect-ratio: 20/19; /* Airbnb signature aspect ratio */
+  aspect-ratio: 4/5; /* Portrait aspect ratio typical of Airbnb small cards */
   border-radius: 12px;
   overflow: hidden;
   position: relative;
