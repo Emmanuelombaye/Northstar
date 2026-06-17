@@ -400,20 +400,22 @@
 /* Mobile adjustments for Airbnb Offers */
 @media (max-width: 768px) {
   .airbnb-marquee-container {
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-    width: auto;
-    margin-inline: calc(-1 * var(--gutter, 16px));
-    padding-inline: var(--gutter, 16px);
-  }
-  .airbnb-marquee-container::-webkit-scrollbar {
-    display: none;
+    padding: 0;
   }
   .airbnb-marquee-track {
     animation: none !important;
     gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    padding-inline: var(--gutter, 16px);
+    padding-bottom: 24px;
+    /* Adjust width to override the flex-shrink from desktop */
+    width: 100%;
+  }
+  .airbnb-marquee-track::-webkit-scrollbar {
+    display: none;
   }
   /* Hide the duplicate infinite track on mobile since we just swipe */
   .airbnb-marquee-track:nth-child(2) {
