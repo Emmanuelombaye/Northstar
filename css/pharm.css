@@ -210,8 +210,20 @@
 /* ── Category tiles (All Categories) ── */
 .pharm-cat-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 16px;
+}
+@media (max-width: 768px) {
+  .pharm-cat-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+}
+@media (max-width: 480px) {
+  .pharm-cat-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
 }
 .pharm-cat-tile {
   border: none;
@@ -240,10 +252,26 @@
 }
 .pharm-cat-tile span {
   display: block;
-  font-size: 11px;
-  font-weight: 700;
+  font-size: 13px;
+  font-weight: 600;
   color: var(--navy);
   line-height: 1.25;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+@media (max-width: 480px) {
+  .pharm-cat-tile {
+    padding: 10px 6px 12px;
+  }
+  .pharm-cat-tile picture,
+  .pharm-cat-tile img {
+    width: 56px;
+    height: 56px;
+    border-width: 1px;
+  }
+  .pharm-cat-tile span {
+    font-size: 11px;
+  }
 }
 
 /* ── Offers horizontal slider ── */
