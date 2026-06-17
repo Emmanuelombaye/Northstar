@@ -54,6 +54,15 @@ export function ShopPage() {
       }
       return prev;
     }, { replace: true });
+    
+    // Auto-scroll to catalog to prevent "middle of nowhere" feeling
+    setTimeout(() => {
+      const catalogEl = document.getElementById("catalog");
+      if (catalogEl) {
+        const top = catalogEl.getBoundingClientRect().top + window.scrollY - 100;
+        window.scrollTo({ top, behavior: "smooth" });
+      }
+    }, 50);
   };
 
   const [query, setQuery] = useState("");
@@ -164,22 +173,9 @@ export function ShopPage() {
 
       <ShopBrandsWall />
 
-      {showCollections ? (
-        collections.map((col) => (
-          <CategoryCollectionSection
-            key={col.category}
-            category={col.category}
-            products={col.products}
-            onViewAll={setCategory}
-          />
-        ))
-      ) : null}
-
       <section id="catalog" className="pharm-section pharm-catalog">
-
         <div className="pharm-wrap">
-
-          <h2 className="pharm-section-title">{showCollections ? "Browse &amp; search catalog" : "All Products"}</h2>
+          <h2 className="pharm-section-title">{showCollections ? "Shop by Category" : "All Products"}</h2>
 
           <p className="pharm-section-sub">
             {PRODUCT_COUNT} Rx &amp; wellness products · U.S. licensed pharmacy · organized by treatment category
@@ -192,10 +188,15 @@ export function ShopPage() {
               {[
                 { id: "all", label: "All categories" },
                 { id: "weight-loss", label: "Weight Loss" },
+                { id: "longevity", label: "Longevity" },
+                { id: "recovery", label: "Recovery" },
                 { id: "mens-health", label: "Men's Health" },
+                { id: "womens-health", label: "Women's Health" },
                 { id: "hair", label: "Hair" },
                 { id: "skincare", label: "Skincare" },
                 { id: "sexual-wellness", label: "Sexual Wellness" },
+                { id: "sleep", label: "Sleep" },
+                { id: "mental-health", label: "Mental Health" },
                 { id: "hormone", label: "Hormone" }
               ].map(cat => (
                 <button
@@ -248,9 +249,18 @@ export function ShopPage() {
 
 
           {showCollections ? (
-            <p className="pharm-catalog-hint">Browse collections above, or search / filter to view the full pharmacy catalog.</p>
+            <div className="pharm-collections-wrapper" style={{ marginTop: "32px", display: "flex", flexDirection: "column", gap: "60px" }}>
+              {collections.map((col) => (
+                <CategoryCollectionSection
+                  key={col.category}
+                  category={col.category}
+                  products={col.products}
+                  onViewAll={setCategory}
+                />
+              ))}
+            </div>
           ) : (
-            <div className="pharm-product-grid pharm-product-grid-all pharm-collection-grid">
+            <div className="pharm-product-grid pharm-product-grid-all pharm-collection-grid" style={{ marginTop: "32px" }}>
               {products.map((p, i) => (
                 <PharmacyProductCard key={p.slug} product={p} index={i} />
               ))}
@@ -259,7 +269,7 @@ export function ShopPage() {
 
           {!showCollections && products.length === 0 ? (
 
-            <p className="pharm-empty">No products match your search. Try another category.</p>
+            <p className="pharm-empty">No products match your search. Try another category or clear your search.</p>
 
           ) : null}
 
