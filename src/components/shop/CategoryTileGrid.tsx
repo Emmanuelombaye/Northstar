@@ -2,17 +2,17 @@ import { SafeImage } from "./SafeImage";
 import type { StoreCategory } from "../../store/types";
 
 const TILES: { id: StoreCategory; label: string; image: string }[] = [
-  { id: "weight-loss", label: "Weight Loss", image: "/images/tirzepatide-hero.png" },
-  { id: "longevity", label: "Longevity", image: "/images/nad-hero.png" },
-  { id: "recovery", label: "Recovery", image: "/images/sermorelin-hero.png" },
-  { id: "mens-health", label: "Men's Health", image: "https://loremflickr.com/600/600/mens,fitness?lock=1004" },
-  { id: "womens-health", label: "Women's Health", image: "https://loremflickr.com/600/600/womens,wellness?lock=1005" },
-  { id: "hair", label: "Hair", image: "https://loremflickr.com/600/600/hair,care?lock=1006" },
-  { id: "skincare", label: "Skincare", image: "https://loremflickr.com/600/600/skincare,cream?lock=1007" },
-  { id: "sexual-wellness", label: "Sexual Wellness", image: "https://loremflickr.com/600/600/wellness,couple?lock=1008" },
-  { id: "sleep", label: "Sleep", image: "https://loremflickr.com/600/600/sleep,rest?lock=1009" },
-  { id: "mental-health", label: "Mental Health", image: "https://loremflickr.com/600/600/mental,calm?lock=1010" },
-  { id: "hormone", label: "Hormone", image: "https://loremflickr.com/600/600/hormone,lab?lock=1011" },
+  { id: "weight-loss", label: "Weight Loss", image: "/images/store/weight-loss-starter.png" },
+  { id: "longevity", label: "Longevity", image: "/images/store/nad-infusion.jpg" },
+  { id: "recovery", label: "Recovery", image: "/images/store/recovery-peptide.jpg" },
+  { id: "mens-health", label: "Men's Health", image: "/images/store/testosterone-trt.png" },
+  { id: "womens-health", label: "Women's Health", image: "/images/store/womens-wellness.jpg" },
+  { id: "hair", label: "Hair", image: "/images/store/hair-care.jpg" },
+  { id: "skincare", label: "Skincare", image: "/images/store/anti-aging-cream.png" },
+  { id: "sexual-wellness", label: "Sexual Wellness", image: "/images/store/sexual-wellness.jpg" },
+  { id: "sleep", label: "Sleep", image: "/images/store/sleep-rest.jpg" },
+  { id: "mental-health", label: "Mental Health", image: "/images/store/mental-calm.jpg" },
+  { id: "hormone", label: "Hormone", image: "/images/store/hormone-lab.jpg" },
 ];
 
 type Props = {
