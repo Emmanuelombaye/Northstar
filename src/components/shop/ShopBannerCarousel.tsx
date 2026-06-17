@@ -8,7 +8,7 @@ const BANNERS = [
     subtitle: "Physician-guided treatments, delivered to your door.",
     cta: "Shop all treatments",
     href: "#catalog",
-    image: "/images/hero-landing.png",
+    image: "/images/hero-photo.png",
   },
   {
     title: "Weight Loss Programs",
