@@ -274,55 +274,112 @@
   }
 }
 
-/* ── Offers horizontal slider ── */
-.pharm-offers {
-  background: #fafbfc;
-}
-.pharm-slider-nav {
-  display: flex;
-  gap: 8px;
-}
-.pharm-slider-nav button {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 1px solid #dde3ea;
+/* ── Airbnb Continuous Loop Offers ── */
+.airbnb-offers-section {
   background: var(--white);
-  font-size: 22px;
-  line-height: 1;
-  color: var(--navy);
-  cursor: pointer;
-  transition: background 0.2s ease, border-color 0.2s ease;
+  padding: 40px 0;
+  border-bottom: 1px solid #e2e8f0;
 }
-.pharm-slider-nav button:hover {
-  background: var(--navy);
-  border-color: var(--navy);
-  color: var(--white);
-}
-.pharm-offers-track {
+.airbnb-marquee-container {
   display: flex;
-  gap: 16px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding: 4px 16px 16px;
-  margin-inline: calc(-1 * 16px);
-  scrollbar-width: thin;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  overflow: hidden;
+  gap: 24px;
+  padding: 8px 0;
 }
-.pharm-offers-item {
-  flex: 0 0 240px;
-  scroll-snap-align: start;
+.airbnb-marquee-track {
+  display: flex;
+  gap: 24px;
+  flex-shrink: 0;
+  animation: airbnb-marquee 35s linear infinite;
+}
+.airbnb-marquee-container:hover .airbnb-marquee-track {
+  animation-play-state: paused;
+}
+@keyframes airbnb-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-100% - 24px)); }
 }
 
-@media (min-width: 768px) {
-  .pharm-offers-item {
-    flex: 0 0 280px;
-  }
+/* Airbnb Exact Style Card */
+.airbnb-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 250px; /* Small exact Airbnb width */
+  text-decoration: none;
+  color: inherit;
+  flex-shrink: 0;
+  background: transparent;
+  cursor: pointer;
+  transition: opacity 0.2s;
 }
-
-@media (min-width: 1024px) {
-  .pharm-offers-item {
-    flex: 0 0 320px;
-  }
+.airbnb-card:hover {
+  opacity: 0.95;
+}
+.airbnb-card-img-wrap {
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  background: #f8fafc;
+}
+.airbnb-card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.airbnb-heart {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+  transition: transform 0.2s;
+  padding: 0;
+}
+.airbnb-heart:hover {
+  transform: scale(1.1);
+}
+.airbnb-heart svg {
+  width: 24px;
+  height: 24px;
+  stroke-width: 2;
+}
+.airbnb-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+}
+.airbnb-card-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #222222;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.airbnb-card-sub {
+  font-size: 14px;
+  color: #717171;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.airbnb-card-price {
+  font-size: 14px;
+  color: #222222;
+  margin-top: 2px;
+}
+.airbnb-card-price s {
+  color: #717171;
+  margin-left: 6px;
+  text-decoration: line-through;
 }
 
 /* ── Browse category banners ── */
