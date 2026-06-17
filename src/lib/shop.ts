@@ -113,7 +113,6 @@ export function buildPatientLoginHandoff(opts: {
   const params: Record<string, string> = {
     source: "northstar-shop",
     redirect: patientPortalPath(),
-    mode: "signup",
   };
 
   if (opts.peakProduct) {
