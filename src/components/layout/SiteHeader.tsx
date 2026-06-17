@@ -12,61 +12,67 @@ export function SiteHeader() {
   return (
     <header className={`site-header${isShop ? " site-header-pharm" : ""}`}>
       <div className="header-inner">
-        <Link to="/" className="logo" aria-label="North Star MD home">
-          <svg className="logo-star" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-            <path
-              d="M24 4L27 18L41 21L27 24L24 38L21 24L7 21L21 18L24 4Z"
-              stroke="currentColor"
-              strokeWidth="1.2"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M24 12L25.5 18.5L32 20L25.5 21.5L24 28L22.5 21.5L16 20L22.5 18.5L24 12Z"
-              stroke="currentColor"
-              strokeWidth="0.9"
-              strokeLinejoin="round"
-            />
-          </svg>
-          <div className="logo-text">
-            <span className="logo-name">North Star MD</span>
-            <span className="logo-tagline">Guided by science. Designed for you.</span>
-          </div>
-        </Link>
+        
+        {/* LEFT: Logo */}
+        <div className="header-left">
+          <Link to="/" className="logo" aria-label="North Star MD home">
+            <svg className="logo-star" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+              <path
+                d="M24 4L27 18L41 21L27 24L24 38L21 24L7 21L21 18L24 4Z"
+                stroke="currentColor"
+                strokeWidth="1.2"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M24 12L25.5 18.5L32 20L25.5 21.5L24 28L22.5 21.5L16 20L22.5 18.5L24 12Z"
+                stroke="currentColor"
+                strokeWidth="0.9"
+                strokeLinejoin="round"
+              />
+            </svg>
+            <div className="logo-text">
+              <span className="logo-name">North Star MD</span>
+              <span className="logo-tagline">Guided by science. Designed for you.</span>
+            </div>
+          </Link>
+        </div>
 
+        {/* MOBILE TOGGLE (Absolutely positioned or handled via CSS) */}
         <button className="nav-toggle" aria-label="Open menu" aria-expanded="false" type="button">
           <span />
           <span />
           <span />
         </button>
 
-        <div className="nav-overlay" aria-hidden="true" />
+        {/* CENTER: Desktop Navigation */}
+        <div className="header-center">
+          <nav className="main-nav" aria-label="Main navigation">
+            <ul>
+              <li>
+                <a href="/about">About Us</a>
+              </li>
+              <li>
+                <Link to="/shop" aria-current={pathname === "/shop" ? "page" : undefined}>
+                  Shop
+                </Link>
+              </li>
+              <li>
+                <a href="/how-it-works">How It Works</a>
+              </li>
+              <li>
+                <a href="/faq">FAQ</a>
+              </li>
+              <li className="nav-cta-mobile">
+                <Link to="/shop" className="btn btn-navy btn-pill btn-block">
+                  Get Started
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
 
-        <nav className="main-nav" aria-label="Main navigation">
-          <ul>
-            <li>
-              <a href="/about">About Us</a>
-            </li>
-            <li>
-              <Link to="/shop" aria-current={pathname === "/shop" ? "page" : undefined}>
-                Shop
-              </Link>
-            </li>
-
-            <li>
-              <a href="/how-it-works">How It Works</a>
-            </li>
-            <li>
-              <a href="/faq">FAQ</a>
-            </li>
-            <li className="nav-cta-mobile">
-              <Link to="/shop" className="btn btn-navy btn-pill btn-block">
-                Get Started
-              </Link>
-            </li>
-          </ul>
-        </nav>
-
-        <div className="header-ctas">
+        {/* RIGHT: CTAs & Icons */}
+        <div className="header-right header-ctas">
           {isShop ? (
             <>
             <button
@@ -97,11 +103,15 @@ export function SiteHeader() {
             </>
           ) : null}
 
-          <Link to="/shop" className="btn btn-navy btn-pill">
+          <Link to="/shop" className="btn btn-navy btn-pill btn-get-started">
             Get Started
           </Link>
         </div>
+
       </div>
+      
+      {/* OVERLAY: Kept outside the flex container to prevent layout shifting */}
+      <div className="nav-overlay" aria-hidden="true" />
     </header>
   );
 }

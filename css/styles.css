@@ -165,22 +165,39 @@ h2 { font-size: clamp(30px, 3vw, 40px); }
 
 /* ========== HEADER (white) ========== */
 .site-header {
-  background: var(--white);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
   z-index: 200;
+  transition: all 0.3s ease;
 }
 
 .header-inner {
   width: var(--page);
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   gap: 32px;
   min-height: var(--header-h);
   padding-inline: var(--gutter);
+}
+
+.header-left {
+  flex: 0 0 auto;
+}
+
+.header-center {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.header-right {
+  flex: 0 0 auto;
 }
 
 .logo {
