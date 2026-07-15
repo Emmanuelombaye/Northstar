@@ -1,14 +1,10 @@
 import { useMemo, useState } from "react";
 
-import { BrowseCategoryBanners } from "../components/shop/BrowseCategoryBanners";
-
 import { CartDrawer } from "../components/shop/CartDrawer";
 
 import { CategoryTileGrid } from "../components/shop/CategoryTileGrid";
 
 import { CookieBanner } from "../components/shop/CookieBanner";
-
-import { OffersSlider } from "../components/shop/OffersSlider";
 
 import { PharmacyProductCard } from "../components/shop/PharmacyProductCard";
 
@@ -136,12 +132,6 @@ export function ShopPage() {
       <ShopTrustBar />
 
       <CategoryTileGrid onSelect={setCategory} active={category === "all" ? undefined : category} />
-
-      <OffersSlider />
-
-      <BrowseCategoryBanners onSelect={setCategory} />
-
-
 
       <section className="pharm-section">
 

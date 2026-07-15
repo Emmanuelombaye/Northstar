@@ -1,8 +1,8 @@
 const TRUST_ITEMS = [
-  { icon: "✓", label: "FDA-Registered Pharmacy" },
-  { icon: "✓", label: "Licensed Physicians" },
-  { icon: "✓", label: "Discreet Shipping" },
-  { icon: "✓", label: "Secure Checkout" },
+  { icon: "✓", label: "503A Compounding Pharmacies" },
+  { icon: "✓", label: "Licensed U.S. Physicians" },
+  { icon: "✓", label: "Cold-Chain Shipping" },
+  { icon: "✓", label: "HIPAA-Aligned Intake" },
 ];
 
 export function ShopTrustBar() {

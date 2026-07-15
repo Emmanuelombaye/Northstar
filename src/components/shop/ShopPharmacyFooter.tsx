@@ -10,7 +10,7 @@ export function ShopPharmacyFooter() {
             North Star MD
           </Link>
           <p className="pharm-footer-desc">
-            Direct-to-patient pharmacy dispensing, physician guidance, and optimized clinical treatments.
+            Physician-guided longevity and wellness — compounded therapies, licensed providers, and discreet delivery.
           </p>
         </div>
 
@@ -20,16 +20,16 @@ export function ShopPharmacyFooter() {
             <li><Link to="/shop?category=weight-loss">Weight Loss</Link></li>
             <li><Link to="/shop?category=longevity">Longevity</Link></li>
             <li><Link to="/shop?category=recovery">Muscle Recovery</Link></li>
-            <li><Link to="/shop?category=mens-health">Men's Health</Link></li>
+            <li><Link to="/shop?category=mens-health">Men&apos;s Health</Link></li>
           </ul>
         </div>
 
         <div>
           <h4>Shop</h4>
           <ul>
-            <li><a href="#catalog">Products</a></li>
-            <li><a href="#offers">Offers</a></li>
-            <li><a href="#pharmacy-wall">Pharmacy Wall</a></li>
+            <li><a href="#catalog">All treatments</a></li>
+            <li><a href={shop.catalog()}>Quick enroll</a></li>
+            <li><Link to="/how-it-works">How it works</Link></li>
           </ul>
         </div>
 
@@ -44,7 +44,7 @@ export function ShopPharmacyFooter() {
           </ul>
         </div>
       </div>
-      
+
       <div className="pharm-wrap">
         <div className="pharm-footer-bottom">
           <p>© {new Date().getFullYear()} North Star MD · Guided by science. Designed for you.</p>

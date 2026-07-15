@@ -1,226 +1,470 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useMediaLoader } from "../hooks/useMediaLoader";
+import { useScrollReveal } from "../hooks/useScrollReveal";
 import { shop } from "../lib/shop";
 
-/** Pixel-faithful port of legacy index.html <main> — do not restyle without design approval. */
+const HERO_SLIDES = [
+  {
+    image: "/images/hero-photo.png",
+    alt: "Woman with sunlit hills — find your North Star",
+  },
+  {
+    image: "/images/hero-mobile-couple.png",
+    alt: "Couple enjoying sunlit hills — physician-guided longevity with North Star MD",
+  },
+  {
+    image: "/images/journey-seated.png",
+    alt: "Woman seated by a window — whole-person wellness care",
+  },
+];
+
+const MARQUEE_TERMS = [
+  "Compounded Semaglutide",
+  "Tirzepatide+",
+  "NAD+ Rejuvenation",
+  "Sermorelin Peptides",
+  "Metabolic Reset",
+  "Hormone Optimization",
+  "Cellular Energy",
+  "Cold-Chain Delivery",
+];
+
+const FAQ_ITEMS = [
+  {
+    q: "Are weight-loss medications FDA approved?",
+    a: "Brand-name GLP-1s such as Wegovy and Ozempic are FDA-approved. Compounded versions are prepared in licensed 503A compounding pharmacies under federal guidelines and are not individually FDA-reviewed.",
+    bullets: [
+      "Wegovy & Ozempic are FDA-approved brands",
+      "Compounded formulas follow 503A pharmacy standards",
+      "Compounded medications are not individually FDA-reviewed",
+    ],
+  },
+  {
+    q: "How fast is my intake reviewed?",
+    a: "Most assessments are completed within 24 hours of submission.",
+    bullets: [
+      "Licensed clinicians review your health intake",
+      "Prescriptions issued when clinically appropriate",
+      "Your provider contacts you if more info is needed",
+    ],
+  },
+  {
+    q: "How are treatments shipped and stored?",
+    a: "Temperature-sensitive peptides ship overnight in cold-chain packaging.",
+    bullets: [
+      "Insulated packaging with gel packs included",
+      "Overnight delivery to your door",
+      "Refrigerate immediately on arrival",
+    ],
+  },
+  {
+    q: "Is North Star MD a secure patient platform?",
+    a: "Yes — licensed U.S. providers, HIPAA-aligned intake, and accredited compounding partners.",
+    bullets: [
+      "Board-certified physicians review every intake",
+      "503A accredited pharmacy sourcing",
+      "Secure patient enrollment and care portal",
+    ],
+  },
+];
+
 export function HomePage() {
-  useMediaLoader([]);
+  const [slide, setSlide] = useState(0);
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
+
+  useMediaLoader([slide]);
+  useScrollReveal([slide]);
+
+  useEffect(() => {
+    const id = window.setInterval(() => {
+      setSlide((i) => (i + 1) % HERO_SLIDES.length);
+    }, 6000);
+    return () => window.clearInterval(id);
+  }, []);
 
   return (
-    <main>
-      <section className="hero" aria-label="Introduction">
-        <div className="hero-desktop hero-banner">
-          <h1 className="sr-only">Find Your North Star.</h1>
-          <p className="sr-only">
-            Physician-guided longevity, metabolic health, and wellness care—delivered wherever you are.
-          </p>
-          <img
-            src="/images/hero-landing.png"
-            decoding="async"
-            alt="Find Your North Star — woman with sunlit hills, physician-guided longevity and wellness care"
-            width={2007}
-            height={784}
-            fetchPriority="high"
-          />
+    <main className="ns-home">
+      {/* 1. Hero carousel */}
+      <section className="ns-hero" aria-label="Introduction">
+        <div className="ns-hero-slides" aria-hidden="true">
+          {HERO_SLIDES.map((s, i) => (
+            <div key={s.image} className={`ns-hero-slide${i === slide ? " is-active" : ""}`}>
+              <img src={s.image} alt="" decoding="async" fetchPriority={i === 0 ? "high" : "low"} />
+            </div>
+          ))}
+          <div className="ns-hero-veil" />
         </div>
 
-        <div className="hero-mobile">
-          <div className="hero-mobile-inner">
-            <div className="hero-mobile-copy">
-              <h1>Find Your North Star.</h1>
-              <div className="hero-rule" aria-hidden="true" />
-              <p className="hero-lead">
-                Physician-guided longevity, metabolic health, and wellness care—delivered wherever you are.
-              </p>
-            </div>
-            <div className="hero-mobile-visual">
-              <img
-                src="/images/hero-mobile-couple.png"
-                decoding="async"
-                alt="Couple enjoying sunlit hills — physician-guided longevity and wellness care with North Star MD"
-                width={998}
-                height={540}
-                fetchPriority="high"
-              />
-              <aside className="hero-tagline" aria-label="Care promise">
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path
-                    d="M12 2L14 9L21 11L14 13L12 20L10 13L3 11L10 9L12 2Z"
-                    stroke="currentColor"
-                    strokeWidth="1.1"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-                <span>Whole-person care for real, lasting results.</span>
-              </aside>
-            </div>
-            <div className="hero-btns">
-              <Link to="/shop" className="btn btn-gold btn-pill btn-block">
-                Start Your Journey
-              </Link>
-              <a href="/how-it-works" className="btn btn-ghost btn-pill btn-block">
-                How It Works
-              </a>
-            </div>
+        <div className="ns-hero-copy">
+          <h1>
+            Find your North Star <em>before</em> decline sets in.
+          </h1>
+          <p>
+            Physician-guided longevity, metabolic health, and wellness care — licensed U.S. providers,
+            compounded therapies, and discreet delivery wherever you are.
+          </p>
+          <div className="ns-hero-actions">
+            <Link to="/shop" className="btn btn-gold btn-pill">
+              Shop treatments
+            </Link>
+            <Link to="/how-it-works" className="btn btn-ghost-light btn-pill">
+              How it works
+            </Link>
           </div>
         </div>
+
+        <div className="ns-hero-dots" role="tablist" aria-label="Hero slides">
+          {HERO_SLIDES.map((s, i) => (
+            <button
+              key={s.image}
+              type="button"
+              role="tab"
+              aria-selected={i === slide}
+              aria-label={`Slide ${i + 1}`}
+              className={i === slide ? "is-active" : ""}
+              onClick={() => setSlide(i)}
+            />
+          ))}
+        </div>
       </section>
 
-      <section className="value-bar">
-        <div className="value-inner">
-          <article className="value-cell">
-            <svg className="value-ico" viewBox="0 0 36 36" fill="none" aria-hidden="true">
-              <path d="M11 16v9M14 13v12M18 14v11M22 11v14M26 16v9" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
-              <path d="M9 25h18" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
-              <circle cx="18" cy="10" r="3" stroke="currentColor" strokeWidth="1.3" />
-            </svg>
-            <h3>Physician-Led</h3>
-            <p>Expert medical care you can trust.</p>
+      {/* 2. Proof strip */}
+      <section className="ns-proof" aria-label="By the numbers">
+        <div className="ns-wrap ns-proof-grid">
+          <article data-reveal>
+            <strong>50</strong>
+            <span>States with licensed care access</span>
           </article>
-          <article className="value-cell">
-            <svg className="value-ico" viewBox="0 0 36 36" fill="none" aria-hidden="true">
-              <path d="M18 5L20 14L29 16.5L20 19L18 28L16 19L7 16.5L16 14L18 5Z" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" />
-            </svg>
-            <h3>Personalized</h3>
-            <p>Care plans tailored to your unique goals.</p>
+          <article data-reveal style={{ ["--reveal-delay" as string]: "80ms" }}>
+            <strong>24h</strong>
+            <span>Typical clinical intake review</span>
           </article>
-          <article className="value-cell">
-            <svg className="value-ico" viewBox="0 0 36 36" fill="none" aria-hidden="true">
-              <path d="M18 30s-8-5.5-8-12a8 8 0 0116 0c0 6.5-8 12-8 12z" stroke="currentColor" strokeWidth="1.3" />
-              <path d="M14 16c2-3 6-3 8 0M18 14v10" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
-            </svg>
-            <h3>Science-Backed</h3>
-            <p>Evidence-based treatments that work.</p>
-          </article>
-          <article className="value-cell">
-            <svg className="value-ico" viewBox="0 0 36 36" fill="none" aria-hidden="true">
-              <path d="M18 29s-7-4.8-7-11a5.5 5.5 0 0111 0c0 6.2-7 11-7 11z" stroke="currentColor" strokeWidth="1.3" />
-            </svg>
-            <h3>Whole-Person</h3>
-            <p>Supporting your health from the inside out.</p>
-          </article>
-          <article className="value-cell">
-            <svg className="value-ico" viewBox="0 0 36 36" fill="none" aria-hidden="true">
-              <rect x="13" y="16" width="10" height="10" rx="1.5" stroke="currentColor" strokeWidth="1.3" />
-              <path d="M15.5 16v-2a2.5 2.5 0 015 0v2" stroke="currentColor" strokeWidth="1.3" />
-            </svg>
-            <h3>Convenient</h3>
-            <p>100% online care on your schedule.</p>
+          <article data-reveal style={{ ["--reveal-delay" as string]: "160ms" }}>
+            <strong>100%</strong>
+            <span>Online, physician-guided care</span>
           </article>
         </div>
       </section>
 
-      <section className="care-block" id="treatments">
-        <div className="care-inner">
-          <div className="care-text">
-            <p className="eyebrow">Physician-guided programs</p>
-            <h2>Weight loss, longevity, and recovery—built around you.</h2>
+      {/* 3. Two pillars */}
+      <section className="ns-pillars">
+        <div className="ns-wrap ns-pillars-grid">
+          <article data-reveal>
+            <p className="eyebrow">Personalized care</p>
+            <h3>See personal guidance</h3>
             <p>
-              Compare GLP-1 weight management, NAD+ rejuvenation, and sermorelin recovery options with
-              transparent pricing, licensed pharmacy fulfillment, and ongoing clinical support.
+              Every patient receives a tailored longevity plan built around your goals, biomarkers, and
+              clinical history — not a one-size-fits-all protocol.
             </p>
-            <Link to="/shop" className="btn btn-navy btn-pill">
+          </article>
+          <article data-reveal style={{ ["--reveal-delay" as string]: "100ms" }}>
+            <p className="eyebrow">Clinical oversight</p>
+            <h3>Provider consultation</h3>
+            <p>
+              A licensed U.S. practitioner reviews your online health intake within 24 hours and guides
+              your treatment path from first assessment through delivery.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      {/* 4. How it works */}
+      <section className="ns-pathway" id="how-it-works-home">
+        <div className="ns-wrap">
+          <header className="ns-section-head" data-reveal>
+            <p className="eyebrow">Care pathway</p>
+            <h2>How it works.</h2>
+          </header>
+          <ol className="ns-pathway-list">
+            <li data-reveal>
+              <span className="ns-step-num">01</span>
+              <h3>Online health intake</h3>
+              <p>
+                Complete a short health assessment covering your biological goals, medications, and
+                clinical history — HIPAA-aligned and designed for busy schedules.
+              </p>
+            </li>
+            <li data-reveal style={{ ["--reveal-delay" as string]: "80ms" }}>
+              <span className="ns-step-num">02</span>
+              <h3>Provider consultation</h3>
+              <p>
+                A licensed clinical provider reviews your data within 24 hours to construct a safe,
+                personalized prescription plan when clinically appropriate.
+              </p>
+            </li>
+            <li data-reveal style={{ ["--reveal-delay" as string]: "160ms" }}>
+              <span className="ns-step-num">03</span>
+              <h3>Cold-chain delivery</h3>
+              <p>
+                Partner compounding pharmacies verify and overnight ship your treatment in
+                temperature-controlled packaging, directly to your door.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      {/* 5. Eligibility */}
+      <section className="ns-eligible">
+        <div className="ns-wrap">
+          <header className="ns-section-head" data-reveal>
+            <p className="eyebrow">Safe &amp; transparent care</p>
+            <h2>Are you eligible?</h2>
+            <p className="ns-lead">
+              Longevity treatments require professional medical assessment. North Star MD connects you
+              with qualified U.S. providers and accredited 503A compounding pharmacies — secure intake
+              and ongoing clinical support.
+            </p>
+          </header>
+          <div className="ns-eligible-grid">
+            <article data-reveal>
+              <span className="ns-check" aria-hidden="true">
+                ✓
+              </span>
+              <h4>Accredited compounding pharmacies</h4>
+              <p>
+                Prescription formulas are compounded in FDA-licensed 503A facilities using quality
+                ingredients and third-party assay checks.
+              </p>
+            </article>
+            <article data-reveal style={{ ["--reveal-delay" as string]: "100ms" }}>
+              <span className="ns-check" aria-hidden="true">
+                ✓
+              </span>
+              <h4>Licensed U.S. practitioners only</h4>
+              <p>
+                Intake reviews and medical consults are handled by board-certified physicians or nurse
+                practitioners licensed in your home state.
+              </p>
+            </article>
+          </div>
+          <div className="ns-eligible-cta" data-reveal>
+            <Link to="/shop" className="btn btn-gold btn-pill">
               Shop treatments
             </Link>
           </div>
-          <div className="care-scene">
-            <img
-              src="/images/product-box.png"
-              decoding="async"
-              alt="North Star MD box, supplements, and greenery on linen"
-              width={1200}
-              height={900}
-              loading="lazy"
-            />
+        </div>
+      </section>
+
+      {/* 6. Medical direction */}
+      <section className="ns-md">
+        <div className="ns-wrap ns-md-grid">
+          <div className="ns-md-copy" data-reveal>
+            <p className="eyebrow">Medical direction</p>
+            <h2>Your care, led by a licensed physician.</h2>
+            <p>
+              Clinical protocols, dosage ranges, and safety audits are overseen by our Clinical Practice
+              Director — real human oversight, not a chatbot.
+            </p>
+            <div className="ns-md-person">
+              <img
+                src="/images/sterling.webp"
+                data-fallback="/images/sterling.png"
+                alt="Dr. Evelyn Sterling, MD"
+                width={96}
+                height={96}
+                loading="lazy"
+              />
+              <div>
+                <strong>Dr. Evelyn Sterling, MD</strong>
+                <span>Clinical Practice Director</span>
+                <p>
+                  Board-certified physician leading intake reviews, prescription protocols, and
+                  personalized treatment plans for North Star MD members.
+                </p>
+              </div>
+            </div>
+            <Link to="/about" className="ns-text-link">
+              Meet our clinical team →
+            </Link>
+          </div>
+          <aside className="ns-md-aside" data-reveal>
+            <h3>Medical safety &amp; oversight</h3>
+            <p>
+              Every dose is prescribed and monitored by licensed practitioners. If risks appear in your
+              intake or labs, your provider adjusts your plan immediately.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      {/* 7. Treatments */}
+      <section className="ns-treatments" id="treatments">
+        <div className="ns-wrap">
+          <header className="ns-section-head" data-reveal>
+            <p className="eyebrow">Clinical protocols</p>
+            <h2>Explore our treatments.</h2>
+            <p className="ns-lead">
+              Physician-guided compounded therapies, cold-chain shipped overnight to your door.
+            </p>
+          </header>
+          <div className="ns-treat-grid">
+            <Link to="/semaglutide" className="ns-treat-card" data-reveal>
+              <div className="ns-treat-img">
+                <img
+                  src="/images/tirzepatide-hero.webp"
+                  data-fallback="/images/tirzepatide-hero.png"
+                  alt=""
+                  loading="lazy"
+                />
+              </div>
+              <h3>Compounded GLP-1</h3>
+              <p>Semaglutide &amp; Tirzepatide for metabolic reset and sustainable weight management.</p>
+            </Link>
+            <Link
+              to="/nad"
+              className="ns-treat-card"
+              data-reveal
+              style={{ ["--reveal-delay" as string]: "80ms" }}
+            >
+              <div className="ns-treat-img">
+                <img
+                  src="/images/nad-hero.webp"
+                  data-fallback="/images/nad-hero.png"
+                  alt=""
+                  loading="lazy"
+                />
+              </div>
+              <h3>Compounded NAD+</h3>
+              <p>Cellular energy restoration, mitochondrial support, and cognitive clarity.</p>
+            </Link>
+            <Link
+              to="/sermorelin"
+              className="ns-treat-card"
+              data-reveal
+              style={{ ["--reveal-delay" as string]: "160ms" }}
+            >
+              <div className="ns-treat-img">
+                <img
+                  src="/images/sermorelin-hero.webp"
+                  data-fallback="/images/sermorelin-hero.png"
+                  alt=""
+                  loading="lazy"
+                />
+              </div>
+              <h3>Compounded Sermorelin</h3>
+              <p>Recovery, sleep quality, and natural growth hormone stimulation.</p>
+            </Link>
           </div>
         </div>
       </section>
 
-      <section className="journey-block" id="about">
-        <div className="journey-navy">
-          <div className="journey-starburst" aria-hidden="true">
-            <svg viewBox="0 0 300 300" fill="none">
-              <path
-                d="M150 6L164 118L278 132L164 146L150 258L136 146L22 132L136 118L150 6Z"
-                stroke="currentColor"
-                strokeWidth="0.85"
-              />
-            </svg>
-          </div>
-          <div className="journey-navy-copy">
-            <p className="eyebrow eyebrow-light">More than medicine</p>
-            <h2>A partner in your health journey.</h2>
-            <p>
-              Beyond prescriptions, you get a dedicated team invested in your long-term wellbeing—with
-              check-ins, adjustments, and guidance every step of the way.
+      {/* 8. Keyword marquee */}
+      <section className="ns-marquee" aria-label="Treatment focus areas">
+        <div className="ns-marquee-track">
+          {[...MARQUEE_TERMS, ...MARQUEE_TERMS].map((term, i) => (
+            <span key={`${term}-${i}`}>{term}</span>
+          ))}
+        </div>
+      </section>
+
+      {/* 9. Lifestyle */}
+      <section className="ns-lifestyle">
+        <div className="ns-wrap">
+          <header className="ns-section-head" data-reveal>
+            <p className="eyebrow">Whole-person care</p>
+            <h2>Longevity you can feel.</h2>
+            <p className="ns-lead">
+              Movement, nourishment, recovery, and clarity — woven into every North Star protocol.
             </p>
-            <a href="/how-it-works" className="text-link">
-              Learn More
+          </header>
+          <div className="ns-life-grid">
+            <article data-reveal>
+              <span className="ns-step-num">01</span>
+              <h3>Daily movement</h3>
+              <p>Sustainable activity patterns that support metabolic health year-round — not extremes.</p>
+              <Link to="/resources" className="ns-text-link">
+                Explore
+              </Link>
+            </article>
+            <article data-reveal style={{ ["--reveal-delay" as string]: "60ms" }}>
+              <span className="ns-step-num">02</span>
+              <h3>Metabolic nourishment</h3>
+              <p>Nutrition guidance that stabilizes glucose and fuels cellular repair alongside therapy.</p>
+              <Link to="/resources" className="ns-text-link">
+                Explore
+              </Link>
+            </article>
+            <article data-reveal style={{ ["--reveal-delay" as string]: "120ms" }}>
+              <span className="ns-step-num">03</span>
+              <h3>Active recovery</h3>
+              <p>Sleep, strength, and recovery cycles built for decades — not just seasons.</p>
+              <Link to="/sermorelin" className="ns-text-link">
+                Explore
+              </Link>
+            </article>
+            <article data-reveal style={{ ["--reveal-delay" as string]: "180ms" }}>
+              <span className="ns-step-num">04</span>
+              <h3>Mind-body balance</h3>
+              <p>Nervous-system recovery and cognitive clarity as part of whole-person longevity.</p>
+              <Link to="/nad" className="ns-text-link">
+                Explore
+              </Link>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      {/* 10. Closing CTA */}
+      <section className="ns-close">
+        <div className="ns-wrap ns-close-inner" data-reveal>
+          <p className="eyebrow eyebrow-light">Your journey starts here</p>
+          <h2>Better health today. A clearer path tomorrow.</h2>
+          <p>Personalized North Star protocols built for the life you want to live — guided by science.</p>
+          <div className="ns-hero-actions">
+            <Link to="/shop" className="btn btn-gold btn-pill">
+              Shop treatments
+            </Link>
+            <a href={shop.catalog()} className="btn btn-ghost-light btn-pill">
+              Become a member
             </a>
           </div>
         </div>
-
-        <div className="journey-features" id="how-it-works">
-          <div className="journey-row">
-            <svg viewBox="0 0 28 28" fill="none" aria-hidden="true">
-              <circle cx="14" cy="10" r="4" stroke="currentColor" strokeWidth="1.2" />
-              <path d="M6 24c0-4.5 3.5-6.5 8-6.5s8 2 8 6.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
-            </svg>
-            <div>
-              <strong>One-on-one support</strong>
-              <p>Work closely with your care team.</p>
-            </div>
-          </div>
-          <div className="journey-row">
-            <svg viewBox="0 0 28 28" fill="none" aria-hidden="true">
-              <path d="M5 21V11M9.5 21V15M14 21V8M18.5 21V13M23 21V6" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
-            </svg>
-            <div>
-              <strong>Ongoing optimization</strong>
-              <p>Plans that evolve with you.</p>
-            </div>
-          </div>
-          <div className="journey-row">
-            <svg viewBox="0 0 28 28" fill="none" aria-hidden="true">
-              <path d="M14 24s-6-4.2-6-9.5a6 6 0 0112 0C20 19.8 14 24 14 24z" stroke="currentColor" strokeWidth="1.2" />
-            </svg>
-            <div>
-              <strong>Built for real life</strong>
-              <p>Sustainable habits. Realistic goals.</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="journey-photo">
-          <img
-            src="/images/journey-seated.png"
-            decoding="async"
-            alt="Woman seated by a window holding a glass of water"
-            width={1266}
-            height={1242}
-            loading="lazy"
-          />
-        </div>
       </section>
 
-      <section className="cta-block" id="membership">
-        <p className="cta-eyebrow">
-          Longevity is a journey.
-          <svg viewBox="0 0 14 14" fill="none" aria-hidden="true">
-            <path
-              d="M7 1L8 5.5L12 6.5L8 7.5L7 12L6 7.5L2 6.5L6 5.5L7 1Z"
-              stroke="currentColor"
-              strokeWidth="0.85"
-              strokeLinejoin="round"
-            />
-          </svg>
-          We're here to guide it.
-        </p>
-        <h2>Better health today. A better you tomorrow.</h2>
-        <p className="cta-sub">Join North Star MD and take the first step toward a longer, healthier life.</p>
-        <a href={shop.catalog()} className="btn btn-gold btn-pill btn-lg" id="get-started">
-          Become a Member
-        </a>
+      {/* 11. FAQ */}
+      <section className="ns-faq" id="faq-home">
+        <div className="ns-wrap ns-faq-grid">
+          <header data-reveal>
+            <p className="eyebrow">Answering your questions</p>
+            <h2>Frequently asked.</h2>
+            <p className="ns-lead">Quick answers — tap any question to expand.</p>
+            <Link to="/faq" className="ns-text-link">
+              View all FAQs →
+            </Link>
+          </header>
+          <div className="ns-faq-list" data-reveal>
+            {FAQ_ITEMS.map((item, i) => {
+              const open = openFaq === i;
+              return (
+                <div key={item.q} className={`ns-faq-item${open ? " is-open" : ""}`}>
+                  <button
+                    type="button"
+                    className="ns-faq-q"
+                    aria-expanded={open}
+                    onClick={() => setOpenFaq(open ? null : i)}
+                  >
+                    <span>{item.q}</span>
+                    <span className="ns-faq-icon" aria-hidden="true">
+                      {open ? "−" : "+"}
+                    </span>
+                  </button>
+                  {open && (
+                    <div className="ns-faq-a">
+                      <p>{item.a}</p>
+                      <ul>
+                        {item.bullets.map((b) => (
+                          <li key={b}>{b}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </section>
     </main>
   );
