@@ -10,6 +10,8 @@ export function useMediaLoader(deps: unknown[] = []) {
     imgs.forEach((node) => {
       const img = node as HTMLImageElement;
       if (img.closest(".logo") || img.classList.contains("logo-star")) return;
+      /* Full-bleed cinematic heroes should not fade from grey */
+      if (img.closest(".ns-hero-slide, .ns-close-banner-bg, .ns-life-card, .ns-threat-img")) return;
       img.classList.add("media-img");
 
       const fallback = img.getAttribute("data-fallback");

@@ -15,6 +15,7 @@ import "../css/how-it-works.css";
 import "../css/membership.css";
 import "../css/resources.css";
 import "../css/treatments.css";
+import "../css/pax-site.css";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

@@ -2,20 +2,63 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useMediaLoader } from "../hooks/useMediaLoader";
 import { useScrollReveal } from "../hooks/useScrollReveal";
-import { shop } from "../lib/shop";
 
 const HERO_SLIDES = [
   {
-    image: "/images/hero-photo.png",
-    alt: "Woman with sunlit hills — find your North Star",
+    image: "/images/hero-longevity.webp",
+    fallback: "/images/hero-photo.png",
+    alt: "Physician-guided longevity with North Star MD",
   },
   {
-    image: "/images/hero-mobile-couple.png",
-    alt: "Couple enjoying sunlit hills — physician-guided longevity with North Star MD",
+    image: "/images/miami-active.webp",
+    fallback: "/images/hero-mobile-couple.png",
+    alt: "Active coastal wellness lifestyle",
   },
   {
-    image: "/images/journey-seated.png",
-    alt: "Woman seated by a window — whole-person wellness care",
+    image: "/images/hero-miami-cycle.webp",
+    fallback: "/images/journey-seated.png",
+    alt: "Movement and metabolic health",
+  },
+  {
+    image: "/images/hero-miami-yoga.webp",
+    fallback: "/images/journey-seated.png",
+    alt: "Mind-body balance and recovery",
+  },
+  {
+    image: "/images/hero-miami-water.webp",
+    fallback: "/images/hero-photo.png",
+    alt: "Whole-person longevity care",
+  },
+];
+
+const LIFESTYLE_PILLARS = [
+  {
+    image: "/images/lifestyle-movement.webp",
+    fallback: "/images/store/fitness-man.webp",
+    title: "Daily movement",
+    caption: "Sustainable activity patterns that support metabolic health year-round.",
+    to: "/education",
+  },
+  {
+    image: "/images/lifestyle-nourishment.webp",
+    fallback: "/images/store/skincare-cream.webp",
+    title: "Metabolic nourishment",
+    caption: "Nutrition guidance that stabilizes glucose and fuels cellular repair.",
+    to: "/education",
+  },
+  {
+    image: "/images/lifestyle-active.webp",
+    fallback: "/images/store/brain-focus.webp",
+    title: "Active recovery",
+    caption: "Sleep, strength, and recovery cycles built for decades — not just seasons.",
+    to: "/sermorelin",
+  },
+  {
+    image: "/images/lifestyle-balance.webp",
+    fallback: "/images/store/womens-wellness.webp",
+    title: "Mind-body balance",
+    caption: "Nervous-system recovery and cognitive clarity as part of whole-person longevity.",
+    to: "/nad",
   },
 ];
 
@@ -90,7 +133,13 @@ export function HomePage() {
         <div className="ns-hero-slides" aria-hidden="true">
           {HERO_SLIDES.map((s, i) => (
             <div key={s.image} className={`ns-hero-slide${i === slide ? " is-active" : ""}`}>
-              <img src={s.image} alt="" decoding="async" fetchPriority={i === 0 ? "high" : "low"} />
+              <img
+                src={s.image}
+                data-fallback={s.fallback}
+                alt=""
+                decoding="async"
+                fetchPriority={i === 0 ? "high" : "low"}
+              />
             </div>
           ))}
           <div className="ns-hero-veil" />
@@ -105,8 +154,8 @@ export function HomePage() {
             compounded therapies, and discreet delivery wherever you are.
           </p>
           <div className="ns-hero-actions">
-            <Link to="/shop" className="btn btn-gold btn-pill">
-              Shop treatments
+            <Link to="/start" className="btn btn-gold btn-pill">
+              Find my treatment
             </Link>
             <Link to="/how-it-works" className="btn btn-ghost-light btn-pill">
               How it works
@@ -217,31 +266,41 @@ export function HomePage() {
               and ongoing clinical support.
             </p>
           </header>
-          <div className="ns-eligible-grid">
-            <article data-reveal>
-              <span className="ns-check" aria-hidden="true">
-                ✓
-              </span>
-              <h4>Accredited compounding pharmacies</h4>
-              <p>
-                Prescription formulas are compounded in FDA-licensed 503A facilities using quality
-                ingredients and third-party assay checks.
-              </p>
-            </article>
-            <article data-reveal style={{ ["--reveal-delay" as string]: "100ms" }}>
-              <span className="ns-check" aria-hidden="true">
-                ✓
-              </span>
-              <h4>Licensed U.S. practitioners only</h4>
-              <p>
-                Intake reviews and medical consults are handled by board-certified physicians or nurse
-                practitioners licensed in your home state.
-              </p>
-            </article>
+          <div className="ns-eligible-layout">
+            <div className="ns-eligible-photo" data-reveal>
+              <img
+                src="/images/clinical-consultation.webp"
+                data-fallback="/images/store/consultation.webp"
+                alt="Clinical consultation with a North Star MD provider"
+                loading="lazy"
+              />
+            </div>
+            <div className="ns-eligible-grid">
+              <article data-reveal>
+                <span className="ns-check" aria-hidden="true">
+                  ✓
+                </span>
+                <h4>Accredited compounding pharmacies</h4>
+                <p>
+                  Prescription formulas are compounded in FDA-licensed 503A facilities using quality
+                  ingredients and third-party assay checks.
+                </p>
+              </article>
+              <article data-reveal style={{ ["--reveal-delay" as string]: "100ms" }}>
+                <span className="ns-check" aria-hidden="true">
+                  ✓
+                </span>
+                <h4>Licensed U.S. practitioners only</h4>
+                <p>
+                  Intake reviews and medical consults are handled by board-certified physicians or nurse
+                  practitioners licensed in your home state.
+                </p>
+              </article>
+            </div>
           </div>
           <div className="ns-eligible-cta" data-reveal>
-            <Link to="/shop" className="btn btn-gold btn-pill">
-              Shop treatments
+            <Link to="/start" className="btn btn-gold btn-pill">
+              Find my treatment
             </Link>
           </div>
         </div>
@@ -275,7 +334,7 @@ export function HomePage() {
                 </p>
               </div>
             </div>
-            <Link to="/about" className="ns-text-link">
+            <Link to="/advisors" className="ns-text-link">
               Meet our clinical team →
             </Link>
           </div>
@@ -300,11 +359,11 @@ export function HomePage() {
             </p>
           </header>
           <div className="ns-treat-grid">
-            <Link to="/semaglutide" className="ns-treat-card" data-reveal>
+            <Link to="/treatments" className="ns-treat-card" data-reveal>
               <div className="ns-treat-img">
                 <img
-                  src="/images/tirzepatide-hero.webp"
-                  data-fallback="/images/tirzepatide-hero.png"
+                  src="/images/glp1-treatment.webp"
+                  data-fallback="/images/tirzepatide-hero.webp"
                   alt=""
                   loading="lazy"
                 />
@@ -313,15 +372,15 @@ export function HomePage() {
               <p>Semaglutide &amp; Tirzepatide for metabolic reset and sustainable weight management.</p>
             </Link>
             <Link
-              to="/nad"
+              to="/treatments"
               className="ns-treat-card"
               data-reveal
               style={{ ["--reveal-delay" as string]: "80ms" }}
             >
               <div className="ns-treat-img">
                 <img
-                  src="/images/nad-hero.webp"
-                  data-fallback="/images/nad-hero.png"
+                  src="/images/nad-treatment.webp"
+                  data-fallback="/images/nad-hero.webp"
                   alt=""
                   loading="lazy"
                 />
@@ -330,15 +389,15 @@ export function HomePage() {
               <p>Cellular energy restoration, mitochondrial support, and cognitive clarity.</p>
             </Link>
             <Link
-              to="/sermorelin"
+              to="/treatments"
               className="ns-treat-card"
               data-reveal
               style={{ ["--reveal-delay" as string]: "160ms" }}
             >
               <div className="ns-treat-img">
                 <img
-                  src="/images/sermorelin-hero.webp"
-                  data-fallback="/images/sermorelin-hero.png"
+                  src="/images/sermorelin-treatment.webp"
+                  data-fallback="/images/sermorelin-hero.webp"
                   alt=""
                   loading="lazy"
                 />
@@ -369,56 +428,50 @@ export function HomePage() {
               Movement, nourishment, recovery, and clarity — woven into every North Star protocol.
             </p>
           </header>
-          <div className="ns-life-grid">
-            <article data-reveal>
-              <span className="ns-step-num">01</span>
-              <h3>Daily movement</h3>
-              <p>Sustainable activity patterns that support metabolic health year-round — not extremes.</p>
-              <Link to="/resources" className="ns-text-link">
-                Explore
-              </Link>
-            </article>
-            <article data-reveal style={{ ["--reveal-delay" as string]: "60ms" }}>
-              <span className="ns-step-num">02</span>
-              <h3>Metabolic nourishment</h3>
-              <p>Nutrition guidance that stabilizes glucose and fuels cellular repair alongside therapy.</p>
-              <Link to="/resources" className="ns-text-link">
-                Explore
-              </Link>
-            </article>
-            <article data-reveal style={{ ["--reveal-delay" as string]: "120ms" }}>
-              <span className="ns-step-num">03</span>
-              <h3>Active recovery</h3>
-              <p>Sleep, strength, and recovery cycles built for decades — not just seasons.</p>
-              <Link to="/sermorelin" className="ns-text-link">
-                Explore
-              </Link>
-            </article>
-            <article data-reveal style={{ ["--reveal-delay" as string]: "180ms" }}>
-              <span className="ns-step-num">04</span>
-              <h3>Mind-body balance</h3>
-              <p>Nervous-system recovery and cognitive clarity as part of whole-person longevity.</p>
-              <Link to="/nad" className="ns-text-link">
-                Explore
-              </Link>
-            </article>
+          <div className="ns-life-gallery">
+            {LIFESTYLE_PILLARS.map((pillar, i) => (
+              <article
+                key={pillar.title}
+                className="ns-life-card"
+                data-reveal
+                style={{ ["--reveal-delay" as string]: `${i * 60}ms` }}
+              >
+                <img src={pillar.image} data-fallback={pillar.fallback} alt="" loading="lazy" />
+                <div className="ns-life-card-overlay">
+                  <h3>{pillar.title}</h3>
+                  <p>{pillar.caption}</p>
+                  <Link to={pillar.to} className="ns-text-link">
+                    Explore →
+                  </Link>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
       {/* 10. Closing CTA */}
-      <section className="ns-close">
+      <section className="ns-close ns-close-banner">
+        <div className="ns-close-banner-bg" aria-hidden="true">
+          <img
+            src="/images/home-scroll-banner.webp"
+            data-fallback="/images/journey-seated.png"
+            alt=""
+            loading="lazy"
+          />
+          <div className="ns-close-banner-veil" />
+        </div>
         <div className="ns-wrap ns-close-inner" data-reveal>
           <p className="eyebrow eyebrow-light">Your journey starts here</p>
           <h2>Better health today. A clearer path tomorrow.</h2>
           <p>Personalized North Star protocols built for the life you want to live — guided by science.</p>
           <div className="ns-hero-actions">
-            <Link to="/shop" className="btn btn-gold btn-pill">
+            <Link to="/start" className="btn btn-gold btn-pill">
+              Find my treatment
+            </Link>
+            <Link to="/shop" className="btn btn-ghost-light btn-pill">
               Shop treatments
             </Link>
-            <a href={shop.catalog()} className="btn btn-ghost-light btn-pill">
-              Become a member
-            </a>
           </div>
         </div>
       </section>
