@@ -1225,15 +1225,38 @@ body.nav-open .nav-overlay {
     linear-gradient(0deg, rgba(8, 26, 50, 0.45) 0%, transparent 50%);
   pointer-events: none;
 }
-.ns-hero-link-overlay {
-  display: block;
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  cursor: pointer;
-}
 .ns-hero-banner-mode .ns-hero-veil {
   display: none;
+}
+
+.ns-hero-hotspots {
+  position: absolute;
+  z-index: 5;
+  bottom: 88px;
+  left: max(var(--gutter), calc((100% - var(--page)) / 2 + var(--gutter)));
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.ns-hero-hotspot {
+  height: 52px;
+  border-radius: 999px;
+  display: inline-block;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.ns-hero-hotspot:hover {
+  opacity: 0.85;
+}
+
+.ns-hero-hotspot-start {
+  width: 250px;
+}
+
+.ns-hero-hotspot-how {
+  width: 210px;
 }
 .ns-hero-copy {
   position: relative;

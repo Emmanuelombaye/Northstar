@@ -110,21 +110,37 @@ export function HomePage() {
     <main className="ns-home">
       {/* 1. Hero banner */}
       <section className="ns-hero ns-hero-banner-mode" aria-label="Introduction">
-        <Link to="/start" className="ns-hero-link-overlay" aria-label="Start your journey with North Star MD">
-          <div className="ns-hero-slides">
-            {HERO_SLIDES.map((s, i) => (
-              <div key={s.image} className={`ns-hero-slide${i === slide ? " is-active" : ""}`}>
-                <img
-                  src={s.image}
-                  data-fallback={s.fallback}
-                  alt="North Star MD — Physician-guided longevity"
-                  decoding="async"
-                  fetchPriority={i === 0 ? "high" : "low"}
-                />
-              </div>
-            ))}
-          </div>
-        </Link>
+        <div className="ns-hero-slides">
+          {HERO_SLIDES.map((s, i) => (
+            <div key={s.image} className={`ns-hero-slide${i === slide ? " is-active" : ""}`}>
+              <img
+                src={s.image}
+                data-fallback={s.fallback}
+                alt="North Star MD — Physician-guided longevity"
+                decoding="async"
+                fetchPriority={i === 0 ? "high" : "low"}
+              />
+            </div>
+          ))}
+        </div>
+
+        <div className="ns-hero-hotspots">
+          <Link
+            to="/start"
+            className="ns-hero-hotspot ns-hero-hotspot-start"
+            aria-label="Start your journey"
+          />
+          <a
+            href="#how-it-works-home"
+            className="ns-hero-hotspot ns-hero-hotspot-how"
+            aria-label="How it works"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById("how-it-works-home")?.scrollIntoView({ behavior: "smooth" });
+            }}
+          />
+        </div>
+
         <h1 className="sr-only">
           Find your North Star <em>before</em> decline sets in.
         </h1>
