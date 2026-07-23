@@ -347,7 +347,7 @@ export function HomePage() {
             </p>
           </header>
           <div className="ns-treat-grid">
-            <Link to="/treatments" className="ns-treat-card" data-reveal>
+            <Link to="/treatments" className="ns-treat-card bouncy-card card-selectable" data-reveal>
               <div className="ns-treat-img">
                 <img
                   src="/images/glp1-treatment.webp"
@@ -361,7 +361,7 @@ export function HomePage() {
             </Link>
             <Link
               to="/treatments"
-              className="ns-treat-card"
+              className="ns-treat-card bouncy-card card-selectable"
               data-reveal
               style={{ ["--reveal-delay" as string]: "80ms" }}
             >
@@ -378,7 +378,7 @@ export function HomePage() {
             </Link>
             <Link
               to="/treatments"
-              className="ns-treat-card"
+              className="ns-treat-card bouncy-card card-selectable"
               data-reveal
               style={{ ["--reveal-delay" as string]: "160ms" }}
             >
