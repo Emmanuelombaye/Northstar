@@ -5,36 +5,16 @@ import { useScrollReveal } from "../hooks/useScrollReveal";
 
 const HERO_SLIDES = [
   {
-    image: "/images/hero-longevity.webp",
-    fallback: "/images/hero-photo.png",
+    image: "/upper image on that landing page.png",
+    fallback: "/new upper landing image.png",
     alt: "Physician-guided longevity with North Star MD",
-  },
-  {
-    image: "/images/miami-active.webp",
-    fallback: "/images/hero-mobile-couple.png",
-    alt: "Active coastal wellness lifestyle",
-  },
-  {
-    image: "/images/hero-miami-cycle.webp",
-    fallback: "/images/journey-seated.png",
-    alt: "Movement and metabolic health",
-  },
-  {
-    image: "/images/hero-miami-yoga.webp",
-    fallback: "/images/journey-seated.png",
-    alt: "Mind-body balance and recovery",
-  },
-  {
-    image: "/images/hero-miami-water.webp",
-    fallback: "/images/hero-photo.png",
-    alt: "Whole-person longevity care",
   },
 ];
 
 const LIFESTYLE_PILLARS = [
   {
-    image: "/images/lifestyle-movement.webp",
-    fallback: "/images/store/fitness-man.webp",
+    image: "/person sitting in corrner.png",
+    fallback: "/one sitted on corner.jpg",
     title: "Daily movement",
     caption: "Sustainable activity patterns that support metabolic health year-round.",
     to: "/education",
@@ -163,19 +143,21 @@ export function HomePage() {
           </div>
         </div>
 
-        <div className="ns-hero-dots" role="tablist" aria-label="Hero slides">
-          {HERO_SLIDES.map((s, i) => (
-            <button
-              key={s.image}
-              type="button"
-              role="tab"
-              aria-selected={i === slide}
-              aria-label={`Slide ${i + 1}`}
-              className={i === slide ? "is-active" : ""}
-              onClick={() => setSlide(i)}
-            />
-          ))}
-        </div>
+        {HERO_SLIDES.length > 1 && (
+          <div className="ns-hero-dots" role="tablist" aria-label="Hero slides">
+            {HERO_SLIDES.map((s, i) => (
+              <button
+                key={s.image}
+                type="button"
+                role="tab"
+                aria-selected={i === slide}
+                aria-label={`Slide ${i + 1}`}
+                className={i === slide ? "is-active" : ""}
+                onClick={() => setSlide(i)}
+              />
+            ))}
+          </div>
+        )}
       </section>
 
       {/* 2. Proof strip */}
@@ -269,8 +251,8 @@ export function HomePage() {
           <div className="ns-eligible-layout">
             <div className="ns-eligible-photo" data-reveal>
               <img
-                src="/images/clinical-consultation.webp"
-                data-fallback="/images/store/consultation.webp"
+                src="/person sitting in corrner.png"
+                data-fallback="/one sitted on corner.jpg"
                 alt="Clinical consultation with a North Star MD provider"
                 loading="lazy"
               />
