@@ -108,8 +108,8 @@ export function HomePage() {
 
   return (
     <main className="ns-home">
-      {/* 1. Hero carousel */}
-      <section className="ns-hero" aria-label="Introduction">
+      {/* 1. Hero banner */}
+      <section className="ns-hero ns-hero-banner-mode" aria-label="Introduction">
         <div className="ns-hero-slides" aria-hidden="true">
           {HERO_SLIDES.map((s, i) => (
             <div key={s.image} className={`ns-hero-slide${i === slide ? " is-active" : ""}`}>
@@ -126,10 +126,10 @@ export function HomePage() {
         </div>
 
         <div className="ns-hero-copy">
-          <h1>
+          <h1 className="sr-only">
             Find your North Star <em>before</em> decline sets in.
           </h1>
-          <p>
+          <p className="sr-only">
             Physician-guided longevity, metabolic health, and wellness care — licensed U.S. providers,
             compounded therapies, and discreet delivery wherever you are.
           </p>

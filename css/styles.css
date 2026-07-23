@@ -1223,6 +1223,12 @@ body.nav-open .nav-overlay {
     linear-gradient(0deg, rgba(8, 26, 50, 0.45) 0%, transparent 50%);
   pointer-events: none;
 }
+.ns-hero-banner-mode .ns-hero-veil {
+  background: linear-gradient(180deg, transparent 55%, rgba(8, 26, 50, 0.45) 100%);
+}
+.ns-hero-banner-mode .ns-hero-copy {
+  padding-bottom: 40px;
+}
 .ns-hero-copy {
   position: relative;
   z-index: 2;
