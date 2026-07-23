@@ -1661,16 +1661,40 @@ body.nav-open .nav-overlay {
     grid-template-columns: 1fr 1fr;
   }
   .ns-hero {
-    min-height: min(88vh, 720px);
+    min-height: clamp(460px, 72vh, 600px);
+  }
+  .ns-hero-slide img {
+    object-position: center top;
+  }
+  .ns-hero-veil {
+    background:
+      linear-gradient(180deg, rgba(8, 26, 50, 0.2) 0%, rgba(8, 26, 50, 0.65) 55%, rgba(8, 26, 50, 0.92) 100%);
   }
   .ns-hero-copy {
     margin-left: auto;
     margin-right: auto;
-    padding-bottom: 72px;
+    padding-bottom: 48px;
+    text-align: center;
+  }
+  .ns-hero-copy h1 {
+    font-size: clamp(28px, 6.8vw, 40px);
   }
 }
 
 @media (max-width: 640px) {
+  .ns-hero {
+    min-height: clamp(420px, 65vh, 520px);
+  }
+  .ns-hero-slide img {
+    object-position: center 20%;
+  }
+  .ns-hero-copy {
+    padding-bottom: 32px;
+  }
+  .ns-hero-copy > p {
+    font-size: 14.5px;
+    margin-bottom: 20px;
+  }
   .ns-life-grid {
     grid-template-columns: 1fr;
   }
