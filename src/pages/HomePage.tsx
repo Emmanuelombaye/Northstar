@@ -110,38 +110,28 @@ export function HomePage() {
     <main className="ns-home">
       {/* 1. Hero banner */}
       <section className="ns-hero ns-hero-banner-mode" aria-label="Introduction">
-        <div className="ns-hero-slides" aria-hidden="true">
-          {HERO_SLIDES.map((s, i) => (
-            <div key={s.image} className={`ns-hero-slide${i === slide ? " is-active" : ""}`}>
-              <img
-                src={s.image}
-                data-fallback={s.fallback}
-                alt=""
-                decoding="async"
-                fetchPriority={i === 0 ? "high" : "low"}
-              />
-            </div>
-          ))}
-          <div className="ns-hero-veil" />
-        </div>
-
-        <div className="ns-hero-copy">
-          <h1 className="sr-only">
-            Find your North Star <em>before</em> decline sets in.
-          </h1>
-          <p className="sr-only">
-            Physician-guided longevity, metabolic health, and wellness care — licensed U.S. providers,
-            compounded therapies, and discreet delivery wherever you are.
-          </p>
-          <div className="ns-hero-actions">
-            <Link to="/start" className="btn btn-gold btn-pill">
-              Find my treatment
-            </Link>
-            <Link to="/how-it-works" className="btn btn-ghost-light btn-pill">
-              How it works
-            </Link>
+        <Link to="/start" className="ns-hero-link-overlay" aria-label="Start your journey with North Star MD">
+          <div className="ns-hero-slides">
+            {HERO_SLIDES.map((s, i) => (
+              <div key={s.image} className={`ns-hero-slide${i === slide ? " is-active" : ""}`}>
+                <img
+                  src={s.image}
+                  data-fallback={s.fallback}
+                  alt="North Star MD — Physician-guided longevity"
+                  decoding="async"
+                  fetchPriority={i === 0 ? "high" : "low"}
+                />
+              </div>
+            ))}
           </div>
-        </div>
+        </Link>
+        <h1 className="sr-only">
+          Find your North Star <em>before</em> decline sets in.
+        </h1>
+        <p className="sr-only">
+          Physician-guided longevity, metabolic health, and wellness care — licensed U.S. providers,
+          compounded therapies, and discreet delivery wherever you are.
+        </p>
 
         {HERO_SLIDES.length > 1 && (
           <div className="ns-hero-dots" role="tablist" aria-label="Hero slides">
