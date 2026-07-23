@@ -13,29 +13,29 @@ const HERO_SLIDES = [
 
 const LIFESTYLE_PILLARS = [
   {
-    image: "/images/lifestyle-movement-v2.png",
-    fallback: "/person sitting in corrner.png",
+    image: "/images/lifestyle-movement-v2.webp",
+    fallback: "/images/lifestyle-movement-v2.png",
     title: "Daily movement",
     caption: "Sustainable activity patterns that support metabolic health year-round.",
     to: "/education",
   },
   {
-    image: "/images/lifestyle-nourishment-v2.png",
-    fallback: "/images/lifestyle-nourishment.webp",
+    image: "/images/lifestyle-nourishment-v2.webp",
+    fallback: "/images/lifestyle-nourishment-v2.png",
     title: "Metabolic nourishment",
     caption: "Nutrition guidance that stabilizes glucose and fuels cellular repair.",
     to: "/education",
   },
   {
-    image: "/images/lifestyle-active-v2.png",
-    fallback: "/images/lifestyle-active.webp",
+    image: "/images/lifestyle-active-v2.webp",
+    fallback: "/images/lifestyle-active-v2.png",
     title: "Active recovery",
     caption: "Sleep, strength, and recovery cycles built for decades — not just seasons.",
     to: "/sermorelin",
   },
   {
-    image: "/images/lifestyle-balance-v2.png",
-    fallback: "/images/lifestyle-balance.webp",
+    image: "/images/lifestyle-balance-v2.webp",
+    fallback: "/images/lifestyle-balance-v2.png",
     title: "Mind-body balance",
     caption: "Nervous-system recovery and cognitive clarity as part of whole-person longevity.",
     to: "/nad",
