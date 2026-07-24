@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+"use client";
+
+import { Link } from "@/lib/routerAdapter";
 import { shop } from "../../lib/shop";
 
 export function ShopPharmacyFooter() {

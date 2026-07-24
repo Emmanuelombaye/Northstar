@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+"use client";
+
+import { Link } from "@/lib/routerAdapter";
 import { PHARMACY_PRODUCTS, formatPrice } from "../../store/products";
 import { SafeImage } from "./SafeImage";
 

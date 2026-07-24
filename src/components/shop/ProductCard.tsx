@@ -1,5 +1,7 @@
+"use client";
+
 import type { CSSProperties } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/routerAdapter";
 import type { PharmacyProduct } from "../../store/types";
 import { formatPrice } from "../../store/products";
 import { useCartContext } from "../../context/CartContext";

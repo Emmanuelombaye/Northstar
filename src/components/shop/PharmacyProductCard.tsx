@@ -1,5 +1,7 @@
+"use client";
+
 import type { CSSProperties } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "@/lib/routerAdapter";
 import { discountPercent, isPrescription } from "../../lib/productDiscount";
 
 import { useCartContext } from "../../context/CartContext";

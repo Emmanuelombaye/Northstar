@@ -1,5 +1,7 @@
+"use client";
+
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation } from "@/lib/routerAdapter";
 
 export function ScrollToTop() {
   const { pathname } = useLocation();

@@ -1,5 +1,7 @@
+"use client";
+
 import type { ReactNode } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation } from "@/lib/routerAdapter";
 import { AnnouncementBar } from "./AnnouncementBar";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";

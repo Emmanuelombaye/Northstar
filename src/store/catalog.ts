@@ -481,11 +481,16 @@ export const PHARMACY_CATALOG: PharmacyProduct[] = [
   }),
 ];
 
-export const CATEGORY_LABELS: Record<StoreCategory, string> = {
+export const CATEGORY_LABELS: Record<string, string> = {
   "weight-loss": "Weight Loss",
   "mens-health": "Men's Health",
+  "womens-health": "Women's Health",
   hair: "Hair",
   skincare: "Skincare",
   "sexual-wellness": "Sexual Wellness",
   hormone: "Hormone",
+  longevity: "Longevity",
+  recovery: "Recovery",
+  sleep: "Sleep",
+  "mental-health": "Mental Health",
 };

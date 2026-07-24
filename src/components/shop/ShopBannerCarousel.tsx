@@ -1,5 +1,7 @@
+"use client";
+
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/routerAdapter";
 import { SafeImage } from "./SafeImage";
 
 const BANNERS = [

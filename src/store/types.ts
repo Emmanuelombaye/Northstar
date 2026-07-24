@@ -1,10 +1,16 @@
 export type StoreCategory =
   | "weight-loss"
   | "mens-health"
+  | "womens-health"
   | "hair"
   | "skincare"
   | "sexual-wellness"
-  | "hormone";
+  | "hormone"
+  | "longevity"
+  | "recovery"
+  | "sleep"
+  | "mental-health"
+  | (string & {});
 
 export type PharmacyProduct = {
   slug: string;
@@ -34,6 +40,9 @@ export type PharmacyProduct = {
   dosageForm?: string;
   strength?: string;
   vendor?: string;
+  isAlternative?: boolean;
+  calculatedBmi?: string;
+  safetyLabel?: string;
 };
 
 export type CartItem = {

@@ -1,4 +1,6 @@
-import { Link, useLocation } from "react-router-dom";
+"use client";
+
+import { Link, useLocation } from "@/lib/routerAdapter";
 
 const LINKS = [
   { label: "Home", href: "/" },
