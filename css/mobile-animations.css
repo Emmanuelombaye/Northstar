@@ -235,9 +235,13 @@
     -webkit-overflow-scrolling: touch !important;
   }
 
-  /* Mobile Hero Alignment Fix - prevents left text from being cut off on phone screens */
+  /* Mobile Hero Alignment Fix - ensures hero image fits cleanly on mobile without cropping */
+  .ns-hero-slide picture,
   .ns-hero-slide img {
-    object-position: left 25% !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
   }
 
   .ns-hero-hotspots {

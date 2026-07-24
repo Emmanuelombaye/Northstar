@@ -1048,6 +1048,13 @@
   .shop-hero-visual {
     min-height: 300px;
   }
+  .shop-hero-card-stack {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  .shop-hero-card {
+    object-fit: contain !important;
+  }
   .shop-catalog-layout {
     grid-template-columns: 1fr;
   }
