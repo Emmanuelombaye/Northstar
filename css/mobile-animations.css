@@ -214,6 +214,16 @@
   box-shadow: 0 2px 8px rgba(196, 169, 98, 0.4);
 }
 
+/* Hide Mobile Dock, Sheet Drawers, and Mobile Headers by default on Desktop View (width > 768px) */
+@media (min-width: 769px) {
+  .universal-mobile-dock,
+  .mobile-sheet-overlay,
+  .mobile-sheet-drawer,
+  .mobile-nav-header {
+    display: none !important;
+  }
+}
+
 /* Universal Floating Bottom Dock Navigation */
 @media (max-width: 768px) {
   body.nav-open {
