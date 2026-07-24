@@ -216,6 +216,16 @@
 
 /* Universal Floating Bottom Dock Navigation */
 @media (max-width: 768px) {
+  /* Mobile Hero Alignment Fix - prevents left text from being cut off on phone screens */
+  .ns-hero-slide img {
+    object-position: left 25% !important;
+  }
+
+  .ns-hero-hotspots {
+    left: max(var(--gutter, 18px), 16px) !important;
+    bottom: 24px !important;
+  }
+
   body {
     padding-bottom: calc(76px + env(safe-area-inset-bottom, 0px)) !important;
   }
