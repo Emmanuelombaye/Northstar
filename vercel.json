@@ -2,7 +2,6 @@
   "version": 2,
   "cleanUrls": true,
   "buildCommand": "npm run build",
-  "outputDirectory": "dist",
   "redirects": [
     {
       "source": "/care/north-star-md/shop",
