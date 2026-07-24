@@ -352,13 +352,24 @@ export function HomePage() {
                 <img
                   src="/images/glp1-treatment.webp"
                   data-fallback="/images/tirzepatide-hero.webp"
-                  alt=""
+                  alt="Compounded GLP-1"
                   loading="lazy"
                 />
+                <span className="ns-treat-badge">Metabolic Reset</span>
               </div>
-              <h3>Compounded GLP-1</h3>
-              <p>Semaglutide &amp; Tirzepatide for metabolic reset and sustainable weight management.</p>
+              <div className="ns-treat-content">
+                <h3>Compounded GLP-1</h3>
+                <p>Semaglutide &amp; Tirzepatide for metabolic reset and sustainable weight management.</p>
+                <div className="ns-treat-tags">
+                  <span className="ns-treat-tag">Overnight Delivery</span>
+                  <span className="ns-treat-tag">Physician Guided</span>
+                </div>
+                <span className="ns-treat-action bouncy-btn">
+                  Explore Protocol &rarr;
+                </span>
+              </div>
             </Link>
+
             <Link
               to="/treatments"
               className="ns-treat-card bouncy-card card-selectable"
@@ -369,13 +380,24 @@ export function HomePage() {
                 <img
                   src="/images/nad-treatment.webp"
                   data-fallback="/images/nad-hero.webp"
-                  alt=""
+                  alt="Compounded NAD+"
                   loading="lazy"
                 />
+                <span className="ns-treat-badge">Cellular Energy</span>
               </div>
-              <h3>Compounded NAD+</h3>
-              <p>Cellular energy restoration, mitochondrial support, and cognitive clarity.</p>
+              <div className="ns-treat-content">
+                <h3>Compounded NAD+</h3>
+                <p>Cellular energy restoration, mitochondrial support, and cognitive clarity.</p>
+                <div className="ns-treat-tags">
+                  <span className="ns-treat-tag">Anti-Aging</span>
+                  <span className="ns-treat-tag">Cognitive Focus</span>
+                </div>
+                <span className="ns-treat-action bouncy-btn">
+                  Explore Protocol &rarr;
+                </span>
+              </div>
             </Link>
+
             <Link
               to="/treatments"
               className="ns-treat-card bouncy-card card-selectable"
@@ -386,12 +408,27 @@ export function HomePage() {
                 <img
                   src="/images/sermorelin-treatment.webp"
                   data-fallback="/images/sermorelin-hero.webp"
-                  alt=""
+                  alt="Compounded Sermorelin"
                   loading="lazy"
                 />
+                <span className="ns-treat-badge">Peptide Recovery</span>
               </div>
-              <h3>Compounded Sermorelin</h3>
-              <p>Recovery, sleep quality, and natural growth hormone stimulation.</p>
+              <div className="ns-treat-content">
+                <h3>Compounded Sermorelin</h3>
+                <p>Recovery, sleep quality, and natural growth hormone stimulation.</p>
+                <div className="ns-treat-tags">
+                  <span className="ns-treat-tag">Deep Sleep</span>
+                  <span className="ns-treat-tag">Muscle Repair</span>
+                </div>
+                <span className="ns-treat-action bouncy-btn">
+                  Explore Protocol &rarr;
+                </span>
+              </div>
+            </Link>
+          </div>
+          <div className="ns-treatments-cta" data-reveal style={{ ["--reveal-delay" as string]: "240ms" }}>
+            <Link to="/start" className="btn btn-gold btn-pill bouncy-btn">
+              Find My Custom Treatment Plan &rarr;
             </Link>
           </div>
         </div>

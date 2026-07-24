@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-/** Adds .is-visible when elements with [data-reveal] enter the viewport. */
+/** Adds .is-visible when elements with [data-reveal] enter the viewport on both desktop & mobile. */
 export function useScrollReveal(deps: unknown[] = []) {
   useEffect(() => {
     const nodes = document.querySelectorAll("[data-reveal]");
@@ -12,6 +12,20 @@ export function useScrollReveal(deps: unknown[] = []) {
       return;
     }
 
+    // Helper to reveal elements in viewport
+    const checkViewport = () => {
+      const windowHeight = window.innerHeight;
+      nodes.forEach((node) => {
+        const rect = node.getBoundingClientRect();
+        if (rect.top <= windowHeight - 30 && rect.bottom >= 0) {
+          node.classList.add("is-visible");
+        }
+      });
+    };
+
+    // Run immediate check for initial viewport elements
+    checkViewport();
+
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
@@ -21,10 +35,18 @@ export function useScrollReveal(deps: unknown[] = []) {
           }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+      { threshold: 0.02, rootMargin: "100px 0px 100px 0px" },
     );
 
     nodes.forEach((n) => io.observe(n));
-    return () => io.disconnect();
+
+    window.addEventListener("scroll", checkViewport, { passive: true });
+    window.addEventListener("resize", checkViewport, { passive: true });
+
+    return () => {
+      io.disconnect();
+      window.removeEventListener("scroll", checkViewport);
+      window.removeEventListener("resize", checkViewport);
+    };
   }, deps);
 }
