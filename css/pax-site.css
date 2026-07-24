@@ -1261,7 +1261,101 @@
   .pc-tabbar {
     display: grid;
   }
-  .pp-auth-visual {
-    display: none;
-  }
 }
+
+/* Articles & Clinical Guides Enhancements */
+.ns-edu-article-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ns-edu-article-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+}
+
+.ns-edu-cat-badge {
+  background: rgba(196, 169, 98, 0.15);
+  color: #c4a962;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(196, 169, 98, 0.3);
+}
+
+.ns-edu-read-time {
+  color: rgba(14, 23, 33, 0.55);
+  font-weight: 500;
+}
+
+.ns-edu-article-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(14, 23, 33, 0.08);
+}
+
+.ns-edu-author {
+  font-size: 12px;
+  font-weight: 600;
+  color: #0e1721;
+}
+
+/* Article Modal Reader */
+.ns-modal-article {
+  max-width: 680px;
+  width: 90vw;
+  max-height: 88vh;
+  overflow-y: auto;
+  padding: 32px;
+  border-radius: 24px;
+  background: #ffffff;
+}
+
+.ns-article-modal-header h2 {
+  font-family: var(--serif, serif);
+  font-size: 26px;
+  line-height: 1.25;
+  color: #0e1721;
+  margin: 12px 0 8px;
+}
+
+.ns-article-modal-author {
+  font-size: 12.5px;
+  color: rgba(14, 23, 33, 0.65);
+  margin-bottom: 20px;
+}
+
+.ns-article-modal-img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.ns-article-modal-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ns-article-modal-body p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #0e1721;
+  margin-bottom: 16px;
+  white-space: pre-line;
+}
+
+.ns-article-modal-cta {
+  margin-top: 28px;
+  text-align: center;
+}
+
