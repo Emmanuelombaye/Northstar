@@ -8,7 +8,7 @@ import { useScrollReveal } from "../hooks/useScrollReveal";
 const HERO_SLIDES = [
   {
     image: "/upper image on that landing page.png",
-    mobileImage: "/images/hero-mobile-banner.png",
+    mobileImage: "/images/heroheaderformobiledisplay.png",
     fallback: "/new upper landing image.png",
     alt: "Physician-guided longevity with North Star MD",
   },
