@@ -1359,3 +1359,174 @@
   text-align: center;
 }
 
+/* Legal & Compliance Document Styling */
+.legal-hero-banner {
+  padding: 88px 0 64px !important;
+}
+
+.legal-hero-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.legal-date-chip {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gold);
+  background: rgba(196, 169, 98, 0.12);
+  border: 1px solid rgba(196, 169, 98, 0.3);
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+.legal-print-btn {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+}
+
+.legal-body-section {
+  padding: 56px 0 88px;
+  background: var(--cream);
+}
+
+.legal-card-container {
+  background: #ffffff;
+  border: 1px solid rgba(14, 23, 33, 0.08);
+  border-radius: 24px;
+  padding: 44px;
+  box-shadow: 0 12px 36px -8px rgba(14, 23, 33, 0.06);
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.legal-intro-lead {
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: #0e1721;
+}
+
+.legal-divider {
+  border: none;
+  border-top: 1px solid rgba(14, 23, 33, 0.1);
+  margin: 32px 0;
+}
+
+.legal-section-block {
+  margin-bottom: 32px;
+}
+
+.legal-section-block h2 {
+  font-family: var(--serif, serif);
+  font-size: 22px;
+  font-weight: 600;
+  color: #0e1721;
+  margin-bottom: 12px;
+}
+
+.legal-section-block p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(14, 23, 33, 0.82);
+  margin-bottom: 12px;
+}
+
+.legal-bullet-list {
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+
+.legal-bullet-list li {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: rgba(14, 23, 33, 0.82);
+  margin-bottom: 8px;
+}
+
+.legal-alert-box {
+  padding: 24px;
+  border-radius: 16px;
+  margin: 32px 0;
+}
+
+.legal-alert-warning {
+  background: #fff8eb;
+  border: 1px solid #f3d496;
+  border-left: 5px solid #c4a962;
+}
+
+.legal-alert-warning h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #8c6819;
+  margin-bottom: 8px;
+}
+
+.legal-alert-warning p {
+  font-size: 14.5px;
+  color: #5c430e;
+  line-height: 1.55;
+  margin-bottom: 6px;
+}
+
+.legal-footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.legal-footer-links span {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(14, 23, 33, 0.65);
+}
+
+.legal-chip-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.legal-chip {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #0e1721;
+  background: #f0f4f8;
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  border: 1px solid rgba(14, 23, 33, 0.08);
+}
+
+@media (max-width: 768px) {
+  .legal-card-container {
+    padding: 24px 20px;
+    border-radius: 18px;
+  }
+  .legal-footer-links {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .legal-chip-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .legal-chip-group .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+

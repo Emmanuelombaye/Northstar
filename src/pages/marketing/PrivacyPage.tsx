@@ -1,63 +1,104 @@
+import { Link } from "react-router-dom";
+import { useScrollReveal } from "../../hooks/useScrollReveal";
+
 export function PrivacyPage() {
+  useScrollReveal([]);
+
+  const handlePrint = () => {
+    window.print();
+  };
+
   return (
-    <main className="privacy-page">
-      
-      <section className="legal-hero">
-        <div className="legal-content">
-          <p className="eyebrow">Data Protection</p>
+    <main className="ns-page legal-page">
+      <section className="ns-page-hero ns-vision-banner legal-hero-banner">
+        <div className="ns-vision-hero-bg">
+          <img
+            src="/images/vision-hero-stars.png"
+            alt="North Star Privacy Policy"
+            decoding="async"
+            fetchPriority="high"
+          />
+          <div className="ns-vision-hero-veil" />
+        </div>
+        <div className="ns-wrap ns-vision-hero-content">
+          <span className="ns-vision-star-badge">🔒 Data Protection &amp; HIPAA</span>
+          <p className="eyebrow">Data Privacy</p>
           <h1>Privacy Policy &amp; HIPAA Disclosures</h1>
-          <p style="font-size: 14px; color: var(--text-body); margin-top: 8px;">Effective Date: January 1, 2026</p>
+          <p className="ns-lead">
+            How your health logs, biomarker lab results, and protected health information (PHI) are encrypted and secured.
+          </p>
+          <div className="legal-hero-meta">
+            <span className="legal-date-chip">Effective Date: January 1, 2026</span>
+            <button type="button" className="legal-print-btn bouncy-btn" onClick={handlePrint}>
+              🖨️ Print / Save Document
+            </button>
+          </div>
         </div>
       </section>
 
-      <section className="legal-body">
-        <div className="legal-content">
-          <p>
-            At North Star MD, we are committed to safeguarding your private medical data and personal information. 
-            This policy outlines how your health logs are secured, collected, and shared under federal regulations.
-          </p>
+      <section className="ns-section legal-body-section">
+        <div className="ns-wrap">
+          <div className="legal-card-container bouncy-card" data-reveal>
+            <p className="legal-intro-lead">
+              At North Star MD, we are committed to safeguarding your private medical data and personal health information.
+              This policy outlines how your clinical records are secured, encrypted, and processed under federal HIPAA regulations.
+            </p>
 
-          <h2>1. HIPAA Compliance &amp; Protected Health Information (PHI)</h2>
-          <p>
-            All patient diagnostic bloodwork, clinical intakes, practitioner communication, and medication histories 
-            are categorized as Protected Health Information (PHI) under the Health Insurance Portability and Accountability Act (HIPAA).
-          </p>
-          <p>
-            Your PHI is strictly secured under state-of-the-art medical database encryption and is never shared, sold, 
-            or exposed to third-party marketing companies. Access is granted solely to your licensed North Star MD practitioners.
-          </p>
+            <hr className="legal-divider" />
 
-          <h2>2. Data Collection &amp; Use</h2>
-          <p>
-            To provide clinical titrations and direct longevity care, we collect:
-          </p>
-          <ul>
-            <li>Contact details, identity verification records, and secure billing tokens.</li>
-            <li>HIPAA-aligned health intakes, prior disease histories, and active symptoms.</li>
-            <li>Biomarker diagnostics ordered through our Quest and Labcorp partner clinics.</li>
-          </ul>
+            <div className="legal-section-block">
+              <h2>1. HIPAA Compliance &amp; Protected Health Information (PHI)</h2>
+              <p>
+                All diagnostic bloodwork, clinical health intakes, physician communications, and compounding prescription histories
+                are classified as Protected Health Information (PHI) under the Health Insurance Portability and Accountability Act (HIPAA).
+              </p>
+              <p>
+                Your PHI is strictly encrypted using AES-256 bank-grade database security and is never sold, shared,
+                or exposed to third-party data brokers or marketing platforms. Access is restricted exclusively to your credentialed North Star MD care team.
+              </p>
+            </div>
 
-          <h2>3. White-Label Third-Party Frameworks</h2>
-          <p>
-            Our online patient dashboards, buy-flows, and medical intakes are managed in partnership with **Peak Health**, 
-            our secure white-label telehealth software provider. Peak Health complies with all federal HIPAA data storage 
-            mandates, ensuring your care transitions safely.
-          </p>
+            <div className="legal-section-block">
+              <h2>2. Information We Collect</h2>
+              <p>
+                To provide tailored longevity protocols and physician oversight, we collect:
+              </p>
+              <ul className="legal-bullet-list">
+                <li>Contact information, identity verification records, and billing tokens.</li>
+                <li>HIPAA-aligned online medical intakes, symptom history, and medication profiles.</li>
+                <li>Biomarker diagnostics ordered through our partner accredited laboratory networks.</li>
+              </ul>
+            </div>
 
-          <h2>4. Your Legal Rights</h2>
-          <p>
-            Under federal law, you maintain the right to inspect your clinical records, request copies of your diagnostic bloodwork, 
-            or request that we terminate or purge your digital profile from our active care portals at any time.
-          </p>
+            <div className="legal-section-block">
+              <h2>3. Software Infrastructure &amp; Partner Systems</h2>
+              <p>
+                Our secure patient portals and digital health intake workflows operate in partnership with accredited, HIPAA-compliant telehealth software providers.
+                All software infrastructure adheres strictly to federal data privacy standards.
+              </p>
+            </div>
 
-          <h2>5. Security Disclosures</h2>
-          <p>
-            We implement multiple layers of security to secure your PHI, including end-to-end database encryption, 
-            secure socket layer (SSL) transactions, and strict clinical access controls.
-          </p>
+            <div className="legal-section-block">
+              <h2>4. Your Privacy Rights</h2>
+              <p>
+                Under federal HIPAA mandates, you maintain the right to request full copies of your clinical health records, inspect your laboratory bloodwork,
+                or request that your digital profile be archived or purged from our active patient portals at any time.
+              </p>
+            </div>
+
+            <hr className="legal-divider" />
+
+            <div className="legal-footer-links">
+              <span>Related Legal Documents:</span>
+              <div className="legal-chip-group">
+                <Link to="/telehealth-consent" className="legal-chip bouncy-touch">Telehealth Consent</Link>
+                <Link to="/terms" className="legal-chip bouncy-touch">Terms of Service</Link>
+                <Link to="/start" className="btn btn-gold btn-pill bouncy-btn">Start Medical Intake &rarr;</Link>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
-    
     </main>
   );
 }
