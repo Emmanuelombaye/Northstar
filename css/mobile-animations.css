@@ -509,7 +509,6 @@
   .ns-treat-grid,
   .pharm-grid,
   .ns-life-gallery,
-  .ns-pathway-list,
   .ns-proof-grid {
     display: flex !important;
     overflow-x: auto !important;
@@ -527,7 +526,6 @@
   .ns-treat-grid::-webkit-scrollbar,
   .pharm-grid::-webkit-scrollbar,
   .ns-life-gallery::-webkit-scrollbar,
-  .ns-pathway-list::-webkit-scrollbar,
   .ns-proof-grid::-webkit-scrollbar {
     display: none !important;
   }
@@ -535,7 +533,6 @@
   .ns-treat-grid > *,
   .pharm-grid > *,
   .ns-life-gallery > *,
-  .ns-pathway-list > *,
   .ns-proof-grid > * {
     flex: 0 0 calc(84vw - 20px) !important;
     max-width: 320px !important;
@@ -548,7 +545,6 @@
   .ns-treat-card,
   .pharm-card,
   .ns-life-card,
-  .ns-pathway-list li,
   .ns-proof-grid article {
     background: #ffffff;
     padding: 0;
@@ -558,16 +554,34 @@
     box-shadow: 0 10px 30px -8px rgba(14, 23, 33, 0.08);
   }
 
+  /* Mobile Care Pathway - Full Width Vertical Stack (Zero Clipping) */
+  .ns-pathway-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
   .ns-pathway-list li {
     display: flex !important;
     flex-direction: column !important;
-  }
-  .ns-pathway-content {
-    padding: 18px 18px 22px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 1 1 100% !important;
+    background: #ffffff !important;
+    border-radius: 20px !important;
+    border: 1px solid rgba(14, 23, 33, 0.12) !important;
+    box-shadow: 0 12px 32px rgba(10, 31, 61, 0.08) !important;
+    overflow: hidden !important;
   }
   .ns-pathway-media {
     width: 100% !important;
     aspect-ratio: 16 / 10 !important;
+  }
+  .ns-pathway-content {
+    padding: 20px 20px 24px !important;
   }
 
   .ns-treat-img {
