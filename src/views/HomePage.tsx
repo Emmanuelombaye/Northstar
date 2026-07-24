@@ -215,34 +215,83 @@ export function HomePage() {
       {/* 4. How it works */}
       <section className="ns-pathway" id="how-it-works-home">
         <div className="ns-wrap">
-          <header className="ns-section-head" data-reveal>
+          <header className="ns-section-head ns-pathway-head" data-reveal>
             <p className="eyebrow">Care pathway</p>
             <h2>How it works.</h2>
+            <p className="ns-lead">
+              A 3-step digital care journey designed for mobile ease and fast physician turnaround.
+            </p>
           </header>
           <ol className="ns-pathway-list">
-            <li data-reveal>
-              <span className="ns-step-num">01</span>
-              <h3>Online health intake</h3>
-              <p>
-                Complete a short health assessment covering your biological goals, medications, and
-                clinical history — HIPAA-aligned and designed for busy schedules.
-              </p>
+            <li data-reveal className="ns-pathway-item ns-pathway-item-featured">
+              <div className="ns-pathway-media">
+                <span className="ns-pathway-badge">📱 Mobile-First Intake · 2 mins</span>
+                <img
+                  src="/images/step-01-choose-treatment.webp"
+                  data-fallback="/images/step-01-choose-treatment.png"
+                  alt="01 Online health intake on mobile phone"
+                  loading="lazy"
+                />
+              </div>
+              <div className="ns-pathway-content">
+                <span className="ns-step-num">01</span>
+                <h3>Online health intake</h3>
+                <p>
+                  Complete a short health assessment covering your biological goals, medications, and
+                  clinical history — HIPAA-aligned and designed for busy schedules.
+                </p>
+                <div className="ns-pathway-pills">
+                  <span>✓ 100% Digital</span>
+                  <span>✓ HIPAA Compliant</span>
+                  <span>✓ No Waiting Room</span>
+                </div>
+              </div>
             </li>
-            <li data-reveal style={{ ["--reveal-delay" as string]: "80ms" }}>
-              <span className="ns-step-num">02</span>
-              <h3>Provider consultation</h3>
-              <p>
-                A licensed clinical provider reviews your data within 24 hours to construct a safe,
-                personalized prescription plan when clinically appropriate.
-              </p>
+            <li data-reveal style={{ ["--reveal-delay" as string]: "80ms" }} className="ns-pathway-item">
+              <div className="ns-pathway-media">
+                <span className="ns-pathway-badge">🩺 Board-Certified Review</span>
+                <img
+                  src="/images/step-03-provider-review.webp"
+                  data-fallback="/images/step-03-provider-review.png"
+                  alt="02 Provider consultation review"
+                  loading="lazy"
+                />
+              </div>
+              <div className="ns-pathway-content">
+                <span className="ns-step-num">02</span>
+                <h3>Provider consultation</h3>
+                <p>
+                  A licensed clinical provider reviews your data within 24 hours to construct a safe,
+                  personalized prescription plan when clinically appropriate.
+                </p>
+                <div className="ns-pathway-pills">
+                  <span>✓ 24hr Turnaround</span>
+                  <span>✓ Licensed U.S. MDs</span>
+                </div>
+              </div>
             </li>
-            <li data-reveal style={{ ["--reveal-delay" as string]: "160ms" }}>
-              <span className="ns-step-num">03</span>
-              <h3>Cold-chain delivery</h3>
-              <p>
-                Partner compounding pharmacies verify and overnight ship your treatment in
-                temperature-controlled packaging, directly to your door.
-              </p>
+            <li data-reveal style={{ ["--reveal-delay" as string]: "160ms" }} className="ns-pathway-item">
+              <div className="ns-pathway-media">
+                <span className="ns-pathway-badge">📦 Overnight Cold-Chain</span>
+                <img
+                  src="/images/step-04-delivery-kit.webp"
+                  data-fallback="/images/step-04-delivery-kit.png"
+                  alt="03 Cold-chain delivery to your door"
+                  loading="lazy"
+                />
+              </div>
+              <div className="ns-pathway-content">
+                <span className="ns-step-num">03</span>
+                <h3>Cold-chain delivery</h3>
+                <p>
+                  Partner compounding pharmacies verify and overnight ship your treatment in
+                  temperature-controlled packaging, directly to your door.
+                </p>
+                <div className="ns-pathway-pills">
+                  <span>✓ Discreet Shipping</span>
+                  <span>✓ Temp Monitored</span>
+                </div>
+              </div>
             </li>
           </ol>
         </div>

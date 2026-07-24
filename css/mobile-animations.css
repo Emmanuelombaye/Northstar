@@ -558,6 +558,18 @@
     box-shadow: 0 10px 30px -8px rgba(14, 23, 33, 0.08);
   }
 
+  .ns-pathway-list li {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .ns-pathway-content {
+    padding: 18px 18px 22px !important;
+  }
+  .ns-pathway-media {
+    width: 100% !important;
+    aspect-ratio: 16 / 10 !important;
+  }
+
   .ns-treat-img {
     position: relative;
     width: 100%;

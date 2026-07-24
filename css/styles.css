@@ -1433,6 +1433,61 @@ body.nav-open .nav-overlay {
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
 }
+.ns-pathway-item {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  box-shadow: 0 12px 36px rgba(10, 31, 61, 0.06);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  display: flex;
+  flex-direction: column;
+}
+.ns-pathway-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 48px rgba(10, 31, 61, 0.12);
+}
+.ns-pathway-item-featured {
+  border: 2px solid var(--gold);
+  box-shadow: 0 16px 40px rgba(196, 169, 98, 0.18);
+}
+.ns-pathway-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/10;
+  background: #0e1721;
+  overflow: hidden;
+}
+.ns-pathway-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+.ns-pathway-item:hover .ns-pathway-media img {
+  transform: scale(1.04);
+}
+.ns-pathway-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+  background: rgba(14, 23, 33, 0.82);
+  backdrop-filter: blur(8px);
+  color: var(--gold-light, #e2d2a4);
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(196, 169, 98, 0.3);
+}
+.ns-pathway-content {
+  padding: 24px 22px 28px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
 .ns-pathway-list h3 {
   font-family: var(--serif);
   font-size: 22px;
@@ -1442,8 +1497,24 @@ body.nav-open .nav-overlay {
 }
 .ns-pathway-list p {
   color: var(--text-body);
-  font-size: 15px;
+  font-size: 14.5px;
   line-height: 1.6;
+  margin-bottom: 16px;
+}
+.ns-pathway-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+}
+.ns-pathway-pills span {
+  font-size: 11px;
+  font-weight: 700;
+  color: #1e3a8a;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  padding: 4px 10px;
+  border-radius: 999px;
 }
 
 /* Eligibility */
