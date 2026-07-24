@@ -216,6 +216,15 @@
 
 /* Universal Floating Bottom Dock Navigation */
 @media (max-width: 768px) {
+  body.nav-open {
+    overflow: hidden !important;
+  }
+
+  .main-nav {
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
   /* Mobile Hero Alignment Fix - prevents left text from being cut off on phone screens */
   .ns-hero-slide img {
     object-position: left 25% !important;

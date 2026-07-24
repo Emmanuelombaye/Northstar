@@ -89,21 +89,43 @@ export function SiteHeader() {
 
         <div className="header-center">
           <nav className={`main-nav${isNavOpen ? " is-open" : ""}`} aria-label="Main navigation">
+            <div className="mobile-nav-header">
+              <div className="mobile-nav-title">
+                <svg className="logo-star" viewBox="0 0 48 48" fill="none" aria-hidden="true" style={{ width: 22, height: 22, color: "#c4a962" }}>
+                  <path d="M24 4L27 18L41 21L27 24L24 38L21 24L7 21L21 18L24 4Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+                </svg>
+                <span>Navigation</span>
+              </div>
+              <button
+                type="button"
+                className="mobile-nav-close bouncy-touch"
+                onClick={closeNav}
+                aria-label="Close navigation menu"
+              >
+                ✕
+              </button>
+            </div>
+
             <ul>
-              {NAV_LINKS.map((link) => (
-                <li key={link.to}>
-                  <Link
-                    to={link.to}
-                    aria-current={link.match(pathname) ? "page" : undefined}
-                    onClick={closeNav}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              {NAV_LINKS.map((link) => {
+                const isActive = link.match(pathname);
+                return (
+                  <li key={link.to}>
+                    <Link
+                      to={link.to}
+                      className={`bouncy-touch${isActive ? " is-active" : ""}`}
+                      aria-current={isActive ? "page" : undefined}
+                      onClick={closeNav}
+                    >
+                      <span>{link.label}</span>
+                      {isActive && <span className="nav-active-dot">★</span>}
+                    </Link>
+                  </li>
+                );
+              })}
               <li className="nav-cta-mobile">
-                <Link to="/start" className="btn btn-gold btn-pill btn-block" onClick={closeNav}>
-                  Find my treatment
+                <Link to="/start" className="btn btn-gold btn-pill btn-block bouncy-btn" onClick={closeNav}>
+                  Find my treatment &rarr;
                 </Link>
               </li>
             </ul>
