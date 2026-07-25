@@ -491,7 +491,6 @@
   }
 
   /* Responsive Horizontal Snap Carousels on Mobile */
-  .ns-treat-grid,
   .pharm-grid,
   .ns-life-gallery {
     display: flex !important;
@@ -507,13 +506,11 @@
     scrollbar-width: none !important;
   }
 
-  .ns-treat-grid::-webkit-scrollbar,
   .pharm-grid::-webkit-scrollbar,
   .ns-life-gallery::-webkit-scrollbar {
     display: none !important;
   }
 
-  .ns-treat-grid > *,
   .pharm-grid > *,
   .ns-life-gallery > * {
     flex: 0 0 calc(84vw - 20px) !important;
@@ -524,7 +521,6 @@
     transition: transform 0.4s var(--ease-spring-bounce), box-shadow 0.3s ease !important;
   }
 
-  .ns-treat-card,
   .pharm-card,
   .ns-life-card {
     background: #ffffff;
@@ -533,6 +529,34 @@
     border: 1px solid rgba(14, 23, 33, 0.08);
     border-radius: 20px !important;
     box-shadow: 0 10px 30px -8px rgba(14, 23, 33, 0.08);
+  }
+
+  /* Mobile Treatments Grid - Full Width Stacked View (Zero Clipping) */
+  .ns-treat-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+  .ns-treat-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 1 1 100% !important;
+    background: #ffffff !important;
+    border-radius: 20px !important;
+    border: 1px solid rgba(14, 23, 33, 0.1) !important;
+    box-shadow: 0 12px 32px rgba(10, 31, 61, 0.08) !important;
+    overflow: hidden !important;
+  }
+  .ns-treat-img {
+    width: 100% !important;
+    aspect-ratio: 16 / 10 !important;
+  }
+  .ns-treat-content {
+    padding: 20px 20px 24px !important;
   }
 
   /* Mobile Proof Grid - Full Width Stacked View (Zero Clipping) */
