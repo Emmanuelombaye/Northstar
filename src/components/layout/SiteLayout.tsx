@@ -16,7 +16,6 @@ export function SiteLayout({ children }: { children: ReactNode }) {
       <SiteHeader />
       {children}
       {!isShop ? <SiteFooter /> : null}
-      <UniversalMobileNav />
     </>
   );
 }

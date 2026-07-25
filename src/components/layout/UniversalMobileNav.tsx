@@ -6,12 +6,8 @@ import { useCartContext } from "../../context/CartContext";
 import { useWishlistContext } from "../../context/WishlistContext";
 
 export function UniversalMobileNav() {
-  const { pathname } = useLocation();
-  const cart = useCartContext();
-  const wishlist = useWishlistContext();
-  const [isSheetOpen, setIsSheetOpen] = useState(false);
-  const [isHidden, setIsHidden] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  return null;
+}
 
   // Hide dock on scroll down, show on scroll up
   useEffect(() => {

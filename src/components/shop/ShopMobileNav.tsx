@@ -5,11 +5,8 @@ import { useCartContext } from "../../context/CartContext";
 import { useWishlistContext } from "../../context/WishlistContext";
 
 export function ShopMobileNav() {
-  const { pathname } = useLocation();
-  const cart = useCartContext();
-  const wishlist = useWishlistContext();
-
-  if (!pathname.startsWith("/shop")) return null;
+  return null;
+}
 
   return (
     <nav className="pharm-mobile-nav" aria-label="Store navigation">
