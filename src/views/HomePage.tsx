@@ -116,16 +116,24 @@ export function HomePage() {
         <div className="ns-hero-slides">
           {HERO_SLIDES.map((s, i) => (
             <div key={s.image} className={`ns-hero-slide${i === slide ? " is-active" : ""}`}>
-              <picture style={{ width: "100%", height: "100%" }}>
-                <source media="(max-width: 768px)" srcSet={s.mobileImage} />
-                <img
-                  src={s.image}
-                  data-fallback={s.fallback}
-                  alt={s.alt}
-                  decoding="async"
-                  fetchPriority={i === 0 ? "high" : "low"}
-                />
-              </picture>
+              {/* Desktop image (> 768px) */}
+              <img
+                src={s.image}
+                data-fallback={s.fallback}
+                alt={s.alt}
+                className="ns-hero-desktop-img"
+                decoding="async"
+                fetchPriority={i === 0 ? "high" : "low"}
+              />
+              {/* Mobile image (<= 768px) */}
+              <img
+                src={s.mobileImage}
+                data-fallback="/images/heroheaderformobiledisplay.webp"
+                alt={s.alt}
+                className="ns-hero-mobile-img"
+                decoding="async"
+                fetchPriority={i === 0 ? "high" : "low"}
+              />
             </div>
           ))}
         </div>

@@ -1270,6 +1270,12 @@ body.nav-open .nav-overlay {
   object-fit: cover;
   object-position: center;
 }
+.ns-hero-desktop-img {
+  display: block;
+}
+.ns-hero-mobile-img {
+  display: none;
+}
 .ns-hero-veil {
   position: absolute;
   inset: 0;

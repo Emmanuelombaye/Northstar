@@ -235,9 +235,12 @@
     -webkit-overflow-scrolling: touch !important;
   }
 
-  /* Mobile Hero Alignment Fix - ensures hero image fits cleanly on mobile without cropping */
-  .ns-hero-slide picture,
-  .ns-hero-slide img {
+  /* Mobile Hero Image Switch - ensures heroheaderformobiledisplay.png is displayed on mobile screens */
+  .ns-hero-desktop-img {
+    display: none !important;
+  }
+  .ns-hero-mobile-img {
+    display: block !important;
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
