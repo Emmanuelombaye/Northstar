@@ -4,73 +4,6 @@ import { useState } from "react";
 import { Link } from "@/lib/routerAdapter";
 import { useScrollReveal } from "../../hooks/useScrollReveal";
 
-const CATEGORY_TILES = [
-  {
-    id: "trt",
-    title: "TESTOSTERONE THERAPY",
-    sub: "TRT & Bioidentical Hormone Optimization",
-    image: "/images/categories/cat-trt.webp",
-    link: "#protocol-catalog",
-    filterId: "trt",
-  },
-  {
-    id: "weight-loss",
-    title: "WEIGHT LOSS",
-    sub: "Compounded GLP-1, Semaglutide & Tirzepatide+",
-    image: "/images/categories/cat-weight-loss.webp",
-    link: "#protocol-catalog",
-    filterId: "weight-loss",
-  },
-  {
-    id: "sleep-recovery",
-    title: "SLEEP & RECOVERY",
-    sub: "Sermorelin, CJC-1295 & Deep Sleep Rest",
-    image: "/images/categories/cat-sleep-recovery.webp",
-    link: "#protocol-catalog",
-    filterId: "sleep-recovery",
-  },
-  {
-    id: "anti-aging",
-    title: "ANTI-AGING & LONGEVITY",
-    sub: "NAD+ Rejuvenation & NMN Cellular Renewal",
-    image: "/images/categories/cat-anti-aging.webp",
-    link: "#protocol-catalog",
-    filterId: "anti-aging",
-  },
-  {
-    id: "sexual-wellness",
-    title: "SEXUAL WELLNESS & ED",
-    sub: "Daily Tadalafil, Sildenafil & PT-141 Desire",
-    image: "/images/categories/cat-sexual-wellness.webp",
-    link: "#protocol-catalog",
-    filterId: "sexual-wellness",
-  },
-  {
-    id: "hair-loss",
-    title: "HAIR LOSS",
-    sub: "Finasteride & Topical Minoxidil Formulas",
-    image: "/images/categories/cat-hair-loss.webp",
-    link: "#protocol-catalog",
-    filterId: "hair-loss",
-  },
-  {
-    id: "detox",
-    title: "DETOX & CELLULAR HEALTH",
-    sub: "Glutathione Glow, BPC-157 & GHK-Cu",
-    image: "/images/categories/cat-detox.webp",
-    link: "#protocol-catalog",
-    filterId: "detox",
-  },
-  {
-    id: "all-treatments",
-    title: "ALL TREATMENTS",
-    sub: "Full 45+ Physician-Guided Catalog",
-    image: "/images/categories/cat-all-treatments.webp",
-    link: "#protocol-catalog",
-    filterId: "all",
-  },
-] as const;
-
 const PROTOCOLS = [
   {
     id: "glp1",
@@ -184,44 +117,14 @@ export function TreatmentsHubPage() {
           </h1>
           <p className="ns-lead" style={{ maxWidth: 680, margin: "0 auto" }}>
             Physician-guided compounded therapies, cold-chain shipped overnight to your door.
-            Select a category below to browse custom care protocols.
+            Filter by clinical category below to find your custom prescription protocol.
           </p>
         </div>
       </section>
 
-      {/* 2. Patriot-Style Branded Category Tiles Grid */}
-      <section className="ns-section ns-cat-grid-section">
+      {/* 2. Filterable Protocol Catalog Section */}
+      <section className="ns-section ns-catalog-section" id="protocol-catalog" style={{ paddingTop: 32 }}>
         <div className="ns-wrap">
-          <div className="ns-patriot-cat-grid">
-            {CATEGORY_TILES.map((tile) => (
-              <a
-                key={tile.id}
-                href={tile.link}
-                className="ns-patriot-cat-card bouncy-card"
-                onClick={() => setActiveFilter(tile.filterId)}
-              >
-                <div className="ns-patriot-cat-art">
-                  <img src={tile.image} alt={tile.title} loading="lazy" />
-                  <span className="ns-patriot-arrow">↗</span>
-                </div>
-                <div className="ns-patriot-cat-overlay">
-                  <h3>{tile.title}</h3>
-                  <p>{tile.sub}</p>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 3. Filterable Protocol Catalog Section */}
-      <section className="ns-section ns-catalog-section" id="protocol-catalog">
-        <div className="ns-wrap">
-          <header className="ns-section-head text-center" style={{ marginBottom: 36 }}>
-            <p className="eyebrow">Clinical protocols &amp; formulas</p>
-            <h2>Treatment Protocol Catalog</h2>
-          </header>
-
           {/* Filter Bar */}
           <div className="ns-cat-filter-tabs">
             <button
