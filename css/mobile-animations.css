@@ -235,16 +235,36 @@
     -webkit-overflow-scrolling: touch !important;
   }
 
-  /* Mobile Hero Image Switch - ensures heroheaderformobiledisplay.png is displayed on mobile screens */
+  /* Mobile Hero Container & Full Image Display (Zero Cropping on Top/Bottom) */
+  .ns-hero-banner-mode {
+    height: auto !important;
+    min-height: auto !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+  .ns-hero-banner-mode .ns-hero-slides {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+  .ns-hero-banner-mode .ns-hero-slide {
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    opacity: 1 !important;
+  }
   .ns-hero-desktop-img {
     display: none !important;
   }
   .ns-hero-mobile-img {
     display: block !important;
     width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    object-position: center center !important;
+    height: auto !important;
+    aspect-ratio: 916 / 1717 !important;
+    object-fit: contain !important;
+    object-position: top center !important;
   }
 
   .ns-hero-hotspots {
