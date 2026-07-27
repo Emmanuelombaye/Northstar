@@ -2198,57 +2198,185 @@ body.nav-open .nav-overlay {
 
 /* FAQ */
 .ns-faq {
-  background: var(--white);
-  padding: 80px 0 96px;
+  background: linear-gradient(180deg, var(--cream) 0%, #fff 58%);
+  padding: 96px 0 112px;
+  border-top: 1px solid var(--border);
 }
 .ns-faq-grid {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 48px;
+  grid-template-columns: minmax(240px, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(36px, 5vw, 72px);
   align-items: start;
 }
+.ns-faq-intro {
+  position: sticky;
+  top: calc(var(--header-h) + 24px);
+}
+.ns-faq-intro h2 {
+  margin-bottom: 14px;
+  max-width: 10ch;
+}
+.ns-faq-intro .ns-lead {
+  margin-bottom: 4px;
+}
+.ns-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 .ns-faq-item {
-  border-bottom: 1px solid var(--border);
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.ns-faq-item.is-open {
+  border-color: var(--gold);
+  box-shadow: 0 10px 28px -18px rgba(10, 31, 61, 0.28);
 }
 .ns-faq-q {
   width: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 20px 0;
+  gap: 14px;
+  padding: 18px 20px;
   background: none;
   border: none;
   cursor: pointer;
   text-align: left;
   font-family: var(--sans);
-  font-size: 15.5px;
-  font-weight: 600;
   color: var(--navy);
+  transition: background-color var(--ease);
 }
-.ns-faq-icon {
-  font-size: 22px;
+.ns-faq-q:hover {
+  background: rgba(197, 160, 89, 0.04);
+}
+.ns-faq-q:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: -2px;
+  border-radius: 4px;
+}
+.ns-faq-index {
+  font-family: var(--serif);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
   color: var(--gold);
   line-height: 1;
+  min-width: 1.6em;
+}
+.ns-faq-q-text {
+  font-size: 15.5px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.ns-faq-icon {
+  position: relative;
+  width: 22px;
+  height: 22px;
   flex-shrink: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(197, 160, 89, 0.45);
+  background: rgba(197, 160, 89, 0.08);
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.35s var(--ease-spring-bounce, cubic-bezier(0.34, 1.56, 0.64, 1));
+}
+.ns-faq-item.is-open .ns-faq-icon {
+  background: var(--gold);
+  border-color: var(--gold);
+  transform: rotate(90deg);
+}
+.ns-faq-icon-bar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 1.5px;
+  background: var(--gold);
+  border-radius: 1px;
+  transform: translate(-50%, -50%);
+  transition:
+    transform 0.3s ease,
+    opacity 0.25s ease,
+    background-color 0.25s ease;
+}
+.ns-faq-icon-bar--v {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+.ns-faq-item.is-open .ns-faq-icon-bar {
+  background: var(--white);
+}
+.ns-faq-item.is-open .ns-faq-icon-bar--v {
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(90deg) scaleX(0);
+}
+.ns-faq-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.ns-faq-item.is-open .ns-faq-panel {
+  grid-template-rows: 1fr;
+}
+.ns-faq-panel-inner {
+  overflow: hidden;
+  min-height: 0;
 }
 .ns-faq-a {
-  padding: 0 0 20px;
+  padding: 0 20px 20px 54px;
+  border-top: 1px solid transparent;
+  transition: border-color 0.3s ease;
+}
+.ns-faq-item.is-open .ns-faq-a {
+  border-top-color: var(--border);
+  padding-top: 16px;
 }
 .ns-faq-a p {
   font-size: 14.5px;
   color: var(--text-body);
-  line-height: 1.6;
-  margin-bottom: 12px;
+  line-height: 1.65;
+  margin-bottom: 14px;
 }
 .ns-faq-a ul {
-  padding-left: 18px;
-  color: var(--text-body);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 .ns-faq-a li {
+  position: relative;
+  padding-left: 18px;
   font-size: 14px;
-  margin-bottom: 6px;
+  color: var(--text-body);
   line-height: 1.5;
+}
+.ns-faq-a li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 0 2px rgba(197, 160, 89, 0.18);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ns-faq-item,
+  .ns-faq-icon,
+  .ns-faq-icon-bar,
+  .ns-faq-panel,
+  .ns-faq-a {
+    transition: none;
+  }
 }
 
 @media (max-width: 960px) {
@@ -2260,6 +2388,15 @@ body.nav-open .nav-overlay {
   .ns-treat-grid,
   .ns-faq-grid {
     grid-template-columns: 1fr;
+  }
+  .ns-faq-intro {
+    position: static;
+  }
+  .ns-faq-intro h2 {
+    max-width: none;
+  }
+  .ns-faq-a {
+    padding-left: 20px;
   }
   .ns-life-grid {
     grid-template-columns: 1fr 1fr;

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 import { Link } from "@/lib/routerAdapter";
 import { useMediaLoader } from "../hooks/useMediaLoader";
 import { useScrollReveal } from "../hooks/useScrollReveal";
@@ -565,42 +565,70 @@ export function HomePage() {
       </section>
 
       {/* 11. FAQ */}
-      <section className="ns-faq" id="faq-home">
+      <section className="ns-faq" id="faq-home" aria-labelledby="faq-home-heading">
         <div className="ns-wrap ns-faq-grid">
-          <header data-reveal>
+          <header className="ns-faq-intro" data-reveal>
             <p className="eyebrow">Answering your questions</p>
-            <h2>Frequently asked.</h2>
-            <p className="ns-lead">Quick answers — tap any question to expand.</p>
+            <h2 id="faq-home-heading">Frequently asked.</h2>
+            <p className="ns-lead">
+              Clear answers on medications, shipping, and how physician-guided care works at North
+              Star MD.
+            </p>
             <Link to="/faq" className="ns-text-link">
-              View all FAQs →
+              View all FAQs
+              <span aria-hidden="true"> →</span>
             </Link>
           </header>
-          <div className="ns-faq-list" data-reveal>
+
+          <div className="ns-faq-list" role="list">
             {FAQ_ITEMS.map((item, i) => {
               const open = openFaq === i;
+              const panelId = `faq-panel-${i}`;
+              const triggerId = `faq-trigger-${i}`;
               return (
-                <div key={item.q} className={`ns-faq-item${open ? " is-open" : ""}`}>
+                <div
+                  key={item.q}
+                  className={`ns-faq-item${open ? " is-open" : ""}`}
+                  role="listitem"
+                  data-reveal
+                  style={{ "--reveal-delay": `${i * 70}ms` } as CSSProperties}
+                >
                   <button
                     type="button"
+                    id={triggerId}
                     className="ns-faq-q"
                     aria-expanded={open}
+                    aria-controls={panelId}
                     onClick={() => setOpenFaq(open ? null : i)}
                   >
-                    <span>{item.q}</span>
+                    <span className="ns-faq-index" aria-hidden="true">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="ns-faq-q-text">{item.q}</span>
                     <span className="ns-faq-icon" aria-hidden="true">
-                      {open ? "−" : "+"}
+                      <span className="ns-faq-icon-bar ns-faq-icon-bar--h" />
+                      <span className="ns-faq-icon-bar ns-faq-icon-bar--v" />
                     </span>
                   </button>
-                  {open && (
-                    <div className="ns-faq-a">
-                      <p>{item.a}</p>
-                      <ul>
-                        {item.bullets.map((b) => (
-                          <li key={b}>{b}</li>
-                        ))}
-                      </ul>
+                  <div
+                    id={panelId}
+                    className="ns-faq-panel"
+                    role="region"
+                    aria-labelledby={triggerId}
+                    aria-hidden={!open}
+                    inert={!open ? true : undefined}
+                  >
+                    <div className="ns-faq-panel-inner">
+                      <div className="ns-faq-a">
+                        <p>{item.a}</p>
+                        <ul>
+                          {item.bullets.map((b) => (
+                            <li key={b}>{b}</li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
-                  )}
+                  </div>
                 </div>
               );
             })}
