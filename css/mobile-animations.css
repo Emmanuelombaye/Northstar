@@ -579,37 +579,47 @@
     padding: 20px 20px 24px !important;
   }
 
-  /* Mobile Proof Grid - Full Width Stacked View (Zero Clipping) */
-  .ns-proof-grid {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 16px !important;
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
+  /* Mobile proof — readable static cards (marquee hidden via styles.css) */
+  .ns-proof {
+    padding: 20px 0 !important;
     overflow: visible !important;
   }
-  .ns-proof-grid article {
+  .ns-proof-marquee {
+    display: none !important;
+  }
+  .ns-proof-mobile {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
     width: 100% !important;
-    max-width: 100% !important;
-    flex: 1 1 100% !important;
-    background: #ffffff !important;
-    padding: 24px 20px !important;
-    border-radius: 20px !important;
-    border: 1px solid rgba(14, 23, 33, 0.1) !important;
-    box-shadow: 0 10px 30px -8px rgba(14, 23, 33, 0.08) !important;
+  }
+  .ns-proof-mobile-item {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
     text-align: center !important;
+    padding: 18px 16px !important;
+    background: #ffffff !important;
+    border: 1px solid rgba(14, 23, 33, 0.1) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 8px 22px -12px rgba(10, 31, 61, 0.14) !important;
   }
-  .ns-proof-grid strong {
-    font-size: 42px !important;
+  .ns-proof-mobile-item strong {
+    font-size: 32px !important;
     color: var(--gold, #c4a962) !important;
-    margin-bottom: 6px !important;
+    margin-bottom: 0 !important;
+    line-height: 1 !important;
   }
-  .ns-proof-grid span {
+  .ns-proof-mobile-item span {
     font-size: 11px !important;
     font-weight: 700 !important;
     letter-spacing: 0.12em !important;
+    text-transform: uppercase !important;
     color: var(--navy, #0a1f3d) !important;
+    line-height: 1.35 !important;
   }
 
   /* Mobile Care Pathway - Full Width Vertical Stack (Zero Clipping) */

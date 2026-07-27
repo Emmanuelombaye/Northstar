@@ -1814,34 +1814,117 @@ body.nav-open .nav-overlay {
   transform: scale(1.2);
 }
 
-/* Proof */
+/* Proof — compact continuous logo marquee (desktop) + clear static mobile */
 .ns-proof {
+  position: relative;
   background: var(--cream);
   border-bottom: 1px solid var(--border);
-  padding: 40px 0;
+  padding: 14px 0;
+  overflow: hidden;
 }
-.ns-proof-grid {
+.ns-proof-marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+.ns-proof-track {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: max-content;
+  padding-inline: 12px;
+  animation: ns-proof-marquee 32s linear infinite;
+}
+.ns-proof-marquee:hover .ns-proof-track {
+  animation-play-state: paused;
+}
+.ns-proof-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  min-height: 44px;
+  padding: 8px 16px 8px 12px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  box-shadow: 0 1px 0 rgba(10, 31, 61, 0.03);
+}
+.ns-proof-logo-value {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  text-align: center;
-}
-.ns-proof-grid strong {
-  display: block;
+  place-items: center;
+  min-width: 42px;
+  height: 28px;
+  padding: 0 8px;
+  border-radius: 999px;
+  background: rgba(197, 160, 89, 0.12);
+  border: 1px solid rgba(197, 160, 89, 0.35);
   font-family: var(--serif);
-  font-size: clamp(36px, 4vw, 48px);
+  font-size: 15px;
   font-weight: 500;
-  color: var(--gold);
-  line-height: 1.1;
-  margin-bottom: 8px;
+  color: var(--gold-dark);
+  line-height: 1;
+  letter-spacing: 0.02em;
 }
-.ns-proof-grid span {
-  display: block;
+.ns-proof-logo-label {
   font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--navy);
+  white-space: nowrap;
+  line-height: 1.25;
+}
+.ns-proof-mobile {
+  display: none;
+}
+@keyframes ns-proof-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (max-width: 768px) {
+  .ns-proof {
+    padding: 20px 0;
+    overflow: visible;
+  }
+  .ns-proof-marquee {
+    display: none;
+  }
+  .ns-proof-mobile {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .ns-proof-mobile-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    text-align: center;
+    padding: 18px 16px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: 0 8px 22px -12px rgba(10, 31, 61, 0.14);
+  }
+  .ns-proof-mobile-item strong {
+    font-family: var(--serif);
+    font-size: 32px;
+    font-weight: 500;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .ns-proof-mobile-item span {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--navy);
+    line-height: 1.35;
+    max-width: 28ch;
+  }
 }
 
 /* Pillars */
@@ -2380,7 +2463,6 @@ body.nav-open .nav-overlay {
 }
 
 @media (max-width: 960px) {
-  .ns-proof-grid,
   .ns-pillars-grid,
   .ns-pathway-list,
   .ns-eligible-grid,
@@ -2439,12 +2521,6 @@ body.nav-open .nav-overlay {
   .ns-life-grid {
     grid-template-columns: 1fr;
   }
-  .ns-proof {
-    padding: 32px 0;
-  }
-  .ns-proof-grid {
-    gap: 28px;
-  }
   .ns-pillars,
   .ns-pathway,
   .ns-eligible,
@@ -2467,6 +2543,7 @@ body.nav-open .nav-overlay {
 
 @media (prefers-reduced-motion: reduce) {
   .ns-marquee-track { animation: none; }
+  .ns-proof-track { animation: none; }
   .ns-hero-slide { transition: none; }
   .ns-home [data-reveal],
   .ns-page [data-reveal] {

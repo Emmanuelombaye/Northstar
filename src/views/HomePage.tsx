@@ -45,6 +45,21 @@ const LIFESTYLE_PILLARS = [
   },
 ];
 
+const PROOF_LOGOS = [
+  {
+    value: "50",
+    label: "States with licensed care access",
+  },
+  {
+    value: "24h",
+    label: "Typical clinical intake review",
+  },
+  {
+    value: "100%",
+    label: "Online, physician-guided care",
+  },
+];
+
 const MARQUEE_TERMS = [
   "Compounded Semaglutide",
   "Tirzepatide+",
@@ -180,21 +195,26 @@ export function HomePage() {
         )}
       </section>
 
-      {/* 2. Proof strip */}
-      <section className="ns-proof" aria-label="By the numbers">
-        <div className="ns-wrap ns-proof-grid">
-          <article data-reveal>
-            <strong>50</strong>
-            <span>States with licensed care access</span>
-          </article>
-          <article data-reveal style={{ ["--reveal-delay" as string]: "80ms" }}>
-            <strong>24h</strong>
-            <span>Typical clinical intake review</span>
-          </article>
-          <article data-reveal style={{ ["--reveal-delay" as string]: "160ms" }}>
-            <strong>100%</strong>
-            <span>Online, physician-guided care</span>
-          </article>
+      {/* 2. Proof logos — marquee on desktop, static stack on mobile */}
+      <section className="ns-proof" aria-label="Care access highlights">
+        <div className="ns-proof-marquee" aria-hidden="true">
+          <div className="ns-proof-track">
+            {[...PROOF_LOGOS, ...PROOF_LOGOS, ...PROOF_LOGOS, ...PROOF_LOGOS].map((item, i) => (
+              <article key={`${item.value}-${i}`} className="ns-proof-logo">
+                <strong className="ns-proof-logo-value">{item.value}</strong>
+                <span className="ns-proof-logo-label">{item.label}</span>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div className="ns-wrap ns-proof-mobile">
+          {PROOF_LOGOS.map((item) => (
+            <article key={item.value} className="ns-proof-mobile-item">
+              <strong>{item.value}</strong>
+              <span>{item.label}</span>
+            </article>
+          ))}
         </div>
       </section>
 
