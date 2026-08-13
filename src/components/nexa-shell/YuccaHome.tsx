@@ -34,24 +34,49 @@ function HeroSection() {
         <div className="retro-home-hero-contain relative z-2">
           <div className="retro-home-hero-wrap pax-home-hero__wrap relative z-2">
             <div className="retro-home-hero-top">
-              <h1 className="sr-only">North Star MD — provider-guided GLP-1 treatment</h1>
+              <p
+                className="hero-reveal hero-reveal--fade-up"
+                style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: 'clamp(1.35rem, 3.2vw, 2rem)',
+                  fontWeight: 600,
+                  letterSpacing: '0.04em',
+                  marginBottom: '0.35rem',
+                  color: 'var(--gold)',
+                }}
+              >
+                North Star MD
+              </p>
+              <h1 className="sr-only">North Star MD — provider-guided compounded Semaglutide and Tirzepatide</h1>
               <div className="retro-home-hero-heading pax-home-hero__heading hero-reveal hero-reveal--fade-up">
                 <span className="italic pax-home-hero__word" style={{ color: word.color }}>
                   {word.text}
                 </span>
                 <br />
-                with provider review
+                after clinical review
               </div>
+              <p
+                className="hero-reveal hero-reveal--fade-up"
+                style={{
+                  marginTop: '0.75rem',
+                  maxWidth: '28rem',
+                  color: 'rgba(249, 247, 242, 0.92)',
+                  fontSize: '0.95rem',
+                  lineHeight: 1.5,
+                }}
+              >
+                Telehealth intake, licensed U.S. provider decision, then pharmacy fulfillment only if prescribed.
+              </p>
             </div>
             <div className="retro-home-hero-bottom hero-reveal hero-reveal--fade-up">
               <div className="retro-home-hero-cta-group">
                 <div className="retro-home-hero-primary-wrap">
                   <Link href="/start?program=semaglutide" className="retro-home-hero-btn retro-home-hero-btn--primary">
-                    Check Eligibility — $0 to start
+                    Check Eligibility
                   </Link>
                 </div>
                 <Link href="/#treatments" className="retro-home-hero-btn retro-home-hero-btn--secondary">
-                  <span>Explore Treatments</span>
+                  <span>View treatments</span>
                   <span className="retro-home-hero-btn-chevron" aria-hidden="true">
                     <svg viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
@@ -82,9 +107,12 @@ function TreatmentsSection() {
       <div className="goal-treatments-container">
         <div className="goal-treatments-heading">
           <h2>
-            <em>Personalized treatments</em> reviewed by licensed providers
+            <em>Compounded GLP-1 options</em> reviewed by licensed providers
           </h2>
-          <p>Choose Semaglutide or Tirzepatide, then complete a medical intake.</p>
+          <p>
+            Choose Semaglutide or Tirzepatide, then complete a clinical intake. Compounded medications are prepared only
+            if prescribed and are not FDA-approved finished products.
+          </p>
         </div>
 
         <div className="goal-tablist-wrap">
@@ -174,9 +202,9 @@ function HomeHiwSection() {
     <section id="how-it-works-home" className="goal-hiw-section pax-hiw">
       <div className="goal-hiw-container pax-hiw__container">
         <div className="goal-hiw-heading pax-hiw__heading">
-          <p className="goal-hiw-eyebrow pax-hiw__eyebrow">How it works</p>
+          <p className="goal-hiw-eyebrow pax-hiw__eyebrow">How North Star MD works</p>
           <h2>
-            From onboarding through treatment, we&rsquo;ll be supporting and guiding you <em>every step of the way</em>.
+            Intake, clinician review, then fulfillment <em>only if prescribed</em>
           </h2>
         </div>
         <div className="goal-hiw-grid pax-hiw__grid" role="list">
@@ -211,8 +239,8 @@ function FaqSection() {
   return (
     <section className="retro-faqs">
       <div className="retro-faqs__head">
-        <h2 className="retro-faqs__heading">We&rsquo;ve got you.</h2>
-        <p className="retro-faqs__sub">You have questions, we have answers.</p>
+        <h2 className="retro-faqs__heading">Clinical FAQs</h2>
+        <p className="retro-faqs__sub">Straight answers about eligibility, compounding, and provider review.</p>
       </div>
       <ul className="retro-faqs__list">
         {HOME_FAQS.map((faq, index) => {

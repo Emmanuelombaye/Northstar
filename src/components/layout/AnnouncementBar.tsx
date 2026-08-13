@@ -1,5 +1,3 @@
-import { Link } from "@/lib/routerAdapter";
-
 export function AnnouncementBar() {
   return (
     <div className="announcement-bar">
@@ -12,7 +10,7 @@ export function AnnouncementBar() {
         />
       </svg>
       <p>
-        Licensed clinical care. Clear pricing. Qualified U.S. pharmacy fulfillment.{" "}
+        Compounded medications require provider approval and are not FDA-approved finished products.{" "}
         <a href="/start">Check Eligibility</a>
       </p>
     </div>

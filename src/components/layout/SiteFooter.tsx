@@ -47,8 +47,8 @@ export function SiteFooter() {
             </span>
           </div>
           <p style={{ fontSize: 12, color: "rgba(255,255,255,0.6)", lineHeight: 1.6 }}>
-            Physician-guided longevity, metabolic wellness, and premium preventative care delivered safely
-            wherever you are.
+            Provider-guided telehealth for eligible adults. Compounded medications, when prescribed, are prepared by
+            licensed U.S. pharmacies and are not FDA-approved finished products.
           </p>
         </div>
         <div style={{ display: "flex", gap: 40, flexWrap: "wrap" }}>
@@ -75,10 +75,10 @@ export function SiteFooter() {
               }}
             >
               <li>
-                <a href="/tirzepatide">Tirzepatide+</a>
+                <a href="/tirzepatide">Tirzepatide</a>
               </li>
               <li>
-                <a href="/semaglutide">Semaglutide+</a>
+                <a href="/semaglutide">Semaglutide</a>
               </li>
               <li>
                 <a href="/nad">NAD+</a>
@@ -181,7 +181,7 @@ export function SiteFooter() {
         }}
       >
         <span>&copy; 2026 North Star MD. All rights reserved.</span>
-        <span>Guided by science. Designed for you.</span>
+        <span>Licensed clinical review required. Treatment not guaranteed.</span>
       </div>
     </footer>
   );

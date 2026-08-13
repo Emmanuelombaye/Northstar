@@ -8,28 +8,28 @@ import '../../styles/yucca-home-index.css'
 const STEPS = [
   {
     n: '01',
-    title: 'Choose a treatment',
-    body: 'Select Semaglutide or Tirzepatide, then begin a clinical questionnaire.',
+    title: 'Choose a treatment path',
+    body: 'Select Semaglutide or Tirzepatide and begin a clinical questionnaire with North Star MD.',
   },
   {
     n: '02',
     title: 'Complete secure intake',
-    body: 'Share medical history, metrics, and shipping details so a licensed provider can evaluate eligibility.',
+    body: 'Share medical history, body metrics, and shipping details so a licensed provider can evaluate eligibility.',
   },
   {
     n: '03',
     title: 'Provider review',
-    body: 'A licensed U.S. clinician reviews your intake — typically within 24 hours. Treatment is not guaranteed.',
+    body: 'A state-licensed U.S. clinician reviews your intake — typically within about 24 hours. Completing intake does not guarantee a prescription.',
   },
   {
     n: '04',
-    title: 'Pharmacy fulfillment',
-    body: 'If prescribed, a licensed U.S. pharmacy compounds and ships discreetly to your door.',
+    title: 'Pharmacy fulfillment if prescribed',
+    body: 'If approved, a licensed U.S. compounding pharmacy prepares your medication and ships discreetly to an eligible address.',
   },
   {
     n: '05',
     title: 'Ongoing care',
-    body: 'Follow-up, titration, and care-team support continue while you are on an active protocol.',
+    body: 'Follow-up, titration requests, and care-team messaging continue through your secure patient portal while you are on an active protocol.',
   },
 ]
 
@@ -39,12 +39,13 @@ export function HowItWorksPage() {
       <section className="goal-hiw-section pax-hiw" style={{ paddingBottom: '2rem' }}>
         <div className="goal-hiw-container pax-hiw__container">
           <div className="goal-hiw-heading pax-hiw__heading">
-            <p className="goal-hiw-eyebrow pax-hiw__eyebrow">How it works</p>
+            <p className="goal-hiw-eyebrow pax-hiw__eyebrow">North Star MD</p>
             <h1>
-              Every plan starts with a <em>provider review</em>
+              How care works — <em>evaluation before medication</em>
             </h1>
             <p style={{ maxWidth: '40rem', margin: '0.75rem auto 0', color: 'var(--text-body, #3a4d61)' }}>
-              Complete intake, clinician review, and pharmacy fulfillment — only when treatment is appropriate.
+              Clinical intake, licensed provider review, and pharmacy fulfillment only when treatment is appropriate.
+              Compounded medications are not FDA-approved finished products.
             </p>
           </div>
 
@@ -63,7 +64,7 @@ export function HowItWorksPage() {
           <div style={{ textAlign: 'center', marginTop: '2rem' }}>
             <img
               src={`${YUCCA}/expt-tirz-sema-vials-together.png`}
-              alt=""
+              alt="Compounded Semaglutide and Tirzepatide vials with clinical labels"
               loading="lazy"
               style={{ maxWidth: 'min(420px, 90%)', height: 'auto' }}
             />

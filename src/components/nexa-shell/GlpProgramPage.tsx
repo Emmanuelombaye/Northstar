@@ -11,20 +11,20 @@ type Props = {
 
 const COPY = {
   semaglutide: {
-    title: 'Personalized Semaglutide',
+    title: 'Compounded Semaglutide',
     chip: 'GLP-1',
     blurb:
-      'A weekly GLP-1 injection that may support appetite regulation and weight management — prescribed only when a licensed provider determines it is appropriate.',
+      'A weekly compounded GLP-1 injection that may support appetite regulation as part of a medically supervised weight-management plan. Prescribed only when a licensed U.S. provider determines it is appropriate after reviewing your intake.',
     vial: `${YUCCA}/personalized-semaglutide-glp-1-injection-vial-yucca-health.avif`,
-    pathway: 'GLP-1 (Semaglutide)',
+    pathway: 'Compounded GLP-1 (Semaglutide)',
   },
   tirzepatide: {
-    title: 'Personalized Tirzepatide',
+    title: 'Compounded Tirzepatide',
     chip: 'GLP-1 + GIP',
     blurb:
-      'A weekly dual-action GLP-1 + GIP injection for appetite regulation support — prescribed only when a licensed provider determines it is appropriate.',
+      'A weekly compounded dual-pathway GLP-1 + GIP injection that may support appetite regulation when medically appropriate. Prescribed only when a licensed U.S. provider determines it is appropriate after reviewing your intake.',
     vial: `${YUCCA}/personalized-tirzepatide-glp-1-injection-vial-yucca-health.avif`,
-    pathway: 'GLP-1 + GIP (Tirzepatide)',
+    pathway: 'Compounded GLP-1 + GIP (Tirzepatide)',
   },
 } as const
 
@@ -56,14 +56,19 @@ export default function GlpProgramPage({ slug }: Props) {
                   className="goal-product-price"
                   style={{ background: 'linear-gradient(145deg, var(--navy) 0%, color-mix(in oklch, var(--navy) 70%, var(--gold)) 100%)' }}
                 >
-                  FROM $0<span> to start</span>
+                  FROM $0<span> intake</span>
                 </div>
-                <p className="goal-product-price-note">Itemized quote before enrollment</p>
+                <p className="goal-product-price-note">Itemized pricing before enrollment</p>
               </div>
             </div>
+            <p style={{ margin: '0 0 0.35rem', color: 'var(--gold)', fontWeight: 600, letterSpacing: '0.04em', fontSize: '0.8rem' }}>
+              NORTH STAR MD
+            </p>
             <h1 className="goal-product-title">{content.title}</h1>
             <p className="goal-product-desc">{content.blurb}</p>
-            <p className="goal-product-detail">{content.pathway} · Licensed U.S. provider review required.</p>
+            <p className="goal-product-detail">
+              {content.pathway} · Not FDA-approved as a finished product · Licensed U.S. provider review required.
+            </p>
             <div className="goal-product-ctas">
               <Link href={`/start?program=${slug}`} className="goal-product-cta goal-product-cta--primary">
                 Check Eligibility
@@ -77,12 +82,16 @@ export default function GlpProgramPage({ slug }: Props) {
       </section>
 
       <section style={{ maxWidth: '40rem', margin: '2rem auto', padding: '0 1rem', color: '#3a4d61' }}>
-        <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 500, color: 'var(--navy)' }}>What to expect</h2>
+        <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 500, color: 'var(--navy)' }}>Important information</h2>
         <ul style={{ marginTop: '0.75rem', paddingLeft: '1.1rem', lineHeight: 1.6 }}>
-          <li>Complete a clinical intake — not a checkout-first flow.</li>
-          <li>A licensed clinician reviews your history before any prescription decision.</li>
-          <li>If prescribed, fulfillment is through a licensed U.S. pharmacy.</li>
-          <li>Experiences vary. Treatment is not guaranteed to produce a specific outcome.</li>
+          <li>Complete a clinical intake first — this is not a checkout-first purchase flow.</li>
+          <li>A licensed U.S. clinician reviews your history before any prescription decision.</li>
+          <li>If prescribed, a licensed U.S. compounding pharmacy prepares and ships your medication.</li>
+          <li>
+            Compounded medications are not FDA-approved finished products and have not undergone FDA review for safety,
+            effectiveness, or manufacturing quality as finished drugs.
+          </li>
+          <li>Individual experiences vary. Completing intake does not guarantee treatment or a specific outcome.</li>
         </ul>
       </section>
 

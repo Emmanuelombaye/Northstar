@@ -210,8 +210,9 @@ export default function EligibilityForm() {
         <p className="ns-intake-eyebrow">North Star MD · Medical intake</p>
         <h1>Start your medical intake.</h1>
         <p className="ns-intake-lede">
-          Select your care program, then complete a clinical questionnaire. A licensed U.S. provider reviews your
-          answers before any prescription decision.
+          Select Semaglutide or Tirzepatide, then complete a clinical questionnaire. A licensed U.S. provider reviews
+          your answers before any prescription decision. Compounded medications, if prescribed, are prepared by licensed
+          U.S. pharmacies and are not FDA-approved finished products.
         </p>
 
         <div className="ns-intake-programs" role="list">

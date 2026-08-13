@@ -30,7 +30,7 @@ const CATEGORY_INFOS: Record<string, CategoryMeta> = {
   "weight-loss": {
     title: "Weight Loss & GLP-1 Protocols",
     subtitle: "Metabolic Reset & Appetite Control",
-    description: "Physician-guided Semaglutide & Tirzepatide+ compoundings designed to suppress food cravings, lower metabolic set-point, and drive long-term fat reduction.",
+    description: "Physician-guided Semaglutide and Tirzepatide options when medically appropriate after clinical intake and licensed provider review.",
     badge: "Metabolic Reset",
     image: "/images/categories/cat-weight-loss.webp",
   },

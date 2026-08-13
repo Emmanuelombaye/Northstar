@@ -14,21 +14,21 @@ export function RetroWhySection() {
     media: ReactNode
   }[] = [
     {
-      id: 'trusted',
+      id: 'clinical',
       n: '01',
       title: (
         <>
-          Transparent &amp; <em>trusted</em>
+          Clinical review <em>first</em>
         </>
       ),
-      body: 'From compounding partners to doorstep delivery — pharmaceutical-grade quality with clear, clinical oversight.',
+      body: 'Every plan starts with a medical intake. A licensed U.S. provider decides whether treatment is appropriate — intake alone is never a prescription.',
       tone: 'sand',
       media: (
         <ul className="pax-why__checks">
           {[
-            ['Quality sourcing', '503A pharmacies'],
-            ['Medical review', 'Licensed U.S. providers'],
-            ['Home delivery', 'Discreet & expedited'],
+            ['Medical intake', 'History, metrics, screening'],
+            ['Licensed review', 'State-licensed U.S. clinicians'],
+            ['No outcome promise', 'Treatment not guaranteed'],
           ].map(([label, hint]) => (
             <li key={label}>
               <span className="pax-why__check-mark" aria-hidden="true">
@@ -44,21 +44,21 @@ export function RetroWhySection() {
       ),
     },
     {
-      id: 'tailored',
+      id: 'pharmacy',
       n: '02',
       title: (
         <>
-          Care <em>built around you</em>
+          Licensed U.S. <em>pharmacy</em>
         </>
       ),
-      body: 'Semaglutide or Tirzepatide — protocols tailored to your goals, history, and how your body responds.',
+      body: 'If prescribed, compounded medication is prepared by a licensed U.S. compounding pharmacy and shipped discreetly to an eligible address.',
       tone: 'dune',
       media: (
         <ul className="pax-why__checks">
           {[
-            ['Medical intake', 'Clinical questionnaire first'],
-            ['Provider decision', 'Prescribe only if appropriate'],
-            ['Ongoing titration', 'Dose adjusted as needed'],
+            ['Compounded Rx', 'Patient-specific when prescribed'],
+            ['U.S. pharmacies', 'State-licensed fulfillment'],
+            ['Clear labeling', 'Clinical labels — no brand marks on glass'],
           ].map(([label, hint]) => (
             <li key={label}>
               <span className="pax-why__check-mark" aria-hidden="true">
@@ -74,18 +74,18 @@ export function RetroWhySection() {
       ),
     },
     {
-      id: 'science',
+      id: 'glp1',
       n: '03',
       title: (
         <>
-          Clinically guided <em>GLP-1</em>
+          Semaglutide &amp; <em>Tirzepatide</em>
         </>
       ),
-      body: 'Weekly protocols guided by licensed clinicians for appetite regulation support — not guaranteed outcomes.',
+      body: 'Weekly GLP-1 and dual-pathway options may support appetite regulation when medically appropriate. Experiences vary; results are not guaranteed.',
       tone: 'light',
       media: (
         <div className="pax-why__media-frame">
-          <img src={HOME_WHY_MEDIA.vials} alt="" loading="lazy" />
+          <img src={HOME_WHY_MEDIA.vials} alt="Compounded Semaglutide and Tirzepatide vials with clinical labels" loading="lazy" />
         </div>
       ),
     },
@@ -94,14 +94,14 @@ export function RetroWhySection() {
       n: '04',
       title: (
         <>
-          Support <em>within reach</em>
+          Ongoing care <em>portal</em>
         </>
       ),
-      body: 'Your portal, care team, and treatment plan — organized in one place whenever you need them.',
+      body: 'After enrollment, messaging, follow-up, and titration requests run through your secure patient portal with the care team.',
       tone: 'forest',
       media: (
         <div className="pax-why__media-frame pax-why__media-frame--portal">
-          <img src={HOME_WHY_MEDIA.portal} alt="" loading="lazy" />
+          <img src={HOME_WHY_MEDIA.portal} alt="North Star MD patient portal on mobile" loading="lazy" />
         </div>
       ),
     },
@@ -111,12 +111,12 @@ export function RetroWhySection() {
     <section className="retro-home-why pax-why" aria-labelledby="retro-home-why-title">
       <div className="retro-home-why-inner pax-why__inner">
         <header className="pax-why__head">
-          <p className="pax-why__eyebrow">The North Star MD difference</p>
+          <p className="pax-why__eyebrow">North Star MD</p>
           <h2 className="retro-home-why-title" id="retro-home-why-title">
-            Why <em>North Star MD</em>?
+            Provider-guided care, <em>built for clarity</em>
           </h2>
           <p className="pax-why__sub">
-            Provider-guided Semaglutide &amp; Tirzepatide — designed with clinical clarity, not checkout chaos.
+            Telehealth evaluation → clinician decision → pharmacy fulfillment only when prescribed. Compounded medications are not FDA-approved finished products.
           </p>
         </header>
         <div className="retro-home-why-grid pax-why__grid">
@@ -140,10 +140,10 @@ export function RetroClosingSection({
   ctaHref = '/start',
   title = (
     <>
-      Semaglutide &amp; Tirzepatide, <em>guided by your goals</em>
+      Ready for a <em>clinical review</em>?
     </>
   ),
-  subtitle = 'Licensed U.S. providers. Weekly GLP-1 protocols when appropriate. Delivered to your door.',
+  subtitle = 'Start a free medical intake with North Star MD. A licensed U.S. provider decides if Semaglutide or Tirzepatide is appropriate for you.',
   bg = HOME_CLOSING_IMAGE,
 }: {
   ctaHref?: string
