@@ -101,7 +101,7 @@ export function RetroWhySection() {
       tone: 'forest',
       media: (
         <div className="pax-why__media-frame pax-why__media-frame--portal">
-          <img src={HOME_WHY_MEDIA.portal} alt="North Star MD patient portal on mobile" loading="lazy" />
+          <img src={HOME_WHY_MEDIA.portal} alt="Secure clinical intake on tablet" loading="lazy" />
         </div>
       ),
     },

@@ -9,12 +9,12 @@ export const HERO_WORDS = [
 
 export const HOME_WHY_MEDIA = {
   vials: `${YUCCA}/expt-tirz-sema-vials-together.png`,
-  portal: `${YUCCA}/hiw/yucca-health-patient-portal-dashboard-semaglutide-mobile.avif`,
+  portal: '/images/pax-hiw-step-1.png',
 } as const
 
-export const HOME_CLOSING_IMAGE = `${YUCCA}/cta-personalized-treatments-wellness-portrait-yucca-health.avif`
+export const HOME_CLOSING_IMAGE = `${YUCCA}/hiw/pax-why-science-results.avif`
 
-export const HOME_HERO_IMAGE = `${YUCCA}/pax-glp1-couple-cutout.avif`
+export const HOME_HERO_IMAGE = `${YUCCA}/hiw/Every-Treatment-Has-A-Story.avif`
 
 export const HOME_TREATMENTS = [
   {
@@ -64,22 +64,22 @@ export const HOME_HIW_STEPS = [
     n: '1',
     title: 'Complete a clinical intake',
     body: 'Share medical history, metrics, and shipping details in a secure questionnaire. This is an evaluation step — not a purchase.',
-    image: `${YUCCA}/hiw/Checkout--Verify-identity.avif`,
-    alt: 'Secure online medical intake',
+    image: '/images/pax-hiw-step-1.png',
+    alt: 'Clinical intake on a tablet',
   },
   {
     n: '2',
     title: 'Licensed provider review',
     body: 'A state-licensed U.S. clinician reviews your answers — typically within about 24 hours — and decides whether treatment is appropriate. Completing intake does not guarantee a prescription.',
-    image: `${YUCCA}/hiw/Provider-reviews-intake_2.avif`,
-    alt: 'Licensed clinician reviewing intake',
+    image: '/images/pax-hiw-step-2.png',
+    alt: 'Licensed clinician reviewing a patient intake',
   },
   {
     n: '3',
     title: 'Pharmacy fulfillment if prescribed',
     body: 'If approved, a licensed U.S. compounding pharmacy prepares your medication and ships it discreetly. Ongoing care and dose adjustments continue through your patient portal.',
-    image: `${YUCCA}/hiw/Receive-your-medication_2.avif`,
-    alt: 'Medication prepared for home delivery',
+    image: '/images/pax-hiw-step-3.png',
+    alt: 'Temperature-controlled medication delivery',
   },
 ] as const
 
