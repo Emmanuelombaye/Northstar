@@ -10,6 +10,7 @@
 @import './pax-yucca/yucca-retro.css';
 @import './pax-yucca/pax-reviews.css';
 @import './pax-yucca/pax-why.css';
+@import './pax-yucca/yucca-treatments-fidelity.css';
 @import './pax-yucca/nexa-brand-enforce.css';
 @import './pax-yucca/pax-home-brand.css';
 
@@ -36,6 +37,24 @@
   background: var(--cloud);
   color: var(--navy);
   overflow-x: clip;
+}
+
+.program-explore .explore-hero-cta,
+.program-explore .retro-protocol__cta,
+.program-explore .pax-protocol__cta,
+.program-explore .retro-knowall__cta,
+.program-explore .pax-knowall__cta {
+  background: var(--navy) !important;
+  color: #f9f7f2 !important;
+  border-color: var(--navy) !important;
+}
+
+.program-explore .bg-pax-chip {
+  background: var(--navy) !important;
+}
+
+.program-explore .explore-hero-guarantee-logo img {
+  display: none;
 }
 
 .program-explore .sr-only {

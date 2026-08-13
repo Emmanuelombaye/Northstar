@@ -82,12 +82,9 @@ function TreatmentsSection() {
       <div className="goal-treatments-container">
         <div className="goal-treatments-heading">
           <h2>
-            <em>Compounded GLP-1 options</em> reviewed by licensed providers
+            <em>Personalized treatments</em> reviewed by licensed providers
           </h2>
-          <p>
-            Choose Semaglutide or Tirzepatide, then complete a clinical intake. Compounded medications are prepared only
-            if prescribed and are not FDA-approved finished products.
-          </p>
+          <p>Choose Semaglutide or Tirzepatide, then complete a medical intake.</p>
         </div>
 
         <div className="goal-tablist-wrap">
@@ -162,7 +159,7 @@ function TreatmentsSection() {
                 Check Eligibility
               </Link>
               <Link href={active.learnHref} className="goal-product-cta goal-product-cta--ghost">
-                View Details
+                Learn more
               </Link>
             </div>
           </div>
