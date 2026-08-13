@@ -9,67 +9,24 @@ const NAV_LINKS = [
   { to: "/", label: "Home", match: (p: string) => p === "/" },
   { to: "/treatments", label: "Treatments", match: (p: string) => p.startsWith("/treatments") || p === "/semaglutide" || p === "/tirzepatide" },
   { to: "/how-it-works", label: "How it works", match: (p: string) => p === "/how-it-works" },
-  { to: "/shop", label: "Shop", match: (p: string) => p.startsWith("/shop") },
   { to: "/faq", label: "FAQ", match: (p: string) => p === "/faq" },
   { to: "/portal", label: "Patient Center", match: () => false },
 ] as const;
 
 const TREATMENT_CATEGORIES = [
   {
-    id: "trt",
-    title: "TESTOSTERONE THERAPY",
-    sub: "TRT & Hormone Optimization",
-    image: "/images/categories/cat-trt.webp",
-    link: "/treatments?cat=trt",
-  },
-  {
-    id: "weight-loss",
-    title: "WEIGHT LOSS",
-    sub: "Compounded GLP-1 & Tirzepatide+",
-    image: "/images/categories/cat-weight-loss.webp",
+    id: "semaglutide",
+    title: "SEMAGLUTIDE",
+    sub: "Weekly GLP-1",
+    image: "/images/yucca-clone/personalized-semaglutide-glp-1-injection-vial-yucca-health.avif",
     link: "/semaglutide",
   },
   {
-    id: "sleep-recovery",
-    title: "SLEEP & RECOVERY",
-    sub: "Sermorelin & Restorative Peptides",
-    image: "/images/categories/cat-sleep-recovery.webp",
-    link: "/sermorelin",
-  },
-  {
-    id: "anti-aging",
-    title: "ANTI-AGING & LONGEVITY",
-    sub: "NAD+ & Cellular Rejuvenation",
-    image: "/images/categories/cat-anti-aging.webp",
-    link: "/nad",
-  },
-  {
-    id: "sexual-wellness",
-    title: "SEXUAL WELLNESS & ED",
-    sub: "Tadalafil, Sildenafil & PT-141",
-    image: "/images/categories/cat-sexual-wellness.webp",
-    link: "/treatments?cat=sexual-wellness",
-  },
-  {
-    id: "hair-loss",
-    title: "HAIR LOSS",
-    sub: "Finasteride & Minoxidil Solutions",
-    image: "/images/categories/cat-hair-loss.webp",
-    link: "/treatments?cat=hair-loss",
-  },
-  {
-    id: "detox",
-    title: "DETOX & CELLULAR HEALTH",
-    sub: "Glutathione & BPC-157 Cleanse",
-    image: "/images/categories/cat-detox.webp",
-    link: "/treatments?cat=detox",
-  },
-  {
-    id: "all-treatments",
-    title: "ALL TREATMENTS",
-    sub: "Full 45+ Protocol Catalog",
-    image: "/images/categories/cat-all-treatments.webp",
-    link: "/treatments",
+    id: "tirzepatide",
+    title: "TIRZEPATIDE",
+    sub: "Weekly GLP-1 + GIP",
+    image: "/images/yucca-clone/personalized-tirzepatide-glp-1-injection-vial-yucca-health.avif",
+    link: "/tirzepatide",
   },
 ] as const;
 
@@ -204,11 +161,11 @@ export function SiteHeader() {
                       <div className={`ns-mega-dropdown${isTreatmentsHovered ? " is-open" : ""}`}>
                         <div className="ns-mega-header">
                           <div className="ns-mega-title-row">
-                            <span className="ns-mega-eyebrow">CLINICAL CATEGORIES</span>
-                            <h3>Explore Our Treatments</h3>
+                            <span className="ns-mega-eyebrow">WEIGHT MANAGEMENT</span>
+                            <h3>Semaglutide & Tirzepatide</h3>
                           </div>
                           <Link to="/treatments" className="ns-mega-all-link" onClick={closeNav}>
-                            View All 45+ Treatments →
+                            Explore treatments →
                           </Link>
                         </div>
 

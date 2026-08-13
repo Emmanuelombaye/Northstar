@@ -75,16 +75,13 @@ export function SiteFooter() {
               }}
             >
               <li>
-                <a href="/tirzepatide">Tirzepatide</a>
+                <a href="/treatments">Treatments</a>
               </li>
               <li>
                 <a href="/semaglutide">Semaglutide</a>
               </li>
               <li>
-                <a href="/nad">NAD+</a>
-              </li>
-              <li>
-                <a href="/sermorelin">Sermorelin</a>
+                <a href="/tirzepatide">Tirzepatide</a>
               </li>
             </ul>
           </div>

@@ -59,6 +59,16 @@ const nextConfig: NextConfig = {
         destination: "/treatments",
         permanent: false,
       },
+      {
+        source: "/nad",
+        destination: "/treatments",
+        permanent: false,
+      },
+      {
+        source: "/sermorelin",
+        destination: "/treatments",
+        permanent: false,
+      },
     ];
   },
   async rewrites() {

@@ -19,17 +19,16 @@ export function ShopPharmacyFooter() {
         <div>
           <h4>Programs</h4>
           <ul>
-            <li><Link to="/shop?category=weight-loss">Weight Loss</Link></li>
-            <li><Link to="/shop?category=longevity">Longevity</Link></li>
-            <li><Link to="/shop?category=recovery">Muscle Recovery</Link></li>
-            <li><Link to="/shop?category=mens-health">Men&apos;s Health</Link></li>
+            <li><Link to="/semaglutide">Semaglutide</Link></li>
+            <li><Link to="/tirzepatide">Tirzepatide</Link></li>
+            <li><Link to="/treatments">Treatments</Link></li>
           </ul>
         </div>
 
         <div>
           <h4>Shop</h4>
           <ul>
-            <li><a href="#catalog">All treatments</a></li>
+            <li><Link to="/treatments">Treatments</Link></li>
             <li><a href={shop.catalog()}>Quick enroll</a></li>
             <li><Link to="/how-it-works">How it works</Link></li>
           </ul>

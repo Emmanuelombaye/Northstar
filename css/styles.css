@@ -284,7 +284,7 @@ h2 { font-size: clamp(30px, 3vw, 40px); }
   top: calc(100% + 12px);
   left: 50%;
   transform: translateX(-50%) translateY(10px);
-  width: min(980px, 92vw);
+  width: min(520px, 92vw);
   background: rgba(10, 31, 61, 0.97);
   -webkit-backdrop-filter: blur(28px) saturate(180%);
   backdrop-filter: blur(28px) saturate(180%);
@@ -347,7 +347,7 @@ h2 { font-size: clamp(30px, 3vw, 40px); }
 
 .ns-mega-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 16px;
 }
 
