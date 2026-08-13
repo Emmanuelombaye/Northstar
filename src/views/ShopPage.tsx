@@ -98,9 +98,6 @@ export function ShopPage() {
       case "price-desc":
         list.sort((a, b) => b.priceMonthly - a.priceMonthly);
         break;
-      case "rating":
-        list.sort((a, b) => b.rating - a.rating);
-        break;
       case "name":
         list.sort((a, b) => a.name.localeCompare(b.name));
         break;
@@ -211,8 +208,6 @@ export function ShopPage() {
                 <option value="price-asc">Price: low to high</option>
 
                 <option value="price-desc">Price: high to low</option>
-
-                <option value="rating">Top rated</option>
 
                 <option value="name">A–Z</option>
 
