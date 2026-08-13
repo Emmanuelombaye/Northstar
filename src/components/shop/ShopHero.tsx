@@ -45,16 +45,16 @@ export function ShopHero() {
           </div>
           <div className="shop-hero-stats">
             <div>
-              <strong>4.8</strong>
-              <span>Avg. rating</span>
+              <strong>Rx</strong>
+              <span>Provider review</span>
             </div>
             <div>
               <strong>{PRODUCT_COUNT}+</strong>
               <span>Programs</span>
             </div>
             <div>
-              <strong>50</strong>
-              <span>States</span>
+              <strong>US</strong>
+              <span>Pharmacy fulfill</span>
             </div>
           </div>
         </div>
@@ -81,7 +81,7 @@ export function ShopHero() {
           </div>
           <Link to="/shop/product/tirzepatide-plus" className="shop-hero-floating-badge">
             <span className="shop-pulse-dot" />
-            Most popular · Tirzepatide+
+            Tirzepatide+ · View details
           </Link>
         </div>
       </div>

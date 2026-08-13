@@ -296,7 +296,7 @@ const ALL_PROTOCOLS = [
     category: "hair-loss",
     tag: "Hair Loss",
     title: "Oral Dutasteride Advanced Follicle Shield",
-    body: "Dual Type I & Type II 5-alpha reductase inhibitor delivering over 90% scalp DHT suppression for stubborn pattern hair loss resistant to standard treatments.",
+    body: "Dual Type I & Type II 5-alpha reductase inhibitor for stubborn pattern hair loss when standard treatments are not enough.",
     freq: "Daily oral capsule",
     ship: "Free expedited delivery",
     price: "$89",

@@ -77,7 +77,7 @@ export function MembershipPage() {
 
             {/* Tier 2: Longevity Premium */}
             <article className="card-membership is-recommended" data-plan="longevity">
-              <div className="card-badge">Most Popular</div>
+              <div className="card-badge">Recommended</div>
               <div className="plan-header">
                 <h3>Longevity Premium</h3>
                 <p className="plan-desc">Advanced cellular diagnostics, biomarker mapping, cellular longevity, and customized biological optimization plans.</p>
@@ -128,7 +128,7 @@ export function MembershipPage() {
             <article className="card-membership" data-plan="executive">
               <div className="plan-header">
                 <h3>Executive Elite</h3>
-                <p className="plan-desc">Comprehensive cellular optimization, uncapped physician access, premium concierge coordination, and advanced longevity screening support.</p>
+                <p className="plan-desc">Comprehensive cellular optimization, scheduled physician access, premium concierge coordination, and advanced longevity screening support.</p>
                 <div className="plan-price-block">
                   <span className="plan-currency">$</span>
                   <span className="plan-price">299</span>
@@ -142,7 +142,7 @@ export function MembershipPage() {
                   <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                     <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
                   </svg>
-                  <span>Direct, uncapped physician video consults</span>
+                  <span>Scheduled physician video consults</span>
                 </li>
                 <li>
                   <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">

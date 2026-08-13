@@ -22,7 +22,9 @@ export function ProductCard({ product, index = 0 }: Props) {
       data-reveal
       style={{ "--reveal-delay": `${delay}ms` } as CSSProperties}
     >
-      {product.badge ? <span className="shop-badge">{product.badge}</span> : null}
+      {product.badge && !/most popular|best results|top rated|#1/i.test(product.badge) ? (
+        <span className="shop-badge">{product.badge}</span>
+      ) : null}
       {product.newArrival ? <span className="shop-badge shop-badge-new">New</span> : null}
       {!product.inStock ? <span className="shop-badge shop-badge-muted">Waitlist</span> : null}
 
@@ -39,13 +41,6 @@ export function ProductCard({ product, index = 0 }: Props) {
           <h2>{product.name}</h2>
         </Link>
         <p className="shop-card-tagline">{product.tagline}</p>
-        <div className="shop-card-rating" aria-label={`Rated ${product.rating} out of 5`}>
-          <span className="shop-stars" aria-hidden="true">
-            {"★".repeat(Math.round(product.rating))}
-            {"☆".repeat(5 - Math.round(product.rating))}
-          </span>
-          <span>({product.reviews.toLocaleString()})</span>
-        </div>
         <div className="shop-card-pricing">
           <p className="shop-card-price">{formatPrice(product.priceMonthly)}</p>
           {product.compareAtPrice ? (

@@ -1,0 +1,104 @@
+@import './pax-yucca/yucca-retro.css';
+@import './pax-yucca/yucca-home-mirror.css';
+@import './pax-yucca/yucca-clone-sections.css';
+@import './pax-yucca/yucca-home-fidelity.css';
+@import './pax-yucca/yucca-goal-treatments.css';
+@import './pax-yucca/yucca-goal-hiw.css';
+@import './pax-yucca/pax-reviews.css';
+@import './pax-yucca/pax-why.css';
+@import './pax-yucca/pax-home-brand.css';
+@import './pax-yucca/pax-home-hero.css';
+@import './pax-yucca/nexa-brand-enforce.css';
+
+/* North Star MD tokens over Nexa Yucca shell */
+.yucca-home,
+.yucca-home[data-retro-scope],
+.ns-yucca {
+  --sand: #f9f7f2;
+  --cloud: #f9f7f2;
+  --navy: #0a1f3d;
+  --teal: #c5a059;
+  --gold: #c5a059;
+  --gold-dark: #b08f4a;
+  --forest: #0a1f3d;
+  --terracotta: #c5a059;
+  --dune: #eceae6;
+  --btn-bg: var(--navy);
+  --btn-text: #f9f7f2;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-retro-display: var(--font-display);
+  --font-retro-body: var(--font-body);
+  --color-retro-surface: var(--cloud);
+  --color-retro-cream: var(--sand);
+  --color-retro-ink: var(--navy);
+  --color-retro-shadow: var(--navy);
+  --color-retro-green: var(--gold);
+  background: var(--cloud);
+  color: var(--navy);
+  overflow-x: clip;
+}
+
+.yucca-home .rounded-retro-card {
+  border-radius: 1.5rem;
+}
+
+.yucca-home .border-retro-ink {
+  border-color: var(--navy);
+}
+
+.yucca-home .border-2 {
+  border-width: 2px;
+  border-style: solid;
+}
+
+.yucca-home .relative {
+  position: relative;
+}
+
+.yucca-home .overflow-hidden {
+  overflow: hidden;
+}
+
+.yucca-home .z-2 {
+  z-index: 2;
+}
+
+.yucca-home.u5-type {
+  letter-spacing: normal;
+}
+
+.yucca-home .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.yucca-home .italic,
+.yucca-home em {
+  font-style: italic;
+}
+
+/* Primary CTAs → Northstar navy / gold */
+.yucca-home .retro-home-hero-btn--primary,
+.yucca-home .goal-product-cta--primary,
+.yucca-home .retro-home-closing-cta {
+  background: var(--navy) !important;
+  color: #fff !important;
+  border-color: var(--navy) !important;
+}
+
+.yucca-home .retro-home-hero-btn--secondary {
+  border-color: rgba(255, 255, 255, 0.65) !important;
+  color: #fff !important;
+}
+
+.yucca-home .pax-home-hero__word {
+  color: var(--gold);
+}

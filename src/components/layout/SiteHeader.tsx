@@ -7,11 +7,10 @@ import { useWishlistContext } from "../../context/WishlistContext";
 
 const NAV_LINKS = [
   { to: "/", label: "Home", match: (p: string) => p === "/" },
-  { to: "/vision", label: "Vision", match: (p: string) => p === "/vision" },
-  { to: "/threats", label: "The Threats", match: (p: string) => p === "/threats" },
-  { to: "/treatments", label: "Treatments", match: (p: string) => p.startsWith("/treatments") || p === "/explore-treatments" },
-  { to: "/advisors", label: "Advisors", match: (p: string) => p === "/advisors" || p === "/about" },
-  { to: "/education", label: "Education", match: (p: string) => p === "/education" || p === "/resources" },
+  { to: "/treatments", label: "Treatments", match: (p: string) => p.startsWith("/treatments") || p === "/semaglutide" || p === "/tirzepatide" },
+  { to: "/how-it-works", label: "How it works", match: (p: string) => p === "/how-it-works" },
+  { to: "/shop", label: "Shop", match: (p: string) => p.startsWith("/shop") },
+  { to: "/faq", label: "FAQ", match: (p: string) => p === "/faq" },
   { to: "/portal", label: "Patient Center", match: () => false },
 ] as const;
 
@@ -253,7 +252,7 @@ export function SiteHeader() {
               })}
               <li className="nav-cta-mobile">
                 <Link to="/start" className="btn btn-gold btn-pill btn-block bouncy-btn" onClick={closeNav}>
-                  Find my treatment &rarr;
+                  Check Eligibility
                 </Link>
               </li>
             </ul>
@@ -296,7 +295,7 @@ export function SiteHeader() {
           ) : null}
 
           <Link to="/start" className="btn btn-navy btn-pill btn-get-started">
-            Find my treatment
+            Check Eligibility
           </Link>
         </div>
       </div>

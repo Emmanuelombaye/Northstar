@@ -1,5 +1,10 @@
+import { SiteLayout } from "@/components/layout/SiteLayout";
 import { StartPage } from "@/views/start/StartPage";
 
 export default function Start() {
-  return <StartPage />;
+  return (
+    <SiteLayout>
+      <StartPage />
+    </SiteLayout>
+  );
 }

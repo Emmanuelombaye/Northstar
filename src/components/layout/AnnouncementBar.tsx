@@ -1,4 +1,4 @@
-import { shop } from "../../lib/shop";
+import { Link } from "@/lib/routerAdapter";
 
 export function AnnouncementBar() {
   return (
@@ -12,8 +12,8 @@ export function AnnouncementBar() {
         />
       </svg>
       <p>
-        Now accepting new patients in select states.{" "}
-        <a href={shop.catalog()}>Get started today.</a>
+        Licensed clinical care. Clear pricing. Qualified U.S. pharmacy fulfillment.{" "}
+        <a href="/start">Check Eligibility</a>
       </p>
     </div>
   );

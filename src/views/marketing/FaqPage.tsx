@@ -95,8 +95,7 @@ export function FaqPage() {
               <summary>Where are my prescriptions formulated?</summary>
               <p>
                 All therapies are formulated, compounded, and shipped strictly by our CLIA-certified compounding pharmacy 
-                partners in the United States. Every compound is subjected to rigorous third-party assay checks to guarantee 
-                absolute biological purity and consistency.
+                partners in the United States. Compounds undergo third-party assay checks for purity and consistency.
               </p>
             </details>
 

@@ -1,0 +1,219 @@
+/* North Star MD — LegitScript intake shell */
+.ns-intake-shell {
+  min-height: 100vh;
+  padding: 2rem 1rem 4rem;
+  background: linear-gradient(180deg, #f9f7f2 0%, #eceae6 100%);
+  color: #0a1f3d;
+}
+
+.ns-intake-card {
+  max-width: 720px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid #e5e0d8;
+  border-radius: 1.25rem;
+  padding: 1.75rem 1.5rem 2rem;
+  box-shadow: 0 12px 40px rgba(10, 31, 61, 0.06);
+}
+
+.ns-intake-eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #5a7286;
+  margin-bottom: 0.5rem;
+}
+
+.ns-intake-card h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 500;
+  margin: 0 0 0.65rem;
+}
+
+.ns-intake-lede {
+  color: #3a4d61;
+  margin-bottom: 1.25rem;
+}
+
+.ns-intake-programs {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.ns-intake-program {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.55rem 0.85rem;
+  border-radius: 999px;
+  border: 1.5px solid #e5e0d8;
+  background: #f9f7f2;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+
+.ns-intake-program img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.ns-intake-program.is-active {
+  border-color: #0a1f3d;
+  background: color-mix(in oklch, #c5a059 18%, #fff);
+}
+
+.ns-intake-stepper {
+  height: 4px;
+  background: #eceae6;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+}
+
+.ns-intake-stepper-fill {
+  height: 100%;
+  background: #0a1f3d;
+  transition: width 0.25s ease;
+}
+
+.ns-intake-phases {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.85rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem;
+  font-size: 0.78rem;
+  color: #5a7286;
+}
+
+.ns-intake-phases .is-active {
+  color: #0a1f3d;
+  font-weight: 600;
+}
+
+.ns-intake-phases .is-done {
+  color: #c5a059;
+}
+
+.ns-intake-fields {
+  border: 0;
+  padding: 0;
+  margin: 0 0 1rem;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.ns-intake-fields legend {
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.ns-intake-fields label {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+}
+
+.ns-intake-fields input,
+.ns-intake-fields select {
+  font: inherit;
+  padding: 0.7rem 0.85rem;
+  border: 1.5px solid #e5e0d8;
+  border-radius: 0.75rem;
+  background: #fff;
+}
+
+.ns-intake-hint {
+  font-size: 0.88rem;
+  color: #5a7286;
+}
+
+.ns-intake-q {
+  border: 1px solid #e5e0d8;
+  border-radius: 0.85rem;
+  padding: 0.85rem;
+  background: #f9f7f2;
+}
+
+.ns-intake-q.is-warn {
+  border-color: color-mix(in oklch, #c5a059 55%, #0a1f3d);
+  background: color-mix(in oklch, #c5a059 12%, #fff);
+}
+
+.ns-intake-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.55rem;
+}
+
+.ns-intake-options button {
+  font: inherit;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  border: 1.5px solid #e5e0d8;
+  background: #fff;
+  cursor: pointer;
+}
+
+.ns-intake-options button.is-active {
+  border-color: #0a1f3d;
+  background: #0a1f3d;
+  color: #fff;
+}
+
+.ns-intake-warn {
+  margin-top: 0.55rem;
+  font-size: 0.88rem;
+}
+
+.ns-intake-check {
+  display: flex !important;
+  grid-template-columns: none !important;
+  gap: 0.65rem !important;
+  align-items: flex-start;
+}
+
+.ns-intake-check input {
+  margin-top: 0.2rem;
+}
+
+.ns-intake-error {
+  color: #8b3a2a;
+  margin: 0.5rem 0 0.75rem;
+}
+
+.ns-intake-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.ns-intake-btn {
+  font: inherit;
+  padding: 0.85rem 1.25rem;
+  border-radius: 999px;
+  border: 0;
+  background: #0a1f3d;
+  color: #fff;
+  cursor: pointer;
+}
+
+.ns-intake-btn--ghost {
+  background: transparent;
+  color: #0a1f3d;
+  border: 1.5px solid #e5e0d8;
+}
+
+.ns-intake-fine {
+  margin-top: 1.25rem;
+  font-size: 0.8rem;
+  color: #5a7286;
+}

@@ -253,12 +253,12 @@ export function ExploreTreatmentsPage() {
             <p className="results-disclaimer">*Individual results vary. Treatment requires evaluation by a licensed U.S. provider; not all patients qualify. Compounded medications are prepared by licensed U.S. pharmacies.</p>
             <div className="rating-strip">
               <div>
-                <strong>4.6</strong>
-                <span>TrustScore · 1,123 reviews</span>
+                <strong>Rx</strong>
+                <span>Licensed U.S. provider review</span>
               </div>
               <div>
-                <strong>4.8</strong>
-                <span>Google Rating · +100 reviews</span>
+                <strong>US</strong>
+                <span>Qualified pharmacy fulfillment</span>
               </div>
             </div>
           </div>
@@ -588,7 +588,7 @@ export function ExploreTreatmentsPage() {
 
       <section className="testimonials-section testimonials-section--art">
         <div className="explore-wrap">
-          <img src="/images/exceptional-experience.webp" data-fallback="/images/exceptional-experience.png" decoding="async" alt="Exceptional experience is our top priority — North Star MD patient portal, care team support, and verified patient reviews" className="section-art-img" loading="lazy" />
+          <img src="/images/exceptional-experience.webp" data-fallback="/images/exceptional-experience.png" decoding="async" alt="North Star MD patient portal and care team support" className="section-art-img" loading="lazy" />
         </div>
       </section>
 

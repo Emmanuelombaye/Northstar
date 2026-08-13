@@ -156,7 +156,9 @@ export function ProductDetailPage() {
 
           <div className="shop-pdp-info" data-reveal>
 
-            {product.badge ? <span className="shop-badge">{product.badge}</span> : null}
+            {product.badge && !/most popular|best results|top rated|#1/i.test(product.badge) ? (
+              <span className="shop-badge">{product.badge}</span>
+            ) : null}
 
             <p className="shop-card-category">{product.categoryLabel}</p>
 
@@ -172,24 +174,6 @@ export function ProductDetailPage() {
             ) : null}
 
             <p className="shop-pdp-tagline">{product.tagline}</p>
-
-            <div className="shop-card-rating shop-pdp-rating">
-
-              <span className="shop-stars" aria-hidden="true">
-
-                {"★".repeat(Math.round(product.rating))}
-
-                {"☆".repeat(5 - Math.round(product.rating))}
-
-              </span>
-
-              <span>
-
-                {product.rating} · {product.reviews.toLocaleString()} reviews
-
-              </span>
-
-            </div>
 
             <div className="shop-pdp-pricing">
 
