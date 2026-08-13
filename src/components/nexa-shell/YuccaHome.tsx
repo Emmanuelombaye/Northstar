@@ -34,49 +34,24 @@ function HeroSection() {
         <div className="retro-home-hero-contain relative z-2">
           <div className="retro-home-hero-wrap pax-home-hero__wrap relative z-2">
             <div className="retro-home-hero-top">
-              <p
-                className="hero-reveal hero-reveal--fade-up"
-                style={{
-                  fontFamily: 'var(--font-display)',
-                  fontSize: 'clamp(1.35rem, 3.2vw, 2rem)',
-                  fontWeight: 600,
-                  letterSpacing: '0.04em',
-                  marginBottom: '0.35rem',
-                  color: 'var(--gold)',
-                }}
-              >
-                North Star MD
-              </p>
-              <h1 className="sr-only">North Star MD — provider-guided compounded Semaglutide and Tirzepatide</h1>
+              <h1 className="sr-only">North Star MD — provider-guided GLP-1 treatment</h1>
               <div className="retro-home-hero-heading pax-home-hero__heading hero-reveal hero-reveal--fade-up">
                 <span className="italic pax-home-hero__word" style={{ color: word.color }}>
                   {word.text}
                 </span>
                 <br />
-                after clinical review
+                with provider review
               </div>
-              <p
-                className="hero-reveal hero-reveal--fade-up"
-                style={{
-                  marginTop: '0.75rem',
-                  maxWidth: '28rem',
-                  color: 'rgba(249, 247, 242, 0.92)',
-                  fontSize: '0.95rem',
-                  lineHeight: 1.5,
-                }}
-              >
-                Telehealth intake, licensed U.S. provider decision, then pharmacy fulfillment only if prescribed.
-              </p>
             </div>
             <div className="retro-home-hero-bottom hero-reveal hero-reveal--fade-up">
               <div className="retro-home-hero-cta-group">
                 <div className="retro-home-hero-primary-wrap">
                   <Link href="/start?program=semaglutide" className="retro-home-hero-btn retro-home-hero-btn--primary">
-                    Check Eligibility
+                    Check Eligibility — $0 to start
                   </Link>
                 </div>
                 <Link href="/#treatments" className="retro-home-hero-btn retro-home-hero-btn--secondary">
-                  <span>View treatments</span>
+                  <span>Explore Treatments</span>
                   <span className="retro-home-hero-btn-chevron" aria-hidden="true">
                     <svg viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path

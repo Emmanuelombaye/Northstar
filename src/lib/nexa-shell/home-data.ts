@@ -14,7 +14,7 @@ export const HOME_WHY_MEDIA = {
 
 export const HOME_CLOSING_IMAGE = `${YUCCA}/hiw/pax-why-science-results.avif`
 
-export const HOME_HERO_IMAGE = `${YUCCA}/hiw/Every-Treatment-Has-A-Story.avif`
+export const HOME_HERO_IMAGE = `${YUCCA}/pax-glp1-couple-cutout.avif`
 
 export const HOME_TREATMENTS = [
   {
