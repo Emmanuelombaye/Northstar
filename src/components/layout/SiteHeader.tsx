@@ -13,23 +13,6 @@ const NAV_LINKS = [
   { to: "/portal", label: "Patient Center", match: () => false },
 ] as const;
 
-const TREATMENT_CATEGORIES = [
-  {
-    id: "semaglutide",
-    title: "SEMAGLUTIDE",
-    sub: "Weekly GLP-1",
-    image: "/images/yucca-clone/personalized-semaglutide-glp-1-injection-vial-yucca-health.avif",
-    link: "/semaglutide",
-  },
-  {
-    id: "tirzepatide",
-    title: "TIRZEPATIDE",
-    sub: "Weekly GLP-1 + GIP",
-    image: "/images/yucca-clone/personalized-tirzepatide-glp-1-injection-vial-yucca-health.avif",
-    link: "/tirzepatide",
-  },
-] as const;
-
 export function SiteHeader() {
   const { pathname } = useLocation();
   const isShop = pathname.startsWith("/shop");
@@ -37,11 +20,9 @@ export function SiteHeader() {
   const wishlist = useWishlistContext();
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isTreatmentsHovered, setIsTreatmentsHovered] = useState(false);
 
   useEffect(() => {
     setIsNavOpen(false);
-    setIsTreatmentsHovered(false);
   }, [pathname]);
 
   useEffect(() => {
@@ -60,7 +41,6 @@ export function SiteHeader() {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         setIsNavOpen(false);
-        setIsTreatmentsHovered(false);
       }
     };
     document.addEventListener("keydown", onKey);
@@ -69,7 +49,6 @@ export function SiteHeader() {
 
   const closeNav = () => {
     setIsNavOpen(false);
-    setIsTreatmentsHovered(false);
   };
 
   return (
@@ -134,65 +113,6 @@ export function SiteHeader() {
             <ul>
               {NAV_LINKS.map((link) => {
                 const isActive = link.match(pathname);
-                const isTreatments = link.to === "/treatments";
-
-                if (isTreatments) {
-                  return (
-                    <li
-                      key={link.to}
-                      className="nav-has-dropdown"
-                      onMouseEnter={() => setIsTreatmentsHovered(true)}
-                      onMouseLeave={() => setIsTreatmentsHovered(false)}
-                    >
-                      <Link
-                        to={link.to}
-                        className={`bouncy-touch${isActive ? " is-active" : ""}`}
-                        aria-current={isActive ? "page" : undefined}
-                        onClick={closeNav}
-                      >
-                        <span>{link.label}</span>
-                        <svg className="nav-caret" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                          <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                        {isActive && <span className="nav-active-dot">★</span>}
-                      </Link>
-
-                      {/* Mega Treatments Dropdown Menu */}
-                      <div className={`ns-mega-dropdown${isTreatmentsHovered ? " is-open" : ""}`}>
-                        <div className="ns-mega-header">
-                          <div className="ns-mega-title-row">
-                            <span className="ns-mega-eyebrow">WEIGHT MANAGEMENT</span>
-                            <h3>Semaglutide & Tirzepatide</h3>
-                          </div>
-                          <Link to="/treatments" className="ns-mega-all-link" onClick={closeNav}>
-                            Explore treatments →
-                          </Link>
-                        </div>
-
-                        <div className="ns-mega-grid">
-                          {TREATMENT_CATEGORIES.map((cat) => (
-                            <Link
-                              key={cat.id}
-                              to={cat.link}
-                              className="ns-mega-card"
-                              onClick={closeNav}
-                            >
-                              <div className="ns-mega-card-art">
-                                <img src={cat.image} alt={cat.title} loading="lazy" />
-                                <span className="ns-mega-arrow">↗</span>
-                              </div>
-                              <div className="ns-mega-card-content">
-                                <strong>{cat.title}</strong>
-                                <span>{cat.sub}</span>
-                              </div>
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    </li>
-                  );
-                }
-
                 return (
                   <li key={link.to}>
                     <Link

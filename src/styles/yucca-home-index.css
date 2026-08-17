@@ -102,3 +102,122 @@
 .yucca-home .pax-home-hero__word {
   color: var(--gold);
 }
+
+/* Homepage treatments — studio cutout + card, no boxed photo */
+.yucca-home .ns-treat-stage.goal-treatments-section {
+  background: #f7f5f1 !important;
+  padding: 4.5rem 0 0;
+}
+
+.yucca-home .ns-treat-stage .goal-treatments-heading h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+}
+
+.yucca-home .ns-treat-stage .goal-tablist {
+  background: #fff !important;
+  border: 1.5px solid var(--navy) !important;
+  box-shadow: none !important;
+  padding: 5px;
+  gap: 4px;
+}
+
+.yucca-home .ns-treat-stage .goal-tablist button {
+  min-width: 9.5rem;
+  font-weight: 600;
+}
+
+.yucca-home .ns-treat-stage .goal-tablist button.is-active,
+.yucca-home .ns-treat-stage .goal-tablist button[aria-selected='true'] {
+  background: var(--navy) !important;
+  color: #fff !important;
+  border-color: var(--navy) !important;
+}
+
+.yucca-home .ns-treat-stage .goal-treatments-pane {
+  align-items: end;
+  gap: 0 1.25rem;
+  animation: none;
+}
+
+.yucca-home .ns-treat-stage .goal-cutouts {
+  min-height: 560px;
+  overflow: visible;
+}
+
+.yucca-home .ns-treat-stage .goal-cutouts-pair {
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  filter: none;
+  object-fit: contain;
+  object-position: bottom center;
+}
+
+.yucca-home .ns-treat-stage .goal-cutouts-pair.is-on {
+  opacity: 1;
+}
+
+.yucca-home .ns-treat-stage .goal-product-card {
+  background: #fff !important;
+  border: 1.5px solid var(--navy) !important;
+  box-shadow: none !important;
+  border-radius: 1.35rem;
+  padding: 1.5rem 1.55rem 1.4rem;
+}
+
+.yucca-home .ns-treat-stage .goal-product-tag {
+  border: 1.5px solid var(--navy);
+  background: color-mix(in srgb, var(--navy) 8%, #fff);
+  color: var(--navy);
+}
+
+.yucca-home .ns-treat-stage .goal-product-tag--gold {
+  border-color: var(--gold);
+  background: color-mix(in srgb, var(--gold) 16%, #fff);
+}
+
+.yucca-home .ns-treat-stage .goal-product-price {
+  background: var(--navy) !important;
+  color: #fff !important;
+  border: 0 !important;
+  box-shadow: 0 10px 22px rgba(10, 31, 61, 0.18);
+  transform: none;
+  border-radius: 999px;
+  padding: 0.85rem 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.yucca-home .ns-treat-stage .goal-product-price span {
+  display: inline;
+  margin-left: 0.15rem;
+  font-weight: 700;
+}
+
+.yucca-home .ns-treat-stage .goal-product-price-note {
+  margin: 0.45rem 0 0;
+  font-size: 0.72rem;
+  color: #6b7280;
+}
+
+.yucca-home .ns-treat-stage .goal-product-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.yucca-home .ns-treat-stage .goal-product-detail {
+  color: #8a8f98 !important;
+  font-weight: 400;
+  font-size: 0.82rem;
+}
+
+.yucca-home .ns-treat-stage .goal-product-cta--ghost {
+  background: #fff !important;
+}
+
+@media (max-width: 900px) {
+  .yucca-home .ns-treat-stage .goal-cutouts {
+    min-height: 300px;
+  }
+}

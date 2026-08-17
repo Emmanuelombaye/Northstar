@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, type CSSProperties } from 'react'
+import { useState } from 'react'
 import { Link } from '../../lib/routerAdapter'
 import {
   HOME_FAQS,
@@ -62,7 +62,7 @@ function TreatmentsSection() {
   const active = HOME_TREATMENTS.find((t) => t.id === activeId) ?? HOME_TREATMENTS[0]
 
   return (
-    <section id="treatments" className="goal-treatments-section" data-active-tone={active.id}>
+    <section id="treatments" className="goal-treatments-section ns-treat-stage" data-active-tone={active.id}>
       <div className="goal-treatments-container">
         <div className="goal-treatments-heading">
           <h2>
@@ -82,11 +82,6 @@ function TreatmentsSection() {
                   role="tab"
                   aria-selected={selected}
                   className={selected ? 'is-active' : undefined}
-                  style={
-                    selected
-                      ? ({ backgroundColor: treatment.toneSoft, borderColor: 'var(--navy)' } as CSSProperties)
-                      : undefined
-                  }
                   onClick={() => setActiveId(treatment.id)}
                 >
                   {treatment.label}
@@ -96,23 +91,24 @@ function TreatmentsSection() {
           </div>
         </div>
 
-        <div className="goal-treatments-pane" key={active.id}>
+        <div className="goal-treatments-pane">
           <div className="goal-cutouts" aria-hidden="true">
-            <img className="goal-cutouts-pair" src={active.cutoutPair} alt="" loading="lazy" />
+            {HOME_TREATMENTS.map((treatment) => (
+              <img
+                key={treatment.id}
+                className={`goal-cutouts-pair${treatment.id === activeId ? ' is-on' : ''}`}
+                src={treatment.cutoutPair}
+                alt=""
+                loading="lazy"
+              />
+            ))}
           </div>
 
           <div className="goal-product-card">
             <div className="goal-product-tags">
               <div className="goal-product-tags-left">
-                <span className="goal-product-tag" style={{ backgroundColor: active.toneSoft, borderColor: active.tone }}>
-                  {active.label}
-                </span>
-                <span
-                  className="goal-product-tag"
-                  style={{ backgroundColor: active.badgeSoft, borderColor: active.badgeTone, color: 'var(--navy)' }}
-                >
-                  {active.badge}
-                </span>
+                <span className="goal-product-tag">{active.label}</span>
+                <span className="goal-product-tag goal-product-tag--gold">{active.badge}</span>
               </div>
             </div>
 
@@ -123,10 +119,7 @@ function TreatmentsSection() {
                 ))}
               </div>
               <div className="goal-product-meta">
-                <div
-                  className="goal-product-price"
-                  style={{ background: `linear-gradient(145deg, ${active.tone} 0%, ${active.toneSoft} 100%)` }}
-                >
+                <div className="goal-product-price">
                   FROM {active.price}
                   <span>{active.period}</span>
                 </div>
