@@ -1,74 +1,58 @@
 'use client'
 
-import { useEffect, useState, type CSSProperties } from 'react'
+import { useState, type CSSProperties } from 'react'
 import { Link } from '../../lib/routerAdapter'
 import {
-  HERO_WORDS,
   HOME_FAQS,
-  HOME_HERO_IMAGE,
   HOME_HIW_STEPS,
   HOME_TREATMENTS,
 } from '../../lib/nexa-shell/home-data'
 import { RetroClosingSection, RetroWhySection } from './RetroShared'
 
-function useHeroTyper() {
-  const [index, setIndex] = useState(0)
-  useEffect(() => {
-    const id = window.setInterval(() => setIndex((i) => (i + 1) % HERO_WORDS.length), 2200)
-    return () => window.clearInterval(id)
-  }, [])
-  return HERO_WORDS[index]
-}
-
 function HeroSection() {
-  const word = useHeroTyper()
-
   return (
-    <section className="retro-home-hero-section pax-home-hero" data-hero-reveal data-revealed="true">
-      <div className="retro-home-hero-card pax-home-hero__card relative overflow-hidden rounded-retro-card border-2 border-retro-ink">
-        <div className="pax-home-hero__media" aria-hidden="true">
-          <img className="pax-home-hero__photo" src={HOME_HERO_IMAGE} alt="" loading="eager" fetchPriority="high" />
-          <div className="pax-home-hero__wash" />
-          <div className="pax-home-hero__scrim" />
-        </div>
-        <div className="retro-home-hero-contain relative z-2">
-          <div className="retro-home-hero-wrap pax-home-hero__wrap relative z-2">
-            <div className="retro-home-hero-top">
-              <h1 className="sr-only">North Star MD — provider-guided GLP-1 treatment</h1>
-              <div className="retro-home-hero-heading pax-home-hero__heading hero-reveal hero-reveal--fade-up">
-                <span className="italic pax-home-hero__word" style={{ color: word.color }}>
-                  {word.text}
-                </span>
-                <br />
-                with provider review
-              </div>
-            </div>
-            <div className="retro-home-hero-bottom hero-reveal hero-reveal--fade-up">
-              <div className="retro-home-hero-cta-group">
-                <div className="retro-home-hero-primary-wrap">
-                  <Link href="/start?program=semaglutide" className="retro-home-hero-btn retro-home-hero-btn--primary">
-                    Check Eligibility — $0 to start
-                  </Link>
-                </div>
-                <Link href="/#treatments" className="retro-home-hero-btn retro-home-hero-btn--secondary">
-                  <span>Explore Treatments</span>
-                  <span className="retro-home-hero-btn-chevron" aria-hidden="true">
-                    <svg viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M0.799805 0.799988L5.79981 5.79999L0.799805 10.8"
-                        stroke="currentColor"
-                        strokeWidth="1.6"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </span>
-                </Link>
-              </div>
-            </div>
-          </div>
+    <section className="ns-hero ns-hero-banner-mode" aria-label="Introduction">
+      <div className="ns-hero-slides">
+        <div className="ns-hero-slide is-active">
+          <img
+            src="/upper image on that landing page.png"
+            data-fallback="/new upper landing image.png"
+            alt="Physician-guided longevity with North Star MD"
+            className="ns-hero-desktop-img"
+            decoding="async"
+            fetchPriority="high"
+          />
+          <img
+            src="/images/heroheaderformobiledisplay.png"
+            data-fallback="/images/heroheaderformobiledisplay.webp"
+            alt="Physician-guided longevity with North Star MD"
+            className="ns-hero-mobile-img"
+            decoding="async"
+            fetchPriority="high"
+          />
         </div>
       </div>
+
+      <div className="ns-hero-hotspots">
+        <Link to="/start" className="ns-hero-hotspot ns-hero-hotspot-start" aria-label="Start your journey" />
+        <a
+          href="#how-it-works-home"
+          className="ns-hero-hotspot ns-hero-hotspot-how"
+          aria-label="How it works"
+          onClick={(e) => {
+            e.preventDefault()
+            document.getElementById('how-it-works-home')?.scrollIntoView({ behavior: 'smooth' })
+          }}
+        />
+      </div>
+
+      <h1 className="sr-only">
+        Find your North Star <em>before</em> decline sets in.
+      </h1>
+      <p className="sr-only">
+        Physician-guided longevity, metabolic health, and wellness care — licensed U.S. providers,
+        compounded therapies, and discreet delivery wherever you are.
+      </p>
     </section>
   )
 }
