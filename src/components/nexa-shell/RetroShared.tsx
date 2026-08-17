@@ -4,7 +4,13 @@ import { type ReactNode } from 'react'
 import { Link } from '../../lib/routerAdapter'
 import { HOME_CLOSING_IMAGE, HOME_WHY_MEDIA } from '../../lib/nexa-shell/home-data'
 
-export function RetroWhySection() {
+export function RetroWhySection({
+  media,
+}: {
+  media?: { vials: string; portal: string }
+}) {
+  const vialsSrc = media?.vials ?? HOME_WHY_MEDIA.vials
+  const portalSrc = media?.portal ?? HOME_WHY_MEDIA.portal
   const pillars: {
     id: string
     n: string
@@ -85,7 +91,7 @@ export function RetroWhySection() {
       tone: 'light',
       media: (
         <div className="pax-why__media-frame">
-          <img src={HOME_WHY_MEDIA.vials} alt="Compounded Semaglutide and Tirzepatide vials with clinical labels" loading="lazy" />
+          <img src={vialsSrc} alt="Compounded Semaglutide and Tirzepatide vials with clinical labels" loading="lazy" />
         </div>
       ),
     },
@@ -101,7 +107,7 @@ export function RetroWhySection() {
       tone: 'forest',
       media: (
         <div className="pax-why__media-frame pax-why__media-frame--portal">
-          <img src={HOME_WHY_MEDIA.portal} alt="Secure clinical intake on tablet" loading="lazy" />
+          <img src={portalSrc} alt="Secure clinical intake on tablet" loading="lazy" />
         </div>
       ),
     },

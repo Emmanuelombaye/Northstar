@@ -3,9 +3,8 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { RetroClosingSection, RetroWhySection } from './RetroShared'
+import { TREATMENTS_MEDIA } from '../../lib/nexa-shell/treatments-data'
 import '../../styles/program-explore.css'
-
-const IMG = '/images/yucca-clone'
 
 const INCLUDES = [
   'Free Medical Consultation',
@@ -58,13 +57,13 @@ const PANE = {
       id: 'semaglutide',
       name: 'GLP-1 (Semaglutide)',
       desc: 'Weekly GLP-1 pathway support.',
-      thumb: `${IMG}/personalized-semaglutide-glp-1-injection-vial-yucca-health.avif`,
+      thumb: TREATMENTS_MEDIA.semaThumb,
     },
     {
       id: 'tirzepatide',
       name: 'GLP-1 + GIP (Tirzepatide)',
       desc: 'Dual-pathway weekly support.',
-      thumb: `${IMG}/personalized-tirzepatide-glp-1-injection-vial-yucca-health.avif`,
+      thumb: TREATMENTS_MEDIA.tirzThumb,
     },
   ],
 } as const
@@ -72,7 +71,7 @@ const PANE = {
 const WL_PROTOCOL = {
   heading: "Your body isn't working against you. It just needs the right signal.",
   sub: "GLP-1 medications don't fight your hunger — they work through the same hormonal system your body already uses to regulate it.",
-  vials: `${IMG}/expt-tirz-sema-vials-together.png`,
+  vials: TREATMENTS_MEDIA.protocolVials,
   cards: [
     {
       icon: PROTOCOL_ICON_WAVE,
@@ -99,17 +98,17 @@ const WL_EXPECT = {
     {
       tag: 'Week 1 → 4 · Your body is adjusting',
       text: 'You start on a low dose — intentionally. Your GLP-1 treatment is introduced gradually to give your body time to adapt. Some patients notice appetite changes early. Others take a few more weeks. Both are normal. Your provider is available throughout.',
-      img: `${IMG}/GLP1-Retro/expect-week-1-4.avif`,
+      img: TREATMENTS_MEDIA.expectWeek14,
     },
     {
       tag: 'Week 4 → 12 · The protocol starts to settle',
       text: 'As titration continues, your provider monitors how you respond. Appetite signals and dosing may be adjusted based on your individual course — experiences vary, and treatment is not guaranteed to produce a specific outcome.',
-      img: `${IMG}/GLP1-Retro/expect-week-4-12.avif`,
+      img: TREATMENTS_MEDIA.expectWeek412,
     },
     {
       tag: 'Month 3+ · Calibrated to you',
       text: 'This is where the protocol becomes truly personal. With how your body has responded — to the dose, to the titration, to the treatment itself — your provider can now fine-tune your plan with real precision. The focus shifts from adjustment to consistency, and maintainable progress becomes the rhythm.',
-      img: `${IMG}/GLP1-Retro/expect-month-3.avif`,
+      img: TREATMENTS_MEDIA.expectMonth3,
     },
   ],
 }
@@ -343,13 +342,13 @@ function ClinicalSection() {
         <div className="retro-clinical__visual" aria-hidden="true">
           <img
             className="retro-clinical__vial retro-clinical__vial--tirz"
-            src={`${IMG}/personalized-tirzepatide-glp-1-injection-vial-yucca-health.avif`}
+            src={TREATMENTS_MEDIA.tirzClinical}
             alt=""
             loading="lazy"
           />
           <img
             className="retro-clinical__vial retro-clinical__vial--sema"
-            src={`${IMG}/personalized-semaglutide-glp-1-injection-vial-yucca-health.avif`}
+            src={TREATMENTS_MEDIA.semaClinical}
             alt=""
             loading="lazy"
           />
@@ -407,7 +406,7 @@ function KnowallSection({ onCta }: { onCta: () => void }) {
           <h2 id="retro-knowall-heading-wl" className="retro-knowall__heading">
             Common questions before you begin.
           </h2>
-          <img className="retro-knowall__vial retro-knowall__vial--wl" src={`${IMG}/expt-tirz-sema-vials-together.png`} alt="" loading="lazy" />
+          <img className="retro-knowall__vial retro-knowall__vial--wl" src={TREATMENTS_MEDIA.faqVials} alt="" loading="lazy" />
         </div>
         <div className="retro-knowall__right">
           <ul className="retro-knowall__list pax-knowall__list" role="list">
@@ -496,8 +495,11 @@ export default function TreatmentsExplore() {
         <ClinicalSection />
         <ExpectSection />
         <KnowallSection onCta={cta} />
-        <RetroWhySection />
-        <RetroClosingSection ctaHref={`/start?program=${selectedTx === 'tirzepatide' ? 'tirzepatide' : 'semaglutide'}`} />
+        <RetroWhySection media={{ vials: TREATMENTS_MEDIA.whyVials, portal: TREATMENTS_MEDIA.whyPortal }} />
+        <RetroClosingSection
+          ctaHref={`/start?program=${selectedTx === 'tirzepatide' ? 'tirzepatide' : 'semaglutide'}`}
+          bg={TREATMENTS_MEDIA.closing}
+        />
       </div>
     </div>
   )
