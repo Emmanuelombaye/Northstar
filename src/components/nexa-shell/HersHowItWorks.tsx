@@ -101,7 +101,14 @@ function ExtArrow() {
   )
 }
 
-const HIW_NAV = [
+type HiwNavItem = {
+  href: string
+  label: string
+  active?: boolean
+  ext?: boolean
+}
+
+const HIW_NAV: HiwNavItem[] = [
   { href: '/', label: 'About us' },
   { href: '/how-it-works', label: 'How it works', active: true },
   { href: '/treatments', label: 'Clinical excellence' },
@@ -109,7 +116,7 @@ const HIW_NAV = [
   { href: '/faq', label: 'Quality & Safety' },
   { href: '/education', label: 'Newsroom', ext: true },
   { href: '/advisors', label: 'Investors', ext: true },
-] as const
+]
 
 function HiwMenu({
   open,
@@ -151,7 +158,7 @@ function HiwMenu({
               {i === 5 ? <span className="ns-hiw-subnav__rule" aria-hidden="true" /> : null}
               <Link href={item.href} className={item.active ? 'is-on' : undefined}>
                 {item.label}
-                {'ext' in item && item.ext ? <ExtArrow /> : null}
+                {item.ext ? <ExtArrow /> : null}
               </Link>
             </span>
           ))}
@@ -191,7 +198,7 @@ function HiwDrawer({
           <li key={item.label} className={i === 5 ? 'ns-hiw-drawer__break' : undefined}>
             <Link href={item.href} className={item.active ? 'is-on' : undefined} onClick={onToggle}>
               {item.label}
-              {'ext' in item && item.ext ? <ExtArrow /> : null}
+              {item.ext ? <ExtArrow /> : null}
             </Link>
           </li>
         ))}
