@@ -29,8 +29,7 @@ export const HOME_TREATMENTS = [
     price: '$125',
     period: '/mo',
     priceNote: '6-month plan · charged only if prescribed',
-    vial: '/images/home/home-vial-sema.png',
-    cutoutPair: '/images/home/home-treat-couple-sema.png',
+    vial: '/images/home/atlas-vial-sema.avif',
     learnHref: '/semaglutide',
     program: 'semaglutide',
     facts: [
@@ -52,8 +51,7 @@ export const HOME_TREATMENTS = [
     price: '$225',
     period: '/mo',
     priceNote: '6-month plan · charged only if prescribed',
-    vial: '/images/home/home-vial-tirz.png',
-    cutoutPair: '/images/home/home-treat-couple-tirz.png',
+    vial: '/images/home/atlas-vial-tirz.avif',
     learnHref: '/tirzepatide',
     program: 'tirzepatide',
     facts: [

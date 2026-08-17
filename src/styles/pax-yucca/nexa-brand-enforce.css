@@ -64,9 +64,11 @@ main[data-retro-scope],
     url(/images/treatments/hero-glp1-vials.avif),
     linear-gradient(
       180deg,
-      color-mix(in oklch, var(--teal, var(--terracotta)) 18%, var(--sand)),
-      color-mix(in oklch, var(--sand) 70%, var(--navy, var(--forest)))
+      #f9f7f2 0%,
+      color-mix(in oklch, var(--sand) 88%, var(--navy, var(--forest))) 100%
     ) !important;
+  background-size: min(52%, 220px) auto, auto !important;
+  background-position: 50% 58%, 0 0 !important;
   color: var(--navy, var(--forest)) !important;
 }
 

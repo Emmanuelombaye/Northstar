@@ -62,83 +62,98 @@ function TreatmentsSection() {
   const active = HOME_TREATMENTS.find((t) => t.id === activeId) ?? HOME_TREATMENTS[0]
 
   return (
-    <section id="treatments" className="goal-treatments-section ns-treat-stage" data-active-tone={active.id}>
-      <div className="goal-treatments-container">
-        <div className="goal-treatments-heading">
+    <section id="treatments" className="ns-atlas" data-active={activeId}>
+      <div className="ns-atlas__backdrop" aria-hidden="true">
+        <span className="ns-atlas__orb ns-atlas__orb--a" />
+        <span className="ns-atlas__orb ns-atlas__orb--b" />
+        <span className="ns-atlas__stars" />
+      </div>
+
+      <div className="ns-atlas__container">
+        <header className="ns-atlas__head">
+          <p className="ns-atlas__eyebrow">North Star MD · GLP-1 care</p>
           <h2>
-            <em>Personalized treatments</em> reviewed by licensed providers
+            Two pathways. <em>One clinical standard.</em>
           </h2>
-          <p>Choose Semaglutide or Tirzepatide, then complete a medical intake.</p>
-        </div>
+          <p className="ns-atlas__lede">
+            Semaglutide or Tirzepatide — reviewed by a licensed U.S. provider. Charged only if prescribed.
+          </p>
+        </header>
 
-        <div className="goal-tablist-wrap">
-          <div className="goal-tablist" role="tablist" aria-label="Choose a treatment">
-            {HOME_TREATMENTS.map((treatment) => {
-              const selected = treatment.id === activeId
-              return (
-                <button
-                  key={treatment.id}
-                  type="button"
-                  role="tab"
-                  aria-selected={selected}
-                  className={selected ? 'is-active' : undefined}
-                  onClick={() => setActiveId(treatment.id)}
-                >
-                  {treatment.label}
-                </button>
-              )
-            })}
-          </div>
-        </div>
-
-        <div className="goal-treatments-pane">
-          <div className="goal-cutouts" aria-hidden="true">
-            {HOME_TREATMENTS.map((treatment) => (
-              <img
+        <div className="ns-atlas__stage" role="tablist" aria-label="Choose a treatment">
+          {HOME_TREATMENTS.map((treatment) => {
+            const selected = treatment.id === activeId
+            return (
+              <article
                 key={treatment.id}
-                className={`goal-cutouts-pair${treatment.id === activeId ? ' is-on' : ''}`}
-                src={treatment.cutoutPair}
-                alt=""
-                loading="lazy"
-              />
-            ))}
-          </div>
-
-          <div className="goal-product-card">
-            <div className="goal-product-tags">
-              <div className="goal-product-tags-left">
-                <span className="goal-product-tag">{active.label}</span>
-                <span className="goal-product-tag goal-product-tag--gold">{active.badge}</span>
-              </div>
-            </div>
-
-            <div className="goal-product-top">
-              <div className="goal-product-vial">
-                <img src={active.vial} alt="" loading="eager" className="goal-vial goal-vial--front" />
-              </div>
-              <div className="goal-product-meta">
-                <div className="goal-product-price">
-                  FROM {active.price}
-                  <span>{active.period}</span>
+                className={`ns-atlas__panel${selected ? ' is-active' : ''}`}
+                role="tab"
+                aria-selected={selected}
+                tabIndex={selected ? 0 : -1}
+                onClick={() => setActiveId(treatment.id)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault()
+                    setActiveId(treatment.id)
+                  }
+                }}
+              >
+                <div className="ns-atlas__panel-top">
+                  <span className="ns-atlas__pathway">{treatment.badge}</span>
+                  <span className="ns-atlas__cadence">{treatment.kicker}</span>
                 </div>
-                <p className="goal-product-price-note">{active.priceNote}</p>
-              </div>
-            </div>
 
-            <h3 className="goal-product-title">{active.title}</h3>
-            <p className="goal-product-desc">{active.description}</p>
-            <p className="goal-product-detail">{active.detail}</p>
+                <div className="ns-atlas__vial-wrap">
+                  <img
+                    className="ns-atlas__vial"
+                    src={treatment.vial}
+                    alt=""
+                    loading={selected ? 'eager' : 'lazy'}
+                  />
+                </div>
 
-            <div className="goal-product-ctas">
-              <Link href={`/start?program=${active.program}`} className="goal-product-cta goal-product-cta--primary">
-                Check Eligibility
-              </Link>
-              <Link href={active.learnHref} className="goal-product-cta goal-product-cta--ghost">
-                Learn more
-              </Link>
-            </div>
-          </div>
+                <h3 className="ns-atlas__title">{treatment.label}</h3>
+                <p className="ns-atlas__desc">{treatment.description}</p>
+
+                <dl className="ns-atlas__facts">
+                  {treatment.facts.map((fact) => (
+                    <div key={fact.k} className="ns-atlas__fact">
+                      <dt>{fact.k}</dt>
+                      <dd>{fact.v}</dd>
+                    </div>
+                  ))}
+                </dl>
+
+                <div className="ns-atlas__price">
+                  <span className="ns-atlas__price-main">
+                    From {treatment.price}
+                    <small>{treatment.period}</small>
+                  </span>
+                  <span className="ns-atlas__price-note">{treatment.priceNote}</span>
+                </div>
+
+                <div className="ns-atlas__ctas">
+                  <Link
+                    href={`/start?program=${treatment.program}`}
+                    className="ns-atlas__cta ns-atlas__cta--primary"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    Check Eligibility
+                  </Link>
+                  <Link
+                    href={treatment.learnHref}
+                    className="ns-atlas__cta ns-atlas__cta--ghost"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    Learn more
+                  </Link>
+                </div>
+              </article>
+            )
+          })}
         </div>
+
+        <p className="ns-atlas__legal">{active.detail}</p>
       </div>
     </section>
   )
