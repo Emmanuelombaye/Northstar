@@ -114,9 +114,7 @@ function TreatmentsSection() {
 
             <div className="goal-product-top">
               <div className="goal-product-vial">
-                {active.vials.map((src) => (
-                  <img key={src} src={src} alt="" loading="eager" className="goal-vial goal-vial--front" />
-                ))}
+                <img src={active.vial} alt="" loading="eager" className="goal-vial goal-vial--front" />
               </div>
               <div className="goal-product-meta">
                 <div className="goal-product-price">
