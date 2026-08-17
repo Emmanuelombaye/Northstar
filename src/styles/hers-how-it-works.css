@@ -1,0 +1,586 @@
+/* Hers-style How it works — scroll-driven cinematic page (North Star copy) */
+
+.ns-hiw {
+  --hiw-rose: #c4876d;
+  --hiw-rose-deep: #a56a52;
+  --hiw-peach: #f3cbb3;
+  --hiw-ink: #111111;
+  --hiw-muted: #8a8a8a;
+  --hiw-lime: #d6f25a;
+  --hiw-line: color-mix(in srgb, var(--hiw-rose) 55%, #fff);
+  --hiw-sans: Inter, 'Sofia Pro', system-ui, sans-serif;
+  position: relative;
+  background: #fff;
+  color: var(--hiw-ink);
+  font-family: var(--hiw-sans);
+  overflow-x: clip;
+}
+
+.ns-hiw * {
+  box-sizing: border-box;
+}
+
+.ns-hiw h1,
+.ns-hiw h2,
+.ns-hiw h3,
+.ns-hiw p,
+.ns-hiw strong,
+.ns-hiw span {
+  font-family: var(--hiw-sans) !important;
+}
+
+.ns-hiw-rail {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  border-left: 1.5px dotted var(--hiw-line);
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.85;
+}
+
+/* —— Hero —— */
+.ns-hiw-hero {
+  position: relative;
+  height: 180vh;
+  background: radial-gradient(ellipse at 50% 42%, #e8a07a 0%, #c56e55 42%, #9b4f42 100%) !important;
+  color: #fff;
+}
+
+.ns-hiw-hero__pin {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.ns-hiw-hero__copy {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: 0 1.25rem;
+}
+
+.ns-hiw-hero h1 {
+  margin: 0;
+  color: #fff !important;
+  font-size: clamp(4rem, 11vw, 8.6rem) !important;
+  font-weight: 700 !important;
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+}
+
+.ns-hiw-hero h1 span {
+  display: block;
+}
+
+.ns-hiw-hero p {
+  margin: 1.1rem 0 0;
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  font-weight: 400;
+  opacity: 0.95;
+}
+
+.ns-hiw-hero__hand {
+  position: absolute;
+  bottom: -6%;
+  width: min(46vw, 28rem);
+  height: auto;
+  z-index: 2;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.ns-hiw-hero__hand--left {
+  left: -8%;
+}
+
+.ns-hiw-hero__hand--right {
+  right: -8%;
+}
+
+.ns-hiw-scrollcue {
+  position: absolute;
+  bottom: 1.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.ns-hiw-scrollcue i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #fff;
+  display: block;
+  animation: ns-hiw-dot 1.6s ease-in-out infinite;
+}
+
+.ns-hiw-scrollcue i:nth-child(2) { animation-delay: 0.15s; }
+.ns-hiw-scrollcue i:nth-child(3) { animation-delay: 0.3s; }
+
+.ns-hiw-scrollcue svg {
+  width: 14px;
+  height: 8px;
+  fill: #fff;
+  margin-top: 2px;
+}
+
+@keyframes ns-hiw-dot {
+  0%, 100% { opacity: 0.25; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(3px); }
+}
+
+/* —— Intro —— */
+.ns-hiw-intro {
+  position: relative;
+  min-height: 140vh;
+  background: #fff;
+  z-index: 3;
+}
+
+.ns-hiw-intro__pin {
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 1.5rem 4rem;
+  text-align: center;
+}
+
+.ns-hiw-intro h2 {
+  margin: 0;
+  max-width: 46rem;
+  color: var(--hiw-ink) !important;
+  font-size: clamp(1.85rem, 4.2vw, 3.15rem) !important;
+  font-weight: 600 !important;
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+}
+
+.ns-hiw-intro h2 em {
+  font-style: normal;
+  color: var(--hiw-rose-deep);
+}
+
+.ns-hiw-intro__lead {
+  width: 1.5px;
+  height: 5.5rem;
+  margin: 1.75rem 0 1rem;
+  background-image: radial-gradient(circle, var(--hiw-rose) 1.1px, transparent 1.2px);
+  background-size: 1.5px 10px;
+  background-repeat: repeat-y;
+  transform-origin: top;
+}
+
+.ns-hiw-kicker {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--hiw-rose-deep);
+  letter-spacing: -0.01em;
+}
+
+/* —— Shared copy blocks —— */
+.ns-hiw-copy {
+  max-width: 34rem;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 1.25rem;
+}
+
+.ns-hiw-copy h2,
+.ns-hiw-copy h3 {
+  margin: 0 0 0.85rem;
+  color: inherit !important;
+  font-size: clamp(2rem, 4.4vw, 3.35rem) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+}
+
+.ns-hiw-copy p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: #3a3a3a;
+}
+
+.ns-hiw-stage {
+  position: relative;
+  z-index: 3;
+}
+
+.ns-hiw-stage__pin {
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 1rem 3rem;
+}
+
+/* —— Intake —— */
+.ns-hiw-intake {
+  min-height: 220vh;
+  background: #fff;
+}
+
+.ns-hiw-phonewrap {
+  position: relative;
+  width: min(78rem, 160vw);
+  height: min(42rem, 78vh);
+  margin-top: 1.5rem;
+  display: grid;
+  place-items: center;
+}
+
+.ns-hiw-phonewrap img {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -42%);
+  width: min(78rem, 160vw);
+  max-width: none;
+  height: auto;
+  pointer-events: none;
+}
+
+.ns-hiw-phonescreen {
+  position: absolute;
+  width: min(14.2rem, 38vw);
+  height: auto;
+  left: 50%;
+  top: 46%;
+  transform: translate(-50%, -50%);
+  border-radius: 1.6rem;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* —— EMR —— */
+.ns-hiw-emr {
+  min-height: 140vh;
+  background: #0a0a0a;
+  color: #fff;
+}
+
+.ns-hiw-emr .ns-hiw-copy p {
+  color: #d5d5d5;
+}
+
+.ns-hiw-lockcard {
+  margin-top: 2rem;
+  width: min(22rem, 78vw);
+  aspect-ratio: 3 / 3.7;
+  background: #fff;
+  border-radius: 1.6rem;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+}
+
+.ns-hiw-lock {
+  width: 4.4rem;
+  height: 4.4rem;
+  border-radius: 50%;
+  background: var(--hiw-lime);
+  display: grid;
+  place-items: center;
+  animation: ns-hiw-lockpulse 2.2s ease-in-out infinite;
+}
+
+.ns-hiw-emr__tag {
+  margin-top: 1.25rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  color: #fff;
+}
+
+@keyframes ns-hiw-lockpulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
+/* —— Provider —— */
+.ns-hiw-provider {
+  min-height: 220vh;
+  background: #fff;
+}
+
+.ns-hiw-provider__photo {
+  position: relative;
+  width: min(22rem, 78vw);
+  margin-top: 1.5rem;
+  border-radius: 1.15rem;
+  overflow: hidden;
+  box-shadow: 0 18px 50px rgba(17, 17, 17, 0.12);
+  background: #f3d5c0;
+}
+
+.ns-hiw-provider__photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ns-hiw-check {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  background: #d7ef9a;
+  color: #3a5a12;
+  display: grid;
+  place-items: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.ns-hiw-status {
+  margin-top: 1.1rem;
+  display: flex;
+  gap: 1.6rem;
+  padding: 0.7rem 1.4rem;
+  background: #fff;
+  border-radius: 999px;
+  box-shadow: 0 10px 30px rgba(17, 17, 17, 0.08);
+}
+
+.ns-hiw-status span {
+  position: relative;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--hiw-muted);
+}
+
+.ns-hiw-status span.is-on {
+  color: var(--hiw-ink);
+}
+
+.ns-hiw-status span.is-on::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.45rem;
+  height: 3px;
+  border-radius: 99px;
+  background: var(--hiw-rose);
+}
+
+/* —— Prescription / pill spin —— */
+.ns-hiw-rx {
+  min-height: 320vh;
+  background: #111;
+  color: #fff;
+}
+
+.ns-hiw-rx .ns-hiw-copy p {
+  color: #cfcfcf;
+}
+
+.ns-hiw-pillspin {
+  margin-top: 1.25rem;
+  width: min(22rem, 70vw);
+  height: min(22rem, 70vw);
+  background-repeat: no-repeat;
+  image-rendering: auto;
+}
+
+/* —— Compound / pharmacy —— */
+.ns-hiw-compound {
+  min-height: 280vh;
+  background: #3d3d3d;
+  color: #fff;
+}
+
+.ns-hiw-compound .ns-hiw-copy p {
+  color: #ececec;
+}
+
+.ns-hiw-stadium {
+  margin-top: 1.5rem;
+  width: min(48rem, 88vw);
+  height: min(16.5rem, 38vw);
+  border-radius: 999px;
+  overflow: hidden;
+  position: relative;
+  background: #2a2a2a;
+}
+
+.ns-hiw-stadium img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+.ns-hiw-stadium img.is-on {
+  opacity: 1;
+}
+
+.ns-hiw-caption {
+  margin-top: 1.25rem;
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* —— Delivery sprites —— */
+.ns-hiw-ship {
+  min-height: 160vh;
+  background: #fff;
+}
+
+.ns-hiw-deliver {
+  min-height: 240vh;
+  background: #f4f1ee;
+}
+
+.ns-hiw-products {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  width: min(64rem, 92vw);
+  margin-top: 2rem;
+}
+
+.ns-hiw-product {
+  text-align: center;
+}
+
+.ns-hiw-product__sprite {
+  width: 100%;
+  aspect-ratio: 1;
+  margin: 0 auto 0.9rem;
+  background-repeat: no-repeat;
+}
+
+.ns-hiw-product p {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* —— Support stack —— */
+.ns-hiw-support {
+  background: #fff;
+  padding: 4rem 0 6rem;
+}
+
+.ns-hiw-support .ns-hiw-copy {
+  margin-bottom: 1.5rem;
+}
+
+.ns-hiw-stack {
+  position: relative;
+  width: min(40rem, 92vw);
+  margin: 0 auto;
+}
+
+.ns-hiw-card {
+  position: sticky;
+  top: 18vh;
+  margin-bottom: 40vh;
+  background: #fff;
+  border-radius: 1.35rem;
+  box-shadow: 0 24px 70px rgba(17, 17, 17, 0.12);
+  overflow: hidden;
+  border: 1px solid #eee;
+}
+
+.ns-hiw-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ns-hiw-card__meta {
+  padding: 1.1rem 1.25rem 1.3rem;
+}
+
+.ns-hiw-card__meta strong {
+  display: block;
+  font-size: 1.15rem;
+  margin-bottom: 0.2rem;
+}
+
+.ns-hiw-card__meta span {
+  font-size: 0.85rem;
+  color: var(--hiw-muted);
+}
+
+/* —— CTA —— */
+.ns-hiw-cta {
+  background: var(--hiw-rose-deep);
+  color: #fff;
+  padding: 5rem 1.25rem;
+  text-align: center;
+}
+
+.ns-hiw-cta h2 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.03em;
+}
+
+.ns-hiw-cta p {
+  margin: 0 auto 1.75rem;
+  max-width: 32rem;
+  opacity: 0.92;
+}
+
+.ns-hiw-cta a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.1rem;
+  padding: 0 1.6rem;
+  border-radius: 999px;
+  background: #111;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.ns-hiw-cta a:hover {
+  background: #000;
+}
+
+@media (max-width: 768px) {
+  .ns-hiw-rail { display: none; }
+  .ns-hiw-hero { height: 140vh; }
+  .ns-hiw-hero__hand { width: 58vw; bottom: -2%; }
+  .ns-hiw-products { grid-template-columns: 1fr; max-width: 18rem; }
+  .ns-hiw-card { top: 12vh; margin-bottom: 28vh; }
+  .ns-hiw-phonewrap { height: 22rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ns-hiw-hero__hand,
+  .ns-hiw-lock,
+  .ns-hiw-scrollcue i {
+    animation: none !important;
+    transform: none !important;
+  }
+}
