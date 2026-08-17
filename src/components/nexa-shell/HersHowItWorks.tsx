@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState, type CSSProperties } from 'react'
+import { useCallback, useEffect, useRef, useState, type CSSProperties } from 'react'
 import { Link } from '../../lib/routerAdapter'
 import '../../styles/hers-how-it-works.css'
 
@@ -89,7 +89,126 @@ function LockIcon() {
   )
 }
 
+function ExtArrow() {
+  return (
+    <svg className="ns-hiw-ext" width="14" height="14" viewBox="0 0 38 38" fill="none" aria-hidden="true">
+      <path
+        fill="currentColor"
+        fillRule="evenodd"
+        d="M12.67 9.5c0-.87.71-1.58 1.58-1.58H28.5c.87 0 1.58.71 1.58 1.58v14.25c0 .87-.71 1.58-1.58 1.58-.87 0-1.58-.71-1.58-1.58V13.32L11.41 28.83a1.58 1.58 0 0 1-2.24-2.24L24.68 11.08H14.25c-.87 0-1.58-.71-1.58-1.58Z"
+      />
+    </svg>
+  )
+}
+
+const HIW_NAV = [
+  { href: '/', label: 'About us' },
+  { href: '/how-it-works', label: 'How it works', active: true },
+  { href: '/treatments', label: 'Clinical excellence' },
+  { href: '/vision', label: 'Innovation' },
+  { href: '/faq', label: 'Quality & Safety' },
+  { href: '/education', label: 'Newsroom', ext: true },
+  { href: '/advisors', label: 'Investors', ext: true },
+] as const
+
+function HiwMenu({
+  open,
+  onHero,
+  onToggle,
+}: {
+  open: boolean
+  onHero: boolean
+  onToggle: () => void
+}) {
+  return (
+    <nav
+      className={`ns-hiw-chrome${open ? ' is-open' : ''}${onHero ? '' : ' is-away'}`}
+      aria-label="How it works"
+    >
+      <div className="ns-hiw-chrome__stick">
+        <div className="ns-hiw-topbar">
+          <div className="ns-hiw-brandrow">
+            <Link href="/" className="ns-hiw-brand" aria-label="North Star home">
+              <span className="ns-hiw-brand__word">north star</span>
+            </Link>
+            <Link href="/treatments" className="ns-hiw-explore">
+              Explore
+            </Link>
+          </div>
+          <button
+            type="button"
+            className="ns-hiw-burger"
+            aria-label={open ? 'Close menu' : 'Open menu'}
+            aria-expanded={open}
+            onClick={onToggle}
+          >
+            <i />
+          </button>
+        </div>
+        <div className="ns-hiw-subnav" aria-hidden={open}>
+          {HIW_NAV.map((item, i) => (
+            <span key={item.label} className="ns-hiw-subnav__item">
+              {i === 5 ? <span className="ns-hiw-subnav__rule" aria-hidden="true" /> : null}
+              <Link href={item.href} className={item.active ? 'is-on' : undefined}>
+                {item.label}
+                {'ext' in item && item.ext ? <ExtArrow /> : null}
+              </Link>
+            </span>
+          ))}
+        </div>
+      </div>
+    </nav>
+  )
+}
+
+function HiwDrawer({
+  open,
+  onHero,
+  onToggle,
+}: {
+  open: boolean
+  onHero: boolean
+  onToggle: () => void
+}) {
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && open) onToggle()
+    }
+    document.body.style.overflow = open ? 'hidden' : ''
+    window.addEventListener('keydown', onKey)
+    return () => {
+      document.body.style.overflow = ''
+      window.removeEventListener('keydown', onKey)
+    }
+  }, [open, onToggle])
+
+  if (!open) return null
+
+  return (
+    <div className={`ns-hiw-drawer${onHero ? ' is-hero' : ''}`}>
+      <ul>
+        {HIW_NAV.map((item, i) => (
+          <li key={item.label} className={i === 5 ? 'ns-hiw-drawer__break' : undefined}>
+            <Link href={item.href} className={item.active ? 'is-on' : undefined} onClick={onToggle}>
+              {item.label}
+              {'ext' in item && item.ext ? <ExtArrow /> : null}
+            </Link>
+          </li>
+        ))}
+      </ul>
+      <p className="ns-hiw-drawer__other">Other sites:</p>
+      <div className="ns-hiw-drawer__sites">
+        <Link href="/education">Blog</Link>
+        <Link href="/advisors">Careers</Link>
+        <Link href="/">Northstar.md</Link>
+      </div>
+    </div>
+  )
+}
+
 export default function HersHowItWorks() {
+  const [menuOpen, setMenuOpen] = useState(false)
+  const toggleMenu = useCallback(() => setMenuOpen((v) => !v), [])
   const hero = useSectionProgress<HTMLElement>()
   const intake = useSectionProgress<HTMLElement>()
   const provider = useSectionProgress<HTMLElement>()
@@ -97,15 +216,18 @@ export default function HersHowItWorks() {
   const compound = useSectionProgress<HTMLElement>()
   const deliver = useSectionProgress<HTMLElement>()
 
-  const handIn = clamp((hero.p - 0.08) / 0.35)
+  const leftIn = 0.55 + clamp(hero.p / 0.28) * 0.45
+  const rightIn = clamp((hero.p - 0.12) / 0.38)
   const titleFade = 1 - clamp((hero.p - 0.55) / 0.3)
   const phoneScale = 0.78 + clamp(intake.p) * 0.28
   const providerI = Math.min(2, Math.floor(clamp(provider.p) * 3))
   const pharmacyI = Math.min(2, Math.floor(clamp(compound.p) * 3))
 
   return (
-    <div className="ns-hiw">
+    <div className={`ns-hiw${menuOpen ? ' is-menu' : ''}`}>
       <div className="ns-hiw-rail" aria-hidden="true" />
+      <HiwDrawer open={menuOpen} onHero={hero.p < 0.92} onToggle={toggleMenu} />
+      <HiwMenu open={menuOpen} onHero={hero.p < 0.92} onToggle={toggleMenu} />
 
       <section className="ns-hiw-hero" ref={hero.ref}>
         <div className="ns-hiw-hero__pin">
@@ -122,8 +244,8 @@ export default function HersHowItWorks() {
             src={`${IMG}/hand-left.webp`}
             alt=""
             style={{
-              opacity: 0.15 + handIn * 0.85,
-              transform: `translate3d(${(1 - handIn) * -28}%, ${(1 - handIn) * 18}%, 0)`,
+              opacity: leftIn,
+              transform: `translate3d(${(1 - leftIn) * -22}%, ${(1 - leftIn) * 12}%, 0)`,
             }}
           />
           <img
@@ -131,8 +253,8 @@ export default function HersHowItWorks() {
             src={`${IMG}/hand-right.webp`}
             alt=""
             style={{
-              opacity: 0.15 + handIn * 0.85,
-              transform: `translate3d(${(1 - handIn) * 28}%, ${(1 - handIn) * 18}%, 0)`,
+              opacity: rightIn,
+              transform: `translate3d(${(1 - rightIn) * 26}%, ${(1 - rightIn) * 16}%, 0)`,
             }}
           />
           <div className="ns-hiw-scrollcue" aria-hidden="true">
