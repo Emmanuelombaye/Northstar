@@ -1,6 +1,7 @@
 /** North Star MD — marketing shell data (LegitScript-accurate) */
 
 export const YUCCA = '/images/yucca-clone'
+const V = '?v=20260818b'
 
 export const HERO_WORDS = [
   { text: 'Semaglutide', color: 'var(--gold)' },
@@ -8,13 +9,13 @@ export const HERO_WORDS = [
 ] as const
 
 export const HOME_WHY_MEDIA = {
-  vials: `${YUCCA}/expt-tirz-sema-vials-together.png`,
-  portal: '/images/pax-hiw-step-1.png',
+  vials: `${YUCCA}/expt-tirz-sema-vials-together.png${V}`,
+  portal: `/images/pax-hiw-step-1.png${V}`,
 } as const
 
-export const HOME_CLOSING_IMAGE = `${YUCCA}/hiw/pax-why-science-results.avif`
+export const HOME_CLOSING_IMAGE = `${YUCCA}/hiw/pax-why-science-results.avif${V}`
 
-export const HOME_HERO_IMAGE = `${YUCCA}/pax-glp1-couple-cutout.avif`
+export const HOME_HERO_IMAGE = `${YUCCA}/pax-glp1-couple-cutout.avif${V}`
 
 export const HOME_TREATMENTS = [
   {
@@ -29,7 +30,7 @@ export const HOME_TREATMENTS = [
     price: '$125',
     period: '/mo',
     priceNote: '6-month plan · charged only if prescribed',
-    vial: '/images/home/atlas-vial-sema.avif',
+    vial: `/images/home/atlas-vial-sema.avif${V}`,
     learnHref: '/semaglutide',
     program: 'semaglutide',
     facts: [
@@ -51,7 +52,7 @@ export const HOME_TREATMENTS = [
     price: '$225',
     period: '/mo',
     priceNote: '6-month plan · charged only if prescribed',
-    vial: '/images/home/atlas-vial-tirz.avif',
+    vial: `/images/home/atlas-vial-tirz.avif${V}`,
     learnHref: '/tirzepatide',
     program: 'tirzepatide',
     facts: [
@@ -68,21 +69,21 @@ export const HOME_HIW_STEPS = [
     n: '1',
     title: 'Complete a clinical intake',
     body: 'Share medical history, metrics, and shipping details in a secure questionnaire. This is an evaluation step — not a purchase.',
-    image: `${YUCCA}/hiw/Get-Started.avif`,
+    image: `${YUCCA}/hiw/Get-Started.avif${V}`,
     alt: 'Clinical intake on a tablet',
   },
   {
     n: '2',
     title: 'Licensed provider review',
     body: 'A state-licensed U.S. clinician reviews your answers — typically within about 24 hours — and decides whether treatment is appropriate. Completing intake does not guarantee a prescription.',
-    image: `${YUCCA}/hiw/medical-review-licensed-provider-yucca-health.avif`,
+    image: `${YUCCA}/hiw/medical-review-licensed-provider-yucca-health.avif${V}`,
     alt: 'Licensed clinician reviewing a patient intake',
   },
   {
     n: '3',
     title: 'Pharmacy fulfillment if prescribed',
     body: 'If approved, a licensed U.S. compounding pharmacy prepares your medication and ships it discreetly. Ongoing care and dose adjustments continue through your patient portal.',
-    image: `${YUCCA}/hiw/home-delivery.avif`,
+    image: `${YUCCA}/hiw/home-delivery.avif${V}`,
     alt: 'Temperature-controlled medication delivery',
   },
 ] as const

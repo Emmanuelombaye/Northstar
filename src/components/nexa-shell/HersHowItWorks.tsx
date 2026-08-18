@@ -6,37 +6,38 @@ import '../../styles/hers-how-it-works.css'
 
 const Y = '/images/yucca-clone'
 const HIW = `${Y}/hiw`
+const V = '?v=20260818b'
 
 const PROVIDERS = [
-  `${HIW}/Licensed-Providers.avif`,
-  `${HIW}/medical-review-licensed-provider-yucca-health.avif`,
-  `${HIW}/Provider-reviews-intake_2.avif`,
+  `${HIW}/Licensed-Providers.avif${V}`,
+  `${HIW}/medical-review-licensed-provider-yucca-health.avif${V}`,
+  `${HIW}/Provider-reviews-intake_2.avif${V}`,
 ]
 
 const DELIVER = [
-  { src: `${HIW}/home-delivery.avif`, label: 'Discreet home delivery' },
-  { src: `${HIW}/Receive-your-medication_3.avif`, label: 'Cold-chain packaging' },
-  { src: '/images/pax-hiw-step-3.png', label: 'If prescribed, shipped to you' },
+  { src: `${HIW}/home-delivery.avif${V}`, label: 'Discreet home delivery' },
+  { src: `${HIW}/Receive-your-medication_3.avif${V}`, label: 'Cold-chain packaging' },
+  { src: `/images/pax-hiw-step-3.png${V}`, label: 'If prescribed, shipped to you' },
 ]
 
 const SUPPORT = [
   {
-    src: `${HIW}/yucca-health-patient-portal-dashboard-semaglutide-mobile.avif`,
+    src: `${HIW}/yucca-health-patient-portal-dashboard-semaglutide-mobile.avif${V}`,
     title: 'Your patient portal',
     note: 'Track treatment, messages, and next steps in one place.',
   },
   {
-    src: `${HIW}/1_1-Guidance-throughout-treatment.avif`,
+    src: `${HIW}/1_1-Guidance-throughout-treatment.avif${V}`,
     title: 'Guidance throughout treatment',
     note: 'Check in with your care team whenever you need to.',
   },
   {
-    src: `${HIW}/glp-1-weight-loss-progress-chart-30-lbs-yucca-health.avif`,
+    src: `${HIW}/glp-1-weight-loss-progress-chart-30-lbs-yucca-health.avif${V}`,
     title: 'Progress you can see',
     note: 'Log how you feel and watch your plan adjust with you.',
   },
   {
-    src: `${HIW}/yucca-health-patient-portal-features-glp-1-treatment.avif`,
+    src: `${HIW}/yucca-health-patient-portal-features-glp-1-treatment.avif${V}`,
     title: 'Tools that stay with you',
     note: 'Education, refills, and ongoing clinician support.',
   },
@@ -137,7 +138,7 @@ export default function HersHowItWorks() {
           </div>
           <img
             className="ns-hiw-hero__vial ns-hiw-hero__vial--left"
-            src={`${Y}/personalized-semaglutide-glp-1-injection-vial-yucca-health.avif`}
+            src={`${Y}/personalized-semaglutide-glp-1-injection-vial-yucca-health.avif${V}`}
             alt="Personalized Semaglutide"
             style={{
               opacity: leftIn,
@@ -146,7 +147,7 @@ export default function HersHowItWorks() {
           />
           <img
             className="ns-hiw-hero__vial ns-hiw-hero__vial--right"
-            src={`${Y}/personalized-tirzepatide-glp-1-injection-vial-yucca-health.avif`}
+            src={`${Y}/personalized-tirzepatide-glp-1-injection-vial-yucca-health.avif${V}`}
             alt="Personalized Tirzepatide"
             style={{
               opacity: rightIn,
@@ -155,7 +156,7 @@ export default function HersHowItWorks() {
           />
           <img
             className="ns-hiw-hero__couple"
-            src={`${Y}/pax-glp1-couple-cutout.avif`}
+            src={`${Y}/pax-glp1-couple-cutout.avif${V}`}
             alt=""
             style={{ opacity: 0.35 + clamp(hero.p) * 0.45 }}
           />
@@ -189,7 +190,7 @@ export default function HersHowItWorks() {
           </div>
           <div className="ns-hiw-frame ns-hiw-frame--phone" style={{ transform: `scale(${phoneScale})` }}>
             <img
-              src={`${HIW}/yucca-health-patient-portal-dashboard-semaglutide-mobile.avif`}
+              src={`${HIW}/yucca-health-patient-portal-dashboard-semaglutide-mobile.avif${V}`}
               alt="North Star patient intake on a phone"
             />
           </div>
@@ -254,11 +255,11 @@ export default function HersHowItWorks() {
           </div>
           <div className="ns-hiw-vials">
             <figure style={{ transform: `translateY(${(1 - clamp(rx.p)) * 24}px) rotate(${-6 + rxTurn * 0.2}deg)` }}>
-              <img src={`${Y}/personalized-semaglutide-glp-1-injection-vial-yucca-health.avif`} alt="Semaglutide" />
+              <img src={`${Y}/personalized-semaglutide-glp-1-injection-vial-yucca-health.avif${V}`} alt="Semaglutide" />
               <figcaption>Semaglutide</figcaption>
             </figure>
             <figure style={{ transform: `translateY(${(1 - clamp(rx.p)) * 36}px) rotate(${6 - rxTurn * 0.15}deg)` }}>
-              <img src={`${Y}/personalized-tirzepatide-glp-1-injection-vial-yucca-health.avif`} alt="Tirzepatide" />
+              <img src={`${Y}/personalized-tirzepatide-glp-1-injection-vial-yucca-health.avif${V}`} alt="Tirzepatide" />
               <figcaption>Tirzepatide</figcaption>
             </figure>
           </div>
@@ -276,7 +277,7 @@ export default function HersHowItWorks() {
             </p>
           </div>
           <div className="ns-hiw-stadium" style={{ opacity: compoundGlow }}>
-            <img src={`${HIW}/quality-sourcing-verified-compounded-medications-yucca-health.avif`} alt="Licensed U.S. compounding pharmacy" />
+            <img src={`${HIW}/quality-sourcing-verified-compounded-medications-yucca-health.avif${V}`} alt="Licensed U.S. compounding pharmacy" />
           </div>
           <p className="ns-hiw-caption">Compounded in the USA · Clinician-directed strength</p>
         </div>
