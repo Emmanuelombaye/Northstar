@@ -309,6 +309,18 @@ function SectionContent({ user, section }: { user: PortalUser; section: string }
         <>
           <h1>Documents</h1>
           <p className="ns-lead">Consent forms, lab PDFs, and care summaries.</p>
+          <div className="pc-compliance-docs">
+            <p>Compliance documents</p>
+            <ul>
+              {COMPLIANCE_DOCS.map((doc) => (
+                <li key={doc.href}>
+                  <a href={doc.href} target="_blank" rel="noopener noreferrer">
+                    {doc.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </>
       );
     case "settings":
