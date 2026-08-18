@@ -8,6 +8,7 @@ import {
   HOME_TREATMENTS,
 } from '../../lib/nexa-shell/home-data'
 import { RetroClosingSection, RetroWhySection } from './RetroShared'
+import { NsSnapRail } from './NsSnapRail'
 
 const FAQ_MEDIA = [
   { src: '/images/home/faq-provider-review.png?v=20260818c', alt: 'Licensed provider reviewing a clinical intake' },
@@ -80,7 +81,7 @@ function TreatmentsSection() {
           </p>
         </header>
 
-        <div className="ns-atlas__stage" role="tablist" aria-label="Choose a treatment">
+        <NsSnapRail cols={2} className="ns-atlas__stage" hint="Swipe to compare">
           {HOME_TREATMENTS.map((treatment) => {
             const selected = treatment.id === activeId
             return (
@@ -151,7 +152,7 @@ function TreatmentsSection() {
               </article>
             )
           })}
-        </div>
+        </NsSnapRail>
 
         <p className="ns-atlas__legal">{active.detail}</p>
       </div>
@@ -169,7 +170,7 @@ function HomeHiwSection() {
             Intake, clinician review, then fulfillment <em>only if prescribed</em>
           </h2>
         </div>
-        <div className="goal-hiw-grid pax-hiw__grid" role="list">
+        <NsSnapRail cols={3} className="goal-hiw-grid pax-hiw__grid" hint="Swipe the care path">
           {HOME_HIW_STEPS.map((step) => (
             <article key={step.n} className="goal-hiw-card pax-hiw__card" role="listitem">
               <div className="pax-hiw__copy">
@@ -184,7 +185,7 @@ function HomeHiwSection() {
               </div>
             </article>
           ))}
-        </div>
+        </NsSnapRail>
         <p style={{ textAlign: 'center', marginTop: '1.5rem' }}>
           <Link href="/how-it-works" className="goal-product-cta goal-product-cta--ghost" style={{ display: 'inline-flex' }}>
             See full care path
@@ -200,13 +201,13 @@ function FaqSection() {
 
   return (
     <section className="retro-faqs">
-      <div className="ns-faq-media-grid" aria-hidden="true">
+      <NsSnapRail cols={3} className="ns-faq-media-grid" hint="Swipe photos">
         {FAQ_MEDIA.map((item) => (
           <figure key={item.src} className="ns-faq-media-card">
             <img src={item.src} alt={item.alt} loading="lazy" decoding="async" />
           </figure>
         ))}
-      </div>
+      </NsSnapRail>
       <div className="retro-faqs__head">
         <h2 className="retro-faqs__heading">Clinical FAQs</h2>
         <p className="retro-faqs__sub">Straight answers about eligibility, compounding, and provider review.</p>

@@ -650,48 +650,80 @@
 }
 
 @media (max-width: 768px) {
-  .ns-hiw-rail { display: none; }
-  .ns-hiw-hero { height: 140vh; }
-  .ns-hiw-hero__vial { width: 42vw; bottom: 18%; }
-  .ns-hiw-hero__couple { display: none; }
-  .ns-hiw-products {
-    display: flex !important;
-    grid-template-columns: none !important;
-    max-width: none !important;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    gap: 0.9rem;
-    padding: 0.2rem 0 1rem;
-    scrollbar-width: none;
+  .ns-hiw {
+    overflow-x: hidden;
   }
-  .ns-hiw-products::-webkit-scrollbar { display: none; }
-  .ns-hiw-product {
-    flex: 0 0 min(70vw, 15.5rem);
-    scroll-snap-align: start;
-    opacity: 1;
-    transform: none;
+
+  .ns-hiw-rail {
+    display: none;
   }
-  .ns-hiw-support .ns-hiw-stack {
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    overflow-x: auto !important;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    gap: 0.9rem;
-    padding: 0.2rem 0 1rem;
-    scrollbar-width: none;
+
+  .ns-hiw-hero,
+  .ns-hiw-intro,
+  .ns-hiw-stage,
+  .ns-hiw-intake,
+  .ns-hiw-emr,
+  .ns-hiw-provider,
+  .ns-hiw-rx,
+  .ns-hiw-compound,
+  .ns-hiw-deliver,
+  .ns-hiw-support {
+    height: auto !important;
+    min-height: 0 !important;
   }
-  .ns-hiw-support .ns-hiw-stack::-webkit-scrollbar { display: none; }
-  .ns-hiw-support .ns-hiw-card {
+
+  .ns-hiw-hero__pin,
+  .ns-hiw-intro__pin,
+  .ns-hiw-stage__pin {
     position: relative !important;
     top: auto !important;
-    flex: 0 0 min(82vw, 20rem);
-    width: min(82vw, 20rem);
-    margin-bottom: 0 !important;
-    scroll-snap-align: start;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 2.75rem 1.15rem 2.4rem !important;
   }
-  .ns-hiw-vials { max-width: 18rem; }
+
+  .ns-hiw-hero h1 {
+    font-size: clamp(2.35rem, 12vw, 3.35rem) !important;
+  }
+
+  .ns-hiw-hero__vial {
+    width: 30vw;
+    bottom: 6%;
+  }
+
+  .ns-hiw-hero__couple {
+    display: none;
+  }
+
+  .ns-hiw-copy h3 {
+    font-size: clamp(1.45rem, 7vw, 1.85rem) !important;
+  }
+
+  .ns-hiw-frame,
+  .ns-hiw-frame--phone,
+  .ns-hiw-provider__photo,
+  .ns-hiw-lockcard,
+  .ns-hiw-stadium {
+    width: min(100%, 20.5rem);
+    max-width: 20.5rem;
+    margin-inline: auto;
+  }
+
+  .ns-hiw-vials {
+    max-width: 18rem;
+    margin-inline: auto;
+  }
+
+  .ns-hiw-product {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .ns-hiw-card {
+    position: relative !important;
+    top: auto !important;
+    margin-bottom: 0 !important;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

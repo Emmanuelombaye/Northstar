@@ -2,8 +2,9 @@
 
 import { useEffect, useRef, useState, type CSSProperties } from 'react'
 import { Link } from '../../lib/routerAdapter'
+import { NsSnapRail } from './NsSnapRail'
 import '../../styles/hers-how-it-works.css'
-import '../../styles/pax-yucca/yucca-mobile-carousels.css'
+import '../../styles/ns-snap-rail.css'
 
 const Y = '/images/yucca-clone'
 const HIW = `${Y}/hiw`
@@ -291,7 +292,7 @@ export default function HersHowItWorks() {
             <h3>Prescribed, sealed, and delivered</h3>
             <p>If prescribed, your treatment is packed and sent directly to you. Ongoing dose changes continue through the patient portal.</p>
           </div>
-          <div className="ns-hiw-products">
+          <NsSnapRail cols={3} className="ns-hiw-products" hint="Swipe delivery">
             {DELIVER.map((item, i) => (
               <article key={item.label} className={`ns-hiw-product${i === deliverI ? ' is-on' : ''}`}>
                 <div className="ns-hiw-product__frame">
@@ -300,7 +301,7 @@ export default function HersHowItWorks() {
                 <p>{item.label}</p>
               </article>
             ))}
-          </div>
+          </NsSnapRail>
         </div>
       </section>
 
@@ -313,7 +314,7 @@ export default function HersHowItWorks() {
             that can adjust your plan if prescribed.
           </p>
         </div>
-        <div className="ns-hiw-stack">
+        <NsSnapRail cols={4} className="ns-hiw-stack" hint="Swipe care tools">
           {SUPPORT.map((card) => (
             <article key={card.title} className="ns-hiw-card">
               <img src={card.src} alt="" />
@@ -323,7 +324,7 @@ export default function HersHowItWorks() {
               </div>
             </article>
           ))}
-        </div>
+        </NsSnapRail>
       </section>
 
       <section className="ns-hiw-cta">

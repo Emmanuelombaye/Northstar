@@ -1,0 +1,195 @@
+/* Phone image rows: Yucca-style peek snap — never a vertical photo list */
+
+@media (max-width: 900px) {
+  html,
+  body,
+  main,
+  .yucca-home,
+  .yx-clone,
+  .program-explore,
+  .ns-hiw,
+  .ns-yucca {
+    overflow-x: hidden !important;
+  }
+
+  .ns-snap,
+  .ns-snap-wrap > .ns-snap,
+  .yucca-home .ns-snap,
+  .yx-clone .ns-snap,
+  .ns-hiw .ns-snap,
+  .yx-clone .retro-expect__grid.ns-snap,
+  .yx-clone .pax-why__grid.ns-snap,
+  .yucca-home .pax-hiw__grid.ns-snap,
+  .yucca-home .ns-atlas__stage.ns-snap,
+  .yucca-home .ns-faq-media-grid.ns-snap {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+    width: auto !important;
+    max-width: none !important;
+    margin-inline: -1.15rem !important;
+    padding: 4px 1.15rem 18px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-snap-type: x mandatory !important;
+    scroll-padding-inline: 1.15rem !important;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    grid-template-columns: none !important;
+  }
+
+  .ns-snap::-webkit-scrollbar,
+  .ns-snap-wrap > .ns-snap::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ns-snap > *,
+  .ns-snap-wrap > .ns-snap > *,
+  .yucca-home .ns-snap > *,
+  .yx-clone .ns-snap > *,
+  .ns-hiw .ns-snap > * {
+    flex: 0 0 min(78vw, 19.5rem) !important;
+    width: min(78vw, 19.5rem) !important;
+    min-width: min(78vw, 19.5rem) !important;
+    max-width: min(78vw, 19.5rem) !important;
+    scroll-snap-align: start !important;
+    margin: 0 !important;
+  }
+
+  .ns-snap-hint {
+    display: block;
+    margin: 0 0 0.65rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--navy, #0a1f3d) 55%, transparent);
+  }
+
+  .ns-snap-dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin: -4px 0 4px;
+  }
+
+  .ns-snap-dots button {
+    width: 7px;
+    height: 7px;
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--navy, #0a1f3d) 22%, transparent);
+    cursor: pointer;
+  }
+
+  .ns-snap-dots button.is-on {
+    width: 18px;
+    background: var(--navy, #0a1f3d);
+  }
+
+  /* Photo cards fill the slide without stretching the page */
+  .ns-snap .ns-faq-media-card,
+  .ns-snap .faq-media-card,
+  .ns-snap .pax-hiw__card,
+  .ns-snap .goal-hiw-card,
+  .ns-snap .ns-atlas__panel,
+  .ns-snap .retro-expect-card,
+  .ns-snap .pax-why__card,
+  .ns-snap .ns-hiw-card,
+  .ns-snap .ns-hiw-product {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  .ns-snap .ns-faq-media-card img,
+  .ns-snap .faq-media-card img,
+  .ns-snap .ns-hiw-card img {
+    width: 100% !important;
+    height: 13.25rem !important;
+    object-fit: cover !important;
+  }
+
+  .ns-snap .retro-expect-card__media {
+    height: 12.25rem !important;
+    overflow: hidden !important;
+  }
+
+  .ns-snap .retro-expect-card__img,
+  .ns-snap .ns-hiw-product__frame img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .ns-snap .ns-hiw-product__frame {
+    height: 15rem !important;
+  }
+
+  .ns-atlas .ns-snap-hint {
+    color: rgba(249, 247, 242, 0.62);
+  }
+
+  .ns-atlas .ns-snap-dots button {
+    background: rgba(249, 247, 242, 0.3);
+  }
+
+  .ns-atlas .ns-snap-dots button.is-on {
+    background: var(--gold, #c5a059);
+  }
+
+  .ns-snap .pax-hiw__media img,
+  .ns-snap .ns-atlas__vial,
+  .ns-snap .pax-why__media-frame img {
+    object-fit: contain !important;
+  }
+}
+
+@media (min-width: 901px) {
+  .ns-snap-hint,
+  .ns-snap-dots {
+    display: none !important;
+  }
+
+  .ns-snap-wrap--2 > .ns-snap,
+  .ns-snap.ns-snap--2 {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    overflow: visible !important;
+    margin-inline: 0 !important;
+    padding: 0 !important;
+  }
+
+  .ns-snap-wrap--3 > .ns-snap,
+  .ns-snap.ns-snap--3 {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    overflow: visible !important;
+    margin-inline: 0 !important;
+    padding: 0 !important;
+  }
+
+  .ns-snap-wrap--4 > .ns-snap,
+  .ns-snap.ns-snap--4 {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    overflow: visible !important;
+    margin-inline: 0 !important;
+    padding: 0 !important;
+  }
+
+  .ns-snap-wrap--2 > .ns-snap > *,
+  .ns-snap-wrap--3 > .ns-snap > *,
+  .ns-snap-wrap--4 > .ns-snap > *,
+  .ns-snap.ns-snap--2 > *,
+  .ns-snap.ns-snap--3 > *,
+  .ns-snap.ns-snap--4 > * {
+    flex: none !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+  }
+}

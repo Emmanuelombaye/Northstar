@@ -386,29 +386,9 @@
 }
 
 @media (max-width: 759px) {
-  .pax-why__grid,
-  .yx-clone .pax-why__grid,
-  .yucca-home .pax-why__grid {
-    display: flex !important;
-    overflow-x: auto !important;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    grid-template-columns: none !important;
-    gap: 0.9rem !important;
-    padding-bottom: 0.75rem;
-    scrollbar-width: none;
-  }
-
-  .pax-why__grid::-webkit-scrollbar {
-    display: none;
-  }
-
   .pax-why__card,
   .yx-clone .pax-why__card,
   .yucca-home .pax-why__card {
     min-height: 0 !important;
-    flex: 0 0 min(80vw, 18.75rem) !important;
-    width: min(80vw, 18.75rem) !important;
-    scroll-snap-align: start;
   }
 }

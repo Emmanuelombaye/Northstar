@@ -3,6 +3,7 @@
 import { type ReactNode } from 'react'
 import { Link } from '../../lib/routerAdapter'
 import { HOME_CLOSING_IMAGE, HOME_WHY_MEDIA } from '../../lib/nexa-shell/home-data'
+import { NsSnapRail } from './NsSnapRail'
 
 export function RetroWhySection({
   media,
@@ -125,7 +126,7 @@ export function RetroWhySection({
             Telehealth evaluation → clinician decision → pharmacy fulfillment only when prescribed. Compounded medications are not FDA-approved finished products.
           </p>
         </header>
-        <div className="retro-home-why-grid pax-why__grid">
+        <NsSnapRail cols={4} className="retro-home-why-grid pax-why__grid" hint="Swipe to see why">
           {pillars.map((p) => (
             <article key={p.id} className={`retro-home-why-card pax-why__card pax-why__card--${p.tone}`}>
               <div className="pax-why__card-copy">
@@ -136,7 +137,7 @@ export function RetroWhySection({
               <div className="pax-why__card-media">{p.media}</div>
             </article>
           ))}
-        </div>
+        </NsSnapRail>
       </div>
     </section>
   )

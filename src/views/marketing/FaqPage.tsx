@@ -29,7 +29,7 @@ export function FaqPage() {
       </div>
 
       <section className="faq-main-section">
-        <div className="faq-media-grid" aria-hidden="true">
+        <div className="faq-media-grid ns-snap ns-snap--3" aria-hidden="true">
           {faqMedia.map((item) => (
             <figure key={item.src} className="faq-media-card">
               <img src={item.src} alt={item.alt} loading="lazy" decoding="async" />

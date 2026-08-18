@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { RetroClosingSection, RetroWhySection } from './RetroShared'
 import { TREATMENTS_MEDIA } from '../../lib/nexa-shell/treatments-data'
+import { NsSnapRail } from './NsSnapRail'
 import '../../styles/program-explore.css'
 
 const INCLUDES = [
@@ -186,7 +187,7 @@ function ExploreHero({
               {pane.blurb}
             </p>
 
-            <div className="explore-hero-products my-[18px] flex flex-row flex-wrap items-center gap-x-6 gap-y-3 mb-6">
+            <div className="explore-hero-products my-[18px] flex flex-row flex-nowrap items-center gap-x-4 gap-y-2 mb-6 overflow-x-auto">
               {pane.products.map((p) => (
                 <button
                   key={p.id}
@@ -366,7 +367,7 @@ function ExpectSection() {
           {data.title}
         </h2>
         <p className="retro-expect__sub">{data.sub}</p>
-        <div className="retro-expect__grid">
+        <NsSnapRail cols={3} className="retro-expect__grid ns-expect-rail" hint="Swipe week by week">
           {data.weeks.map((w) => (
             <article key={w.tag} className="retro-expect-card">
               <div className="retro-expect-card__media">
@@ -376,20 +377,7 @@ function ExpectSection() {
               <p className="retro-expect-card__desc">{w.text}</p>
             </article>
           ))}
-        </div>
-        <div className="retro-expect__carousel">
-          <div className="retro-expect__track">
-            {data.weeks.map((w) => (
-              <article key={`c-${w.tag}`} className="retro-expect-card retro-expect-card--carousel">
-                <div className="retro-expect-card__media">
-                  <img className="retro-expect-card__img" src={w.img} alt="" loading="lazy" />
-                </div>
-                <h3 className="retro-expect-card__label">{w.tag}</h3>
-                <p className="retro-expect-card__desc">{w.text}</p>
-              </article>
-            ))}
-          </div>
-        </div>
+        </NsSnapRail>
       </div>
     </section>
   )

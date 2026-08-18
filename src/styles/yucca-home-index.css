@@ -10,6 +10,7 @@
 @import './pax-yucca/pax-home-hero.css';
 @import './pax-yucca/nexa-brand-enforce.css';
 @import './pax-yucca/yucca-mobile-carousels.css';
+@import './ns-snap-rail.css';
 
 /* North Star MD tokens over Nexa Yucca shell */
 .yucca-home,

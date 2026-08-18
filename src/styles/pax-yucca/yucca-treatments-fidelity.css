@@ -490,7 +490,8 @@
     width: 100% !important;
     max-width: 430px !important;
     margin-inline: auto !important;
-    min-height: 520px !important;
+    min-height: 0 !important;
+    height: auto !important;
   }
 
   .retro-explore-tabs-wrap .explore-hero-includes {
@@ -504,17 +505,16 @@
   .retro-explore-tabs-wrap .explore-hero-products {
     flex-wrap: nowrap !important;
     overflow-x: auto !important;
-    scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
+    gap: 0.75rem !important;
   }
 
   .retro-explore-tabs-wrap .explore-hero-product {
-    flex: 0 0 min(78vw, 17.5rem) !important;
-    width: min(78vw, 17.5rem) !important;
-    max-width: min(78vw, 17.5rem) !important;
-    min-width: min(78vw, 17.5rem) !important;
-    scroll-snap-align: start;
+    flex: 0 0 auto !important;
+    width: auto !important;
+    max-width: none !important;
+    min-width: 0 !important;
   }
 
   .retro-explore-tabs-wrap .explore-tab-menu {
@@ -1331,16 +1331,13 @@
     grid-template-columns: 1fr !important;
   }
 
-  .yx-clone .retro-expect__grid,
-  .yx-clone .retro-expect--nad .retro-expect__grid,
-  .yx-clone .retro-expect--sermorelin .retro-expect__grid,
-  .yx-clone [data-explore-section-stack='longevity'] .retro-expect__grid,
-  .yx-clone [data-explore-section-stack='muscle-recovery'] .retro-expect__grid {
-    display: none !important;
+  .yx-clone .retro-expect__grid.ns-snap,
+  .yx-clone .ns-expect-rail {
+    display: flex !important;
   }
 
   .yx-clone .retro-expect__carousel {
-    display: block !important;
+    display: none !important;
   }
 
   .yx-clone .retro-home-reviews-track,

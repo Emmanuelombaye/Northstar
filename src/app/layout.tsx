@@ -18,6 +18,7 @@ import "../../css/resources.css";
 import "../../css/treatments.css";
 import "../../css/pax-site.css";
 import "../styles/pax-yucca/yucca-mobile-carousels.css";
+import "../styles/ns-snap-rail.css";
 
 export const viewport: Viewport = {
   width: "device-width",
