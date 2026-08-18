@@ -54,7 +54,7 @@ export default function RootLayout({
         <link
           rel="preload"
           as="image"
-          href="/images/hero-photo.png"
+          href="/upper image on that landing page.png"
         />
       </head>
       <body>
