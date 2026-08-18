@@ -10,9 +10,9 @@ import {
 import { RetroClosingSection, RetroWhySection } from './RetroShared'
 
 const FAQ_MEDIA = [
-  { src: '/images/home/faq-provider-review.png', alt: 'Provider review support iconography' },
-  { src: '/images/home/faq-shipping-pharmacy.png', alt: 'Pharmacy shipping support iconography' },
-  { src: '/images/home/faq-safety-eligibility.png', alt: 'Safety and eligibility support iconography' },
+  { src: '/images/home/faq-provider-review.png?v=20260818c', alt: 'Licensed provider reviewing a clinical intake' },
+  { src: '/images/home/faq-shipping-pharmacy.png?v=20260818c', alt: 'Temperature-controlled pharmacy fulfillment' },
+  { src: '/images/home/faq-safety-eligibility.png?v=20260818c', alt: 'Secure eligibility questionnaire on a phone' },
 ] as const
 
 function HeroSection() {
