@@ -30,11 +30,11 @@ const PROGRAMS = [
 
 const TOTAL_STEPS = INTAKE_PHASES.length
 const COMPLIANCE_DOCS = [
-  { label: 'Telehealth Consent', href: 'https://docs.google.com/document/d/16NYEkgaubSGBqdRZfH1mBFV0G-Xc_V7ComjIPb2KQe4/edit?tab=t.0' },
-  { label: 'HIPAA Notice', href: 'https://docs.google.com/document/d/1_rpphjHgaBxcrYLN3xm8xZvoAHh_xK1wTaT7wgt00aY/edit?tab=t.0' },
-  { label: 'Terms of Use', href: 'https://docs.google.com/document/d/1RKdlEuHLxAIuh871y6T4oaWh_YNClZ1WGXlng4ISVeM/edit?tab=t.0' },
-  { label: 'Medical Disclaimer', href: 'https://docs.google.com/document/d/1sQx8uWGtl51FHtJoleL7tFEE2hUTLWDLXOI0WqFwn_A/edit?tab=t.0' },
-  { label: 'Privacy Policy', href: 'https://docs.google.com/document/d/1AgGkg0ok-ELK36S_OTUSe7Ef-X1lt24f3M0fg-ef0fs/edit?tab=t.0' },
+  { label: 'Telehealth Consent', href: '/telehealth-consent' },
+  { label: 'HIPAA Notice', href: '/privacy' },
+  { label: 'Terms of Use', href: '/terms' },
+  { label: 'Medical Disclaimer', href: '/terms' },
+  { label: 'Privacy Policy', href: '/privacy' },
 ] as const
 
 /** LegitScript-oriented clinical mock intake — North Star MD */
@@ -321,8 +321,8 @@ export default function EligibilityForm() {
                 <p>Compliance documents</p>
                 <ul>
                   {COMPLIANCE_DOCS.map((doc) => (
-                    <li key={doc.href}>
-                      <a href={doc.href} target="_blank" rel="noopener noreferrer">
+                    <li key={doc.label}>
+                      <a href={doc.href}>
                         {doc.label}
                       </a>
                     </li>

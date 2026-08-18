@@ -37,7 +37,7 @@ export function ShopPharmacyFooter() {
         <div>
           <h4>Company</h4>
           <ul>
-            <li><Link to="/about">About Us</Link></li>
+            <li><Link to="/advisors">About Us</Link></li>
             <li><Link to="/faq">FAQs</Link></li>
             <li><Link to="/privacy">Privacy</Link></li>
             <li><Link to="/terms">Terms</Link></li>
@@ -48,11 +48,11 @@ export function ShopPharmacyFooter() {
         <div>
           <h4>Compliance Documents</h4>
           <ul>
-            <li><a href="https://docs.google.com/document/d/1Awz6N8v7kBi4ksN7vB9tVyvYQ1lM9NfOe3Y5WQ1m2k8/edit?tab=t.0" target="_blank" rel="noopener noreferrer">Consent to Telehealth</a></li>
-            <li><a href="https://docs.google.com/document/d/1Y5ikgPhsNQzr5jvIhP9KbZ6GsYvAnQzzm6QfYv2G-9Y/edit?tab=t.0" target="_blank" rel="noopener noreferrer">Notice of Privacy Practices</a></li>
-            <li><a href="https://docs.google.com/document/d/1_rpphjHgaBxcrYLN3xm8xZvoAHh_xK1wTaT7wgt00aY/edit?tab=t.0" target="_blank" rel="noopener noreferrer">HIPAA Notice</a></li>
-            <li><a href="https://docs.google.com/document/d/1mQbLFkD9wFj5lzR9wV5Y7h0hVn3Lr0QwKj0j6m9V4mY/edit?tab=t.0" target="_blank" rel="noopener noreferrer">Medical Consent</a></li>
-            <li><a href="https://docs.google.com/document/d/1sQx8uWGtl51FHtJoleL7tFEE2hUTLWDLXOI0WqFwn_A/edit?tab=t.0" target="_blank" rel="noopener noreferrer">Medical Disclaimer</a></li>
+            <li><Link to="/telehealth-consent">Consent to Telehealth</Link></li>
+            <li><Link to="/privacy">Notice of Privacy Practices</Link></li>
+            <li><Link to="/privacy">HIPAA Notice</Link></li>
+            <li><Link to="/terms">Medical Consent</Link></li>
+            <li><Link to="/terms">Medical Disclaimer</Link></li>
           </ul>
         </div>
       </div>

@@ -37,7 +37,7 @@ function HeroSection() {
             fetchPriority="high"
           />
           <p className="ns-hero-treat-line">
-            Semaglutide or Tirzepatide—two physician-guided GLP-1 pathways, delivered wherever you are.
+            Semaglutide or Tirzepatide—physician-guided GLP-1 care, delivered wherever you are.
           </p>
         </div>
       </div>
@@ -51,7 +51,7 @@ function HeroSection() {
         Find your North Star <em>before</em> decline sets in.
       </h1>
       <p className="sr-only">
-        Semaglutide or Tirzepatide — two physician-guided GLP-1 pathways, delivered wherever you are.
+        Semaglutide or Tirzepatide — physician-guided GLP-1 care, delivered wherever you are.
       </p>
     </section>
   )

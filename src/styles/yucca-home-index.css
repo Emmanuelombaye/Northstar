@@ -469,8 +469,25 @@
   display: none;
 }
 
+/* Desktop CTAs sit on the baked START / HOW IT WORKS pills */
 .yucca-home .ns-hero-banner-mode .ns-hero-hotspots {
-  bottom: 7%;
+  left: 8.2%;
+  bottom: 10.2%;
+  height: 10%;
+  gap: 1.15%;
+  align-items: stretch;
+}
+
+.yucca-home .ns-hero-banner-mode .ns-hero-hotspot {
+  height: 100%;
+}
+
+.yucca-home .ns-hero-banner-mode .ns-hero-hotspot-start {
+  width: 20.6%;
+}
+
+.yucca-home .ns-hero-banner-mode .ns-hero-hotspot-how {
+  width: 18.4%;
 }
 
 /* Sits in the cleared subhead band — do not cover Find Your North Star or the CTAs */
@@ -492,21 +509,47 @@
 
 @media (max-width: 820px) {
   .yucca-home .ns-hero-banner-mode .ns-hero-desktop-img {
-    display: none;
+    display: none !important;
   }
 
+  /* Crop the baked NORTH STAR HEALTH header so the live SiteHeader is the only nav */
   .yucca-home .ns-hero-banner-mode .ns-hero-mobile-img {
-    display: block;
-    width: 100%;
-    height: auto;
-    object-fit: contain;
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 916 / 1565 !important;
+    object-fit: cover !important;
+    object-position: center bottom !important;
   }
 
   .yucca-home .ns-hero-banner-mode .ns-hero-treat-line {
-    left: 5.4%;
-    top: 31.1%;
-    width: 66%;
-    font-size: clamp(0.92rem, 3.5vw, 1.12rem);
-    line-height: 1.35;
+    left: 5.6%;
+    top: 24.2%;
+    width: 78%;
+    max-width: 22rem;
+    font-size: clamp(0.9rem, 3.4vw, 1.06rem);
+    line-height: 1.32;
+  }
+
+  /* Stacked full-width pills on the mobile banner */
+  .yucca-home .ns-hero-banner-mode .ns-hero-hotspots {
+    left: 5.8% !important;
+    right: 5.8% !important;
+    top: 70.8% !important;
+    bottom: auto !important;
+    width: auto;
+    height: 13.4% !important;
+    flex-direction: column;
+    gap: 1.7%;
+    align-items: stretch;
+  }
+
+  .yucca-home .ns-hero-banner-mode .ns-hero-hotspot,
+  .yucca-home .ns-hero-banner-mode .ns-hero-hotspot-start,
+  .yucca-home .ns-hero-banner-mode .ns-hero-hotspot-how {
+    width: 100% !important;
+    height: auto !important;
+    flex: 1;
+    min-height: 44px;
   }
 }
