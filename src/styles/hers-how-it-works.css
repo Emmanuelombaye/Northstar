@@ -654,8 +654,24 @@
   .ns-hiw-hero { height: 140vh; }
   .ns-hiw-hero__vial { width: 42vw; bottom: 18%; }
   .ns-hiw-hero__couple { display: none; }
-  .ns-hiw-products { grid-template-columns: 1fr; max-width: 18rem; }
-  .ns-hiw-product { opacity: 1; transform: none; }
+  .ns-hiw-products {
+    display: flex !important;
+    grid-template-columns: none !important;
+    max-width: none !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 0.9rem;
+    padding: 0.2rem 0 1rem;
+    scrollbar-width: none;
+  }
+  .ns-hiw-products::-webkit-scrollbar { display: none; }
+  .ns-hiw-product {
+    flex: 0 0 min(70vw, 15.5rem);
+    scroll-snap-align: start;
+    opacity: 1;
+    transform: none;
+  }
   .ns-hiw-card { top: 12vh; margin-bottom: 22vh; }
   .ns-hiw-vials { max-width: 18rem; }
 }

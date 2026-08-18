@@ -4,6 +4,11 @@
   gap: 1.1rem !important;
 }
 
+.yx-clone .pax-protocol .retro-protocol__rail {
+  display: grid;
+  gap: 1.1rem;
+}
+
 .yx-clone .pax-protocol .pax-protocol-card {
   --i: 0;
   position: relative;

@@ -179,19 +179,27 @@
 
   .faq-tabs {
     border-radius: 12px;
-    width: 100%;
-    max-width: 480px;
+    width: auto;
+    max-width: none;
     gap: 4px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start;
+    scrollbar-width: none;
   }
 
-  .faq-tab {
-    width: calc(50% - 4px);
-    text-align: center;
-    padding: 8px 12px;
+  .faq-tabs::-webkit-scrollbar {
+    display: none;
   }
 
+  .faq-tab,
   .faq-tab[data-group="all"] {
-    width: 100%;
+    width: auto;
+    flex: 0 0 auto;
+    text-align: center;
+    padding: 8px 14px;
+    white-space: nowrap;
   }
 
   .faq-main-section {
@@ -199,8 +207,24 @@
   }
 
   .faq-media-grid {
-    grid-template-columns: 1fr;
-    max-width: 360px;
-    margin-bottom: 20px;
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    grid-template-columns: none;
+    max-width: none;
+    width: auto;
+    gap: 12px;
+    padding: 0 1rem 8px;
+    scrollbar-width: none;
+  }
+
+  .faq-media-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .faq-media-card {
+    flex: 0 0 min(70vw, 16rem);
+    scroll-snap-align: start;
   }
 }

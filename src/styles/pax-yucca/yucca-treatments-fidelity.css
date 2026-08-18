@@ -1319,7 +1319,14 @@
     grid-template-columns: 1fr !important;
   }
 
-  .yx-clone .retro-expect__grid,
+  .yx-clone .retro-expect__grid {
+    display: none !important;
+  }
+
+  .yx-clone .retro-expect__carousel {
+    display: block !important;
+  }
+
   .yx-clone .retro-home-reviews-track,
   .yx-clone .retro-home-why-grid {
     grid-template-columns: 1fr !important;

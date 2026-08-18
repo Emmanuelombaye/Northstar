@@ -17,6 +17,7 @@ import "../../css/membership.css";
 import "../../css/resources.css";
 import "../../css/treatments.css";
 import "../../css/pax-site.css";
+import "../styles/pax-yucca/yucca-mobile-carousels.css";
 
 export const viewport: Viewport = {
   width: "device-width",

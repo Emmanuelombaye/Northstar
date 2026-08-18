@@ -150,9 +150,26 @@
 }
 
 @media (max-width: 899px) {
+  .pax-hiw__grid {
+    display: flex !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    grid-template-columns: none !important;
+    gap: 0.9rem !important;
+    padding: 0.2rem 0.15rem 1rem;
+    scrollbar-width: none;
+  }
+
+  .pax-hiw__grid::-webkit-scrollbar {
+    display: none;
+  }
+
   .pax-hiw__card {
-    max-width: 26rem;
-    margin-inline: auto;
-    width: 100%;
+    flex: 0 0 min(82vw, 20rem) !important;
+    max-width: min(82vw, 20rem) !important;
+    margin-inline: 0 !important;
+    width: min(82vw, 20rem) !important;
+    scroll-snap-align: start;
   }
 }

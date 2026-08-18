@@ -264,8 +264,26 @@
 
 @media (max-width: 900px) {
   .yucca-home .ns-faq-media-grid {
-    grid-template-columns: 1fr;
-    max-width: 22rem;
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    grid-template-columns: none;
+    max-width: none;
+    width: auto;
+    margin-left: -0.25rem;
+    margin-right: -0.25rem;
+    padding: 0.2rem 1.15rem 1rem;
+    scrollbar-width: none;
+  }
+
+  .yucca-home .ns-faq-media-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .yucca-home .ns-faq-media-card {
+    flex: 0 0 min(72vw, 16.5rem);
+    scroll-snap-align: start;
   }
 }
 

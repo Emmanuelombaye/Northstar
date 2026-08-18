@@ -1,0 +1,193 @@
+/* Yucca-style mobile: one horizontal snap-scroll instead of stacked cards/images */
+
+@media (max-width: 900px) {
+  .ns-mobile-rail,
+  .yucca-home .ns-atlas__stage,
+  .yucca-home .pax-hiw__grid,
+  .pax-hiw__grid,
+  .yucca-home .ns-faq-media-grid,
+  .yucca-home .pax-why__grid,
+  .yx-clone .pax-why__grid,
+  .pax-why__grid,
+  .faq-media-grid,
+  .ns-hiw-products,
+  .yx-clone .retro-protocol__rail {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    gap: 0.9rem !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-snap-type: x mandatory !important;
+    scroll-padding-inline: 1.15rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    grid-template-columns: none !important;
+    max-width: none !important;
+    width: auto !important;
+    margin-inline: -0.35rem !important;
+    padding: 0.2rem 1.15rem 1.05rem !important;
+  }
+
+  .ns-mobile-rail::-webkit-scrollbar,
+  .yucca-home .ns-atlas__stage::-webkit-scrollbar,
+  .pax-hiw__grid::-webkit-scrollbar,
+  .yucca-home .ns-faq-media-grid::-webkit-scrollbar,
+  .pax-why__grid::-webkit-scrollbar,
+  .faq-media-grid::-webkit-scrollbar,
+  .ns-hiw-products::-webkit-scrollbar,
+  .yx-clone .retro-protocol__rail::-webkit-scrollbar {
+    display: none;
+  }
+
+  .yucca-home .ns-atlas__panel {
+    flex: 0 0 min(82vw, 20.5rem) !important;
+    width: min(82vw, 20.5rem) !important;
+    max-width: min(82vw, 20.5rem) !important;
+    scroll-snap-align: start;
+  }
+
+  .pax-hiw__card,
+  .yucca-home .pax-hiw__card,
+  .goal-hiw-card {
+    flex: 0 0 min(82vw, 20rem) !important;
+    width: min(82vw, 20rem) !important;
+    max-width: min(82vw, 20rem) !important;
+    margin-inline: 0 !important;
+    scroll-snap-align: start;
+    height: auto !important;
+  }
+
+  .yucca-home .ns-faq-media-card,
+  .faq-media-card {
+    flex: 0 0 min(72vw, 16.5rem) !important;
+    width: min(72vw, 16.5rem) !important;
+    max-width: min(72vw, 16.5rem) !important;
+    scroll-snap-align: start;
+  }
+
+  .pax-why__card,
+  .yucca-home .pax-why__card,
+  .yx-clone .pax-why__card {
+    flex: 0 0 min(80vw, 18.75rem) !important;
+    width: min(80vw, 18.75rem) !important;
+    min-width: min(80vw, 18.75rem) !important;
+    max-width: min(80vw, 18.75rem) !important;
+    scroll-snap-align: start;
+  }
+
+  .ns-hiw-product {
+    flex: 0 0 min(70vw, 15.5rem) !important;
+    width: min(70vw, 15.5rem) !important;
+    max-width: min(70vw, 15.5rem) !important;
+    scroll-snap-align: start;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .yx-clone .retro-protocol__rail .pax-protocol-card,
+  .yx-clone .pax-protocol .retro-protocol__rail .pax-protocol-card {
+    flex: 0 0 min(82vw, 20rem) !important;
+    width: min(82vw, 20rem) !important;
+    max-width: min(82vw, 20rem) !important;
+    scroll-snap-align: start;
+  }
+
+  /* Treatments “what to expect” — use the existing snap track, not a stacked grid */
+  .yx-clone .retro-expect__grid {
+    display: none !important;
+  }
+
+  .yx-clone .retro-expect__carousel {
+    display: block !important;
+    margin-top: 1.35rem !important;
+    margin-left: -16px !important;
+    margin-right: -16px !important;
+  }
+
+  .yx-clone .retro-expect__track {
+    display: flex !important;
+    gap: 14px !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch;
+    padding: 6px 12vw 12px !important;
+    scrollbar-width: none;
+  }
+
+  .yx-clone .retro-expect__track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .yx-clone .retro-expect-card--carousel {
+    flex: 0 0 auto !important;
+    width: 78vw !important;
+    max-width: 22rem !important;
+    scroll-snap-align: center !important;
+  }
+
+  /* Treatments hero product pickers — swipe, don’t wrap into a stack */
+  .program-explore .explore-hero-products,
+  .retro-explore-tabs-wrap .explore-hero-products {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    gap: 0.85rem !important;
+    padding-bottom: 0.4rem;
+    scrollbar-width: none;
+  }
+
+  .program-explore .explore-hero-products::-webkit-scrollbar,
+  .retro-explore-tabs-wrap .explore-hero-products::-webkit-scrollbar {
+    display: none;
+  }
+
+  .retro-explore-tabs-wrap .explore-hero-product,
+  .program-explore .explore-hero-product {
+    flex: 0 0 min(78vw, 17.5rem) !important;
+    width: min(78vw, 17.5rem) !important;
+    max-width: min(78vw, 17.5rem) !important;
+    min-width: min(78vw, 17.5rem) !important;
+    scroll-snap-align: start;
+  }
+
+  .faq-tabs {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    width: auto !important;
+    max-width: none !important;
+    justify-content: flex-start !important;
+    scrollbar-width: none;
+  }
+
+  .faq-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .faq-tab,
+  .faq-tab[data-group='all'] {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    white-space: nowrap;
+  }
+
+  .ns-intake-programs {
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 0.25rem;
+  }
+
+  .ns-intake-programs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ns-intake-program {
+    flex: 0 0 auto;
+  }
+}
