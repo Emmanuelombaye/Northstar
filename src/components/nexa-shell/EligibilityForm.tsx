@@ -29,6 +29,13 @@ const PROGRAMS = [
 ] as const
 
 const TOTAL_STEPS = INTAKE_PHASES.length
+const COMPLIANCE_DOCS = [
+  { label: 'Telehealth Consent', href: 'https://docs.google.com/document/d/16NYEkgaubSGBqdRZfH1mBFV0G-Xc_V7ComjIPb2KQe4/edit?tab=t.0' },
+  { label: 'HIPAA Notice', href: 'https://docs.google.com/document/d/1_rpphjHgaBxcrYLN3xm8xZvoAHh_xK1wTaT7wgt00aY/edit?tab=t.0' },
+  { label: 'Terms of Use', href: 'https://docs.google.com/document/d/1RKdlEuHLxAIuh871y6T4oaWh_YNClZ1WGXlng4ISVeM/edit?tab=t.0' },
+  { label: 'Medical Disclaimer', href: 'https://docs.google.com/document/d/1sQx8uWGtl51FHtJoleL7tFEE2hUTLWDLXOI0WqFwn_A/edit?tab=t.0' },
+  { label: 'Privacy Policy', href: 'https://docs.google.com/document/d/1AgGkg0ok-ELK36S_OTUSe7Ef-X1lt24f3M0fg-ef0fs/edit?tab=t.0' },
+] as const
 
 /** LegitScript-oriented clinical mock intake — North Star MD */
 export default function EligibilityForm() {
@@ -310,6 +317,18 @@ export default function EligibilityForm() {
               <p className="ns-intake-hint">
                 Submitting this intake does not guarantee a prescription. A licensed provider must approve treatment.
               </p>
+              <div className="ns-intake-docs">
+                <p>Compliance documents</p>
+                <ul>
+                  {COMPLIANCE_DOCS.map((doc) => (
+                    <li key={doc.href}>
+                      <a href={doc.href} target="_blank" rel="noopener noreferrer">
+                        {doc.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </fieldset>
           )}
 
