@@ -54,7 +54,7 @@ export default function RootLayout({
         <link
           rel="preload"
           as="image"
-          href="/images/home/hero-desktop-treatments.png?v=20260818e"
+          href="/images/home/hero-desktop-treatments.png?v=20260818f"
         />
       </head>
       <body>
