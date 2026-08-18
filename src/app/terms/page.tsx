@@ -1,10 +1,12 @@
-import { SiteLayout } from "@/components/layout/SiteLayout";
-import { TermsPage } from "@/views/marketing/TermsPage";
+import { SiteLayout } from '@/components/layout/SiteLayout'
+import { PolicyDocumentPage } from '@/views/marketing/PolicyDocumentPage'
+import { getPolicy } from '@/lib/policies'
 
 export default function Terms() {
+  const doc = getPolicy('terms-of-use')!
   return (
     <SiteLayout>
-      <TermsPage />
+      <PolicyDocumentPage doc={doc} />
     </SiteLayout>
-  );
+  )
 }

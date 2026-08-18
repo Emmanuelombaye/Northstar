@@ -10,6 +10,7 @@ import {
   logoutPortal,
   type PortalUser,
 } from "../../lib/portalAuth";
+import { PolicyLibrary } from "../../components/nexa-shell/PolicyBody";
 
 const NAV = [
   { id: "dashboard", label: "Dashboard" },
@@ -25,13 +26,6 @@ const NAV = [
 ] as const;
 
 const MOBILE_TABS = ["dashboard", "appointments", "messages", "health"] as const;
-const COMPLIANCE_DOCS = [
-  { label: "Telehealth Consent", href: "/telehealth-consent" },
-  { label: "HIPAA Notice", href: "/privacy" },
-  { label: "Terms of Use", href: "/terms" },
-  { label: "Medical Disclaimer", href: "/terms" },
-  { label: "Privacy Policy", href: "/privacy" },
-] as const;
 
 function SignIn() {
   const navigate = useNavigate();
@@ -172,18 +166,7 @@ function PortalPurchaseGate() {
             View Treatments
           </Link>
         </div>
-        <div className="pc-compliance-docs">
-          <p>Submission compliance documents</p>
-          <ul>
-            {COMPLIANCE_DOCS.map((doc) => (
-              <li key={doc.label}>
-                <a href={doc.href}>
-                  {doc.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <PolicyLibrary heading="Read these documents on this website" />
       </div>
     </div>
   );
@@ -374,19 +357,8 @@ function SectionContent({
       return (
         <>
           <h1>Documents</h1>
-          <p className="ns-lead">Consent forms, lab PDFs, and care summaries.</p>
-          <div className="pc-compliance-docs">
-            <p>Compliance documents</p>
-            <ul>
-              {COMPLIANCE_DOCS.map((doc) => (
-                <li key={doc.label}>
-                  <a href={doc.href}>
-                    {doc.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <p className="ns-lead">Open each compliance document here. They display on this website.</p>
+          <PolicyLibrary heading="North Star MD policies" />
         </>
       );
     case "settings":

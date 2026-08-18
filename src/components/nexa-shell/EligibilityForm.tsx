@@ -11,7 +11,9 @@ import {
   isValidZip,
 } from '../../lib/nexa-shell/intake'
 import { YUCCA } from '../../lib/nexa-shell/home-data'
+import { POLICIES } from '../../lib/policies'
 import { markPortalPurchased } from '../../lib/portalAuth'
+import { PolicyBody } from './PolicyBody'
 
 const PROGRAMS = [
   {
@@ -29,13 +31,6 @@ const PROGRAMS = [
 ] as const
 
 const TOTAL_STEPS = INTAKE_PHASES.length
-const COMPLIANCE_DOCS = [
-  { label: 'Telehealth Consent', href: '/telehealth-consent' },
-  { label: 'HIPAA Notice', href: '/privacy' },
-  { label: 'Terms of Use', href: '/terms' },
-  { label: 'Medical Disclaimer', href: '/terms' },
-  { label: 'Privacy Policy', href: '/privacy' },
-] as const
 
 /** LegitScript-oriented clinical mock intake — North Star MD */
 export default function EligibilityForm() {
@@ -318,16 +313,15 @@ export default function EligibilityForm() {
                 Submitting this intake does not guarantee a prescription. A licensed provider must approve treatment.
               </p>
               <div className="ns-intake-docs">
-                <p>Compliance documents</p>
-                <ul>
-                  {COMPLIANCE_DOCS.map((doc) => (
-                    <li key={doc.label}>
-                      <a href={doc.href}>
-                        {doc.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+                <p>Read these documents on this website before you continue</p>
+                {POLICIES.map((doc) => (
+                  <details key={doc.slug} className="ns-policy-embed">
+                    <summary>{doc.navLabel}</summary>
+                    <div className="ns-policy-embed-body">
+                      <PolicyBody doc={doc} compact />
+                    </div>
+                  </details>
+                ))}
               </div>
             </fieldset>
           )}

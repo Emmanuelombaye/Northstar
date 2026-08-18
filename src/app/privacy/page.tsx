@@ -1,10 +1,12 @@
-import { SiteLayout } from "@/components/layout/SiteLayout";
-import { PrivacyPage } from "@/views/marketing/PrivacyPage";
+import { SiteLayout } from '@/components/layout/SiteLayout'
+import { PolicyDocumentPage } from '@/views/marketing/PolicyDocumentPage'
+import { getPolicy } from '@/lib/policies'
 
 export default function Privacy() {
+  const doc = getPolicy('privacy-policy')!
   return (
     <SiteLayout>
-      <PrivacyPage />
+      <PolicyDocumentPage doc={doc} />
     </SiteLayout>
-  );
+  )
 }

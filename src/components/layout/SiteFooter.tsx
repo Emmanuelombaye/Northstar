@@ -49,13 +49,14 @@ export function SiteFooter() {
         </div>
 
         <div>
-          <h4>Compliance Documents</h4>
+          <h4>Policies</h4>
           <ul>
-            <li><a href="/telehealth-consent">Telehealth Consent</a></li>
-            <li><a href="/privacy">HIPAA Notice</a></li>
-            <li><a href="/terms">Terms of Use</a></li>
-            <li><a href="/terms">Medical Disclaimer</a></li>
-            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/policies">All policies</a></li>
+            <li><a href="/policies/consent-to-telehealth">Telehealth Consent</a></li>
+            <li><a href="/policies/hipaa-notice">HIPAA Notice</a></li>
+            <li><a href="/policies/terms-of-use">Terms of Use</a></li>
+            <li><a href="/policies/fda-and-medical-disclaimer">Medical Disclaimer</a></li>
+            <li><a href="/policies/privacy-policy">Privacy Policy</a></li>
           </ul>
         </div>
       </div>
