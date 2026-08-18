@@ -143,7 +143,7 @@ export function FaqPage() {
         </p>
         <h2>Still have questions? Chat with our team.</h2>
         <p className="cta-sub">Our clinical care coordinators are standing by to guide you through payment, state coverage, or lab options.</p>
-        <a href="https://joinnorthstarmd.com/care/north-star-md/shop?brand=north-star-md&amp;brandId=c8e7f6a2-4b1d-4e9f-a3c2-1d5e8f7a6b4c" data-shop="catalog" className="btn btn-gold btn-pill btn-lg">Start Live Intake</a>
+        <a href="/start" className="btn btn-gold btn-pill btn-lg">Start Live Intake</a>
       </section>
     
     </main>

@@ -72,7 +72,7 @@ export function MembershipPage() {
                   <span>Discreet, temperature-safe prescription shipping</span>
                 </li>
               </ul>
-              <a href="https://joinnorthstarmd.com/care/north-star-md/shop" data-shop="category" data-shop-category="metabolic" className="btn btn-navy btn-pill btn-block">Select Core</a>
+              <a href="/start" data-shop="category" data-shop-category="metabolic" className="btn btn-navy btn-pill btn-block">Select Core</a>
             </article>
 
             {/* Tier 2: Longevity Premium */}
@@ -121,7 +121,7 @@ export function MembershipPage() {
                   <span>Quarterly plan review &amp; lab updates</span>
                 </li>
               </ul>
-              <a href="https://joinnorthstarmd.com/care/north-star-md/shop" data-shop="category" data-shop-category="longevity" className="btn btn-gold btn-pill btn-block">Select Premium</a>
+              <a href="/start" data-shop="category" data-shop-category="longevity" className="btn btn-gold btn-pill btn-block">Select Premium</a>
             </article>
 
             {/* Tier 3: Executive Elite */}
@@ -169,7 +169,7 @@ export function MembershipPage() {
                   <span>Annual body composition scanning &amp; analysis</span>
                 </li>
               </ul>
-              <a href="https://joinnorthstarmd.com/care/north-star-md/shop" data-shop="category" data-shop-category="executive" className="btn btn-navy btn-pill btn-block">Select Elite</a>
+              <a href="/start" data-shop="category" data-shop-category="executive" className="btn btn-navy btn-pill btn-block">Select Elite</a>
             </article>
           </div>
         </div>
@@ -381,7 +381,7 @@ export function MembershipPage() {
             <details>
               <summary>How does the secure White-Label checkout operate?</summary>
               <p>
-                Once you select your plan tier, you are guided through a HIPAA-aligned, secure medical intake powered by our backend partner, Peak Health. The patient dashboard is fully customized to present exclusive North Star MD clinical standards, ensuring a premium, private care flow.
+                Once you select your plan tier, you are guided through a HIPAA-aligned, secure North Star MD medical intake. The patient dashboard is customized to North Star MD clinical standards, ensuring a premium and private care flow.
               </p>
             </details>
           </div>
@@ -398,7 +398,7 @@ export function MembershipPage() {
         </p>
         <h2>Ready to invest in a longer, healthier life?</h2>
         <p className="cta-sub">Enroll today in a direct physician-led care membership program customized precisely to your biology.</p>
-        <a href="https://joinnorthstarmd.com/care/north-star-md/shop?brand=north-star-md&amp;brandId=c8e7f6a2-4b1d-4e9f-a3c2-1d5e8f7a6b4c" data-shop="catalog" className="btn btn-gold btn-pill btn-lg">Start Your Intake</a>
+        <a href="/start" className="btn btn-gold btn-pill btn-lg">Start Your Intake</a>
       </section>
     
     </main>

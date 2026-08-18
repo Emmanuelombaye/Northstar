@@ -367,7 +367,7 @@ export function CheckoutIntakeWizard() {
             <span className="ns-intake-badge">Step 9 — Patient login</span>
             <h2 className="ns-intake-title">Open your North Star patient portal</h2>
             <p className="ns-intake-sub">
-              Intake is complete on North Star MD. Log in on Peak Health to access your branded patient portal — orders, messages, and care.
+              Intake is complete on North Star MD. Log in to your North Star patient portal to access orders, messages, and care.
             </p>
             <ol className="ns-intake-portal-steps">
               <li>North Star MD patient dashboard</li>

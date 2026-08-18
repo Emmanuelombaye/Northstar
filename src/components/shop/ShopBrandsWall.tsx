@@ -7,7 +7,7 @@ import { SafeImage } from "./SafeImage";
 const BRANDS = [
   { name: "North Star MD", tag: "House brand", logo: "★" },
   { name: "Compounded Rx", tag: "503A pharmacies", logo: "Rx" },
-  { name: "Peak Health", tag: "Portal partner", logo: "◆" },
+  { name: "North Star Portal", tag: "Patient platform", logo: "◆" },
   { name: "VialsRX", tag: "Fulfillment", logo: "◇" },
 ];
 

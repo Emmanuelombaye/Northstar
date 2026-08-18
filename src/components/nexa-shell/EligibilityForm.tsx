@@ -310,7 +310,7 @@ export default function EligibilityForm() {
                   onChange={(e) => setForm({ ...form, authorizeReview: e.target.checked })}
                 />
                 <span>
-                  I authorize Peakcare&apos;s affiliated clinicians to securely review my medical records and prescribe
+                  I authorize North Star MD&apos;s affiliated clinicians to securely review my medical records and prescribe
                   the necessary medication if candidate. *
                 </span>
               </label>

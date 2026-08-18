@@ -158,7 +158,7 @@ export function SermorelinPage() {
                 <span className="price-period">/ month</span>
               </div>
               <a
-                href="https://joinnorthstarmd.com/care/north-star-md/shop?brand=north-star-md&amp;brandId=c8e7f6a2-4b1d-4e9f-a3c2-1d5e8f7a6b4c"
+                href="/start"
                 data-shop="category"
                 data-shop-category="sermorelin"
                 className="btn btn-gold btn-pill btn-block btn-lg"
