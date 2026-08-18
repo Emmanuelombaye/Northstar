@@ -21,16 +21,16 @@ function HeroSection() {
       <div className="ns-hero-slides">
         <div className="ns-hero-slide is-active">
           <img
-            src="/upper image on that landing page.png"
-            data-fallback="/new upper landing image.png"
+            src="/images/home/hero-desktop-treatments.png?v=20260818d"
+            data-fallback="/upper image on that landing page.png"
             alt="Physician-guided longevity with North Star MD"
             className="ns-hero-desktop-img"
             decoding="async"
             fetchPriority="high"
           />
           <img
-            src="/images/heroheaderformobiledisplay.png"
-            data-fallback="/images/heroheaderformobiledisplay.webp"
+            src="/images/home/hero-mobile-treatments.png?v=20260818d"
+            data-fallback="/images/heroheaderformobiledisplay.png"
             alt="Physician-guided longevity with North Star MD"
             className="ns-hero-mobile-img"
             decoding="async"
