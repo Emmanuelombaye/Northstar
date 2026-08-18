@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, type CSSProperties } from 'react'
 import { Link } from '../../lib/routerAdapter'
 import '../../styles/hers-how-it-works.css'
+import '../../styles/pax-yucca/yucca-mobile-carousels.css'
 
 const Y = '/images/yucca-clone'
 const HIW = `${Y}/hiw`

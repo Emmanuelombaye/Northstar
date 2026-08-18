@@ -94,11 +94,18 @@
   }
 
   /* Treatments “what to expect” — use the existing snap track, not a stacked grid */
-  .yx-clone .retro-expect__grid {
+  .yx-clone .retro-expect__grid,
+  .yx-clone .retro-expect--nad .retro-expect__grid,
+  .yx-clone .retro-expect--sermorelin .retro-expect__grid,
+  .yx-clone [data-explore-section-stack='longevity'] .retro-expect__grid,
+  .yx-clone [data-explore-section-stack='muscle-recovery'] .retro-expect__grid,
+  .yx-clone [data-explore-section-stack='weight-loss'] .retro-expect__grid {
     display: none !important;
   }
 
-  .yx-clone .retro-expect__carousel {
+  .yx-clone .retro-expect__carousel,
+  .yx-clone .retro-expect--nad .retro-expect__carousel,
+  .yx-clone .retro-expect--sermorelin .retro-expect__carousel {
     display: block !important;
     margin-top: 1.35rem !important;
     margin-left: -16px !important;
@@ -189,5 +196,141 @@
 
   .ns-intake-program {
     flex: 0 0 auto;
+  }
+
+  /* Why / reviews — beat fidelity 1-column stacks */
+  .yx-clone .retro-home-why-grid,
+  .yx-clone .pax-why__grid,
+  .yucca-home .pax-why__grid,
+  .yx-clone .retro-home-reviews-track,
+  .yx-clone .pax-reviews__track,
+  .yucca-home .pax-reviews__track {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-snap-type: x mandatory !important;
+    grid-template-columns: none !important;
+    gap: 0.9rem !important;
+    width: auto !important;
+    max-width: none !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .yx-clone .retro-home-why-card,
+  .yx-clone .pax-why__card,
+  .yx-clone .retro-home-reviews-slide,
+  .yx-clone .pax-reviews__slide {
+    flex: 0 0 min(80vw, 18.75rem) !important;
+    width: min(80vw, 18.75rem) !important;
+    max-width: min(80vw, 18.75rem) !important;
+    scroll-snap-align: start;
+  }
+
+  /* Treatments protocol cards — swipe, don’t list */
+  .yx-clone .pax-protocol .retro-protocol__rail,
+  .yx-clone .retro-protocol__rail.ns-mobile-rail {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    grid-template-columns: none !important;
+    gap: 0.9rem !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .yx-clone .pax-protocol .retro-protocol__rail .pax-protocol-card,
+  .yx-clone .retro-protocol__rail .pax-protocol-card {
+    flex: 0 0 min(82vw, 20rem) !important;
+    width: min(82vw, 20rem) !important;
+    max-width: min(82vw, 20rem) !important;
+    min-width: min(82vw, 20rem) !important;
+    scroll-snap-align: start;
+  }
+
+  /* How it works — support images as one horizontal snap, not a tall sticky stack */
+  .ns-hiw-support .ns-hiw-stack,
+  .ns-hiw .ns-hiw-stack {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-snap-type: x mandatory !important;
+    gap: 0.9rem !important;
+    width: auto !important;
+    max-width: none !important;
+    margin: 1.25rem -0.35rem 0 !important;
+    padding: 0.2rem 1.15rem 1.05rem !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .ns-hiw-support .ns-hiw-card,
+  .ns-hiw .ns-hiw-card {
+    position: relative !important;
+    top: auto !important;
+    flex: 0 0 min(82vw, 20rem) !important;
+    width: min(82vw, 20rem) !important;
+    max-width: min(82vw, 20rem) !important;
+    margin: 0 !important;
+    scroll-snap-align: start;
+  }
+
+  .ns-hiw-support .ns-hiw-stack::-webkit-scrollbar,
+  .ns-hiw .ns-hiw-stack::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Treatments category tabs — swipe instead of overflowing 606px grid */
+  .retro-explore-tabs-wrap .explore-tab-menu,
+  .yx-clone .explore-tab-menu {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    width: auto !important;
+    max-width: none !important;
+    grid-template-columns: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 0 1rem 0.4rem !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .retro-explore-tabs-wrap .explore-tab-link,
+  .yx-clone .explore-tab-link {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    min-width: 8.5rem !important;
+    white-space: nowrap;
+  }
+
+  /* Membership / shop image cards — swipe instead of a long vertical list */
+  .plans-grid,
+  .shop-grid-premium {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    grid-template-columns: none !important;
+    gap: 0.9rem !important;
+    padding: 0.2rem 1.15rem 1.05rem !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .plans-grid .card-membership,
+  .shop-grid-premium .shop-card-premium {
+    flex: 0 0 min(82vw, 20rem) !important;
+    width: min(82vw, 20rem) !important;
+    max-width: min(82vw, 20rem) !important;
+    scroll-snap-align: start;
+  }
+
+  .plans-grid .card-membership:last-child {
+    grid-column: auto !important;
+    max-width: min(82vw, 20rem) !important;
   }
 }

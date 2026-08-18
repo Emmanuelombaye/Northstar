@@ -672,7 +672,25 @@
     opacity: 1;
     transform: none;
   }
-  .ns-hiw-card { top: 12vh; margin-bottom: 22vh; }
+  .ns-hiw-support .ns-hiw-stack {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 0.9rem;
+    padding: 0.2rem 0 1rem;
+    scrollbar-width: none;
+  }
+  .ns-hiw-support .ns-hiw-stack::-webkit-scrollbar { display: none; }
+  .ns-hiw-support .ns-hiw-card {
+    position: relative !important;
+    top: auto !important;
+    flex: 0 0 min(82vw, 20rem);
+    width: min(82vw, 20rem);
+    margin-bottom: 0 !important;
+    scroll-snap-align: start;
+  }
   .ns-hiw-vials { max-width: 18rem; }
 }
 
