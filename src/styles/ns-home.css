@@ -11,6 +11,7 @@
 @import './ns/ns-brand-enforce.css';
 @import './ns/ns-mobile-carousels.css';
 @import './ns-snap-rail.css';
+@import './ns-phone.css';
 
 /* North Star MD tokens over Nexa Yucca shell */
 .yucca-home,
@@ -427,29 +428,8 @@
 }
 
 @media (max-width: 820px) {
-  .ns-atlas__stage {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    grid-template-columns: none;
-    gap: 0.9rem;
-    padding: 0.2rem 0.15rem 1rem;
-    scrollbar-width: none;
-  }
-
-  .ns-atlas__stage::-webkit-scrollbar {
-    display: none;
-  }
-
-  .ns-atlas__panel {
-    flex: 0 0 min(82vw, 20.5rem);
-    padding: 1.15rem 1.1rem 1.25rem;
-    scroll-snap-align: start;
-  }
-
   .ns-atlas__vial-wrap {
-    min-height: 9rem;
+    min-height: 7.5rem;
   }
 
   .ns-atlas__vial {
@@ -566,5 +546,28 @@
     height: auto !important;
     flex: 1;
     min-height: 44px;
+  }
+}
+
+@media (max-width: 900px) {
+  .yucca-home .ns-atlas .ns-atlas__panel,
+  .yucca-home .ns-atlas .ns-snap > .ns-atlas__panel {
+    background: #f9f7f2 !important;
+    color: var(--navy, #0a1f3d) !important;
+    border-color: color-mix(in srgb, var(--gold, #c5a059) 55%, transparent) !important;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22) !important;
+    transform: none !important;
+    padding: 1rem 1rem 1.1rem !important;
+  }
+
+  .yucca-home .ns-atlas .ns-atlas__desc,
+  .yucca-home .ns-atlas .ns-atlas__price-note,
+  .yucca-home .ns-atlas .ns-atlas__cadence {
+    color: rgba(10, 31, 61, 0.68) !important;
+  }
+
+  .yucca-home .ns-atlas .ns-atlas__cta--ghost {
+    color: var(--navy, #0a1f3d) !important;
+    border-color: rgba(10, 31, 61, 0.22) !important;
   }
 }

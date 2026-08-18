@@ -1,0 +1,260 @@
+/* Phone layout — last-load overrides so Figma 1440px dumps cannot clip the page. */
+
+@media (max-width: 900px) {
+  html,
+  body {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+  }
+
+  .yx-clone,
+  .yx-clone.program-explore,
+  .program-explore,
+  .yucca-home,
+  .ns-hiw,
+  .ns-yucca {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+  }
+
+  .yx-clone .u-container,
+  .yx-clone .explore-hero-container,
+  .program-explore .explore-hero-container,
+  .retro-explore-tabs-wrap .explore-hero-container,
+  .retro-explore-tabs-wrap .u-container,
+  .retro-explore-tabs-wrap [data-explore-tab-pane] .explore-hero-container,
+  .retro-explore-tabs-wrap [data-explore-tab-pane] .explore-hero-grid {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+    margin-inline: 0 !important;
+    padding-inline: 1rem !important;
+  }
+
+  .program-explore .explore-hero-section,
+  .retro-explore-tabs-wrap [data-explore-tab-pane] .explore-hero-section,
+  .yx-clone .explore-hero-section {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    padding-bottom: 2rem !important;
+  }
+
+  .program-explore .explore-hero-grid,
+  .retro-explore-tabs-wrap .explore-hero-grid,
+  .retro-explore-tabs-wrap [data-explore-tab-pane] .explore-hero-grid,
+  .retro-explore-tabs-wrap [data-explore-tab-pane='weight-loss'] .explore-hero-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 1.25rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+  }
+
+  .program-explore .explore-hero-card,
+  .program-explore .explore-hero-card[data-card='wl'],
+  .retro-explore-tabs-wrap .explore-hero-card,
+  .retro-explore-tabs-wrap [data-explore-tab-pane] .explore-hero-card,
+  .retro-explore-tabs-wrap [data-explore-tab-pane='weight-loss'] .explore-hero-card[data-card='wl'] {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    flex: none !important;
+    height: auto !important;
+    min-height: 20rem !important;
+    aspect-ratio: auto !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+  }
+
+  .program-explore .explore-hero-card-footer,
+  .retro-explore-tabs-wrap .explore-hero-card-footer {
+    flex-wrap: wrap !important;
+    row-gap: 0.5rem !important;
+    overflow: visible !important;
+  }
+
+  .program-explore .explore-hero-content,
+  .retro-explore-tabs-wrap .explore-hero-content,
+  .retro-explore-tabs-wrap [data-explore-tab-pane] .explore-hero-content,
+  .retro-explore-tabs-wrap [data-explore-tab-pane='weight-loss'] .explore-hero-content,
+  .program-explore .explore-hero-copy,
+  .retro-explore-tabs-wrap .explore-hero-copy,
+  .retro-explore-tabs-wrap [data-explore-tab-pane='weight-loss'] .explore-hero-copy,
+  .program-explore .explore-hero-products,
+  .retro-explore-tabs-wrap .explore-hero-products,
+  .retro-explore-tabs-wrap [data-explore-tab-pane='weight-loss'] .explore-hero-products,
+  .program-explore .explore-hero-includes,
+  .retro-explore-tabs-wrap .explore-hero-includes,
+  .program-explore .explore-hero-plans,
+  .program-explore .explore-hero-guarantee,
+  .retro-explore-tabs-wrap .explore-hero-guarantee,
+  .retro-explore-tabs-wrap [data-explore-tab-pane='weight-loss'] .explore-hero-guarantee,
+  .program-explore .explore-hero-pricing,
+  .retro-explore-tabs-wrap .explore-hero-pricing,
+  .retro-explore-tabs-wrap [data-explore-tab-pane='weight-loss'] .explore-hero-pricing,
+  .program-explore .explore-hero-cta,
+  .retro-explore-tabs-wrap .explore-hero-cta,
+  .retro-explore-tabs-wrap [data-explore-tab-pane='weight-loss'] .explore-hero-cta,
+  .program-explore .explore-hero-divider,
+  .retro-explore-tabs-wrap .explore-hero-divider {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+    transform: none !important;
+  }
+
+  .program-explore .explore-hero-product,
+  .retro-explore-tabs-wrap .explore-hero-product,
+  .retro-explore-tabs-wrap [data-explore-tab-pane='weight-loss'] .explore-hero-product,
+  .retro-explore-tabs-wrap [data-explore-tab-pane='weight-loss'] .explore-hero-product:first-child,
+  .retro-explore-tabs-wrap [data-explore-tab-pane='weight-loss'] .explore-hero-product:nth-child(2) {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: auto !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  .program-explore .explore-hero-product-copy,
+  .retro-explore-tabs-wrap .explore-hero-product-copy,
+  .retro-explore-tabs-wrap [data-explore-tab-pane='weight-loss'] .explore-hero-product-copy {
+    position: static !important;
+    left: auto !important;
+    width: auto !important;
+    max-width: 100% !important;
+  }
+
+  .program-explore .explore-hero-product-name,
+  .retro-explore-tabs-wrap [data-explore-tab-pane='weight-loss'] .explore-hero-product-name {
+    white-space: normal !important;
+  }
+
+  .program-explore .explore-hero-guarantee-card,
+  .retro-explore-tabs-wrap .explore-hero-guarantee-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  .yx-clone .retro-protocol,
+  .yx-clone .retro-clinical,
+  .yx-clone .retro-knowall,
+  .yx-clone .retro-expect {
+    overflow: visible !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .yx-clone .retro-protocol__inner,
+  .yx-clone .retro-clinical__inner,
+  .yx-clone .retro-knowall__inner,
+  .yx-clone .retro-expect__inner {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-width: 0 !important;
+    padding-inline: 0 !important;
+  }
+
+  /* Homepage compare cards: solid cream so the peek is readable */
+  .ns-atlas {
+    overflow-x: hidden;
+    padding-inline: 0;
+  }
+
+  .ns-atlas__container {
+    width: calc(100% - 1.25rem) !important;
+    max-width: 100% !important;
+  }
+
+  .ns-atlas .ns-snap > .ns-atlas__panel,
+  .ns-atlas .ns-atlas__panel {
+    background: #f9f7f2 !important;
+    color: var(--navy, #0a1f3d) !important;
+    border-color: color-mix(in srgb, var(--gold, #c5a059) 55%, transparent) !important;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22) !important;
+    transform: none !important;
+    padding: 1rem 1rem 1.1rem !important;
+    overflow: visible !important;
+  }
+
+  .ns-atlas .ns-atlas__panel.is-active {
+    border-color: var(--gold, #c5a059) !important;
+  }
+
+  .ns-atlas .ns-atlas__pathway,
+  .ns-atlas .ns-atlas__cadence,
+  .ns-atlas .ns-atlas__panel.is-active .ns-atlas__pathway,
+  .ns-atlas .ns-atlas__panel.is-active .ns-atlas__cadence {
+    color: var(--navy, #0a1f3d) !important;
+    border-color: rgba(10, 31, 61, 0.16) !important;
+  }
+
+  .ns-atlas .ns-atlas__desc,
+  .ns-atlas .ns-atlas__price-note,
+  .ns-atlas .ns-atlas__panel.is-active .ns-atlas__desc,
+  .ns-atlas .ns-atlas__panel.is-active .ns-atlas__price-note {
+    color: rgba(10, 31, 61, 0.7) !important;
+  }
+
+  .ns-atlas .ns-atlas__fact,
+  .ns-atlas .ns-atlas__panel.is-active .ns-atlas__fact {
+    background: rgba(10, 31, 61, 0.04) !important;
+    border-color: rgba(10, 31, 61, 0.08) !important;
+  }
+
+  .ns-atlas .ns-atlas__cta--ghost,
+  .ns-atlas .ns-atlas__panel.is-active .ns-atlas__cta--ghost {
+    color: var(--navy, #0a1f3d) !important;
+    border-color: rgba(10, 31, 61, 0.22) !important;
+  }
+
+  .ns-atlas .ns-atlas__vial-wrap {
+    min-height: 7.25rem !important;
+  }
+
+  .ns-atlas .ns-atlas__vial {
+    width: min(34%, 6.75rem) !important;
+  }
+
+  .ns-atlas .ns-atlas__desc {
+    font-size: 0.86rem !important;
+    margin: 0.45rem 0 0.75rem !important;
+  }
+
+  .ns-atlas .ns-atlas__ctas {
+    flex-wrap: nowrap !important;
+  }
+
+  .ns-atlas .ns-atlas__cta {
+    flex: 1 1 auto !important;
+    min-height: 2.6rem !important;
+    font-size: 0.82rem !important;
+    padding: 0.55rem 0.7rem !important;
+  }
+}

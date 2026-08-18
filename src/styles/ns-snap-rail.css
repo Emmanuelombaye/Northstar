@@ -64,10 +64,10 @@
   .ns-hiw .ns-snap > *,
   .yx-clone .ns-snap > .pax-protocol-card {
     box-sizing: border-box !important;
-    flex: 0 0 78% !important;
-    width: 78% !important;
-    min-width: 78% !important;
-    max-width: 78% !important;
+    flex: 0 0 86% !important;
+    width: 86% !important;
+    min-width: 86% !important;
+    max-width: 86% !important;
     scroll-snap-align: start !important;
     margin: 0 !important;
   }

@@ -19,6 +19,7 @@ import "../../css/treatments.css";
 import "../../css/ns-site.css";
 import "../styles/ns/ns-mobile-carousels.css";
 import "../styles/ns-snap-rail.css";
+import "../styles/ns-phone.css";
 
 export const viewport: Viewport = {
   width: "device-width",

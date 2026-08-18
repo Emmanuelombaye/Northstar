@@ -16,6 +16,7 @@
 @import './ns/ns-home-brand.css';
 @import './ns/ns-mobile-carousels.css';
 @import './ns-snap-rail.css';
+@import './ns-phone.css';
 
 /* Nexa program pages — retro explore layout → Nexa navy/teal/sand/cloud */
 .program-explore,
