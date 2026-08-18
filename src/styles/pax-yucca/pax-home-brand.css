@@ -234,6 +234,75 @@
   color: var(--forest) !important;
 }
 
+.yucca-home .ns-faq-media-grid {
+  width: min(72rem, calc(100% - 2.5rem));
+  margin: 0 auto 1.35rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.yucca-home .ns-faq-media-card {
+  margin: 0;
+  border-radius: 1.15rem;
+  overflow: hidden;
+  border: 1px solid color-mix(in oklch, var(--forest) 16%, transparent);
+  background: color-mix(in oklch, var(--sand) 92%, var(--dune));
+  box-shadow: 0 16px 34px color-mix(in oklch, var(--forest) 10%, transparent);
+  aspect-ratio: 1 / 1;
+}
+
+.yucca-home .ns-faq-media-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.yucca-home .ns-hero-treatment-copy {
+  position: absolute;
+  left: clamp(1rem, 4vw, 3rem);
+  bottom: clamp(1.1rem, 4vw, 2.2rem);
+  z-index: 4;
+  max-width: min(31rem, calc(100% - 2rem));
+  padding: 0.95rem 1.05rem;
+  border-radius: 1rem;
+  background: color-mix(in oklch, var(--sand) 86%, transparent);
+  border: 1px solid color-mix(in oklch, var(--forest) 14%, transparent);
+  backdrop-filter: blur(8px);
+}
+
+.yucca-home .ns-hero-treatment-copy h2 {
+  margin: 0.2rem 0 0.35rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.4vw, 1.75rem);
+  line-height: 1.12;
+  color: var(--forest);
+}
+
+.yucca-home .ns-hero-treatment-copy p {
+  margin: 0;
+  font-size: 0.86rem;
+  line-height: 1.45;
+  color: color-mix(in oklch, var(--forest) 78%, transparent);
+}
+
+.yucca-home .ns-hero-treatment-kicker {
+  margin: 0;
+  font-size: 0.68rem !important;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .yucca-home .ns-faq-media-grid {
+    grid-template-columns: 1fr;
+    max-width: 22rem;
+  }
+}
+
 .yucca-home .pax-why__card--light,
 .yucca-home .retro-home-why-card {
   background: color-mix(in oklch, var(--sand) 94%, var(--dune)) !important;

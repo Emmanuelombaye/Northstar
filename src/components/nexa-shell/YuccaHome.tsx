@@ -9,6 +9,12 @@ import {
 } from '../../lib/nexa-shell/home-data'
 import { RetroClosingSection, RetroWhySection } from './RetroShared'
 
+const FAQ_MEDIA = [
+  { src: '/images/home/faq-provider-review.png', alt: 'Provider review support iconography' },
+  { src: '/images/home/faq-shipping-pharmacy.png', alt: 'Pharmacy shipping support iconography' },
+  { src: '/images/home/faq-safety-eligibility.png', alt: 'Safety and eligibility support iconography' },
+] as const
+
 function HeroSection() {
   return (
     <section className="ns-hero ns-hero-banner-mode" aria-label="Introduction">
@@ -49,6 +55,11 @@ function HeroSection() {
       <h1 className="sr-only">
         Find your North Star <em>before</em> decline sets in.
       </h1>
+      <div className="ns-hero-treatment-copy" aria-hidden="true">
+        <p className="ns-hero-treatment-kicker">North Star MD Treatments</p>
+        <h2>Semaglutide &amp; Tirzepatide care</h2>
+        <p>Clinician-reviewed GLP-1 treatment pathways. If prescribed, fulfilled by licensed U.S. pharmacies.</p>
+      </div>
       <p className="sr-only">
         Physician-guided longevity, metabolic health, and wellness care — licensed U.S. providers,
         compounded therapies, and discreet delivery wherever you are.
@@ -200,6 +211,13 @@ function FaqSection() {
 
   return (
     <section className="retro-faqs">
+      <div className="ns-faq-media-grid" aria-hidden="true">
+        {FAQ_MEDIA.map((item) => (
+          <figure key={item.src} className="ns-faq-media-card">
+            <img src={item.src} alt={item.alt} loading="lazy" decoding="async" />
+          </figure>
+        ))}
+      </div>
       <div className="retro-faqs__head">
         <h2 className="retro-faqs__heading">Clinical FAQs</h2>
         <p className="retro-faqs__sub">Straight answers about eligibility, compounding, and provider review.</p>

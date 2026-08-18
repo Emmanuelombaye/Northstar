@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { getQuestionsForProduct } from "../../lib/intakeQuestions";
 import { buildPatientLoginHandoff } from "../../lib/shop";
+import { markPortalPurchased } from "../../lib/portalAuth";
 import {
   INTAKE_STEP_LABELS,
   INTAKE_TOTAL_STEPS,
@@ -180,6 +181,7 @@ export function CheckoutIntakeWizard() {
 
   function handleContinueToLogin() {
     const rec = recommendation ?? product!;
+    markPortalPurchased();
     const url = buildPatientLoginHandoff({
       peakProduct: rec.peakProduct,
       peakCategory: rec.peakCategory,

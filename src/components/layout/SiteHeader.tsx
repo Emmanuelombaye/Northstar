@@ -10,7 +10,7 @@ const NAV_LINKS = [
   { to: "/treatments", label: "Treatments", match: (p: string) => p.startsWith("/treatments") || p === "/semaglutide" || p === "/tirzepatide" },
   { to: "/how-it-works", label: "How it works", match: (p: string) => p === "/how-it-works" },
   { to: "/faq", label: "FAQ", match: (p: string) => p === "/faq" },
-  { to: "/portal", label: "Patient Center", match: () => false },
+  { to: "/portal", label: "Patient Center", match: (p: string) => p.startsWith("/portal") },
 ] as const;
 
 export function SiteHeader() {

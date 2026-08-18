@@ -5,6 +5,7 @@ import { Link, Navigate, useNavigate, useParams } from "@/lib/routerAdapter";
 import {
   DEMO_USER,
   getSessionUser,
+  hasPortalPurchase,
   loginPortal,
   logoutPortal,
   type PortalUser,
@@ -33,6 +34,7 @@ function SignIn() {
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
 
+  if (!hasPortalPurchase()) return <PortalPurchaseGate />;
   if (existing) return <Navigate to="/portal/dashboard" replace />;
 
   const submit = (e: FormEvent) => {
@@ -114,6 +116,55 @@ function SignIn() {
             Sign in
           </button>
         </form>
+      </div>
+    </div>
+  );
+}
+
+function PortalPurchaseGate() {
+  return (
+    <div className="pp-auth">
+      <div className="pp-auth-visual" aria-hidden="true">
+        <div className="pp-auth-glow" />
+        <div className="pp-auth-copy">
+          <p className="eyebrow eyebrow-light">Patient Center Access</p>
+          <h1>Complete checkout to unlock your portal.</h1>
+          <p>
+            North Star MD portal access opens after enrollment checkout so your treatment plan,
+            shipping, and support data are tied to an active purchase.
+          </p>
+        </div>
+      </div>
+      <div className="pp-auth-panel">
+        <Link to="/" className="pp-auth-back">
+          ← Back to North Star MD
+        </Link>
+        <h2>Portal locked</h2>
+        <p className="pp-auth-sim">
+          Purchase and complete intake first, then return to sign in.
+        </p>
+        <div className="ns-portal-list">
+          <article>
+            <strong>Step 1</strong>
+            <span>Choose Semaglutide or Tirzepatide plan.</span>
+          </article>
+          <article>
+            <strong>Step 2</strong>
+            <span>Complete medical intake and checkout.</span>
+          </article>
+          <article>
+            <strong>Step 3</strong>
+            <span>Sign in to Patient Center and track care.</span>
+          </article>
+        </div>
+        <div style={{ display: "grid", gap: 10, marginTop: 18 }}>
+          <Link to="/start" className="btn btn-gold btn-pill btn-block">
+            Start Intake & Checkout
+          </Link>
+          <Link to="/shop" className="btn btn-navy btn-pill btn-block">
+            View Treatments
+          </Link>
+        </div>
       </div>
     </div>
   );
@@ -370,6 +421,8 @@ export function PortalApp() {
   const rawSection = rawParams.section;
   const section = Array.isArray(rawSection) ? rawSection[0] : rawSection;
   const user = getSessionUser();
+
+  if (!hasPortalPurchase()) return <PortalPurchaseGate />;
 
   if (!section) {
     if (user) return <Navigate to="/portal/dashboard" replace />;

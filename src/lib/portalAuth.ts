@@ -3,6 +3,7 @@
 const DB_KEY = "ns_auth_db_v1";
 const SESSION_KEY = "ns_auth_session_v1";
 const START_KEY = "ns_start_draft_v1";
+const PORTAL_PURCHASE_KEY = "northstar_portal_paid_v1";
 
 export const DEMO_USER = {
   email: "demo@northstarmd.com",
@@ -134,6 +135,18 @@ export function loadStartDraft(): StartDraft | null {
 
 export function clearStartDraft() {
   localStorage.removeItem(START_KEY);
+}
+
+export function hasPortalPurchase(): boolean {
+  try {
+    return localStorage.getItem(PORTAL_PURCHASE_KEY) === "true";
+  } catch {
+    return false;
+  }
+}
+
+export function markPortalPurchased() {
+  localStorage.setItem(PORTAL_PURCHASE_KEY, "true");
 }
 
 export const intakeIndex = (draft: StartDraft | null) => draft?.intakeIndex ?? 0;

@@ -1,4 +1,10 @@
 export function FaqPage() {
+  const faqMedia = [
+    { src: "/images/home/faq-provider-review.png", alt: "Provider review and safety" },
+    { src: "/images/home/faq-shipping-pharmacy.png", alt: "Pharmacy and shipping standards" },
+    { src: "/images/home/faq-safety-eligibility.png", alt: "Eligibility and treatment guidance" },
+  ] as const;
+
   return (
     <main className="faq-page">
       
@@ -23,6 +29,13 @@ export function FaqPage() {
       </div>
 
       <section className="faq-main-section">
+        <div className="faq-media-grid" aria-hidden="true">
+          {faqMedia.map((item) => (
+            <figure key={item.src} className="faq-media-card">
+              <img src={item.src} alt={item.alt} loading="lazy" decoding="async" />
+            </figure>
+          ))}
+        </div>
         <div className="faq-list-container">
           {/* Group 1: Medical & Intake */}
           <div className="faq-group" id="clinical">

@@ -12,11 +12,10 @@ export type QuestionnaireQuestion = {
 }
 
 export const INTAKE_PHASES = [
-  { id: 'metrics', label: 'Body metrics' },
-  { id: 'screening', label: 'Screening' },
-  { id: 'patient', label: 'Patient info' },
-  { id: 'shipping', label: 'Shipping' },
-  { id: 'consent', label: 'Agreements' },
+  { id: 'patient', label: 'Step 1 — Patient Information' },
+  { id: 'shipping', label: 'Step 2 — Shipping Address' },
+  { id: 'screening', label: 'Step 3 — Medical Screening' },
+  { id: 'consent', label: 'Step 4 — Agreements & Checkout' },
 ] as const
 
 export type IntakePhaseId = (typeof INTAKE_PHASES)[number]['id']
