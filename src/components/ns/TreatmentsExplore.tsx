@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { RetroClosingSection, RetroWhySection } from './RetroShared'
-import { TREATMENTS_MEDIA } from '../../lib/nexa-shell/treatments-data'
+import { RetroClosingSection, RetroWhySection } from './SharedSections'
+import { TREATMENTS_MEDIA } from '../../lib/ns/treatments-data'
 import { NsSnapRail } from './NsSnapRail'
 import '../../styles/program-explore.css'
 

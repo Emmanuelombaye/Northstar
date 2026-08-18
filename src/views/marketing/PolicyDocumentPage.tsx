@@ -2,7 +2,7 @@
 
 import { Link } from '@/lib/routerAdapter'
 import { POLICIES, type PolicyDoc } from '../../lib/policies'
-import { PolicyBody } from '../../components/nexa-shell/PolicyBody'
+import { PolicyBody } from '../../components/ns/PolicyBody'
 
 export function PolicyDocumentPage({ doc }: { doc: PolicyDoc }) {
   const handlePrint = () => window.print()

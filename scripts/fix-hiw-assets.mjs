@@ -4,8 +4,8 @@ import sharp from 'sharp'
 
 const ASSETS = 'C:/Users/Administrator/.cursor/projects/i-ceo-northstar/assets'
 const ROOT = 'I:/ceo/northstar/public/images'
-const HIW = `${ROOT}/yucca-clone/hiw`
-const YUCCA = `${ROOT}/yucca-clone`
+const HIW = `${ROOT}/ns/hiw`
+const NS_IMG = `${ROOT}/ns`
 const HOME = `${ROOT}/home`
 const PREVIEW = 'I:/ceo/northstar/.tmp-img-preview'
 
@@ -65,7 +65,7 @@ for (const [file, dest, width] of photos) {
 const nologoPair = path.join(PREVIEW, 'Personalized-GLP-1-Injections-nologo.png')
 const nologoPlan = path.join(PREVIEW, 'Treatment-Plan-nologo.png')
 if (fs.existsSync(nologoPair)) {
-  await avif(nologoPair, `${YUCCA}/Personalized-GLP-1-Injections.avif`, 1100)
+  await avif(nologoPair, `${NS_IMG}/Personalized-GLP-1-Injections.avif`, 1100)
 }
 if (fs.existsSync(nologoPlan)) {
   await avif(nologoPlan, `${HIW}/Treatment-Plan.avif`, 1100)
@@ -74,7 +74,7 @@ if (fs.existsSync(nologoPlan)) {
 await relabelVial(
   path.join(ASSETS, 'vial-sema-blank.png'),
   `${HOME}/home-vial-sema.png`,
-  `${YUCCA}/personalized-semaglutide-glp-1-injection-vial-yucca-health.avif`,
+  `${NS_IMG}/personalized-semaglutide-glp-1-injection-vial-yucca-health.avif`,
   'SEMAGLUTIDE',
   'GLP-1  ·  Rx Only',
 )
@@ -82,7 +82,7 @@ await relabelVial(
 await relabelVial(
   path.join(ASSETS, 'vial-tirz-blank.png'),
   `${HOME}/home-vial-tirz.png`,
-  `${YUCCA}/personalized-tirzepatide-glp-1-injection-vial-yucca-health.avif`,
+  `${NS_IMG}/personalized-tirzepatide-glp-1-injection-vial-yucca-health.avif`,
   'TIRZEPATIDE',
   'GLP-1 + GIP  ·  Rx Only',
 )

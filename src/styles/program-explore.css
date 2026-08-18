@@ -1,20 +1,20 @@
-@import './pax-yucca/yucca-clone-sections.css';
-@import './pax-yucca/yucca-home-mirror.css';
-@import './pax-yucca/yucca-treatments-mirror.css';
-@import './pax-yucca/yucca-explore-tabs.css';
-@import './pax-yucca/yucca-explore-index.css';
-@import './pax-yucca/yucca-treatments-utils.css';
-@import './pax-yucca/pax-protocol.css';
-@import './pax-yucca/pax-knowall.css';
-@import './pax-yucca/pax-buttons.css';
-@import './pax-yucca/yucca-retro.css';
-@import './pax-yucca/pax-reviews.css';
-@import './pax-yucca/pax-why.css';
-@import './pax-yucca/yucca-treatments-fidelity.css';
-@import './pax-yucca/nexa-brand-enforce.css';
-@import './pax-yucca/treatments-ns-brand.css';
-@import './pax-yucca/pax-home-brand.css';
-@import './pax-yucca/yucca-mobile-carousels.css';
+@import './ns/ns-home-sections.css';
+@import './ns/ns-home-mirror.css';
+@import './ns/ns-treatments-mirror.css';
+@import './ns/ns-explore-tabs.css';
+@import './ns/ns-explore-index.css';
+@import './ns/ns-treatments-utils.css';
+@import './ns/ns-protocol.css';
+@import './ns/ns-knowall.css';
+@import './ns/ns-buttons.css';
+@import './ns/ns-retro.css';
+@import './ns/ns-reviews.css';
+@import './ns/ns-why.css';
+@import './ns/ns-treatments-fidelity.css';
+@import './ns/ns-brand-enforce.css';
+@import './ns/ns-treatments-brand.css';
+@import './ns/ns-home-brand.css';
+@import './ns/ns-mobile-carousels.css';
 @import './ns-snap-rail.css';
 
 /* Nexa program pages — retro explore layout → Nexa navy/teal/sand/cloud */

@@ -1,6 +1,6 @@
 'use client'
 
-import TreatmentsExplore from '../../components/nexa-shell/TreatmentsExplore'
+import TreatmentsExplore from '../../components/ns/TreatmentsExplore'
 
 /** Pax-style treatments explore (Semaglutide & Tirzepatide) */
 export function TreatmentsHubPage() {

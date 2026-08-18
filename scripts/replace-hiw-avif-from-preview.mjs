@@ -1,6 +1,6 @@
 /**
  * Converts PNG drafts from `.tmp-img-preview/` into the `.avif` assets used by
- * `src/components/nexa-shell/HersHowItWorks.tsx`.
+ * `src/components/ns/NsHowItWorks.tsx`.
  *
  * Usage:
  *   node scripts/replace-hiw-avif-from-preview.mjs
@@ -10,7 +10,7 @@ import path from "node:path";
 import sharp from "sharp";
 
 const PREVIEW_DIR = path.join(process.cwd(), ".tmp-img-preview");
-const HIW_DIR = path.join(process.cwd(), "public/images/yucca-clone/hiw");
+const HIW_DIR = path.join(process.cwd(), "public/images/ns/hiw");
 
 // src (png) -> dest (avif) mapping
 const JOBS = [

@@ -1,9 +1,9 @@
 'use client'
 
 import { Link } from '../../lib/routerAdapter'
-import { RetroClosingSection } from '../../components/nexa-shell/RetroShared'
-import { YUCCA } from '../../lib/nexa-shell/home-data'
-import '../../styles/yucca-home-index.css'
+import { RetroClosingSection } from '../../components/ns/SharedSections'
+import { NS_IMG } from '../../lib/ns/home-data'
+import '../../styles/ns-home.css'
 
 type Props = {
   slug: 'semaglutide' | 'tirzepatide'
@@ -15,7 +15,7 @@ const COPY = {
     chip: 'GLP-1',
     blurb:
       'A weekly compounded GLP-1 injection that may support appetite regulation as part of a medically supervised weight-management plan. Prescribed only when a licensed U.S. provider determines it is appropriate after reviewing your intake.',
-    vial: `${YUCCA}/personalized-semaglutide-glp-1-injection-vial-yucca-health.avif`,
+    vial: `${NS_IMG}/personalized-semaglutide-glp-1-injection-vial-yucca-health.avif`,
     pathway: 'Compounded GLP-1 (Semaglutide)',
   },
   tirzepatide: {
@@ -23,7 +23,7 @@ const COPY = {
     chip: 'GLP-1 + GIP',
     blurb:
       'A weekly compounded dual-pathway GLP-1 + GIP injection that may support appetite regulation when medically appropriate. Prescribed only when a licensed U.S. provider determines it is appropriate after reviewing your intake.',
-    vial: `${YUCCA}/personalized-tirzepatide-glp-1-injection-vial-yucca-health.avif`,
+    vial: `${NS_IMG}/personalized-tirzepatide-glp-1-injection-vial-yucca-health.avif`,
     pathway: 'Compounded GLP-1 + GIP (Tirzepatide)',
   },
 } as const

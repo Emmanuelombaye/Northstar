@@ -1,7 +1,7 @@
 'use client'
 
-import HersHowItWorks from '../../components/nexa-shell/HersHowItWorks'
+import NsHowItWorks from '../../components/ns/NsHowItWorks'
 
 export function HowItWorksPage() {
-  return <HersHowItWorks />
+  return <NsHowItWorks />
 }

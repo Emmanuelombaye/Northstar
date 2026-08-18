@@ -16,8 +16,8 @@ import "../../css/how-it-works.css";
 import "../../css/membership.css";
 import "../../css/resources.css";
 import "../../css/treatments.css";
-import "../../css/pax-site.css";
-import "../styles/pax-yucca/yucca-mobile-carousels.css";
+import "../../css/ns-site.css";
+import "../styles/ns/ns-mobile-carousels.css";
 import "../styles/ns-snap-rail.css";
 
 export const viewport: Viewport = {

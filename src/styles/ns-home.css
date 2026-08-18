@@ -1,15 +1,15 @@
-@import './pax-yucca/yucca-retro.css';
-@import './pax-yucca/yucca-home-mirror.css';
-@import './pax-yucca/yucca-clone-sections.css';
-@import './pax-yucca/yucca-home-fidelity.css';
-@import './pax-yucca/yucca-goal-treatments.css';
-@import './pax-yucca/yucca-goal-hiw.css';
-@import './pax-yucca/pax-reviews.css';
-@import './pax-yucca/pax-why.css';
-@import './pax-yucca/pax-home-brand.css';
-@import './pax-yucca/pax-home-hero.css';
-@import './pax-yucca/nexa-brand-enforce.css';
-@import './pax-yucca/yucca-mobile-carousels.css';
+@import './ns/ns-retro.css';
+@import './ns/ns-home-mirror.css';
+@import './ns/ns-home-sections.css';
+@import './ns/ns-home-fidelity.css';
+@import './ns/ns-goal-treatments.css';
+@import './ns/ns-home-hiw.css';
+@import './ns/ns-reviews.css';
+@import './ns/ns-why.css';
+@import './ns/ns-home-brand.css';
+@import './ns/ns-home-hero.css';
+@import './ns/ns-brand-enforce.css';
+@import './ns/ns-mobile-carousels.css';
 @import './ns-snap-rail.css';
 
 /* North Star MD tokens over Nexa Yucca shell */

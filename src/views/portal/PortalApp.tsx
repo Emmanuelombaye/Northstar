@@ -10,7 +10,7 @@ import {
   logoutPortal,
   type PortalUser,
 } from "../../lib/portalAuth";
-import { PolicyLibrary } from "../../components/nexa-shell/PolicyBody";
+import { PolicyLibrary } from "../../components/ns/PolicyBody";
 
 const NAV = [
   { id: "dashboard", label: "Dashboard" },

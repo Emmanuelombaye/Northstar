@@ -9,8 +9,8 @@ import {
   isValidEmail,
   isValidPhone,
   isValidZip,
-} from '../../lib/nexa-shell/intake'
-import { YUCCA } from '../../lib/nexa-shell/home-data'
+} from '../../lib/ns/intake'
+import { NS_IMG } from '../../lib/ns/home-data'
 import { POLICIES } from '../../lib/policies'
 import { markPortalPurchased } from '../../lib/portalAuth'
 import { PolicyBody } from './PolicyBody'
@@ -20,13 +20,13 @@ const PROGRAMS = [
     slug: 'semaglutide',
     title: 'Semaglutide',
     navLabel: 'Semaglutide',
-    thumb: `${YUCCA}/personalized-semaglutide-glp-1-injection-vial-yucca-health.avif`,
+    thumb: `${NS_IMG}/personalized-semaglutide-glp-1-injection-vial-yucca-health.avif`,
   },
   {
     slug: 'tirzepatide',
     title: 'Tirzepatide',
     navLabel: 'Tirzepatide',
-    thumb: `${YUCCA}/personalized-tirzepatide-glp-1-injection-vial-yucca-health.avif`,
+    thumb: `${NS_IMG}/personalized-tirzepatide-glp-1-injection-vial-yucca-health.avif`,
   },
 ] as const
 

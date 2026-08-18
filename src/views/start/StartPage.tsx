@@ -1,7 +1,7 @@
 'use client'
 
 import { Suspense } from 'react'
-import EligibilityForm from '../../components/nexa-shell/EligibilityForm'
+import EligibilityForm from '../../components/ns/EligibilityForm'
 import '../../styles/ns-intake.css'
 
 function StartFallback() {

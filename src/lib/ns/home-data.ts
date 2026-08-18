@@ -1,6 +1,6 @@
 /** North Star MD — marketing shell data (LegitScript-accurate) */
 
-export const YUCCA = '/images/yucca-clone'
+export const NS_IMG = '/images/ns'
 const V = '?v=20260818b'
 
 export const HERO_WORDS = [
@@ -9,13 +9,13 @@ export const HERO_WORDS = [
 ] as const
 
 export const HOME_WHY_MEDIA = {
-  vials: `${YUCCA}/expt-tirz-sema-vials-together.png${V}`,
+  vials: `${NS_IMG}/expt-tirz-sema-vials-together.png${V}`,
   portal: `/images/pax-hiw-step-1.png${V}`,
 } as const
 
-export const HOME_CLOSING_IMAGE = `${YUCCA}/hiw/pax-why-science-results.avif${V}`
+export const HOME_CLOSING_IMAGE = `${NS_IMG}/hiw/pax-why-science-results.avif${V}`
 
-export const HOME_HERO_IMAGE = `${YUCCA}/pax-glp1-couple-cutout.avif${V}`
+export const HOME_HERO_IMAGE = `${NS_IMG}/pax-glp1-couple-cutout.avif${V}`
 
 export const HOME_TREATMENTS = [
   {
@@ -69,21 +69,21 @@ export const HOME_HIW_STEPS = [
     n: '1',
     title: 'Complete a clinical intake',
     body: 'Share medical history, metrics, and shipping details in a secure questionnaire. This is an evaluation step — not a purchase.',
-    image: `${YUCCA}/hiw/Get-Started.avif${V}`,
+    image: `${NS_IMG}/hiw/Get-Started.avif${V}`,
     alt: 'Clinical intake on a tablet',
   },
   {
     n: '2',
     title: 'Licensed provider review',
     body: 'A state-licensed U.S. clinician reviews your answers — typically within about 24 hours — and decides whether treatment is appropriate. Completing intake does not guarantee a prescription.',
-    image: `${YUCCA}/hiw/medical-review-licensed-provider-yucca-health.avif${V}`,
+    image: `${NS_IMG}/hiw/medical-review-licensed-provider-yucca-health.avif${V}`,
     alt: 'Licensed clinician reviewing a patient intake',
   },
   {
     n: '3',
     title: 'Pharmacy fulfillment if prescribed',
     body: 'If approved, a licensed U.S. compounding pharmacy prepares your medication and ships it discreetly. Ongoing care and dose adjustments continue through your patient portal.',
-    image: `${YUCCA}/hiw/home-delivery.avif${V}`,
+    image: `${NS_IMG}/hiw/home-delivery.avif${V}`,
     alt: 'Temperature-controlled medication delivery',
   },
 ] as const

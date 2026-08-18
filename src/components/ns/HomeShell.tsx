@@ -6,8 +6,8 @@ import {
   HOME_FAQS,
   HOME_HIW_STEPS,
   HOME_TREATMENTS,
-} from '../../lib/nexa-shell/home-data'
-import { RetroClosingSection, RetroWhySection } from './RetroShared'
+} from '../../lib/ns/home-data'
+import { RetroClosingSection, RetroWhySection } from './SharedSections'
 import { NsSnapRail } from './NsSnapRail'
 
 const FAQ_MEDIA = [
@@ -246,8 +246,8 @@ function FaqSection() {
   )
 }
 
-/** North Star MD homepage — Nexa Yucca shell + Northstar brand */
-export default function YuccaHome() {
+/** North Star MD homepage */
+export default function HomeShell() {
   return (
     <div className="yucca-home u5-type ns-yucca" data-retro-scope>
       <HeroSection />

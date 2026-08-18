@@ -1,6 +1,6 @@
 /**
  * Converts freshly generated HIW PNGs (from the model) into the `.avif` assets
- * used by `src/components/nexa-shell/HersHowItWorks.tsx`.
+ * used by `src/components/ns/NsHowItWorks.tsx`.
  *
  * Usage:
  *   node scripts/replace-hiw-avif-from-generated.mjs
@@ -9,7 +9,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import sharp from "sharp";
 
-const HIW_DIR = path.join(process.cwd(), "public/images/yucca-clone/hiw");
+const HIW_DIR = path.join(process.cwd(), "public/images/ns/hiw");
 
 // Absolute paths returned by the image generator tool.
 const JOBS = [

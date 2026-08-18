@@ -1,8 +1,8 @@
 'use client'
 
-import YuccaHome from '../components/nexa-shell/YuccaHome'
-import '../styles/yucca-home-index.css'
+import HomeShell from '../components/ns/HomeShell'
+import '../styles/ns-home.css'
 
 export function HomePage() {
-  return <YuccaHome />
+  return <HomeShell />
 }

@@ -3,10 +3,10 @@
 import { useEffect, useRef, useState, type CSSProperties } from 'react'
 import { Link } from '../../lib/routerAdapter'
 import { NsSnapRail } from './NsSnapRail'
-import '../../styles/hers-how-it-works.css'
+import '../../styles/ns-how-it-works.css'
 import '../../styles/ns-snap-rail.css'
 
-const Y = '/images/yucca-clone'
+const Y = '/images/ns'
 const HIW = `${Y}/hiw`
 const V = '?v=20260818b'
 
@@ -105,7 +105,7 @@ function StarField() {
   )
 }
 
-export default function HersHowItWorks() {
+export default function NsHowItWorks() {
   const hero = useSectionProgress<HTMLElement>()
   const intake = useSectionProgress<HTMLElement>()
   const provider = useSectionProgress<HTMLElement>()

@@ -2,7 +2,7 @@
 
 import { type ReactNode } from 'react'
 import { Link } from '../../lib/routerAdapter'
-import { HOME_CLOSING_IMAGE, HOME_WHY_MEDIA } from '../../lib/nexa-shell/home-data'
+import { HOME_CLOSING_IMAGE, HOME_WHY_MEDIA } from '../../lib/ns/home-data'
 import { NsSnapRail } from './NsSnapRail'
 
 export function RetroWhySection({
