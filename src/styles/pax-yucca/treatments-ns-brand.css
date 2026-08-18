@@ -5,6 +5,72 @@
   background-position: 50% 58%, 0 0 !important;
 }
 
+/* Top treatments hero — North Star sunset card polish */
+.yx-clone.program-explore .explore-hero-section {
+  background:
+    radial-gradient(120% 110% at 12% 0%, color-mix(in oklch, var(--gold) 16%, #fff), transparent 52%),
+    radial-gradient(110% 95% at 88% 100%, color-mix(in oklch, #f3bf8b 28%, #fff), transparent 50%),
+    linear-gradient(180deg, #f9f7f2 0%, #f3eee5 100%) !important;
+}
+
+.yx-clone.program-explore .explore-hero-card[data-card='wl'] {
+  border: 1.5px solid color-mix(in oklch, var(--gold) 48%, var(--navy)) !important;
+  border-radius: 1.5rem !important;
+  box-shadow:
+    0 24px 42px rgba(10, 31, 61, 0.14),
+    0 0 0 1px rgba(197, 160, 89, 0.2) inset !important;
+  background-image:
+    url(/images/treatments/hero-glp1-vials.avif),
+    linear-gradient(165deg, #fff8ea 0%, #f9f3e8 45%, #ecedf7 100%) !important;
+  background-size: min(58%, 255px) auto, auto !important;
+  background-position: 50% 82%, 0 0 !important;
+}
+
+.yx-clone.program-explore .explore-hero-card-title {
+  color: var(--navy, #0a1f3d) !important;
+  font-family: var(--font-display, Georgia, serif) !important;
+  font-weight: 500 !important;
+}
+
+.yx-clone.program-explore .explore-hero-card-price--text {
+  color: var(--navy, #0a1f3d) !important;
+}
+
+.yx-clone.program-explore .explore-hero-card-price-main {
+  font-size: clamp(2.15rem, 5vw, 3.2rem) !important;
+  letter-spacing: -0.03em !important;
+}
+
+.yx-clone.program-explore .explore-hero-card-price-sub {
+  color: color-mix(in oklch, var(--navy) 70%, #fff) !important;
+}
+
+.yx-clone.program-explore .explore-hero-card-footer {
+  color: color-mix(in oklch, var(--navy) 82%, #fff) !important;
+}
+
+.yx-clone.program-explore .explore-hero-product {
+  padding: 0.45rem 0.55rem !important;
+  border-radius: 0.9rem !important;
+  border: 1px solid rgba(10, 31, 61, 0.08) !important;
+  background: rgba(255, 255, 255, 0.7) !important;
+}
+
+.yx-clone.program-explore .explore-hero-product.is-active {
+  background: color-mix(in oklch, var(--gold) 10%, #fff) !important;
+  border-color: color-mix(in oklch, var(--gold) 52%, var(--navy)) !important;
+}
+
+.yx-clone.program-explore .explore-hero-guarantee-card {
+  background: linear-gradient(165deg, #fffaf0 0%, #f7f1e4 100%) !important;
+  border: 1.2px solid rgba(197, 160, 89, 0.42) !important;
+  box-shadow: 0 14px 28px rgba(10, 31, 61, 0.1) !important;
+}
+
+.yx-clone.program-explore .explore-hero-guarantee-word {
+  color: var(--gold, #c5a059) !important;
+}
+
 .yx-clone.program-explore .explore-hero-product-thumb {
   width: 3.25rem !important;
   max-width: 3.25rem !important;
