@@ -1,3 +1,5 @@
+import { FooterTrustBadges } from "./FooterTrustBadges";
+
 export function SiteFooter() {
   return (
     <footer className="pharm-footer">
@@ -62,6 +64,7 @@ export function SiteFooter() {
       </div>
 
       <div className="pharm-wrap">
+        <FooterTrustBadges />
         <div className="pharm-footer-bottom">
           <p>&copy; 2026 North Star MD. All rights reserved.</p>
           <p>Licensed clinical review required. Treatment not guaranteed.</p>

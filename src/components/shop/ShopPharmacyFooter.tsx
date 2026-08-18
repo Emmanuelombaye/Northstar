@@ -2,6 +2,7 @@
 
 import { Link } from "@/lib/routerAdapter";
 import { shop } from "../../lib/shop";
+import { FooterTrustBadges } from "../layout/FooterTrustBadges";
 
 export function ShopPharmacyFooter() {
   return (
@@ -59,6 +60,7 @@ export function ShopPharmacyFooter() {
       </div>
 
       <div className="pharm-wrap">
+        <FooterTrustBadges />
         <div className="pharm-footer-bottom">
           <p>© {new Date().getFullYear()} North Star MD · Guided by science. Designed for you.</p>
         </div>
