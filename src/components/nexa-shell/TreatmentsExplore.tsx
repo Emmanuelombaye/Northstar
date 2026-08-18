@@ -281,7 +281,7 @@ function ProtocolSection({ onCta }: { onCta: () => void }) {
           </div>
         </div>
         <div className="retro-protocol__right">
-          <div className="retro-protocol__rail ns-mobile-rail">
+          <NsSnapRail cols={3} className="retro-protocol__rail" hint="Swipe how it works" desktop="stack">
           {data.cards.map((c, i) => (
             <article
               key={c.title}
@@ -301,7 +301,7 @@ function ProtocolSection({ onCta }: { onCta: () => void }) {
               <p className="retro-protocol-card__body">{c.body}</p>
             </article>
           ))}
-          </div>
+          </NsSnapRail>
           <button type="button" className="retro-protocol__cta pax-protocol__cta" onClick={onCta}>
             Check Eligibility
           </button>

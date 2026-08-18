@@ -7,11 +7,13 @@ export function NsSnapRail({
   cols = 3,
   className = '',
   hint = 'Swipe',
+  desktop = 'grid',
 }: {
   children: ReactNode
   cols?: 2 | 3 | 4
   className?: string
   hint?: string
+  desktop?: 'grid' | 'stack'
 }) {
   const ref = useRef<HTMLDivElement>(null)
   const items = Children.toArray(children)
@@ -37,7 +39,7 @@ export function NsSnapRail({
   }
 
   return (
-    <div className={`ns-snap-wrap ns-snap-wrap--${cols}`}>
+    <div className={`ns-snap-wrap ns-snap-wrap--${cols}${desktop === 'stack' ? ' ns-snap-wrap--stack' : ''}`}>
       {hint ? <p className="ns-snap-hint">{hint}</p> : null}
       <div ref={ref} className={`ns-snap ns-snap--${cols} ${className}`.trim()} onScroll={sync}>
         {children}

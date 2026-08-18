@@ -138,24 +138,26 @@ export default function HersHowItWorks() {
             </h1>
             <p>A clear path from intake to clinician review — and fulfillment only if prescribed.</p>
           </div>
-          <img
-            className="ns-hiw-hero__vial ns-hiw-hero__vial--left"
-            src={`${Y}/personalized-semaglutide-glp-1-injection-vial-yucca-health.avif${V}`}
-            alt="Personalized Semaglutide"
-            style={{
-              opacity: leftIn,
-              transform: `translate3d(${(1 - leftIn) * -18}%, ${(1 - leftIn) * 10}%, 0) rotate(${(1 - leftIn) * -8}deg)`,
-            }}
-          />
-          <img
-            className="ns-hiw-hero__vial ns-hiw-hero__vial--right"
-            src={`${Y}/personalized-tirzepatide-glp-1-injection-vial-yucca-health.avif${V}`}
-            alt="Personalized Tirzepatide"
-            style={{
-              opacity: rightIn,
-              transform: `translate3d(${(1 - rightIn) * 18}%, ${(1 - rightIn) * 12}%, 0) rotate(${(1 - rightIn) * 8}deg)`,
-            }}
-          />
+          <div className="ns-hiw-hero__vials">
+            <img
+              className="ns-hiw-hero__vial ns-hiw-hero__vial--left"
+              src={`${Y}/personalized-semaglutide-glp-1-injection-vial-yucca-health.avif${V}`}
+              alt="Personalized Semaglutide"
+              style={{
+                opacity: leftIn,
+                transform: `translate3d(${(1 - leftIn) * -18}%, ${(1 - leftIn) * 10}%, 0) rotate(${(1 - leftIn) * -8}deg)`,
+              }}
+            />
+            <img
+              className="ns-hiw-hero__vial ns-hiw-hero__vial--right"
+              src={`${Y}/personalized-tirzepatide-glp-1-injection-vial-yucca-health.avif${V}`}
+              alt="Personalized Tirzepatide"
+              style={{
+                opacity: rightIn,
+                transform: `translate3d(${(1 - rightIn) * 18}%, ${(1 - rightIn) * 12}%, 0) rotate(${(1 - rightIn) * 8}deg)`,
+              }}
+            />
+          </div>
           <img
             className="ns-hiw-hero__couple"
             src={`${Y}/pax-glp1-couple-cutout.avif${V}`}
@@ -314,7 +316,7 @@ export default function HersHowItWorks() {
             that can adjust your plan if prescribed.
           </p>
         </div>
-        <NsSnapRail cols={4} className="ns-hiw-stack" hint="Swipe care tools">
+        <NsSnapRail cols={4} className="ns-hiw-stack" hint="Swipe care tools" desktop="stack">
           {SUPPORT.map((card) => (
             <article key={card.title} className="ns-hiw-card">
               <img src={card.src} alt="" />

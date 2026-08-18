@@ -1,9 +1,16 @@
-/* Phone image rows: Yucca-style peek snap — never a vertical photo list */
+/* Phone image rows: one peek-snap. Rail is viewport-wide so it can scroll. */
+
+.ns-snap-wrap {
+  min-width: 0;
+  max-width: 100%;
+}
 
 @media (max-width: 900px) {
   html,
-  body,
-  main,
+  body {
+    overflow-x: hidden !important;
+  }
+
   .yucca-home,
   .yx-clone,
   .program-explore,
@@ -21,20 +28,24 @@
   .yx-clone .pax-why__grid.ns-snap,
   .yucca-home .pax-hiw__grid.ns-snap,
   .yucca-home .ns-atlas__stage.ns-snap,
-  .yucca-home .ns-faq-media-grid.ns-snap {
+  .yucca-home .ns-faq-media-grid.ns-snap,
+  .ns-hiw .ns-hiw-products.ns-snap,
+  .ns-hiw .ns-hiw-stack.ns-snap {
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: nowrap !important;
     align-items: stretch !important;
     gap: 12px !important;
-    width: auto !important;
-    max-width: none !important;
-    margin-inline: -1.15rem !important;
-    padding: 4px 1.15rem 18px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin-inline: 0 !important;
+    padding: 4px 4px 16px 2px !important;
     overflow-x: auto !important;
     overflow-y: hidden !important;
     scroll-snap-type: x mandatory !important;
-    scroll-padding-inline: 1.15rem !important;
+    scroll-padding-inline: 2px !important;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior-x: contain;
     scrollbar-width: none;
@@ -50,11 +61,13 @@
   .ns-snap-wrap > .ns-snap > *,
   .yucca-home .ns-snap > *,
   .yx-clone .ns-snap > *,
-  .ns-hiw .ns-snap > * {
-    flex: 0 0 min(78vw, 19.5rem) !important;
-    width: min(78vw, 19.5rem) !important;
-    min-width: min(78vw, 19.5rem) !important;
-    max-width: min(78vw, 19.5rem) !important;
+  .ns-hiw .ns-snap > *,
+  .yx-clone .ns-snap > .pax-protocol-card {
+    box-sizing: border-box !important;
+    flex: 0 0 78% !important;
+    width: 78% !important;
+    min-width: 78% !important;
+    max-width: 78% !important;
     scroll-snap-align: start !important;
     margin: 0 !important;
   }
@@ -73,7 +86,7 @@
     display: flex;
     justify-content: center;
     gap: 6px;
-    margin: -4px 0 4px;
+    margin: 2px 0 6px;
   }
 
   .ns-snap-dots button {
@@ -91,7 +104,6 @@
     background: var(--navy, #0a1f3d);
   }
 
-  /* Photo cards fill the slide without stretching the page */
   .ns-snap .ns-faq-media-card,
   .ns-snap .faq-media-card,
   .ns-snap .pax-hiw__card,
@@ -181,6 +193,17 @@
     padding: 0 !important;
   }
 
+  .ns-snap-wrap--stack > .ns-snap,
+  .ns-snap-wrap--stack > .ns-snap.ns-snap--4 {
+    display: block !important;
+    grid-template-columns: none !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    margin-inline: 0 !important;
+    width: auto !important;
+    max-width: none !important;
+  }
+
   .ns-snap-wrap--2 > .ns-snap > *,
   .ns-snap-wrap--3 > .ns-snap > *,
   .ns-snap-wrap--4 > .ns-snap > *,
@@ -191,5 +214,12 @@
     width: auto !important;
     min-width: 0 !important;
     max-width: none !important;
+  }
+
+  .ns-snap-wrap--stack > .ns-snap > * {
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    flex: none !important;
   }
 }
