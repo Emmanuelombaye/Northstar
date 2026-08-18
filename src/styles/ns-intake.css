@@ -106,7 +106,13 @@
   padding: 0;
   margin: 0 0 1rem;
   display: grid;
-  gap: 0.85rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem 1rem;
+}
+
+.ns-intake-fields legend,
+.ns-intake-span {
+  grid-column: 1 / -1;
 }
 
 .ns-intake-fields legend {
@@ -244,4 +250,10 @@
   color: #0a1f3d;
   font-size: 0.82rem;
   text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .ns-intake-fields {
+    grid-template-columns: 1fr;
+  }
 }

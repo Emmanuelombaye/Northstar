@@ -8,14 +8,16 @@ import { SiteHeader } from "./SiteHeader";
 import { UniversalMobileNav } from "./UniversalMobileNav";
 
 export function SiteLayout({ children }: { children: ReactNode }) {
-  const isShop = useLocation().pathname.startsWith("/shop");
+  const pathname = useLocation().pathname;
+  const isShop = pathname.startsWith("/shop");
+  const isPortal = pathname.startsWith("/portal");
 
   return (
     <>
       {!isShop ? <AnnouncementBar /> : null}
       <SiteHeader />
       {children}
-      {!isShop ? <SiteFooter /> : null}
+      {!isShop && !isPortal ? <SiteFooter /> : null}
     </>
   );
 }

@@ -1,5 +1,10 @@
+import { SiteLayout } from "@/components/layout/SiteLayout";
 import { PortalApp } from "@/views/portal/PortalApp";
 
 export default function Portal() {
-  return <PortalApp />;
+  return (
+    <SiteLayout>
+      <PortalApp />
+    </SiteLayout>
+  );
 }

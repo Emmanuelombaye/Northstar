@@ -66,6 +66,7 @@ export function useParams<
   const result: Record<string, any> = { ...params };
   if (Array.isArray(params.slug) && params.slug.length > 0) {
     result.section = params.slug[0];
+    if (params.slug[1]) result.subsection = params.slug[1];
   }
   return result as T;
 }

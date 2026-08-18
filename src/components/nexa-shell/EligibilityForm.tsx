@@ -204,7 +204,7 @@ export default function EligibilityForm() {
           {currentStep === 1 && (
             <fieldset className="ns-intake-fields">
               <legend>{phase.label}</legend>
-              <label>
+              <label className="ns-intake-span">
                 Email Address *
                 <input type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} required />
               </label>
@@ -216,7 +216,7 @@ export default function EligibilityForm() {
                 Last Name *
                 <input value={form.lastName} onChange={(e) => setForm({ ...form, lastName: e.target.value })} required />
               </label>
-              <label>
+              <label className="ns-intake-span">
                 Phone Number *
                 <input type="tel" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} required />
               </label>
@@ -238,11 +238,11 @@ export default function EligibilityForm() {
           {currentStep === 2 && (
             <fieldset className="ns-intake-fields">
               <legend>{phase.label}</legend>
-              <label>
+              <label className="ns-intake-span">
                 Street Address *
                 <input value={form.street} onChange={(e) => setForm({ ...form, street: e.target.value })} required />
               </label>
-              <label>
+              <label className="ns-intake-span">
                 Apartment / Suite (Optional)
                 <input value={form.apartment} onChange={(e) => setForm({ ...form, apartment: e.target.value })} />
               </label>

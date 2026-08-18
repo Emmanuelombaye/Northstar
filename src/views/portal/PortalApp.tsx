@@ -189,11 +189,20 @@ function PortalPurchaseGate() {
   );
 }
 
-function SectionContent({ user, section }: { user: PortalUser; section: string }) {
+function SectionContent({
+  user,
+  section,
+  subsection,
+}: {
+  user: PortalUser;
+  section: string;
+  subsection?: string;
+}) {
   const planLabel =
     user.plan === "nad" ? "NAD+ Protocol" : user.plan === "peptide" ? "Sermorelin" : "GLP-1 Weight Management";
+  const healthKey = subsection ? `health/${subsection}` : section;
 
-  switch (section) {
+  switch (healthKey) {
     case "dashboard":
       return (
         <>
@@ -249,18 +258,75 @@ function SectionContent({ user, section }: { user: PortalUser; section: string }
         </>
       );
     case "health":
+    case "health/records":
       return (
         <>
           <h1>Health records</h1>
-          <p className="ns-lead">Labs, vitals, wellness plans, and clinical notes.</p>
+          <p className="ns-lead">Clinical notes and intake history for your care team.</p>
           <div className="ns-portal-cards">
             <article>
               <h3>Intake summary</h3>
               <p>Submitted via Find my treatment flow</p>
             </article>
             <article>
-              <h3>Biomarkers</h3>
-              <p>Pending lab orders after clinical approval</p>
+              <h3>Visit notes</h3>
+              <p>Available after your first clinician review</p>
+            </article>
+          </div>
+        </>
+      );
+    case "health/labs":
+      return (
+        <>
+          <h1>Labs</h1>
+          <p className="ns-lead">Orders and results after clinical approval.</p>
+          <div className="ns-portal-list">
+            <article>
+              <strong>Baseline panel</strong>
+              <span>Pending provider order</span>
+            </article>
+          </div>
+        </>
+      );
+    case "health/vitals":
+      return (
+        <>
+          <h1>Vitals</h1>
+          <p className="ns-lead">Weight, blood pressure, and other logged metrics.</p>
+          <div className="ns-portal-cards">
+            <article>
+              <h3>Weight</h3>
+              <p>Log entries after your plan activates</p>
+            </article>
+            <article>
+              <h3>Blood pressure</h3>
+              <p>Optional home readings</p>
+            </article>
+          </div>
+        </>
+      );
+    case "health/wellness":
+      return (
+        <>
+          <h1>Wellness</h1>
+          <p className="ns-lead">Lifestyle guidance that sits alongside your treatment plan.</p>
+          <div className="ns-portal-list">
+            <article>
+              <strong>Nutrition notes</strong>
+              <span>Shared after prescription, if approved</span>
+            </article>
+          </div>
+        </>
+      );
+    case "health/plans":
+      return (
+        <>
+          <h1>Care plans</h1>
+          <p className="ns-lead">Your active protocol and titration schedule.</p>
+          <div className="ns-portal-list">
+            <article>
+              <strong>{planLabel}</strong>
+              <span>Pending clinical approval</span>
             </article>
           </div>
         </>
@@ -338,7 +404,7 @@ function SectionContent({ user, section }: { user: PortalUser; section: string }
         </>
       );
     default:
-      return <h1>{section}</h1>;
+      return <h1>{subsection || section}</h1>;
   }
 }
 
@@ -346,6 +412,7 @@ function PortalShell({ user }: { user: PortalUser }) {
   const navigate = useNavigate();
   const rawParams = useParams();
   const rawSection = rawParams.section;
+  const subsection = typeof rawParams.subsection === "string" ? rawParams.subsection : undefined;
   const section = Array.isArray(rawSection) ? rawSection[0] : (rawSection || "dashboard");
   const [healthOpen, setHealthOpen] = useState(section === "health");
   const [moreOpen, setMoreOpen] = useState(false);
@@ -382,7 +449,11 @@ function PortalShell({ user }: { user: PortalUser }) {
                 {healthOpen && (
                   <div className="pc-nav-children">
                     {item.children.map((child) => (
-                      <Link key={child} to={`/portal/${item.id}/${child}`} className="pc-nav-child">
+                      <Link
+                        key={child}
+                        to={`/portal/${item.id}/${child}`}
+                        className={`pc-nav-child${subsection === child ? " is-active" : ""}`}
+                      >
                         {child}
                       </Link>
                     ))}
@@ -408,12 +479,15 @@ function PortalShell({ user }: { user: PortalUser }) {
       <div className="pc-main">
         <header className="pc-top">
           <span>{user.name}</span>
-          <Link to="/shop" className="ns-text-link">
-            Shop
-          </Link>
+          <nav className="pc-top-links" aria-label="Site">
+            <Link to="/treatments">Treatments</Link>
+            <Link to="/how-it-works">How it works</Link>
+            <Link to="/start">Check eligibility</Link>
+            <Link to="/faq">FAQ</Link>
+          </nav>
         </header>
         <main className="pc-content">
-          <SectionContent user={user} section={section} />
+          <SectionContent user={user} section={section} subsection={subsection} />
         </main>
       </div>
 
@@ -435,6 +509,9 @@ function PortalShell({ user }: { user: PortalUser }) {
               {item.label}
             </Link>
           ))}
+          <Link to="/treatments" onClick={() => setMoreOpen(false)}>Treatments</Link>
+          <Link to="/how-it-works" onClick={() => setMoreOpen(false)}>How it works</Link>
+          <Link to="/start" onClick={() => setMoreOpen(false)}>Check eligibility</Link>
         </div>
       )}
     </div>

@@ -93,7 +93,7 @@
   border: 1px solid color-mix(in oklch, var(--forest) 12%, transparent) !important;
   border-radius: 1.25rem !important;
   box-shadow: 0 12px 28px color-mix(in oklch, var(--forest) 7%, transparent) !important;
-  overflow: hidden !important;
+  overflow: visible !important;
   background: #fff !important;
   color: var(--why-ink) !important;
 }
@@ -270,12 +270,13 @@
 .pax-why__media-frame {
   display: grid;
   place-items: center;
-  height: 11rem;
+  height: auto;
+  min-height: 11rem;
   padding: 0.55rem;
   border-radius: 0.95rem;
   background: color-mix(in oklch, var(--sand) 55%, #fff);
   border: 1px solid color-mix(in oklch, var(--forest) 10%, transparent);
-  overflow: hidden;
+  overflow: visible;
 }
 
 .pax-why__media-frame img {

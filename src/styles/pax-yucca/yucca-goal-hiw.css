@@ -61,7 +61,7 @@
   }
 }
 
-/* Floating white card — soft radius, soft shadow, no heavy border */
+/* Floating white card — never clip illustrations */
 .pax-hiw__card {
   display: flex !important;
   flex-direction: column !important;
@@ -73,9 +73,9 @@
   box-shadow:
     0 1px 0 color-mix(in oklch, var(--forest) 4%, transparent),
     0 18px 40px color-mix(in oklch, var(--forest) 7%, transparent) !important;
-  padding: 1.5rem 1.35rem 1.35rem !important;
+  padding: 1.5rem 1.35rem 1.15rem !important;
   text-align: left !important;
-  overflow: hidden !important;
+  overflow: visible !important;
 }
 
 .pax-hiw__copy {
@@ -124,27 +124,29 @@
   flex: 1 1 auto !important;
 }
 
-/* Photo well — soft inset, full image visible */
+/* Photo well — full illustration, never cropped */
 .pax-hiw__media {
-  margin-top: 1.35rem !important;
+  margin-top: 1.2rem !important;
   border-radius: 1.35rem !important;
-  overflow: hidden !important;
+  overflow: visible !important;
   border: none !important;
   background: color-mix(in oklch, var(--sand) 70%, var(--dune)) !important;
-  aspect-ratio: 4 / 3 !important;
-  min-height: 0 !important;
+  aspect-ratio: auto !important;
+  min-height: 11.5rem !important;
+  height: auto !important;
   display: grid !important;
   place-items: center !important;
+  padding: 0.85rem 0.75rem 0.5rem !important;
 }
 
 .pax-hiw__media img {
   display: block !important;
-  width: 100% !important;
-  height: 100% !important;
+  width: auto !important;
   max-width: 100% !important;
-  max-height: 100% !important;
+  height: auto !important;
+  max-height: 14.5rem !important;
   object-fit: contain !important;
-  object-position: center !important;
+  object-position: center bottom !important;
 }
 
 @media (max-width: 899px) {

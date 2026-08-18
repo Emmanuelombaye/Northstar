@@ -888,7 +888,7 @@
 
 /* Portal */
 .pp-auth {
-  min-height: 100vh;
+  min-height: calc(100vh - var(--header-h));
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
@@ -975,7 +975,7 @@
 .pc-app {
   display: grid;
   grid-template-columns: 240px 1fr;
-  min-height: 100vh;
+  min-height: calc(100vh - var(--header-h));
   background: var(--cream);
 }
 .pc-sidebar {
@@ -1051,8 +1051,26 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 16px;
   font-size: 14px;
   color: var(--navy);
+}
+.pc-top-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  justify-content: flex-end;
+}
+.pc-top-links a {
+  color: var(--navy);
+  font-weight: 600;
+  text-decoration: none;
+}
+.pc-top-links a:hover {
+  color: var(--gold-dark, #b08f4a);
+}
+.pc-nav-child.is-active {
+  color: var(--gold);
 }
 .pc-content {
   padding: 32px 24px 80px;

@@ -17,53 +17,43 @@ const FAQ_MEDIA = [
 
 function HeroSection() {
   return (
-    <section className="ns-hero ns-hero-banner-mode" aria-label="Introduction">
-      <div className="ns-hero-slides">
-        <div className="ns-hero-slide is-active">
-          <img
-            src="/upper image on that landing page.png"
-            data-fallback="/new upper landing image.png"
-            alt="Physician-guided longevity with North Star MD"
-            className="ns-hero-desktop-img"
-            decoding="async"
-            fetchPriority="high"
-          />
-          <img
-            src="/images/heroheaderformobiledisplay.png"
-            data-fallback="/images/heroheaderformobiledisplay.webp"
-            alt="Physician-guided longevity with North Star MD"
-            className="ns-hero-mobile-img"
-            decoding="async"
-            fetchPriority="high"
-          />
-        </div>
-      </div>
-
-      <div className="ns-hero-hotspots">
-        <Link to="/start" className="ns-hero-hotspot ns-hero-hotspot-start" aria-label="Start your journey" />
-        <a
-          href="#how-it-works-home"
-          className="ns-hero-hotspot ns-hero-hotspot-how"
-          aria-label="How it works"
-          onClick={(e) => {
-            e.preventDefault()
-            document.getElementById('how-it-works-home')?.scrollIntoView({ behavior: 'smooth' })
-          }}
+    <section className="ns-hero ns-hero-composed" aria-label="Introduction">
+      <div className="ns-hero-composed__media" aria-hidden="true">
+        <img
+          src="/images/hero-photo.png"
+          alt=""
+          className="ns-hero-composed__photo ns-hero-composed__photo--desktop"
+          decoding="async"
+          fetchPriority="high"
+        />
+        <img
+          src="/images/hero-mobile-couple.png"
+          alt=""
+          className="ns-hero-composed__photo ns-hero-composed__photo--mobile"
+          decoding="async"
         />
       </div>
 
-      <h1 className="sr-only">
-        Find your North Star <em>before</em> decline sets in.
-      </h1>
-      <div className="ns-hero-treatment-copy" aria-hidden="true">
-        <p className="ns-hero-treatment-kicker">North Star MD Treatments</p>
-        <h2>Semaglutide &amp; Tirzepatide care</h2>
-        <p>Clinician-reviewed GLP-1 treatment pathways. If prescribed, fulfilled by licensed U.S. pharmacies.</p>
+      <div className="ns-hero-composed__copy">
+        <h1>
+          Physician-guided longevity, metabolic health, and wellness care — delivered wherever you are.
+        </h1>
+        <article className="ns-hero-composed__card">
+          <p className="ns-hero-composed__kicker">North Star MD Treatments</p>
+          <h2>Semaglutide &amp; Tirzepatide care</h2>
+          <p>
+            Clinician-reviewed GLP-1 treatment pathways. If prescribed, fulfilled by licensed U.S. pharmacies.
+          </p>
+        </article>
+        <div className="ns-hero-composed__actions">
+          <Link to="/start" className="ns-hero-composed__cta ns-hero-composed__cta--primary">
+            Check eligibility
+          </Link>
+          <Link to="/how-it-works" className="ns-hero-composed__cta ns-hero-composed__cta--ghost">
+            How it works
+          </Link>
+        </div>
       </div>
-      <p className="sr-only">
-        Physician-guided longevity, metabolic health, and wellness care — licensed U.S. providers,
-        compounded therapies, and discreet delivery wherever you are.
-      </p>
     </section>
   )
 }
