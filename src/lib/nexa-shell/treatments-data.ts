@@ -9,6 +9,7 @@ export const TREATMENTS_MEDIA = {
   protocolVials: `${TREATMENTS_IMG}/vials-protocol.avif`,
   semaClinical: `${TREATMENTS_IMG}/vial-sema-clinical.avif`,
   tirzClinical: `${TREATMENTS_IMG}/vial-tirz-clinical.avif`,
+  clinicalHero: `${TREATMENTS_IMG}/clinical-hero-people.avif`,
   expectWeek14: `${TREATMENTS_IMG}/expect-week-1-4.avif`,
   expectWeek412: `${TREATMENTS_IMG}/expect-week-4-12.avif`,
   expectMonth3: `${TREATMENTS_IMG}/expect-month-3.avif`,

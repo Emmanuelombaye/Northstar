@@ -310,7 +310,7 @@ function ProtocolSection({ onCta }: { onCta: () => void }) {
 
 function ClinicalSection() {
   return (
-    <section className="retro-clinical retro-clinical--weight-loss" aria-labelledby="retro-clinical-heading">
+    <section className="retro-clinical retro-clinical--weight-loss ns-clinical" aria-labelledby="retro-clinical-heading">
       <div className="retro-clinical__inner">
         <div className="retro-clinical__text">
           <p className="retro-clinical__eyebrow">Personalized GLP-1, GLP-1 + GIP Treatments</p>
@@ -339,20 +339,17 @@ function ClinicalSection() {
             <p>Your dosing protocol is reviewed and prescribed by a licensed provider, adjusted as you progress.</p>
           </div>
         </div>
-        <div className="retro-clinical__visual" aria-hidden="true">
+        <figure className="ns-clinical-hero">
           <img
-            className="retro-clinical__vial retro-clinical__vial--tirz"
-            src={TREATMENTS_MEDIA.tirzClinical}
-            alt=""
+            src={TREATMENTS_MEDIA.clinicalHero}
+            alt="North Star MD patients with Semaglutide and Tirzepatide"
             loading="lazy"
           />
-          <img
-            className="retro-clinical__vial retro-clinical__vial--sema"
-            src={TREATMENTS_MEDIA.semaClinical}
-            alt=""
-            loading="lazy"
-          />
-        </div>
+          <figcaption className="ns-clinical-hero__caption">
+            <span>Semaglutide · Tirzepatide</span>
+            <span>Provider-guided · Charged only if prescribed</span>
+          </figcaption>
+        </figure>
       </div>
     </section>
   )

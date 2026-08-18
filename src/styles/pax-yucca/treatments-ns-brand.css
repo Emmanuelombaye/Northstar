@@ -45,37 +45,56 @@
   filter: none !important;
 }
 
-.yx-clone .retro-clinical__visual {
-  display: flex !important;
-  align-items: flex-end !important;
-  justify-content: center !important;
-  gap: 0.35rem !important;
-  width: min(340px, 100%) !important;
+.yx-clone .ns-clinical .retro-clinical__inner {
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.15fr) !important;
+  align-items: stretch !important;
+  gap: clamp(1.5rem, 4vw, 2.75rem) !important;
+}
+
+.yx-clone .ns-clinical-hero {
+  grid-area: visual;
+  position: relative;
+  margin: 0;
+  width: 100% !important;
+  max-width: none !important;
   height: auto !important;
-  min-height: 18rem !important;
-  padding: 1.25rem 1rem 0.75rem !important;
-  background: linear-gradient(180deg, #f9f7f2 0%, #eceae6 100%) !important;
-  border-radius: 1.25rem !important;
-  border: 1px solid rgba(10, 31, 61, 0.08) !important;
+  min-height: 34rem !important;
+  overflow: hidden;
+  border-radius: 1.75rem;
+  background: #f9f7f2;
+  box-shadow: 0 28px 60px rgba(10, 31, 61, 0.16);
 }
 
-.yx-clone .retro-clinical__vial {
-  position: relative !important;
-  left: auto !important;
-  top: auto !important;
-  width: 46% !important;
-  max-width: 9.5rem !important;
-  height: auto !important;
-  object-fit: contain !important;
-  filter: none !important;
+.yx-clone .ns-clinical-hero img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 34rem;
+  object-fit: cover;
+  object-position: center 18%;
 }
 
-.yx-clone .retro-clinical__vial--tirz {
-  transform: translateY(0) !important;
+.yx-clone .ns-clinical-hero__caption {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.35rem 1rem;
+  padding: 0.7rem 0.95rem;
+  border-radius: 999px;
+  background: rgba(10, 31, 61, 0.78);
+  color: #f9f7f2;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
-.yx-clone .retro-clinical__vial--sema {
-  transform: translateY(1.25rem) !important;
+.yx-clone .ns-clinical-hero__caption span:first-child {
+  color: var(--gold, #c5a059);
 }
 
 .yx-clone .retro-expect-card__media {
@@ -169,8 +188,13 @@ html[data-explore-active-tab='weight-loss'] .yx-clone .retro-home-closing-bg--we
 }
 
 @media (max-width: 900px) {
-  .yx-clone .retro-clinical__visual {
-    min-height: 15rem !important;
+  .yx-clone .ns-clinical .retro-clinical__inner {
+    grid-template-columns: 1fr !important;
+  }
+
+  .yx-clone .ns-clinical-hero,
+  .yx-clone .ns-clinical-hero img {
+    min-height: 26rem !important;
   }
 
   .yx-clone .retro-expect-card__media {
