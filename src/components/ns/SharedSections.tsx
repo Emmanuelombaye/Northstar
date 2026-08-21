@@ -126,7 +126,7 @@ export function RetroWhySection({
             Telehealth evaluation → clinician decision → pharmacy fulfillment only when prescribed. Compounded medications are not FDA-approved finished products.
           </p>
         </header>
-        <NsSnapRail cols={4} className="retro-home-why-grid pax-why__grid" hint="Swipe to see why">
+        <NsSnapRail cols={4} className="retro-home-why-grid pax-why__grid" mobile="stack">
           {pillars.map((p) => (
             <article key={p.id} className={`retro-home-why-card pax-why__card pax-why__card--${p.tone}`}>
               <div className="pax-why__card-copy">

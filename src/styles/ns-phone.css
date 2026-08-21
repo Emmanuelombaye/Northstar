@@ -259,59 +259,19 @@
     padding: 0.55rem 0.7rem !important;
   }
 
-  /* Why cards: full-width stack, even left/right — do not keep the 86% left snap */
-  .yucca-home .pax-why,
   .pax-why {
     padding-inline: 1rem !important;
   }
 
-  .yucca-home .pax-why__inner,
-  .pax-why__inner,
-  .yucca-home .retro-home-why-inner {
+  .pax-why__inner {
     width: 100% !important;
     max-width: 100% !important;
     margin-inline: 0 !important;
     padding-inline: 0 !important;
   }
 
-  .yucca-home .pax-why .ns-snap-wrap,
-  .pax-why .ns-snap-wrap {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
-  .yucca-home .pax-why .ns-snap-hint,
-  .yucca-home .pax-why .ns-snap-dots,
-  .pax-why .ns-snap-hint,
-  .pax-why .ns-snap-dots {
-    display: none !important;
-  }
-
-  .yucca-home .pax-why__grid.ns-snap,
-  .yucca-home .pax-why .ns-snap,
-  .pax-why .pax-why__grid.ns-snap {
-    display: flex !important;
-    flex-direction: column !important;
-    flex-wrap: nowrap !important;
-    align-items: stretch !important;
-    gap: 0.9rem !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    overflow: visible !important;
-    scroll-snap-type: none !important;
-  }
-
-  .yucca-home .pax-why__grid.ns-snap > .pax-why__card,
-  .yucca-home .pax-why .ns-snap > .pax-why__card,
-  .pax-why .ns-snap > .pax-why__card {
-    flex: none !important;
-    width: 100% !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-    scroll-snap-align: unset !important;
+  .pax-why__n {
+    display: block;
   }
 
   .pax-why__card-copy,
@@ -321,14 +281,8 @@
     text-align: center;
   }
 
-  .pax-why__n {
-    display: block !important;
-  }
-
   .pax-why__checks,
-  .pax-why__checks li,
-  .pax-why__checks strong,
-  .pax-why__checks small {
-    text-align: left !important;
+  .pax-why__checks li {
+    text-align: left;
   }
 }

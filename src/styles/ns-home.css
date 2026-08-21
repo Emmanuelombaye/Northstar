@@ -440,8 +440,8 @@
 /* Photo hero — exact image, no CSS crop. Desktop: full panorama. Phone: couple crop. */
 .yucca-home .ns-hero.ns-hero-photo {
   position: relative;
-  min-height: 0 !important;
-  height: auto !important;
+  min-height: 0;
+  height: auto;
   display: block;
   overflow: hidden;
 }
@@ -585,43 +585,17 @@
     background: #f9f7f2;
   }
 
-  .yucca-home .ns-hero-lede {
-    margin-inline: auto;
-  }
-
-  .yucca-home .ns-hero-treats,
-  .yucca-home .ns-hero-photo-actions {
-    justify-content: center;
-  }
-
   .yucca-home .ns-hero-photo-copy h1 {
     font-size: 1.28rem;
   }
 
   .yucca-home .ns-hero-lede {
+    margin-inline: auto;
     font-size: 0.8rem;
   }
-}
 
-@media (max-width: 900px) {
-  .yucca-home .ns-atlas .ns-atlas__panel,
-  .yucca-home .ns-atlas .ns-snap > .ns-atlas__panel {
-    background: #f9f7f2 !important;
-    color: var(--navy, #0a1f3d) !important;
-    border-color: color-mix(in srgb, var(--gold, #c5a059) 55%, transparent) !important;
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22) !important;
-    transform: none !important;
-    padding: 1rem 1rem 1.1rem !important;
-  }
-
-  .yucca-home .ns-atlas .ns-atlas__desc,
-  .yucca-home .ns-atlas .ns-atlas__price-note,
-  .yucca-home .ns-atlas .ns-atlas__cadence {
-    color: rgba(10, 31, 61, 0.68) !important;
-  }
-
-  .yucca-home .ns-atlas .ns-atlas__cta--ghost {
-    color: var(--navy, #0a1f3d) !important;
-    border-color: rgba(10, 31, 61, 0.22) !important;
+  .yucca-home .ns-hero-treats,
+  .yucca-home .ns-hero-photo-actions {
+    justify-content: center;
   }
 }

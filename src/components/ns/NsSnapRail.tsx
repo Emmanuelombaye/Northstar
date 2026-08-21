@@ -8,16 +8,19 @@ export function NsSnapRail({
   className = '',
   hint = 'Swipe',
   desktop = 'grid',
+  mobile = 'snap',
 }: {
   children: ReactNode
   cols?: 2 | 3 | 4
   className?: string
   hint?: string
   desktop?: 'grid' | 'stack'
+  mobile?: 'snap' | 'stack'
 }) {
   const ref = useRef<HTMLDivElement>(null)
   const items = Children.toArray(children)
   const [active, setActive] = useState(0)
+  const isMobileStack = mobile === 'stack'
 
   const sync = () => {
     const el = ref.current
@@ -39,12 +42,21 @@ export function NsSnapRail({
   }
 
   return (
-    <div className={`ns-snap-wrap ns-snap-wrap--${cols}${desktop === 'stack' ? ' ns-snap-wrap--stack' : ''}`}>
-      {hint ? <p className="ns-snap-hint">{hint}</p> : null}
-      <div ref={ref} className={`ns-snap ns-snap--${cols} ${className}`.trim()} onScroll={sync}>
+    <div
+      className={[
+        'ns-snap-wrap',
+        `ns-snap-wrap--${cols}`,
+        desktop === 'stack' ? 'ns-snap-wrap--stack' : '',
+        isMobileStack ? 'ns-snap-wrap--mobile-stack' : '',
+      ]
+        .filter(Boolean)
+        .join(' ')}
+    >
+      {hint && !isMobileStack ? <p className="ns-snap-hint">{hint}</p> : null}
+      <div ref={ref} className={`ns-snap ns-snap--${cols} ${className}`.trim()} onScroll={isMobileStack ? undefined : sync}>
         {children}
       </div>
-      {items.length > 1 ? (
+      {!isMobileStack && items.length > 1 ? (
         <div className="ns-snap-dots" aria-hidden="true">
           {items.map((_, i) => (
             <button
