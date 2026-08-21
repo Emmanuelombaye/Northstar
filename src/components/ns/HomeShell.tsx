@@ -18,42 +18,18 @@ const FAQ_MEDIA = [
 
 function HeroSection() {
   return (
-    <section className="ns-hero ns-hero-banner-mode" aria-label="Introduction">
-      <div className="ns-hero-slides">
-        <div className="ns-hero-slide is-active">
-          <img
-            src="/images/home/hero-desktop-treatments.png?v=20260818f"
-            data-fallback="/upper image on that landing page.png"
-            alt="Physician-guided longevity with North Star MD"
-            className="ns-hero-desktop-img"
-            decoding="async"
-            fetchPriority="high"
-          />
-          <img
-            src="/images/home/hero-mobile-treatments.png?v=20260818f"
-            data-fallback="/images/heroheaderformobiledisplay.png"
-            alt="Physician-guided longevity with North Star MD"
-            className="ns-hero-mobile-img"
-            decoding="async"
-            fetchPriority="high"
-          />
-          <p className="ns-hero-treat-line">
-            Semaglutide or Tirzepatide—physician-guided GLP-1 care, delivered wherever you are.
-          </p>
-        </div>
-      </div>
-
-      <div className="ns-hero-hotspots">
-        <Link to="/start" className="ns-hero-hotspot ns-hero-hotspot-start" aria-label="Start your journey" />
-        <Link to="/how-it-works" className="ns-hero-hotspot ns-hero-hotspot-how" aria-label="How it works" />
-      </div>
-
-      <h1 className="sr-only">
-        Find your North Star <em>before</em> decline sets in.
-      </h1>
-      <p className="sr-only">
-        Semaglutide or Tirzepatide — physician-guided GLP-1 care, delivered wherever you are.
-      </p>
+    <section className="ns-hero ns-hero-photo" aria-label="Introduction">
+      <picture>
+        <source media="(max-width: 820px)" srcSet="/images/newheroheader-mobile.jpg" />
+        <img
+          src="/images/newheroheader.jpg"
+          alt=""
+          className="ns-hero-photo-img"
+          decoding="async"
+          fetchPriority="high"
+        />
+      </picture>
+      <h1 className="sr-only">North Star MD</h1>
     </section>
   )
 }

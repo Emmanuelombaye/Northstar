@@ -57,7 +57,14 @@ export default function RootLayout({
         <link
           rel="preload"
           as="image"
-          href="/images/home/hero-desktop-treatments.png?v=20260818f"
+          href="/images/newheroheader.jpg"
+          media="(min-width: 821px)"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href="/images/newheroheader-mobile.jpg"
+          media="(max-width: 820px)"
         />
       </head>
       <body>
