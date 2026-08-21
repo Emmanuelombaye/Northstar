@@ -41,11 +41,11 @@
     max-width: 100% !important;
     min-width: 0 !important;
     margin-inline: 0 !important;
-    padding: 4px 4px 16px 2px !important;
+    padding: 4px 7% 16px !important;
     overflow-x: auto !important;
     overflow-y: hidden !important;
     scroll-snap-type: x mandatory !important;
-    scroll-padding-inline: 2px !important;
+    scroll-padding-inline: 7% !important;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior-x: contain;
     scrollbar-width: none;
@@ -68,13 +68,14 @@
     width: 86% !important;
     min-width: 86% !important;
     max-width: 86% !important;
-    scroll-snap-align: start !important;
+    scroll-snap-align: center !important;
     margin: 0 !important;
   }
 
   .ns-snap-hint {
     display: block;
     margin: 0 0 0.65rem;
+    text-align: center;
     font-size: 0.72rem;
     font-weight: 600;
     letter-spacing: 0.12em;

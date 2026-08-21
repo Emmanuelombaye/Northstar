@@ -53,7 +53,7 @@ export function NsSnapRail({
               className={i === active ? 'is-on' : undefined}
               onClick={() => {
                 const slide = ref.current?.children[i] as HTMLElement | undefined
-                slide?.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' })
+                slide?.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' })
               }}
             />
           ))}

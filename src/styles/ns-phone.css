@@ -188,8 +188,9 @@
   }
 
   .ns-atlas__container {
-    width: calc(100% - 1.25rem) !important;
+    width: calc(100% - 1.5rem) !important;
     max-width: 100% !important;
+    margin-inline: auto !important;
   }
 
   .ns-atlas .ns-snap > .ns-atlas__panel,

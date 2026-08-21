@@ -29,7 +29,27 @@ function HeroSection() {
           fetchPriority="high"
         />
       </picture>
-      <h1 className="sr-only">North Star MD</h1>
+      <div className="ns-hero-photo-copy">
+        <p className="ns-hero-kicker">North Star MD · GLP-1 care</p>
+        <h1>
+          Find your North Star <em>before</em> decline sets in.
+        </h1>
+        <p className="ns-hero-lede">
+          Semaglutide or Tirzepatide — physician-guided care, delivered wherever you are. Charged only if prescribed.
+        </p>
+        <div className="ns-hero-treats">
+          <Link href="/semaglutide">Semaglutide</Link>
+          <Link href="/tirzepatide">Tirzepatide</Link>
+        </div>
+        <div className="ns-hero-photo-actions">
+          <Link href="/start" className="ns-hero-btn ns-hero-btn--gold">
+            Check eligibility
+          </Link>
+          <Link href="/how-it-works" className="ns-hero-btn ns-hero-btn--ghost">
+            How it works
+          </Link>
+        </div>
+      </div>
     </section>
   )
 }
