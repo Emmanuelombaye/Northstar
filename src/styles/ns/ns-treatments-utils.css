@@ -1,4 +1,4 @@
-/* Minimal utilities used by treatments DOM clone — Pax brand kit */
+/* Minimal utilities used by treatments layout */
 .yx-clone,
 .retro-explore-tabs-wrap {
   --color-retro-ink: var(--forest);
@@ -129,7 +129,7 @@
 .yx-clone .text-neutral-900\/40 { color: color-mix(in oklch, var(--forest) 40%, transparent); }
 .yx-clone .grid-cols-1 { grid-template-columns: 1fr; }
 
-/* Explore tabs — match Yucca geometry */
+/* Explore tabs */
 .yx-clone .explore-tab-menu {
   display: grid;
   max-width: 606px;

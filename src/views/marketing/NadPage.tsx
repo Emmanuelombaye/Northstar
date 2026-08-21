@@ -15,13 +15,10 @@ export function NadPage() {
               </p>
               <div className="treatment-hero-ctas">
                 <a href="#program-select" className="btn btn-navy btn-pill btn-lg">View Program</a>
-                <a href="/explore-treatments" className="btn btn-ghost btn-pill btn-lg">Explore Treatments</a>
+                <a href="/treatments" className="btn btn-ghost btn-pill btn-lg">Explore Treatments</a>
               </div>
             </div>
             <div className="treatment-hero-image-wrap">
-              {/* AI IMAGE GENERATION PROMPT:
-                Minimalist studio photography showing a luxury amber glass vial with clear medicine liquid labelled NAD+, sitting inside a high-end cream medical storage kit, soft direct bright morning light, photorealistic, depth of field, Hasselblad 50mm, color tone #f9f7f2 cream and #0a1f3d navy highlights --ar 4:3
-              */}
               <img
                 className="treatment-hero-image"
                 src="/images/nad-hero.webp" data-fallback="/images/nad-hero.png" decoding="async"
@@ -43,17 +40,11 @@ export function NadPage() {
         <div className="treatment-wrap">
           <div className="molecule-grid">
             <div className="asym-grid-visual">
-              {/* AI IMAGE GENERATION PROMPT:
-                Asymmetric grid layout, (Left Side) close up high-end glass beaker showing sparkling water and a single clean amber pipette on raw cream canvas, (Right Side) warm neutral linen texture details under organic daylight, photorealistic, depth of field, Hasselblad 50mm --ar 4:3
-              */}
               <img
                 className="asym-img-large"
                 src="/images/product-box/close.webp" data-fallback="/images/product-box/close.png" decoding="async"
                 alt="NAD+ sterile raw ingredients close up"
               />
-              {/* AI IMAGE GENERATION PROMPT:
-                Close up macro of pristine medical-grade cold packs, vials, and elegant clinical pamphlets organized inside a dark navy premium insulated gift box, natural sunset lighting, depth of field --ar 1:1
-              */}
               <img
                 className="asym-img-small"
                 src="/images/product-box/wide.webp" data-fallback="/images/product-box/wide.png" decoding="async"

@@ -442,7 +442,7 @@ function KnowallSection({ onCta }: { onCta: () => void }) {
   )
 }
 
-/** Pax-style treatments explore — Semaglutide & Tirzepatide for North Star MD */
+/** North Star MD treatments explore — Semaglutide & Tirzepatide */
 export default function TreatmentsExplore() {
   const router = useRouter()
   const [selectedTx, setSelectedTx] = useState('semaglutide')

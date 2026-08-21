@@ -1,10 +1,10 @@
-/* Nexa Rx — brand kit enforcement for home + treatments (retro layout)
+/* North Star MD — brand kit for home + treatments
  * Allowed: Navy #0F1722 · Teal #4DAA9A · Sand #F2EFEA · Cloud #FAFAF8
  * Ban: forest green · terracotta · peach dune · purple washes
  * Scoped to home/treatments clones — do not force global html/body.
  */
 
-/* —— Token aliases used by Yucca clone sheets —— */
+/* —— Token aliases used by layout sheets —— */
 .yx-clone,
 .yucca-home,
 main[data-retro-scope],

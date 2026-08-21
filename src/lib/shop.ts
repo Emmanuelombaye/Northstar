@@ -1,5 +1,6 @@
-/** North Star → Peak white-label enrollment (never change brandId without DB sync). */
-export const PEAK_ORIGIN = "https://www.joinnorthstarmd.com";
+/** North Star MD enrollment URLs (never change brandId without DB sync). */
+export const SITE_ORIGIN = "https://www.joinnorthstarmd.com";
+export const PEAK_ORIGIN = SITE_ORIGIN;
 export const ENROLL_PATH = "/care/north-star-md/shop";
 export const LOGIN_PATH = "/care/north-star-md/login";
 export const BRAND_SLUG = "north-star-md";
@@ -33,7 +34,7 @@ const TREATMENT_PRODUCT: Record<string, string> = {
   "pt-141": "pt-141",
 };
 
-/** Peak enrollmentDeepLink category slugs (see telehealth src/lib/enrollmentDeepLink.ts). */
+/** Enrollment category slugs used by the Patient Center. */
 const CATEGORY_SLUG: Record<string, string> = {
   "weight-loss": "weight-loss",
   metabolic: "weight-loss",
@@ -104,7 +105,7 @@ export function patientPortalPath(): string {
   return `/care/${BRAND_SLUG}/patient`;
 }
 
-/** After North Star intake — hand off to Peak patient login (product already chosen). */
+/** After North Star MD intake — hand off to the Patient Center login. */
 export function buildPatientLoginHandoff(opts: {
   peakProduct?: string;
   peakCategory?: string;

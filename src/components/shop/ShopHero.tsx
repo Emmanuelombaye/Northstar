@@ -32,8 +32,8 @@ export function ShopHero() {
             The physician-guided store for <em>modern longevity.</em>
           </h1>
           <p className="shop-lead">
-            Browse {PRODUCT_COUNT}+ prescription programs — weight loss, peptides, hormones, hair, skincare, mental health, and more.
-            Checkout on our secure Peak-powered patient portal.
+            Browse {PRODUCT_COUNT}+ physician-guided programs — metabolic health, hormones, hair, skincare, and wellness.
+            Checkout through the secure North Star MD Patient Center.
           </p>
           <div className="shop-hero-actions">
             <a href="#catalog" className="btn btn-navy btn-pill">

@@ -46,7 +46,7 @@ export function SiteFooter() {
             <li><a href="/advisors">Clinical care</a></li>
             <li><a href="/shop">Shop</a></li>
             <li><a href="/how-it-works">How It Works</a></li>
-            <li><a href="/faq">FAQ Support</a></li>
+            <li><a href="/faq">FAQ</a></li>
           </ul>
         </div>
 

@@ -1,8 +1,8 @@
-/** Shopify-style display metadata — form, strength, vendor, sort order */
+/** North Star MD catalog display metadata — form, strength, vendor, sort order */
 
 import type { PharmacyProduct, StoreCategory } from "./types";
 
-export type ShopifyMeta = {
+export type CatalogMeta = {
   dosageForm: string;
   strength?: string;
   vendor: string;
@@ -20,7 +20,7 @@ export const CATEGORY_SORT: StoreCategory[] = [
   "hormone",
 ];
 
-const META: Record<string, ShopifyMeta> = {
+const META: Record<string, CatalogMeta> = {
   "tirzepatide-plus": { dosageForm: "Injection", strength: "2.5–15 mg weekly", vendor: VENDOR, sortOrder: 1 },
   "semaglutide-plus": { dosageForm: "Injection", strength: "0.25–2.4 mg weekly", vendor: VENDOR, sortOrder: 2 },
   "liraglutide-daily": { dosageForm: "Injection", strength: "0.6–3 mg daily", vendor: VENDOR, sortOrder: 3 },
@@ -80,7 +80,7 @@ const FORM_DEFAULT: Record<string, string> = {
   hormone: "Tablet",
 };
 
-export function getShopifyMeta(slug: string, category: StoreCategory): ShopifyMeta {
+export function getCatalogMeta(slug: string, category: StoreCategory): CatalogMeta {
   return (
     META[slug] ?? {
       dosageForm: FORM_DEFAULT[category] ?? "Rx",
@@ -90,12 +90,12 @@ export function getShopifyMeta(slug: string, category: StoreCategory): ShopifyMe
   );
 }
 
-export function sortProductsShopify(a: PharmacyProduct, b: PharmacyProduct): number {
+export function sortCatalogProducts(a: PharmacyProduct, b: PharmacyProduct): number {
   const catA = CATEGORY_SORT.indexOf(a.category);
   const catB = CATEGORY_SORT.indexOf(b.category);
   if (catA !== catB) return catA - catB;
-  const orderA = getShopifyMeta(a.slug, a.category).sortOrder;
-  const orderB = getShopifyMeta(b.slug, b.category).sortOrder;
+  const orderA = getCatalogMeta(a.slug, a.category).sortOrder;
+  const orderB = getCatalogMeta(b.slug, b.category).sortOrder;
   if (orderA !== orderB) return orderA - orderB;
   return a.name.localeCompare(b.name);
 }
@@ -105,6 +105,6 @@ export function groupProductsByCategory(products: PharmacyProduct[]) {
     category,
     products: products
       .filter((p) => p.category === category)
-      .sort((a, b) => getShopifyMeta(a.slug, a.category).sortOrder - getShopifyMeta(b.slug, b.category).sortOrder),
+      .sort((a, b) => getCatalogMeta(a.slug, a.category).sortOrder - getCatalogMeta(b.slug, b.category).sortOrder),
   })).filter((g) => g.products.length > 0);
 }

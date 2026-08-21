@@ -7,26 +7,16 @@ export function FaqPage() {
 
   return (
     <main className="faq-page">
-      
       <section className="faq-hero">
         <div className="faq-wrap">
-          <p className="eyebrow">Clinical Support</p>
-          <h1>Clear answers for your health journey.</h1>
+          <p className="eyebrow">North Star MD</p>
+          <h1>Clear answers before you begin.</h1>
           <p className="faq-hero-lead">
-            Everything you need to know about our physician-guided plans, telemedicine compliance, 
-            HSA/FSA payment policies, and cold-chain shipping logistics.
+            How Semaglutide and Tirzepatide care works at North Star MD — intake, licensed provider review, pharmacy
+            fulfillment, and billing. Completing an intake does not guarantee a prescription.
           </p>
         </div>
       </section>
-
-      <div className="faq-tab-container">
-        <div className="faq-tabs" role="tablist" aria-label="Support categories">
-          <button className="faq-tab is-active" data-group="all" role="tab" aria-selected="true">All FAQs</button>
-          <button className="faq-tab" data-group="clinical" role="tab" aria-selected="false">Medical &amp; Intake</button>
-          <button className="faq-tab" data-group="billing" role="tab" aria-selected="false">Payments &amp; HSA</button>
-          <button className="faq-tab" data-group="shipping" role="tab" aria-selected="false">Pharmacy &amp; Transit</button>
-        </div>
-      </div>
 
       <section className="faq-main-section">
         <div className="faq-media-grid ns-snap ns-snap--3" aria-hidden="true">
@@ -37,96 +27,118 @@ export function FaqPage() {
           ))}
         </div>
         <div className="faq-list-container">
-          {/* Group 1: Medical & Intake */}
           <div className="faq-group" id="clinical">
-            <h2 className="faq-group-title">Medical &amp; Clinical Intake</h2>
-            
+            <h2 className="faq-group-title">Intake &amp; clinical review</h2>
+
             <details className="faq-item" open>
-              <summary>How does the secure clinical intake operate?</summary>
+              <summary>Is a prescription guaranteed?</summary>
               <p>
-                Our HIPAA-aligned onboarding allows you to securely share your medical history, current biomarkers, 
-                and primary care goals online. A board-certified North Star MD physician evaluates your case, 
-                approves appropriate therapy paths, and directs your lab orders—typically within 24 hours.
+                No. Completing an intake does not guarantee treatment. A licensed U.S. clinician reviews your medical
+                history and decides whether Semaglutide or Tirzepatide is appropriate.
               </p>
             </details>
 
             <details className="faq-item">
-              <summary>Is a live video consultation required?</summary>
+              <summary>How does the clinical intake work?</summary>
               <p>
-                Not always. Many of our preventative longevity and weight care paths utilize asynchronous clinical review. 
-                If your doctor requires further clinical context, or if you are enrolled in our Premium or Elite 
-                membership tiers, video check-ins are scheduled directly inside your member portal.
+                You share medical history, metrics, and shipping details in a secure questionnaire. A state-licensed
+                North Star MD provider reviews your answers — typically within about 24 hours — and may follow up if
+                more information is needed.
               </p>
             </details>
 
             <details className="faq-item">
-              <summary>Who are the North Star MD medical practitioners?</summary>
+              <summary>Is a live video visit required?</summary>
               <p>
-                Every practitioner in our clinical network is a board-certified medical doctor (MD), doctor of osteopathic 
-                medicine (DO), or advanced nurse practitioner (APRN) licensed in the United States. Our directors and advisors 
-                specialize in endocrinology, preventative longevity science, and cardiovascular lipidology.
+                Not always. Many reviews are asynchronous. If your clinician needs more context, they can message you
+                through the Patient Center or schedule a visit.
+              </p>
+            </details>
+
+            <details className="faq-item">
+              <summary>Who reviews my intake?</summary>
+              <p>
+                A licensed U.S. healthcare provider — such as a physician, DO, or nurse practitioner — licensed to
+                practice in your state reviews your questionnaire before any prescription decision.
               </p>
             </details>
           </div>
 
-          {/* Group 2: Billing & HSA */}
+          <div className="faq-group" id="treatments">
+            <h2 className="faq-group-title">Treatments &amp; compounding</h2>
+
+            <details className="faq-item">
+              <summary>What treatments does North Star MD offer?</summary>
+              <p>
+                North Star MD focuses on physician-guided Semaglutide and Tirzepatide programs, with additional
+                wellness protocols available through the shop when clinically appropriate. Your provider decides what,
+                if anything, is right for you.
+              </p>
+            </details>
+
+            <details className="faq-item">
+              <summary>Are compounded medications FDA-approved?</summary>
+              <p>
+                Compounded Semaglutide and Tirzepatide are prepared by licensed U.S. pharmacies for individual patients
+                when prescribed. They are not FDA-approved as finished branded products and have not been reviewed by
+                the FDA for safety, effectiveness, or manufacturing quality as finished drugs.
+              </p>
+            </details>
+
+            <details className="faq-item">
+              <summary>What should I know about side effects?</summary>
+              <p>
+                Side effects vary. Common effects may include nausea, constipation, diarrhea, or appetite changes,
+                especially while your body adjusts. Your provider can adjust your protocol if needed.
+              </p>
+            </details>
+          </div>
+
           <div className="faq-group" id="billing">
-            <h2 className="faq-group-title">Payments &amp; HSA / FSA</h2>
-            
+            <h2 className="faq-group-title">Pricing &amp; payments</h2>
+
             <details className="faq-item">
-              <summary>Can I pay for my treatment with HSA or FSA cards?</summary>
+              <summary>How does pricing work?</summary>
               <p>
-                Yes! Because North Star MD provides doctor-prescribed therapies, diagnostic labs, and ongoing clinical care, 
-                our memberships are fully qualifying medical expenses. You can check out directly using your HSA or FSA debit card.
+                You can begin the medical intake at no charge. If prescribed, itemized program pricing is confirmed
+                before enrollment. You are not charged for ongoing medication fulfillment unless a provider approves
+                treatment.
               </p>
             </details>
 
             <details className="faq-item">
-              <summary>Do you accept standard health insurance?</summary>
+              <summary>Can I use an HSA or FSA card?</summary>
               <p>
-                We operate under a Direct Care model, which means we do not contract with insurance carriers. Bypassing 
-                standard commercial insurance enables our physicians to focus 100% on preventative longevity strategies 
-                without restrictive insurance criteria or authorization delays.
+                Many patients use HSA or FSA debit cards for doctor-prescribed care. Eligibility depends on your plan.
+                North Star MD does not bill commercial insurance.
               </p>
             </details>
 
             <details className="faq-item">
-              <summary>How do I receive super-bills for reimbursement?</summary>
+              <summary>Do you accept health insurance?</summary>
               <p>
-                Simply toggle the "Request Super-Bill" trigger inside your member portal after any treatment cycle. 
-                Our billing desk will generate an itemized clinical invoice complete with all standard CPT codes 
-                and ICD-10 diagnostic markers for you to submit to your insurer.
+                No. North Star MD is a direct-pay telehealth practice. This keeps clinical review focused on your
+                history and eligibility rather than insurance authorization.
               </p>
             </details>
           </div>
 
-          {/* Group 3: Pharmacy & Shipping */}
           <div className="faq-group" id="shipping">
-            <h2 className="faq-group-title">Pharmacy, Transit &amp; Logistics</h2>
-            
+            <h2 className="faq-group-title">Pharmacy &amp; shipping</h2>
+
             <details className="faq-item">
-              <summary>Where are my prescriptions formulated?</summary>
+              <summary>Where is medication shipped from?</summary>
               <p>
-                All therapies are formulated, compounded, and shipped strictly by our CLIA-certified compounding pharmacy 
-                partners in the United States. Compounds undergo third-party assay checks for purity and consistency.
+                When prescribed, medication is fulfilled by licensed U.S. compounding pharmacies and shipped to an
+                eligible address. Availability depends on your state and clinical review.
               </p>
             </details>
 
             <details className="faq-item">
               <summary>How does temperature-controlled shipping work?</summary>
               <p>
-                Emerging cellular peptides require strict cold-chain preservation during transit. Your prescription is packed 
-                in specialized insulated boxes with medical-grade frozen gel packs, maintaining optimal cool temperatures 
-                from our sterile pharmacy directly to your doorstep.
-              </p>
-            </details>
-
-            <details className="faq-item">
-              <summary>How quickly will my treatment ship?</summary>
-              <p>
-                Once your physician reviews your lab results and approves your custom longevity script, the order is sent 
-                to our compounding pharmacy. Your box is prepared, packed, and shipped via overnight or express courier, 
-                reaching you in 1 to 2 business days.
+                Injectable medications that require refrigeration are packed for cold-chain transit and shipped
+                discreetly to your door.
               </p>
             </details>
           </div>
@@ -134,18 +146,15 @@ export function FaqPage() {
       </section>
 
       <section className="cta-block">
-        <p className="cta-eyebrow">
-          Always here to support you.
-          <svg viewBox="0 0 14 14" fill="none" aria-hidden="true">
-            <path d="M7 1L8 5.5L12 6.5L8 7.5L7 12L6 7.5L2 6.5L6 5.5L7 1Z" stroke="currentColor" strokeWidth="0.85" strokeLinejoin="round"/>
-          </svg>
-          Direct care support.
+        <p className="cta-eyebrow">North Star MD · GLP-1 care</p>
+        <h2>Ready for a clinical review?</h2>
+        <p className="cta-sub">
+          Start a free medical intake. A licensed U.S. provider decides if Semaglutide or Tirzepatide is appropriate.
         </p>
-        <h2>Still have questions? Chat with our team.</h2>
-        <p className="cta-sub">Our clinical care coordinators are standing by to guide you through payment, state coverage, or lab options.</p>
-        <a href="/start" className="btn btn-gold btn-pill btn-lg">Start Live Intake</a>
+        <a href="/start" className="btn btn-gold btn-pill btn-lg">
+          Check Eligibility
+        </a>
       </section>
-    
     </main>
   );
 }

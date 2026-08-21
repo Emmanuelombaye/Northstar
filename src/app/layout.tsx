@@ -30,7 +30,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "North Star MD | Guided by Science. Designed for You.",
   description:
-    "North Star MD — Physician-guided longevity, metabolic health, and wellness care delivered wherever you are.",
+    "North Star MD — physician-guided Semaglutide and Tirzepatide care. Licensed U.S. provider review. Charged only if prescribed.",
   icons: {
     icon: "/favicon.svg",
   },

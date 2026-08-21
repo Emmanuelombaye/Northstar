@@ -3,8 +3,8 @@ export function ShopNewsletter() {
     <section className="pharm-newsletter">
       <div className="pharm-wrap pharm-newsletter-inner">
         <div>
-          <h2>Join Our Newsletter And Get…</h2>
-          <p>Timely updates on new treatments, offers, and North Star MD programs.</p>
+          <h2>North Star MD updates</h2>
+          <p>Clinical notes on Semaglutide, Tirzepatide, and new programs — no spam.</p>
         </div>
         <form
           className="pharm-newsletter-form"

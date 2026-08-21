@@ -164,7 +164,7 @@
   font-weight: 500;
 }
 
-/* Standalone program pages — reset Pax fixed 1440px explore canvas */
+/* Standalone program pages — reset fixed explore canvas */
 .program-explore .explore-hero-section {
   height: auto !important;
   padding-bottom: 2.5rem !important;

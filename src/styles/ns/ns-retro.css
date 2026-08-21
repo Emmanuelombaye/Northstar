@@ -1,4 +1,4 @@
-/* ========== Yucca retro-home geometry — Pax brand tokens ========== */
+/* ========== Home geometry — North Star MD tokens ========== */
 
 .yxr {
   background: var(--sand);
@@ -46,7 +46,7 @@
   border-top: 0;
 }
 
-/* Hero card — Yucca full-bleed photo + overlay geometry */
+/* Hero card — full-bleed photo + overlay */
 .yxr-hero {
   max-width: 1240px;
   margin: 0 auto;
@@ -340,7 +340,7 @@
   right: 1rem;
 }
 
-/* Yucca-style single GLP product card */
+/* Single GLP product card */
 .yxr-product {
   display: grid;
   grid-template-columns: minmax(260px, 0.95fr) minmax(280px, 1.05fr);
@@ -856,7 +856,7 @@
   transform: none;
 }
 
-/* Yucca-like nav shell overrides inside yx-shell */
+/* Nav shell overrides inside yx-shell */
 .yx-shell .yx-promo {
   background: var(--forest);
 }

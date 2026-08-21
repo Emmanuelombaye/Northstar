@@ -1,4 +1,4 @@
-/* Nexa Rx — homepage brand kit (retro layout)
+/* North Star MD — homepage brand kit
  * Cloud/Sand canvas · Navy ink/CTAs · Teal accents
  * Ban: forest green · terracotta · peach dune · purple washes
  */
@@ -58,7 +58,7 @@
   color: var(--sand) !important;
 }
 
-/* Match Yucca phone hero: accent primary (their green → our teal), light secondary on top */
+/* Phone hero: gold primary + light secondary */
 .yucca-home .retro-home-hero-btn--primary {
   background: var(--teal, #4daa9a) !important;
   color: var(--forest) !important;
@@ -77,7 +77,7 @@
     0 12px 24px -12px color-mix(in oklch, var(--forest) 40%, transparent) !important;
 }
 
-/* Social proof — Yucca-like white cards on phone */
+/* Social proof — white cards on phone */
 .yucca-home .retro-social-proof__card,
 .retro-social-proof__card {
   background: #fff !important;

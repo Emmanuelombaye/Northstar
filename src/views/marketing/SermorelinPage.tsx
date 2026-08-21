@@ -15,13 +15,10 @@ export function SermorelinPage() {
               </p>
               <div className="treatment-hero-ctas">
                 <a href="#program-select" className="btn btn-navy btn-pill btn-lg">View Program</a>
-                <a href="/explore-treatments" className="btn btn-ghost btn-pill btn-lg">Explore Treatments</a>
+                <a href="/treatments" className="btn btn-ghost btn-pill btn-lg">Explore Treatments</a>
               </div>
             </div>
             <div className="treatment-hero-image-wrap">
-              {/* AI IMAGE GENERATION PROMPT:
-                Minimalist medical portrait showing a luxury blue box labeled Sermorelin resting on a light raw linen texture, glowing natural morning sunshine casting beautiful organic leaf shadows, luxury direct care lifestyle photography, Hasselblad 50mm, photorealistic, color palette #f9f7f2 cream and #0a1f3d navy highlights --ar 4:3
-              */}
               <img
                 className="treatment-hero-image"
                 src="/images/sermorelin-hero.webp" data-fallback="/images/sermorelin-hero.png" decoding="async"
@@ -43,17 +40,11 @@ export function SermorelinPage() {
         <div className="treatment-wrap">
           <div className="molecule-grid">
             <div className="asym-grid-visual">
-              {/* AI IMAGE GENERATION PROMPT:
-                Asymmetric grid layout, (Left Side) a clear clinical medicine bottle with pure sterile saline and gold label resting on a sleek warm cream ceramic plate, (Right Side) soft abstract shadows of modern glass vials, Hasselblad 50mm, photorealistic, depth of field --ar 4:3
-              */}
               <img
                 className="asym-img-large"
                 src="/images/product-box/close.webp" data-fallback="/images/product-box/close.png" decoding="async"
                 alt="Sermorelin growth peptide sterile ingredients close up"
               />
-              {/* AI IMAGE GENERATION PROMPT:
-                Close up macro of high-end clinical tools, single-use syringes and alcohol pads inside a dark navy premium insulated cardboard box, soft bright daylight, depth of field --ar 1:1
-              */}
               <img
                 className="asym-img-small"
                 src="/images/product-box/wide.webp" data-fallback="/images/product-box/wide.png" decoding="async"

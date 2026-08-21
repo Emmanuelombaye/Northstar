@@ -5,10 +5,10 @@ import { PHARMACY_PRODUCTS } from "../../store/products";
 import { SafeImage } from "./SafeImage";
 
 const BRANDS = [
-  { name: "North Star MD", tag: "House brand", logo: "★" },
-  { name: "Compounded Rx", tag: "503A pharmacies", logo: "Rx" },
-  { name: "North Star Portal", tag: "Patient platform", logo: "◆" },
-  { name: "VialsRX", tag: "Fulfillment", logo: "◇" },
+  { name: "North Star MD", tag: "Clinical programs", logo: "★" },
+  { name: "Licensed pharmacies", tag: "U.S. 503A partners", logo: "Rx" },
+  { name: "Patient Center", tag: "Secure portal", logo: "◆" },
+  { name: "Cold-chain shipping", tag: "Discreet delivery", logo: "◇" },
 ];
 
 const wall = PHARMACY_PRODUCTS.filter((p) => p.popular || p.badge).slice(0, 12);
@@ -18,8 +18,8 @@ export function ShopBrandsWall() {
     <>
       <section className="pharm-section" id="brands">
         <div className="pharm-wrap">
-          <h2 className="pharm-section-title">Brands</h2>
-          <p className="pharm-section-sub">Trusted partners behind every North Star MD prescription.</p>
+          <h2 className="pharm-section-title">How care is delivered</h2>
+          <p className="pharm-section-sub">Licensed review, U.S. pharmacy fulfillment, and discreet shipping.</p>
           <div className="pharm-brands-row">
             {BRANDS.map((b) => (
               <div key={b.name} className="pharm-brand-chip">
@@ -36,8 +36,8 @@ export function ShopBrandsWall() {
 
       <section className="pharm-section pharm-wall" id="pharmacy-wall">
         <div className="pharm-wrap">
-          <h2 className="pharm-section-title">Pharmacy Wall</h2>
-          <p className="pharm-section-sub">Patient favorites — physician-guided programs our community loves.</p>
+          <h2 className="pharm-section-title">Patient favorites</h2>
+          <p className="pharm-section-sub">Physician-guided programs our patients start most often.</p>
           <div className="pharm-wall-grid">
             {wall.map((p) => (
               <Link key={p.slug} to={`/shop/product/${p.slug}`} className="pharm-wall-tile">

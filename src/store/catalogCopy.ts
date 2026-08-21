@@ -1,4 +1,4 @@
-/** Shopify-style Rx product copy — clinical names, pharmacy descriptions */
+/** North Star MD Rx product copy — clinical names, pharmacy descriptions */
 
 export type CatalogCopy = {
   name: string;

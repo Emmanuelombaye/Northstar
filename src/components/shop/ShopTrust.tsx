@@ -22,8 +22,8 @@ const ITEMS = [
     ),
   },
   {
-    title: "Peak-powered portal",
-    desc: "HIPAA checkout, messaging, refills, and tracking in one place.",
+    title: "Patient Center",
+    desc: "HIPAA-aligned checkout, messaging, refills, and tracking in one place.",
     icon: (
       <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
         <path d="M8 6h16v20H8z" stroke="currentColor" strokeWidth="1.4" />

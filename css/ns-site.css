@@ -1,4 +1,4 @@
-/* Pax-style marketing pages, start funnel, portal — North Star navy/gold/cream */
+/* North Star MD marketing pages, start funnel, and Patient Center */
 
 .ns-page {
   padding-top: var(--header-h);
@@ -590,7 +590,7 @@
   border: 0;
 }
 
-/* Homepage Pax enhancements */
+/* Homepage enhancements */
 .ns-eligible-layout {
   display: grid;
   grid-template-columns: 320px 1fr;

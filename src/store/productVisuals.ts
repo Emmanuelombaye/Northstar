@@ -1,7 +1,7 @@
-/** Per-product labeled pharmacy mockup images + Shopify copy */
+/** Per-product labeled pharmacy mockup images + North Star MD copy */
 
 import { getCatalogCopy } from "./catalogCopy";
-import { getShopifyMeta } from "./shopifyMeta";
+import { getCatalogMeta } from "./shopifyMeta";
 import { PRODUCT_IMAGE_URLS } from "./productImageUrls";
 import type { StoreCategory } from "./types";
 
@@ -26,7 +26,7 @@ export function applyProductVisuals<
     vendor?: string;
   },
 >(product: T): T {
-  const meta = getShopifyMeta(product.slug, product.category);
+  const meta = getCatalogMeta(product.slug, product.category);
   const copy = getCatalogCopy(product.slug);
   const urls = PRODUCT_IMAGE_URLS[product.slug];
 

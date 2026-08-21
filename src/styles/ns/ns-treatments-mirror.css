@@ -1,4 +1,4 @@
-/* Mirrored Yucca treatments geometry — Pax brand kit tokens */
+/* Treatments geometry — North Star MD tokens */
 .yx-clone{
   --color-retro-ink:var(--forest);
   --color-retro-ink-soft:color-mix(in oklch,var(--forest) 62%,transparent);
@@ -686,7 +686,7 @@ h1[class*="37.0625rem"],.retro-clinical__heading,.retro-protocol__heading,.retro
 .retro-explore-tabs-wrap [data-explore-tab-pane=weight-loss] .explore-hero-guarantee{padding-top:0}
 .retro-explore-tabs-wrap [data-explore-tab-pane=weight-loss] .explore-hero-guarantee>img{display:none}
 .retro-explore-tabs-wrap [data-explore-tab-pane=weight-loss] .explore-hero-guarantee-card{background:var(--sand)!important;border:2px solid #dedbd4!important;box-shadow:none!important}
-.retro-explore-tabs-wrap [data-explore-tab-pane=weight-loss] .explore-hero-guarantee-card:before{content:"Pax Guarantee";display:block;margin-bottom:12px;font-size:22px;line-height:1;font-weight:400;font-style:italic;letter-spacing:-.03em;color:var(--color-retro-ink)}
+.retro-explore-tabs-wrap [data-explore-tab-pane=weight-loss] .explore-hero-guarantee-card:before{content:"North Star Care";display:block;margin-bottom:12px;font-size:22px;line-height:1;font-weight:400;font-style:italic;letter-spacing:-.03em;color:var(--color-retro-ink)}
 .retro-explore-tabs-wrap [data-explore-tab-pane=weight-loss] .explore-hero-divider{background:#ececec}
 .retro-explore-tabs-wrap [data-explore-tab-pane=weight-loss] .explore-hero-cta{min-height:64px;display:inline-flex!important;align-items:center;justify-content:center;border:3px solid var(--color-retro-ink)!important;border-radius:999px;background:var(--forest)!important;color:var(--sand)!important;box-shadow:0 8px 0 0 var(--color-retro-shadow)!important;font-weight:400}
 .retro-explore-tabs-wrap [data-explore-tab-pane=weight-loss] .explore-hero-cta:hover{transform:translateY(3px) scale(1);box-shadow:0 5px 0 0 var(--color-retro-shadow)!important}
@@ -777,7 +777,7 @@ h1[class*="37.0625rem"],.retro-clinical__heading,.retro-protocol__heading,.retro
 .retro-explore-tabs-wrap [data-explore-tab-pane=weight-loss] .explore-hero-plan-item{font-family:var(--font-retro-body, var(--font-body));font-size:16px;font-weight:400!important;letter-spacing:0!important;line-height:150%!important}
 .retro-explore-tabs-wrap [data-explore-tab-pane=weight-loss] .explore-hero-guarantee-card{font-family:var(--font-retro-body, var(--font-body));letter-spacing:0!important;line-height:150%!important}
 .retro-explore-tabs-wrap [data-explore-tab-pane=weight-loss] .explore-hero-guarantee-card p{margin:0}
-.retro-explore-tabs-wrap [data-explore-tab-pane=weight-loss] .explore-hero-guarantee-card:before{content:"Pax Guarantee";font-family:var(--font-retro-body, var(--font-body));font-weight:400;letter-spacing:0!important;line-height:1!important}
+.retro-explore-tabs-wrap [data-explore-tab-pane=weight-loss] .explore-hero-guarantee-card:before{content:"North Star Care";font-family:var(--font-retro-body, var(--font-body));font-weight:400;letter-spacing:0!important;line-height:1!important}
 .retro-explore-tabs-wrap [data-explore-tab-pane=weight-loss] .explore-hero-cta,.retro-explore-tabs-wrap [data-explore-tab-pane=weight-loss] .designed-section a.bg-neutral-900,.retro-explore-tabs-wrap [data-explore-tab-pane=weight-loss] .designed-cta-btn{border:2px solid var(--color-retro-ink)!important;box-shadow:3px 4px 0 0 var(--color-retro-shadow)!important;font-family:var(--font-retro-body, var(--font-body));font-size:16px!important;font-weight:400!important;letter-spacing:0!important;line-height:1!important;transition:transform .15s ease-out,box-shadow .15s ease-out!important}
 .retro-explore-tabs-wrap [data-explore-tab-pane=weight-loss] .explore-hero-cta:hover,.retro-explore-tabs-wrap [data-explore-tab-pane=weight-loss] .explore-hero-cta:active,.retro-explore-tabs-wrap [data-explore-tab-pane=weight-loss] .designed-section a.bg-neutral-900:hover,.retro-explore-tabs-wrap [data-explore-tab-pane=weight-loss] .designed-section a.bg-neutral-900:active,.retro-explore-tabs-wrap [data-explore-tab-pane=weight-loss] .designed-cta-btn:hover,.retro-explore-tabs-wrap [data-explore-tab-pane=weight-loss] .designed-cta-btn:active{transform:translate(2px,3px) scale(1)!important;box-shadow:0 0 0 0 var(--color-retro-shadow)!important}
 .retro-explore-tabs-wrap [data-explore-tab-pane=weight-loss] .explore-hero-products{width:672px}

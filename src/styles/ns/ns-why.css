@@ -1,4 +1,4 @@
-/* Why Pax Longevity — branded bento, no clipped media */
+/* Why North Star MD — branded bento, no clipped media */
 
 .pax-why {
   --why-ink: var(--forest);
@@ -321,7 +321,7 @@
   }
 }
 
-/* Kill Yucca dark-card / clip geometry inside this redesign */
+/* Kill leftover dark-card / clip geometry inside this redesign */
 .yx-clone .retro-home-why.pax-why,
 .yucca-home .retro-home-why.pax-why {
   overflow: visible !important;

@@ -13,7 +13,7 @@
 @import './ns-snap-rail.css';
 @import './ns-phone.css';
 
-/* North Star MD tokens over Nexa Yucca shell */
+/* North Star MD homepage tokens */
 .yucca-home,
 .yucca-home[data-retro-scope],
 .ns-yucca {
@@ -106,7 +106,7 @@
   color: var(--gold);
 }
 
-/* Homepage treatments — North Star Atlas split panels */
+/* Homepage treatments — North Star MD split panels */
 .yucca-home .ns-atlas {
   position: relative;
   overflow: visible;

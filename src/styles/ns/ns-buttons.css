@@ -1,4 +1,4 @@
-/* Pax Longevity — button visibility system
+/* North Star MD — button visibility system
  * Primary on light: Forest fill + Sand text
  * Primary on dark / hero scrim: Sand fill + Forest text (never forest-on-forest)
  * Secondary / ghost: Sand fill + Forest border + Forest text
@@ -47,7 +47,7 @@ a.yx-btn--ghost {
   border: 2px solid var(--forest) !important;
 }
 
-/* —— Hero: Yucca-style accent primary (teal) + light secondary —— */
+/* —— Hero: accent primary (gold) + light secondary —— */
 .retro-home-hero-btn--primary,
 .yucca-home .retro-home-hero-btn--primary {
   background: var(--teal, #4daa9a) !important;

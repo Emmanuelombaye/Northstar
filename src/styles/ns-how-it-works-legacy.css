@@ -1,4 +1,4 @@
-/* How It Works — Yucca-style sticky stack (ported from novimid) */
+/* How It Works — sticky stack */
 @keyframes hiw-trust-scroll {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }

@@ -1,4 +1,4 @@
-/** North Star MD — /treatments page media (dedicated assets, no yucca reuse) */
+/** North Star MD — /treatments page media */
 
 export const TREATMENTS_IMG = '/images/treatments'
 

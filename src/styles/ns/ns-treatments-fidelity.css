@@ -237,7 +237,7 @@
   padding: 0 !important;
 }
 
-/* Exact Yucca stack order: copy → products → includes → divider → pricing/CTA */
+/* Stack order: copy → products → includes → divider → pricing/CTA */
 .retro-explore-tabs-wrap .explore-hero-copy { order: 1 !important; }
 .retro-explore-tabs-wrap .explore-hero-products { order: 2 !important; }
 .retro-explore-tabs-wrap .explore-hero-includes { order: 3 !important; }

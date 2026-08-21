@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════════════════════════
    North Star MD Pharmacy Store — editorial longevity storefront
-   Matches marketing navy / gold / cream language (Pax-style chrome)
+   Matches marketing navy / gold / cream language
    ═══════════════════════════════════════════════════════════════ */
 
 .pharm-store {
@@ -60,7 +60,7 @@
   background: var(--cream);
 }
 
-/* ── Hero banner carousel (Pax-style full-bleed) ── */
+/* ── Hero banner carousel ── */
 .pharm-hero {
   position: relative;
   background: var(--navy);
@@ -549,7 +549,7 @@
   opacity: 0.9;
 }
 
-/* ── Trust bar (Shopify-style) ── */
+/* ── Trust bar ── */
 .pharm-trust-bar {
   background: var(--cream-bar);
   border-block: 1px solid var(--border);
@@ -785,7 +785,7 @@
   padding-bottom: 16px;
 }
 
-/* Shopify-style 4-column product grids */
+/* Four-column product grids */
 .pharm-featured-grid,
 .pharm-product-grid,
 .pharm-collection-grid {

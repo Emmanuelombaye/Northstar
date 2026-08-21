@@ -1,4 +1,4 @@
-/* Homepage fidelity overrides — scoped under .yucca-home — Pax brand kit */
+/* Homepage fidelity overrides — scoped under .yucca-home */
 
 .yucca-home {
   background: var(--sand);
@@ -8,7 +8,7 @@
   font-weight: 400;
 }
 
-/* Retro geometry vars remapped to Pax kit tokens */
+/* Retro geometry vars remapped to North Star MD tokens */
 .yucca-home,
 .yucca-home[data-retro-scope] {
   --color-retro-surface: var(--sand);
@@ -100,7 +100,7 @@
   color: var(--btn-text);
 }
 
-/* Doctors cards — exact Yucca geometry; Pax wordmark + photo only */
+/* Doctors cards — North Star MD wordmark + photo only */
 .yucca-home .retro-home-doctor-photo {
   object-position: center 18%;
 }
