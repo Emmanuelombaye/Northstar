@@ -142,9 +142,11 @@
 
   .ns-snap .ns-faq-media-card img,
   .ns-snap .faq-media-card img,
-  .ns-snap .ns-hiw-card img {
+  .ns-snap .ns-hiw-card img,
+  .ns-snap .ns-hiw-card__media img {
     width: 100% !important;
-    height: 13.25rem !important;
+    height: 12rem !important;
+    max-height: 12rem !important;
     object-fit: cover !important;
   }
 
@@ -223,8 +225,8 @@
     overflow: visible !important;
     padding: 0 !important;
     margin-inline: 0 !important;
-    width: auto !important;
-    max-width: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
 
   .ns-snap-wrap--2 > .ns-snap > *,

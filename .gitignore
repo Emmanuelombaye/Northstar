@@ -3,8 +3,6 @@ dist/
 .next/
 .DS_Store
 *.log
-.env
-.env.*
 audit-*.png
 temp_*.jpg
 temp_downloads/
@@ -12,3 +10,4 @@ pill_*.jpg
 test_*.jpg
 unsplash_*.json
 unsplash_dump.html
+config.bat
