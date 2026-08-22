@@ -21,6 +21,10 @@
   box-sizing: border-box;
 }
 
+.ns-hiw img {
+  max-width: 100%;
+}
+
 .ns-hiw h1,
 .ns-hiw h2,
 .ns-hiw h3 {
@@ -35,16 +39,7 @@
 }
 
 .ns-hiw-rail {
-  position: absolute;
-  top: 100vh;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  border-left: 1.5px dotted var(--hiw-line);
-  transform: translateX(-50%);
-  pointer-events: none;
-  z-index: 2;
-  opacity: 0.55;
+  display: none;
 }
 
 .ns-hiw-eyebrow {
@@ -68,19 +63,26 @@
 /* —— Hero —— */
 .ns-hiw-hero {
   position: relative;
-  height: 165vh;
+  height: auto;
+  min-height: 0;
+  padding: 4.75rem 1.25rem 3.25rem;
   background:
     radial-gradient(ellipse at 50% 38%, #16345c 0%, var(--hiw-navy) 58%, #06101f 100%) !important;
   color: #fff;
 }
 
 .ns-hiw-hero__pin {
-  position: sticky;
-  top: var(--hiw-pin);
-  height: calc(100vh - var(--hiw-pin));
-  display: grid;
-  place-items: center;
-  overflow: hidden;
+  position: relative;
+  top: auto;
+  height: auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.25rem;
+  overflow: visible;
+  max-width: 52rem;
+  margin: 0 auto;
 }
 
 .ns-hiw-stars {
@@ -117,7 +119,7 @@
 .ns-hiw-hero h1 {
   margin: 0;
   color: #fff !important;
-  font-size: clamp(3.4rem, 9vw, 7.4rem) !important;
+  font-size: clamp(2.6rem, 7vw, 5.4rem) !important;
   font-weight: 500 !important;
   line-height: 0.95;
   letter-spacing: -0.035em;
@@ -141,56 +143,48 @@
   color: rgba(255, 255, 255, 0.82);
 }
 
-.ns-hiw-hero__vial {
-  position: absolute;
-  z-index: 2;
-  height: auto;
-  pointer-events: none;
-  filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.35));
-  will-change: transform, opacity;
-}
-
-.ns-hiw-hero__vial--left {
-  left: max(-2%, calc(50% - 28rem));
-  bottom: 8%;
-  width: min(34vw, 22rem);
-}
-
-.ns-hiw-hero__vial--right {
-  right: max(-2%, calc(50% - 28rem));
-  bottom: 6%;
-  width: min(34vw, 22rem);
-}
-
 .ns-hiw-hero__vials {
-  display: contents;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: clamp(1.5rem, 5vw, 3.5rem);
+  width: min(28rem, 88%);
+}
+
+.ns-hiw-hero__vials figure {
+  margin: 0;
+  flex: 1;
+  text-align: center;
+}
+
+.ns-hiw-hero__vial {
+  display: block;
+  width: 100%;
+  max-width: 8.75rem;
+  height: auto;
+  max-height: 13.5rem;
+  margin: 0 auto;
+  object-fit: contain;
+  pointer-events: none;
+  filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.35));
+}
+
+.ns-hiw-hero__vials figcaption {
+  margin-top: 0.55rem;
+  color: var(--hiw-gold);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
 }
 
 .ns-hiw-hero__couple {
-  position: absolute;
-  left: 50%;
-  bottom: -8%;
-  z-index: 1;
-  width: min(42vw, 26rem);
-  transform: translateX(-50%);
-  pointer-events: none;
-  mask-image: linear-gradient(180deg, #000 55%, transparent 100%);
+  display: none;
 }
 
 .ns-hiw-scrollcue {
-  position: absolute;
-  bottom: 1.4rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 4;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.45rem;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.72rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  display: none;
 }
 
 .ns-hiw-scrollcue i {
@@ -209,20 +203,20 @@
 /* —— Intro —— */
 .ns-hiw-intro {
   position: relative;
-  min-height: 120vh;
+  min-height: 0;
   background: var(--hiw-cream);
   z-index: 3;
 }
 
 .ns-hiw-intro__pin {
-  position: sticky;
-  top: var(--hiw-pin);
-  min-height: calc(100vh - var(--hiw-pin));
+  position: relative;
+  top: auto;
+  min-height: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 5rem 1.5rem 4rem;
+  padding: 4.25rem 1.5rem 3.5rem;
   text-align: center;
 }
 
@@ -259,16 +253,16 @@
 
 /* —— Shared —— */
 .ns-hiw-copy {
-  max-width: 36rem;
-  margin: 0 auto;
-  text-align: center;
-  padding: 0 1.25rem;
+  max-width: 32rem;
+  margin: 0;
+  text-align: left;
+  padding: 0;
 }
 
 .ns-hiw-copy h3 {
   margin: 0 0 0.85rem;
   color: inherit !important;
-  font-size: clamp(1.85rem, 4vw, 3rem) !important;
+  font-size: clamp(1.7rem, 3.4vw, 2.55rem) !important;
   font-weight: 500 !important;
   letter-spacing: -0.03em;
   line-height: 1.12;
@@ -288,21 +282,46 @@
 .ns-hiw-stage {
   position: relative;
   z-index: 3;
+  min-height: 0;
 }
 
 .ns-hiw-stage__pin {
-  position: sticky;
-  top: var(--hiw-pin);
-  min-height: calc(100vh - var(--hiw-pin));
+  position: relative;
+  top: auto;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  width: min(68rem, calc(100% - 2.5rem));
+  margin: 0 auto;
+  padding: 4.25rem 0;
+}
+
+.ns-hiw-emr .ns-hiw-stage__pin,
+.ns-hiw-rx .ns-hiw-stage__pin {
+  direction: rtl;
+}
+
+.ns-hiw-emr .ns-hiw-copy,
+.ns-hiw-emr .ns-hiw-media,
+.ns-hiw-rx .ns-hiw-copy,
+.ns-hiw-rx .ns-hiw-media {
+  direction: ltr;
+}
+
+.ns-hiw-media {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 4.5rem 1rem 2.5rem;
+  min-width: 0;
+}
+
+.ns-hiw-media--wide {
+  align-items: stretch;
 }
 
 .ns-hiw-frame {
-  margin-top: 1.6rem;
   overflow: hidden;
   background: #fff;
   box-shadow: 0 28px 70px rgba(10, 31, 61, 0.16);
@@ -311,31 +330,34 @@
 .ns-hiw-frame img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
 }
 
 .ns-hiw-frame--phone {
-  width: min(22rem, 78vw);
+  width: min(17.5rem, 100%);
+  max-height: 26rem;
+  aspect-ratio: 9 / 16;
   border-radius: 1.6rem;
 }
 
 /* —— Intake —— */
 .ns-hiw-intake {
-  min-height: 180vh;
+  min-height: 0;
   background: #fff;
 }
 
-/* —— EMR —— */
 .ns-hiw-emr {
-  min-height: 130vh;
+  min-height: 0;
   background: var(--hiw-navy);
   color: #fff;
 }
 
 .ns-hiw-lockcard {
-  margin-top: 2rem;
-  width: min(22rem, 78vw);
-  aspect-ratio: 3 / 3.4;
+  width: min(18rem, 100%);
+  aspect-ratio: 4 / 5;
+  max-height: 22rem;
   background: #fff;
   border-radius: 1.5rem;
   display: grid;
@@ -369,15 +391,15 @@
 
 /* —— Provider —— */
 .ns-hiw-provider {
-  min-height: 200vh;
+  min-height: 0;
   background: var(--hiw-cream);
 }
 
 .ns-hiw-provider__photo {
   position: relative;
-  width: min(24rem, 82vw);
+  width: min(22rem, 100%);
+  max-height: 24rem;
   aspect-ratio: 4 / 5;
-  margin-top: 1.5rem;
   border-radius: 1.15rem;
   overflow: hidden;
   box-shadow: 0 18px 50px rgba(10, 31, 61, 0.14);
@@ -448,7 +470,7 @@
 
 /* —— Rx vials —— */
 .ns-hiw-rx {
-  min-height: 200vh;
+  min-height: 0;
   background: #071325;
   color: #fff;
 }
@@ -457,22 +479,23 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  gap: clamp(1rem, 4vw, 3rem);
-  margin-top: 1.5rem;
-  width: min(40rem, 92vw);
+  gap: clamp(1rem, 4vw, 2.5rem);
+  width: min(24rem, 100%);
 }
 
 .ns-hiw-vials figure {
   margin: 0;
   flex: 1;
   text-align: center;
-  will-change: transform;
 }
 
 .ns-hiw-vials img {
   display: block;
   width: 100%;
+  max-height: 14.5rem;
   height: auto;
+  object-fit: contain;
+  margin: 0 auto;
   filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.35));
 }
 
@@ -485,15 +508,15 @@
 
 /* —— Compound —— */
 .ns-hiw-compound {
-  min-height: 170vh;
+  min-height: 0;
   background: #12243c;
   color: #fff;
 }
 
 .ns-hiw-stadium {
-  margin-top: 1.5rem;
-  width: min(48rem, 90vw);
-  height: min(18rem, 42vw);
+  width: 100%;
+  max-width: 28rem;
+  height: 16rem;
   border-radius: 1.4rem;
   overflow: hidden;
   background: #0b1a2e;
@@ -517,16 +540,19 @@
 
 /* —— Delivery —— */
 .ns-hiw-deliver {
-  min-height: 200vh;
+  min-height: 0;
   background: #fff;
+}
+
+.ns-hiw-deliver .ns-hiw-stage__pin {
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.2fr);
 }
 
 .ns-hiw-products {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.1rem;
-  width: min(64rem, 92vw);
-  margin-top: 1.8rem;
+  width: 100%;
 }
 
 .ns-hiw-product {
@@ -546,6 +572,7 @@
   border-radius: 1.1rem;
   background: var(--hiw-cream);
   aspect-ratio: 4 / 5;
+  max-height: 15rem;
   margin-bottom: 0.8rem;
   box-shadow: 0 16px 40px rgba(10, 31, 61, 0.1);
 }
@@ -554,8 +581,8 @@
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  object-position: center bottom;
+  object-fit: cover;
+  object-position: center;
 }
 
 .ns-hiw-product p {
@@ -568,34 +595,55 @@
 /* —— Support —— */
 .ns-hiw-support {
   background: var(--hiw-cream);
-  padding: 4rem 0 6rem;
+  padding: 4rem 1.25rem 5.5rem;
 }
 
 .ns-hiw-support .ns-hiw-copy {
-  margin-bottom: 1.5rem;
+  margin: 0 auto 1.75rem;
+  text-align: center;
+  max-width: 36rem;
+}
+
+.ns-hiw-support .ns-snap-wrap,
+.ns-hiw-support .ns-snap-wrap--2,
+.ns-hiw-support .ns-snap-wrap--4,
+.ns-hiw-support .ns-snap-wrap--stack {
+  width: min(64rem, calc(100% - 2rem)) !important;
+  max-width: min(64rem, calc(100% - 2rem)) !important;
+  margin-inline: auto !important;
 }
 
 .ns-hiw-stack {
   position: relative;
-  width: min(40rem, 92vw);
+  width: 100% !important;
+  max-width: 100% !important;
   margin: 0 auto;
 }
 
 .ns-hiw-card {
-  position: sticky;
-  top: 18vh;
-  margin-bottom: 32vh;
+  position: relative !important;
+  top: auto !important;
+  margin: 0 !important;
   background: #fff;
   border-radius: 1.35rem;
   box-shadow: 0 24px 70px rgba(10, 31, 61, 0.12);
-  overflow: visible;
+  overflow: hidden;
 }
 
+.ns-hiw-card__media {
+  height: 12rem;
+  overflow: hidden;
+  background: #ece6db;
+}
+
+.ns-hiw-card__media img,
 .ns-hiw-card img {
   display: block;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
+  width: 100% !important;
+  height: 12rem !important;
+  max-height: 12rem !important;
+  object-fit: cover !important;
+  object-position: top center !important;
 }
 
 .ns-hiw-card__meta {
@@ -653,13 +701,9 @@
   filter: brightness(1.06);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .ns-hiw {
     overflow-x: hidden;
-  }
-
-  .ns-hiw-rail {
-    display: none;
   }
 
   .ns-hiw-hero,
@@ -676,61 +720,49 @@
     min-height: 0 !important;
   }
 
+  .ns-hiw-hero {
+    padding: 3.5rem 1.15rem 2.4rem;
+  }
+
   .ns-hiw-hero__pin {
-    overflow: visible !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    padding: 4.5rem 1.15rem 1.5rem !important;
+    gap: 1.5rem;
+    padding: 0;
   }
 
   .ns-hiw-hero__copy {
-    position: relative !important;
-    padding: 0 !important;
+    padding: 0;
   }
 
   .ns-hiw-hero__vials {
-    position: relative !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: flex-end !important;
-    gap: 0.5rem !important;
-    width: 100% !important;
-    margin-top: 1.25rem !important;
+    width: min(18rem, 100%);
+    gap: 1rem;
   }
 
-  .ns-hiw-hero__vial,
-  .ns-hiw-hero__vial--left,
-  .ns-hiw-hero__vial--right {
-    position: relative !important;
-    left: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-    width: 38% !important;
-    max-width: 8.5rem !important;
-    transform: none !important;
-    opacity: 1 !important;
-  }
-
-  .ns-hiw-hero__couple {
-    display: none;
-  }
-
-  .ns-hiw-scrollcue {
-    position: relative !important;
-    left: auto !important;
-    bottom: auto !important;
-    transform: none !important;
-    margin-top: 1rem;
+  .ns-hiw-hero__vial {
+    max-width: 6.5rem;
+    max-height: 10.5rem;
   }
 
   .ns-hiw-intro__pin,
-  .ns-hiw-stage__pin {
+  .ns-hiw-stage__pin,
+  .ns-hiw-deliver .ns-hiw-stage__pin,
+  .ns-hiw-emr .ns-hiw-stage__pin,
+  .ns-hiw-rx .ns-hiw-stage__pin {
     position: relative !important;
-    top: auto !important;
-    height: auto !important;
-    min-height: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: none !important;
+    direction: ltr;
+    width: min(40rem, calc(100% - 2rem));
+    margin: 0 auto;
     padding: 2.75rem 1.15rem 2.4rem !important;
+    gap: 1.4rem;
+  }
+
+  .ns-hiw-copy,
+  .ns-hiw-support .ns-hiw-copy {
+    text-align: center;
+    max-width: none;
   }
 
   .ns-hiw-copy h3 {
@@ -742,13 +774,17 @@
   .ns-hiw-provider__photo,
   .ns-hiw-lockcard,
   .ns-hiw-stadium {
-    width: min(100%, 20.5rem);
-    max-width: 20.5rem;
+    width: min(100%, 18.5rem);
+    max-width: 18.5rem;
     margin-inline: auto;
   }
 
+  .ns-hiw-frame--phone {
+    max-height: 22rem;
+  }
+
   .ns-hiw-vials {
-    max-width: 18rem;
+    max-width: 16rem;
     margin-inline: auto;
   }
 
@@ -761,6 +797,18 @@
     position: relative !important;
     top: auto !important;
     margin-bottom: 0 !important;
+  }
+
+  .ns-hiw-card img,
+  .ns-hiw-card__media img {
+    height: 10.5rem !important;
+    max-height: 10.5rem !important;
+  }
+
+  .ns-hiw-status {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.9rem 1.1rem;
   }
 }
 

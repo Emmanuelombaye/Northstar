@@ -9,6 +9,8 @@ import '../../styles/ns-snap-rail.css'
 const Y = '/images/ns'
 const HIW = `${Y}/hiw`
 const V = '?v=20260818b'
+const VIAL_SEMA = `/images/home/atlas-vial-sema.avif${V}`
+const VIAL_TIRZ = `/images/home/atlas-vial-tirz.avif${V}`
 
 const PROVIDERS = [
   `${HIW}/Licensed-Providers.avif${V}`,
@@ -106,30 +108,19 @@ function StarField() {
 }
 
 export default function NsHowItWorks() {
-  const hero = useSectionProgress<HTMLElement>()
-  const intake = useSectionProgress<HTMLElement>()
   const provider = useSectionProgress<HTMLElement>()
-  const rx = useSectionProgress<HTMLElement>()
-  const compound = useSectionProgress<HTMLElement>()
   const deliver = useSectionProgress<HTMLElement>()
-
-  const leftIn = 0.72 + clamp(hero.p / 0.45) * 0.28
-  const rightIn = 0.62 + clamp((hero.p - 0.04) / 0.5) * 0.38
-  const titleLift = hero.p * -18
-  const phoneScale = 0.88 + clamp(intake.p) * 0.14
   const providerI = Math.min(2, Math.floor(clamp(provider.p) * 2.999))
   const deliverI = Math.min(2, Math.floor(clamp(deliver.p) * 2.999))
-  const rxTurn = rx.p * 18
-  const compoundGlow = 0.55 + clamp(compound.p) * 0.45
 
   return (
     <div className="ns-hiw">
-      <div className="ns-hiw-rail" aria-hidden="true" />
+      <div className="ns-hiw-rail" hidden aria-hidden="true" />
 
-      <section className="ns-hiw-hero" ref={hero.ref}>
+      <section className="ns-hiw-hero">
         <div className="ns-hiw-hero__pin">
           <StarField />
-          <div className="ns-hiw-hero__copy" style={{ transform: `translateY(${titleLift}px)` }}>
+          <div className="ns-hiw-hero__copy">
             <p className="ns-hiw-eyebrow">Guided by science</p>
             <h1>
               <span>How</span>
@@ -139,34 +130,14 @@ export default function NsHowItWorks() {
             <p>A clear path from intake to clinician review — and fulfillment only if prescribed.</p>
           </div>
           <div className="ns-hiw-hero__vials">
-            <img
-              className="ns-hiw-hero__vial ns-hiw-hero__vial--left"
-              src={`${Y}/personalized-semaglutide-glp-1-injection-vial-yucca-health.avif${V}`}
-              alt="Personalized Semaglutide"
-              style={{
-                opacity: leftIn,
-                transform: `translate3d(${(1 - leftIn) * -18}%, ${(1 - leftIn) * 10}%, 0) rotate(${(1 - leftIn) * -8}deg)`,
-              }}
-            />
-            <img
-              className="ns-hiw-hero__vial ns-hiw-hero__vial--right"
-              src={`${Y}/personalized-tirzepatide-glp-1-injection-vial-yucca-health.avif${V}`}
-              alt="Personalized Tirzepatide"
-              style={{
-                opacity: rightIn,
-                transform: `translate3d(${(1 - rightIn) * 18}%, ${(1 - rightIn) * 12}%, 0) rotate(${(1 - rightIn) * 8}deg)`,
-              }}
-            />
-          </div>
-          <img
-            className="ns-hiw-hero__couple"
-            src={`${Y}/pax-glp1-couple-cutout.avif${V}`}
-            alt=""
-            style={{ opacity: 0.35 + clamp(hero.p) * 0.45 }}
-          />
-          <div className="ns-hiw-scrollcue" aria-hidden="true">
-            <span>Scroll</span>
-            <i />
+            <figure>
+              <img className="ns-hiw-hero__vial" src={VIAL_SEMA} alt="Personalized Semaglutide" />
+              <figcaption>Semaglutide</figcaption>
+            </figure>
+            <figure>
+              <img className="ns-hiw-hero__vial" src={VIAL_TIRZ} alt="Personalized Tirzepatide" />
+              <figcaption>Tirzepatide</figcaption>
+            </figure>
           </div>
         </div>
       </section>
@@ -182,7 +153,7 @@ export default function NsHowItWorks() {
         </div>
       </section>
 
-      <section className="ns-hiw-stage ns-hiw-intake" ref={intake.ref}>
+      <section className="ns-hiw-stage ns-hiw-intake">
         <div className="ns-hiw-stage__pin">
           <div className="ns-hiw-copy">
             <span className="ns-hiw-step">01</span>
@@ -192,11 +163,13 @@ export default function NsHowItWorks() {
               purchase — so a licensed clinician can decide what is appropriate for you.
             </p>
           </div>
-          <div className="ns-hiw-frame ns-hiw-frame--phone" style={{ transform: `scale(${phoneScale})` }}>
-            <img
-              src={`${HIW}/yucca-health-patient-portal-dashboard-semaglutide-mobile.avif${V}`}
-              alt="North Star patient intake on a phone"
-            />
+          <div className="ns-hiw-media">
+            <div className="ns-hiw-frame ns-hiw-frame--phone">
+              <img
+                src={`${HIW}/yucca-health-patient-portal-dashboard-semaglutide-mobile.avif${V}`}
+                alt="North Star patient intake on a phone"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -208,7 +181,8 @@ export default function NsHowItWorks() {
             <h3>Sent safely and securely</h3>
             <p>Your information is reviewed in a protected clinical record — encrypted, access-controlled, and used only for your care.</p>
           </div>
-          <div className="ns-hiw-lockcard">
+          <div className="ns-hiw-media">
+            <div className="ns-hiw-lockcard">
             <div className="ns-hiw-lock" aria-hidden="true">
               <svg width="22" height="26" viewBox="0 0 22 26" fill="none">
                 <rect x="3" y="11" width="16" height="13" rx="2.2" fill="#0a1f3d" />
@@ -216,6 +190,7 @@ export default function NsHowItWorks() {
               </svg>
             </div>
             <p>Clinical record protected</p>
+            </div>
           </div>
         </div>
       </section>
@@ -231,23 +206,25 @@ export default function NsHowItWorks() {
               prescription.
             </p>
           </div>
-          <div className="ns-hiw-provider__photo">
+          <div className="ns-hiw-media">
+            <div className="ns-hiw-provider__photo">
             {PROVIDERS.map((src, i) => (
               <img key={src} src={src} alt="" className={i === providerI ? 'is-on' : undefined} />
             ))}
             <span className="ns-hiw-check">✓</span>
-          </div>
-          <div className="ns-hiw-status" aria-hidden="true">
+            </div>
+            <div className="ns-hiw-status" aria-hidden="true">
             {['Requested', 'Reviewed', 'Decision'].map((label, i) => (
               <span key={label} className={i <= providerI ? 'is-on' : undefined}>
                 {label}
               </span>
             ))}
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="ns-hiw-stage ns-hiw-rx" id="prescription-content" ref={rx.ref}>
+      <section className="ns-hiw-stage ns-hiw-rx" id="prescription-content">
         <div className="ns-hiw-stage__pin">
           <div className="ns-hiw-copy ns-hiw-copy--light">
             <span className="ns-hiw-step">04</span>
@@ -257,20 +234,22 @@ export default function NsHowItWorks() {
               profile — not a one-size protocol.
             </p>
           </div>
-          <div className="ns-hiw-vials">
-            <figure style={{ transform: `translateY(${(1 - clamp(rx.p)) * 24}px) rotate(${-6 + rxTurn * 0.2}deg)` }}>
-              <img src={`${Y}/personalized-semaglutide-glp-1-injection-vial-yucca-health.avif${V}`} alt="Semaglutide" />
-              <figcaption>Semaglutide</figcaption>
-            </figure>
-            <figure style={{ transform: `translateY(${(1 - clamp(rx.p)) * 36}px) rotate(${6 - rxTurn * 0.15}deg)` }}>
-              <img src={`${Y}/personalized-tirzepatide-glp-1-injection-vial-yucca-health.avif${V}`} alt="Tirzepatide" />
-              <figcaption>Tirzepatide</figcaption>
-            </figure>
+          <div className="ns-hiw-media">
+            <div className="ns-hiw-vials">
+              <figure>
+                <img src={VIAL_SEMA} alt="Semaglutide" />
+                <figcaption>Semaglutide</figcaption>
+              </figure>
+              <figure>
+                <img src={VIAL_TIRZ} alt="Tirzepatide" />
+                <figcaption>Tirzepatide</figcaption>
+              </figure>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="ns-hiw-stage ns-hiw-compound" id="compound-content" ref={compound.ref}>
+      <section className="ns-hiw-stage ns-hiw-compound" id="compound-content">
         <div className="ns-hiw-stage__pin">
           <div className="ns-hiw-copy ns-hiw-copy--light">
             <span className="ns-hiw-step">05</span>
@@ -280,10 +259,12 @@ export default function NsHowItWorks() {
               selected, then ships it in temperature-aware packaging.
             </p>
           </div>
-          <div className="ns-hiw-stadium" style={{ opacity: compoundGlow }}>
-            <img src={`${HIW}/quality-sourcing-verified-compounded-medications-yucca-health.avif${V}`} alt="Licensed U.S. compounding pharmacy" />
+          <div className="ns-hiw-media">
+            <div className="ns-hiw-stadium">
+              <img src={`${HIW}/quality-sourcing-verified-compounded-medications-yucca-health.avif${V}`} alt="Licensed U.S. compounding pharmacy" />
+            </div>
+            <p className="ns-hiw-caption">Compounded in the USA · Clinician-directed strength</p>
           </div>
-          <p className="ns-hiw-caption">Compounded in the USA · Clinician-directed strength</p>
         </div>
       </section>
 
@@ -294,7 +275,8 @@ export default function NsHowItWorks() {
             <h3>Prescribed, sealed, and delivered</h3>
             <p>If prescribed, your treatment is packed and sent directly to you. Ongoing dose changes continue through the patient portal.</p>
           </div>
-          <NsSnapRail cols={3} className="ns-hiw-products" hint="Swipe delivery">
+          <div className="ns-hiw-media ns-hiw-media--wide">
+            <NsSnapRail cols={3} className="ns-hiw-products" hint="Swipe delivery">
             {DELIVER.map((item, i) => (
               <article key={item.label} className={`ns-hiw-product${i === deliverI ? ' is-on' : ''}`}>
                 <div className="ns-hiw-product__frame">
@@ -303,7 +285,8 @@ export default function NsHowItWorks() {
                 <p>{item.label}</p>
               </article>
             ))}
-          </NsSnapRail>
+            </NsSnapRail>
+          </div>
         </div>
       </section>
 
@@ -316,10 +299,12 @@ export default function NsHowItWorks() {
             that can adjust your plan if prescribed.
           </p>
         </div>
-        <NsSnapRail cols={4} className="ns-hiw-stack" hint="Swipe care tools" desktop="stack">
+        <NsSnapRail cols={2} className="ns-hiw-stack" hint="Swipe care tools">
           {SUPPORT.map((card) => (
             <article key={card.title} className="ns-hiw-card">
-              <img src={card.src} alt="" />
+              <div className="ns-hiw-card__media">
+                <img src={card.src} alt="" />
+              </div>
               <div className="ns-hiw-card__meta">
                 <strong>{card.title}</strong>
                 <span>{card.note}</span>
